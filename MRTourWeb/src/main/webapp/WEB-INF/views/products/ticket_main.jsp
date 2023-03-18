@@ -6,7 +6,7 @@
 	<title>미래투어 [티켓]</title>
 <head>
 	<style scoped>
-		@import "../css/ticket_main.css";
+		@import "resources/css/ticket_main.css";
 	</style>
 </head>
 
@@ -15,7 +15,7 @@
 		<div class="main-visual">
 			<div  class="main-banner" style="height : 470px; opacity: 1; ">
 				<a  href="">
-					<img  src="../img/test_img.jpg" alt="기분좋은 날 서핑">
+					<img  src="resources/img/test_img.jpg" alt="기분좋은 날 서핑">
 				</a>
 			</div>
 			<div class="main-visual_search">

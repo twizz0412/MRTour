@@ -5,7 +5,7 @@
 	<meta charset = "utf-8">
 	<title>미래투어 [호텔]</title>
 <head>
-	<link rel="stylesheet" type="text/css" href="../css/hotel_main.css" />
+	<link rel="stylesheet" type="text/css" href="resources/css/hotel_main.css" />
 </head>
 
 <body>
@@ -62,7 +62,7 @@
 				<div class="location">
 					<a href="">
 						<div class="eachloc">
-							<img alt="서울" src="../img/sl4.jpg" data-nimg="fill"  style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">
+							<img alt="서울" src="resources/img/sl4.jpg" data-nimg="fill"  style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">
 							<div class="locBinB"></div>
 							<span class="eachlocText">서울 숙소</span>
 						</div>
@@ -71,7 +71,7 @@
 				<div class="location">
 					<a href="">
 						<div class="eachloc">
-							<img alt="제주도" src="../img/jj14.jpg" data-nimg="fill" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">
+							<img alt="제주도" src="resources/img/jj14.jpg" data-nimg="fill" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">
 							<div class="locBinB"></div>
 							<span class="eachlocText">제주도 숙소</span>
 						</div>
@@ -80,7 +80,7 @@
 				<div class="location">
 					<a href="">
 						<div class="eachloc">
-							<img alt="강릉" src="../img/gr12.jpg" data-nimg="fill" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">
+							<img alt="강릉" src="resources/img/gr12.jpg" data-nimg="fill" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">
 							<div class="locBinB"></div>
 							<span class="eachlocText">강릉 숙소</span>
 						</div>
@@ -89,7 +89,7 @@
 				<div class="location">
 					<a href="">
 						<div class="eachloc">
-							<img alt="부산" src="../img/bs_sea5.jpg"  data-nimg="fill" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">
+							<img alt="부산" src="resources/img/bs_sea5.jpg"  data-nimg="fill" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">
 							<div class="locBinB"></div>
 							<span class="eachlocText">부산 숙소</span>
 						</div>
@@ -98,7 +98,7 @@
 				<div class="location">
 					<a href="">
 						<div class="eachloc">
-							<img alt="경주" src="../img/gj12.jpg"  data-nimg="fill" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">
+							<img alt="경주" src="resources/img/gj12.jpg"  data-nimg="fill" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">
 							<div class="locBinB"></div>
 							<span class="eachlocText">경주 숙소</span>
 						</div>
@@ -107,7 +107,7 @@
 				<div class="location">
 					<a href="">
 						<div class="eachloc">
-							<img alt="여수" src="../img/ys3.jpg"  data-nimg="fill" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">
+							<img alt="여수" src="resources/img/ys3.jpg"  data-nimg="fill" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">
 							<div class="locBinB"></div>
 							<span class="eachlocText">여수 숙소</span> <!-- 사진 늘어져서 교체 필요 -->
 						</div>
