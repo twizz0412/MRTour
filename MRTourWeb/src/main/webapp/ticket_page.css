@@ -1,5 +1,186 @@
 @charset "UTF-8";
 
+:root {
+    --white: #fff;
+    --black: #000;
+    --primary: #51abf3;
+    --secondary: #33b893;
+    --warning: #ffbf00;
+    --error: #fa5b4a;
+    --gray-50: #f8f9fa;
+    --gray-60: #f5f6f7;
+    --gray-80: #f1f3f5;
+    --gray-100: #e9ecef;
+    --gray-200: #dee2e6;
+    --gray-300: #ced4da;
+    --gray-400: #adb5bd;
+    --gray-500: #848c94;
+    --gray-600: #666d75;
+    --gray-700: #495056;
+    --gray-800: #343a40;
+    --gray-900: #212529;
+    --gray-1000: #141719;
+    --blue-50: #f5fbff;
+    --blue-80: #e7f4fd;
+    --blue-100: #cbe7fd;
+    --blue-200: #a7d4f9;
+    --blue-300: #79bef5;
+    --blue-400: #51abf3;
+    --blue-500: #2b96ed;
+    --blue-600: #1583db;
+    --blue-700: #0a70c2;
+    --blue-800: #025ba5;
+    --blue-900: #01457d;
+    --green-50: #e6f8f3;
+    --green-80: #d7f6ee;
+    --green-100: #94e7d1;
+    --green-200: #71d2b8;
+    --green-300: #58caab;
+    --green-400: #33b893;
+    --green-500: #27ab86;
+    --green-600: #1c9674;
+    --green-700: #137b5e;
+    --green-800: #10634c;
+    --green-900: #0a4534;
+    --yellow-50: #fff8e1;
+    --yellow-80: #fff2c6;
+    --yellow-100: #ffe182;
+    --yellow-200: #ffd74e;
+    --yellow-300: #ffc929;
+    --yellow-400: #ffbf00;
+    --yellow-500: #ffad01;
+    --yellow-600: #ff9a00;
+    --yellow-700: #f78000;
+    --yellow-800: #db5600;
+    --yellow-900: #b94100;
+    --red-50: #fbf1ef;
+    --red-80: #ffd4cc;
+    --red-100: #ffaea1;
+    --red-200: #ff8d7c;
+    --red-300: #fe6a54;
+    --red-400: #fa5b4a;
+    --red-500: #ec4937;
+    --red-600: #dd3c2a;
+    --red-700: #c83323;
+    --red-800: #aa2a1b;
+    --red-900: #8d2115;
+    --elevation-z1: 0 2px 4px 0 rgba(33, 37, 41, 0.1);
+    --elevation-z2: 0 4px 8px 0 rgba(33, 37, 41, 0.1);
+    --elevation-z3: 0 8px 16px 0 rgba(33, 37, 41, 0.15);
+    --elevation-z4: 0 12px 24px 0 rgba(33, 37, 41, 0.15);
+    --elevation-z0-border: 0 0 0 1px var(--gray-100);
+    --elevation-z1-border: 0 2px 4px 0 rgba(0, 0, 0, 0.1),0 0 0 1px var(--gray-100);
+    --elevation-z2-border: 0 4px 8px 0 rgba(33, 37, 41, 0.1),0 0 0 1px var(--gray-100);
+    --elevation-z3-border: 0 8px 16px 0 rgba(33, 37, 41, 0.15),0 0 0 1px var(--gray-100);
+    --elevation-z4-border: 0 12px 24px 0 rgba(33, 37, 41, 0.15),0 0 0 1px var(--gray-100);
+    --motion-easing-basic: cubic-bezier(0.4, 0, 0.2, 1);
+    --motion-easing-linear-out: cubic-bezier(0, 0, 0.2, 1);
+    --motion-easing-linear-in: cubic-bezier(0.4, 0, 1, 1);
+    --z-toast: 60000;
+    --z-screen-loading: 50000;
+    --z-alert: 40000;
+    --z-alert-above-screen-loading: 51000;
+    --z-popup: 30000;
+    --z-dialog: 20000;
+    --z-bottomsheet: 10000;
+    --z-bottomsheet-above-dialog: 21000;
+}
+
+:root {
+    --white: #fff;
+    --black: #000;
+    --primary: #51abf3;
+    --secondary: #33b893;
+    --warning: #ffbf00;
+    --error: #fa5b4a;
+    --gray-50: #f8f9fa;
+    --gray-60: #f5f6f7;
+    --gray-80: #f1f3f5;
+    --gray-100: #e9ecef;
+    --gray-200: #dee2e6;
+    --gray-300: #ced4da;
+    --gray-400: #adb5bd;
+    --gray-500: #848c94;
+    --gray-600: #666d75;
+    --gray-700: #495056;
+    --gray-800: #343a40;
+    --gray-900: #212529;
+    --gray-1000: #141719;
+    --blue-50: #f5fbff;
+    --blue-80: #e7f4fd;
+    --blue-100: #cbe7fd;
+    --blue-200: #a7d4f9;
+    --blue-300: #79bef5;
+    --blue-400: #51abf3;
+    --blue-500: #2b96ed;
+    --blue-600: #1583db;
+    --blue-700: #0a70c2;
+    --blue-800: #025ba5;
+    --blue-900: #01457d;
+    --green-50: #e6f8f3;
+    --green-80: #d7f6ee;
+    --green-100: #94e7d1;
+    --green-200: #71d2b8;
+    --green-300: #58caab;
+    --green-400: #33b893;
+    --green-500: #27ab86;
+    --green-600: #1c9674;
+    --green-700: #137b5e;
+    --green-800: #10634c;
+    --green-900: #0a4534;
+    --yellow-50: #fff8e1;
+    --yellow-80: #fff2c6;
+    --yellow-100: #ffe182;
+    --yellow-200: #ffd74e;
+    --yellow-300: #ffc929;
+    --yellow-400: #ffbf00;
+    --yellow-500: #ffad01;
+    --yellow-600: #ff9a00;
+    --yellow-700: #f78000;
+    --yellow-800: #db5600;
+    --yellow-900: #b94100;
+    --red-50: #fbf1ef;
+    --red-80: #ffd4cc;
+    --red-100: #ffaea1;
+    --red-200: #ff8d7c;
+    --red-300: #fe6a54;
+    --red-400: #fa5b4a;
+    --red-500: #ec4937;
+    --red-600: #dd3c2a;
+    --red-700: #c83323;
+    --red-800: #aa2a1b;
+    --red-900: #8d2115;
+    --elevation-z1: 0 2px 4px 0 rgba(33, 37, 41, 0.1);
+    --elevation-z2: 0 4px 8px 0 rgba(33, 37, 41, 0.1);
+    --elevation-z3: 0 8px 16px 0 rgba(33, 37, 41, 0.15);
+    --elevation-z4: 0 12px 24px 0 rgba(33, 37, 41, 0.15);
+    --elevation-z0-border: 0 0 0 1px var(--gray-100);
+    --elevation-z1-border: 0 2px 4px 0 rgba(0, 0, 0, 0.1),0 0 0 1px var(--gray-100);
+    --elevation-z2-border: 0 4px 8px 0 rgba(33, 37, 41, 0.1),0 0 0 1px var(--gray-100);
+    --elevation-z3-border: 0 8px 16px 0 rgba(33, 37, 41, 0.15),0 0 0 1px var(--gray-100);
+    --elevation-z4-border: 0 12px 24px 0 rgba(33, 37, 41, 0.15),0 0 0 1px var(--gray-100);
+    --motion-easing-basic: cubic-bezier(0.4, 0, 0.2, 1);
+    --motion-easing-linear-out: cubic-bezier(0, 0, 0.2, 1);
+    --motion-easing-linear-in: cubic-bezier(0.4, 0, 1, 1);
+    --z-toast: 60000;
+    --z-screen-loading: 50000;
+    --z-alert: 40000;
+    --z-alert-above-screen-loading: 51000;
+    --z-popup: 30000;
+    --z-dialog: 20000;
+    --z-bottomsheet: 10000;
+    --z-bottomsheet-above-dialog: 21000;
+}
+
+:root {
+    --swiper-navigation-size: 44px;
+}
+
+:root {
+    --swiper-theme-color: #007aff;
+}
+
+
 main {
     position: relative;
 }
@@ -27,9 +208,205 @@ div {
     display: block;
 }
 
-.OfferSectionNavbar_container.OfferSectionNavbar-module__show--fbDpu {
+
+.Offer_container {
+    padding-top: 48px;
+}
+
+/* 메뉴바 */
+
+.OfferSectionNavbar_container.OfferSectionNavbar_show {
     transform: translateY(0);
 }
+
+.Grid_container { /* 메뉴바 전체 */
+    position: relative;
+    width: 100%;
+}
+
+.Grid_row {
+    margin: 0 auto;
+    position: relative;
+    width: 1060px;
+}
+
+.OfferSectionNavbar_row {
+    display: block;
+}
+
+.OfferSectionNav_nav {
+    width: 100%;
+}
+
+.TabsWithSwiper_container.TabsWithSwiper_hideBorder {
+    box-shadow: none;
+}
+
+.TabsWithSwiper_large, .TabsWithSwiper-module__xLarge--Vm7aS {
+    height: 52px;
+}
+
+.TabsWithSwiper_container {
+    box-shadow: inset 0 -1px 0 0 #e9ecef;
+    position: relative;
+    width: 100%;
+}
+
+.TabsWithSwiper_container .swiper-container {
+    height: 100%;
+}
+
+.swiper-container {
+    list-style: none;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.swiper-container {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.swiper-container {
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+}
+
+element.style {
+    width: 1084px;
+    transform: translate3d(0px, 0px, 0px);
+}
+
+.swiper-container-free-mode>.swiper-wrapper {
+    transition-timing-function: ease-out;
+    margin: 0 auto;
+}
+
+@media (max-width: 767px)
+.swiper-wrapper {
+    overflow: visible!important;
+}
+
+.swiper-wrapper {
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.swiper-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-transition-property: -webkit-transform;
+    -moz-transition-property: -moz-transform;
+    -o-transition-property: -o-transform;
+    -ms-transition-property: -ms-transform;
+    transition-property: transform;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+style attribute { /* 메뉴바에 마우스 올리면 나타나는 스팬 */
+    cursor: grab;
+}
+
+.swiper-slide {
+    -webkit-flex-shrink: 0;
+    -ms-flex: 0 0 auto;
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.swiper-slide {
+    flex-shrink: 0;
+    height: 100%;
+    position: relative;
+    transition-property: transform;
+    width: 100%;
+}
+
+
+button {
+    appearance: none;
+    line-height: inherit;
+    border-radius: 0;
+    touch-action: manipulation;
+    cursor: pointer;
+    text-transform: none;
+    overflow: visible;
+    font: inherit;
+    color: inherit;
+}
+
+element.style {
+    margin-right: 24px;
+}
+
+.TabItemWithSwiper_btn.TabItemWithSwiper_active.TabItemWithSwiper_gray { /* 메뉴바(티켓 선택) */
+    color: #343a40;
+}
+
+.TabItemWithSwiper_button.TabItemWithSwiper_active {
+    border-bottom: 3px solid #51abf3;
+}
+
+.TabItemWithSwiper_btn.TabItemWithSwiper_gray { /* 메뉴바(상품 소개, 이용 안내, 환불 안내, 후기) */
+    color: #666d75;
+}
+
+.TabItemWithSwiper_btn { /* 메뉴바(상품 소개, 이용 안내, 환불 안내, 후기) */
+    background-color: #fff;
+    border: 0;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 700;
+    height: calc(100% - 1px);
+    letter-spacing: -.4px;
+    padding: 0;
+    width: auto!important;
+}
+
+.TabItemWithSwiper_large {
+    line-height: 52px;
+}
+
+
+.TabsWithSwiper_prev { /* 이전 버튼 */
+    left: -24px;
+    right: auto;
+}
+
+.TabsWithSwiper_next { /* 다음 버튼 */
+    left: 100%;
+}
+
+.TabsWithSwiper_navButton {
+    background-color: transparent;
+    background-image: none;
+    border: 0;
+    display: none;
+    height: 24px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+}
+
 
 :-webkit-any(article, aside, nav, section) h1 {
     margin-block-start: 0.83em;
@@ -66,6 +443,11 @@ margin: 0;
     padding: 17px 0;
 }
 
+@media screen and (max-width: 767px)
+.OfferHeaderTags-module__container--QaWnu {
+    padding: 9px 0;
+}
+
 ul {
     list-style: none;
     margin: 0;
@@ -88,7 +470,37 @@ b, strong {
     font-weight: bold;
 }
 
-.OfferMeta_container { /* e-ticket, 유효기간, 한국어 부분 */
+/* 본문 시작 */
+.Offer_layout {
+    padding-bottom: 24px;
+}
+
+
+@media (min-width: 768px) /* article */
+.Offer_article {
+    width: 700px;
+}
+
+
+img {
+    border-width: 0;
+    vertical-align: middle;
+}
+
+img {
+    overflow-clip-margin: content-box;
+    overflow: clip;
+}
+
+
+.OfferHeaderTags_container li {
+    color: #495056;
+    font-size: 16px;
+    line-height: 38px;
+}
+
+
+.OfferMeta_container { /* e-ticket, 유효기간, 한국어 섹션 */
     border-bottom: 1px solid #e9ecef;
     border-top: 1px solid #e9ecef;
     margin-bottom: -1px;
@@ -96,16 +508,11 @@ b, strong {
     width: 100%;
 }
 
-.OfferMetaItem_container {
+.OfferMetaItem_container { /* e-ticket, 유효기간, 한국어 각 항목 */
     display: inline-block;
     padding: 12px 0;
     vertical-align: middle;
     width: 50%;
-}
-
-img {
-    border-width: 0;
-    vertical-align: middle;
 }
 
 .OfferMetaItem_label {/* e-ticket, 유효기간, 한국어 레이블 */
@@ -116,11 +523,19 @@ img {
     vertical-align: middle;
 }
 
+.OfferMetaItem_icon {
+    height: 24px;
+    margin-right: 8px;
+    width: 24px;
+}
+
 .OfferIntro_container { /* 티켓 선택 위 구분선 */
     margin-top: 24px;
     position: relative;
 }
 
+
+/* 티켓 선택 섹션 */
 .OfferSectionBox_container.OfferSectionBox_noPadding {
     padding: 0;
 }
@@ -135,6 +550,7 @@ img {
     padding: 32px 0;
     width: 100%;
 }
+
 
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
     display: block;
@@ -179,12 +595,36 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     box-shadow: 0 4px 8px 0 rgba(33,37,41,.1), 0 0 0 1px #51abf3;
 }
 
+@media (min-width: 768px)
+.OfferOptionItem_container {
+    align-items: center;
+    display: flex;
+    padding: 32px 24px;
+}
+
+.OfferOptionItem_container {
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px 0 rgba(33,37,41,.1), 0 0 0 1px #e9ecef;
+    margin-bottom: 8px;
+    position: relative;
+    transition: box-shadow .2s ease;
+    width: 100%;
+}
+
+@media (min-width: 768px)
+.OfferOptionSelector_container {
+    margin-bottom: 0;
+    margin-top: 24px;
+}
+
+
 .OfferOptionItemHeader_container {
     margin-bottom: 4px;
     width: 310px;
 }
 
-.OfferOptionItemHeader_title {
+.OfferOptionItemHeader_title { /* 알파카월드 1인입장권 */
     color: #343a40;
     font-size: 16px;
     font-weight: 600;
@@ -201,6 +641,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     width: 100%;
 }
 
+ /* 미사용 전액환불~가격~증감버튼 부분 */
 @media (min-width: 768px)
 .OfferOptionItem_body {
     align-items: center;
@@ -237,7 +678,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     padding: 2px 4px;
 }
 
-.OfferOptionItemPrice_unit {
+.OfferOptionItemPrice_unit { /* 인원수 표시 */
     color: #adb5bd;
     font-size: 13px;
     letter-spacing: -.4px;
@@ -245,7 +686,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     margin-right: 4px;
 }
 
-.OfferOptionItemPrice_price {
+.OfferOptionItemPrice_price { /* 가격 표시 */
     color: #343a40;
     font-size: 20px;
     font-weight: 700;
@@ -253,12 +694,19 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     line-height: 1.2;
 }
 
-.OfferOptionItemPrice_symbol {
+.OfferOptionItemPrice_symbol { /* 원 */
     color: #343a40;
     font-size: 15px;
     font-weight: 600;
     letter-spacing: normal;
     line-height: 1.33;
+}
+
+@media (max-width: 767px)
+.OfferOptionItemCounter_container {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
 }
 
 .OfferOptionItemCounter_description {
@@ -281,11 +729,15 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     width: 32px;
 }
 
+.layout_border-zero {
+    border: 0;
+}
+
 .layout_padding-zero {
     padding: 0;
 }
 
-.Stepper_value {
+.Stepper_value { /* 버튼에 따라 바뀌는 인원수 */
     color: #343a40;
     font-size: 16px;
     font-weight: 500;
@@ -295,6 +747,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     width: 36px;
 }
 
+/* 인원수에 따른 금액 계산 부분 */
 .OfferOptionCalculator_container {
     margin-top: 16px;
 }
@@ -330,7 +783,15 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     width: 92px;
 }
 
-.OfferOptionCalculator_total {
+.OfferOptionCalculator_row>p {
+    color: #848c94;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.29;
+    margin: 0;
+}
+
+.OfferOptionCalculator_total { /* 총 여행 금액 */
     text-align: right;
     width: 100%;
 }
@@ -395,6 +856,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 
 
+/* 상품 소개 섹션 */
+
+.OfferSectionBox_container.OfferSectionBox_noBorder {
+    border-top: 0;
+}
+
 .OfferSectionBox_container {
     border-top: 1px solid #e9ecef;
     padding: 32px 0;
@@ -409,22 +876,61 @@ element.style {
     max-height: 1000px;
 }
 
-.OfferFlexibleBox_body {
+
+.OfferFlexibleBox_body { 
     overflow: hidden;
     width: 100%;
 }
 
-.OfferFlexibleBox_more.OfferFlexibleBox_absolute {
+.OfferDetailSection_image { /* 상품소개 이미지 */
+    width: 100%;
+}
+
+img {
+    border-width: 0;
+    vertical-align: middle;
+}
+
+img {
+    border: 0;
+}
+
+.OfferFlexibleBox_more.OfferFlexibleBox_absolute { /* 상품 설명 더보기 섹션 */
     bottom: 0;
     left: 0;
     position: absolute;
 }
 
+.OfferFlexibleBox_gradation { /* 상품 설명 잘리는 부분 그라데이션 */
+    background-image: linear-gradient(180deg,hsla(0,0%,100%,0),#fff 99%);
+    height: 120px;
+    width: 100%;
+}
+
+.OfferFlexibleBox_button { /* 더보기 버튼 */
+    background-color: #fff;
+    padding-top: 16px;
+    text-align: center;
+    width: 100%;
+}
+
+.OfferMoreButton_label { /* 상품설명 더보기 */
+    vertical-align: middle;
+}
+
+.OfferMoreButton_icon {
+    margin-left: 4px;
+}
+
+
+
+/* 이용안내 섹션 */
+
 .OfferFlexibleBox_more {
     width: 100%;
 }
 
-.OfferContents_container.OfferContents-module__noMargin--NyUVG, .OfferContents-module__container--Gu7X5:first-child {
+.OfferContents_container.OfferContents-module__noMargin--NyUVG, .OfferContents_container:first-child {
     margin-top: 0;
 }
 
@@ -432,6 +938,16 @@ element.style {
     margin-top: 24px;
     width: 100%;
 }
+
+.OfferContents_title { /* 이용안내 섹션 소제목들 */
+    color: #343a40;
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: -.28px;
+    line-height: 1.41;
+    margin-bottom: 8px;
+}
+
 
 h3 {
     font-size: 1.75rem;
@@ -450,14 +966,92 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 0.5rem;
 }
 
+.OfferContents_contents { /* 이용안내 섹션 본문 */
+    color: #343a40;
+    font-size: 15px;
+    letter-spacing: -.3px;
+    line-height: 1.6;
+}
+
+.OfferUseMeetingPoint_container { /* 지역명+지도 */
+    width: 100%;
+}
+
+.OfferUseMeetingPoint_description { /* 지역명 */
+    color: #343a40;
+    font-size: 15px;
+    letter-spacing: -.43px;
+    line-height: 1.6;
+    margin-bottom: 8px;
+    margin-top: 0;
+    white-space: pre-wrap;
+}
+
+.OfferUseMeetingPoint_photos { /* 지도 */
+    display: flex;
+    justify-content: space-between;
+}
+
+a, a:active, a:hover, a:link, a:visited {
+    text-decoration: none;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a {
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
+}
+
+a {
+    background-color: transparent;
+}
+
 a, area, button, [role="button"], input, label, select, summary, textarea {
     -ms-touch-action: manipulation;
     touch-action: manipulation;
 }
 
+.OfferUseMeetingPoint_image { /* 지도 이미지 */
+    border-radius: 4px;
+    height: 200px;
+    -o-object-fit: cover;
+    object-fit: cover;
+    width: 342px;
+}
+
+
+.OfferFlexibleBox_more { /* 더 보기 */
+    width: 100%;
+}
+
+.OfferFlexibleBox_text {
+    color: #2b96ed;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.14;
+    margin-top: 4px;
+}
+
+
 .Link_link {
     box-sizing: border-box;
     display: inline-block;
+    line-height: 1;
+}
+
+
+.Link_medium {
+    padding-top: 12px;
+}
+
+.Button_link {
+    color: #2b96ed;
     line-height: 1;
 }
 
@@ -471,6 +1065,25 @@ a, area, button, [role="button"], input, label, select, summary, textarea {
     padding: 6px;
 }
 
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+html {
+    font-size: 16px;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    font-family: sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
 html, body {
     background: #fff;
     letter-spacing: -.2px;
@@ -481,14 +1094,31 @@ html, body {
     -webkit-font-smoothing: antialiased;
 }
 
+*, *:before, *:after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+
+
 /* aside 섹션 */
 .Offer_side {
     width: 320px;
 }
 
+aside {
+    display: block;
+}
+
 .OfferSideBar_container {
     position: sticky;
     top: 80px;
+    width: 100%;
+}
+
+.OfferSideBar_row {
+    margin-bottom: 16px;
     width: 100%;
 }
 
@@ -514,7 +1144,7 @@ html, body {
     display: inline-block;
 }
 
-.OfferPrice_price {
+.OfferPrice_price { /* 가격 표시 부분 */
     color: #343a40;
     font-size: 24px;
     font-weight: 700;
@@ -522,23 +1152,23 @@ html, body {
     line-height: 1;
 }
 
-.OfferPrice_suffix {
+.OfferPrice_suffix { /* 부터 */
     margin-left: 4px;
 }
 
-.OfferSideBarMain_row {
+.OfferSideBarMain_row { /* 티켓 선택, 구매 후 확정됩니다 부분 */
     margin-bottom: 8px;
 }
 
-.OfferSideBarMainButton_buttonIcon {
+.OfferSideBarMainButton_buttonIcon { /* 티켓 선택 버튼 아이콘 */
     margin-right: 8px;
 }
 
-.OfferSideBarMainButton_buttonLabel {
+.OfferSideBarMainButton_buttonLabel { /* 티켓 선택 버튼 레이블 */
     vertical-align: middle;
 }
 
-.OfferSideBarMainButton_immediately {
+.OfferSideBarMainButton_immediately { /* 구매 후 즉시 확정됩니다 부분 */
     margin-bottom: 0;
     margin-top: 8px;
     text-align: center;
@@ -555,7 +1185,7 @@ html, body {
     vertical-align: middle;
 }
 
-.OfferSideBarMainButton_immediately>.OfferSideBarMainButton_question {
+.OfferSideBarMainButton_immediately>.OfferSideBarMainButton_question { /* ? 아이콘 */
     margin-left: 4px;
 }
 
@@ -572,12 +1202,90 @@ html, body {
     padding-right: 16px;
 }
 
+svg:not(:root) {
+    overflow: hidden;
+}
+
+.WishIcon_container { /* 위시리스트에 담기 앞 하트 아이콘 */
+    vertical-align: middle;
+}
+
+.OfferSideBarMainWishlist_label { /* 위시리스트에 담기 스팬 */
+    margin-left: 4px;
+}
+
 path[Attributes Style] {
     fill: none;
     fill-rule: evenodd;
     stroke: rgb(206, 212, 218);
     stroke-width: 1.25;
     d: path("M 15.876 4.625 c 1.205 0 2.41 0.46 3.33 1.379 c 0.918 0.92 1.378 2.124 1.378 3.33 c 0 1.204 -0.46 2.41 -1.379 3.329 h 0 l -7.1 7.1 l -7.101 -7.1 c -0.92 -0.92 -1.379 -2.125 -1.379 -3.33 s 0.46 -2.41 1.379 -3.329 c 0.92 -0.92 2.124 -1.379 3.33 -1.379 c 1.204 0 2.41 0.46 3.329 1.379 c 0.161 0.162 0.309 0.332 0.442 0.51 c 0.133 -0.178 0.28 -0.349 0.442 -0.51 c 0.919 -0.92 2.124 -1.379 3.329 -1.379 Z");
+}
+
+.OfferSideBarMainWishlist_desc { /* 306명이 위시리스트에 담았습니다 부분 */
+    color: #848c94;
+    font-size: 13px;
+    letter-spacing: -.2px;
+    margin-bottom: 0;
+    margin-top: 8px;
+    text-align: center;
+    width: 100%;
+}
+
+.BoxItem_container { /* 안심하고 구매하세요 부분 */
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    display: flex;
+    padding: 16px;
+    width: 100%;
+}
+
+.OfferBadge_icon { /* 안심하고 구매하세요 앞 아이콘 */
+    height: 32px;
+    margin-right: 12px;
+    width: 32px;
+}
+
+.BoxItem_body { /* 안심하고 구매하세요 아이콘 제외한 부분*/
+    flex: 1;
+    word-break: break-word;
+}
+
+.BoxItem_title { /* 안심하고 구매하세요! */
+    color: #343a40;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: -.3px;
+    line-height: 1.38;
+    margin: 0;
+}
+
+.BoxItem_content {
+    color: #343a40;
+    font-size: 15px;
+    letter-spacing: -.3px;
+    line-height: 1.6;
+    margin-top: 4px;
+    word-break: break-all;
+}
+
+/* 렌트카 광고 부분 */
+.OfferSideBar_row:last-child {
+    margin-bottom: 0;
+}
+
+.OfferSideBarBanner_container { /* 렌트카 광고 */
+    display: inline-block;
+    height: 80px;
+    width: 100%;
+}
+
+.OfferSideBarBanner_image { /* 렌트카 배너 이미지 */
+    background-position: 50%;
+    border-radius: 2px;
+    -o-object-fit: cover;
+    object-fit: cover;
+    width: 100%;
 }
 
 :not(svg) {
@@ -589,123 +1297,20 @@ li {
     text-align: -webkit-match-parent;
 }
 
-
-
-
-
-
-
-
-=================================================
-
-.Grid_container {
-    position: relative;
-    width: 100%;
-}
-
-@media (max-width: 767px)
-.Grid_row.Grid_full {
-    padding: 0;
-    width: 100%;
-}
-
-.Grid-module__row--GTpEN {
-    margin: 0 auto;
-    position: relative;
-}
-
-.OfferSectionNavbar_row {
-    display: block;
-}
-
-.OfferSectionNav_nav {
-    width: 100%;
-}
-
-.TabsWithSwiper_container.TabsWithSwiper_hideBorder {
-    box-shadow: none;
-}
-
-.TabsWithSwiper_container .swiper-container {
-    height: 100%;
-}
-
-.swiper-container {
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-}
-
-.swiper-container {
-    list-style: none;
-    margin: 0 auto;
-    padding: 0;
-}
-
-.swiper-container-free-mode>.swiper-wrapper {
-    transition-timing-function: ease-out;
-    margin: 0 auto;
-}
-
-@media (max-width: 767px)
-.swiper-wrapper {
-    overflow: visible!important;
-}
-
-.swiper-wrapper {
-    box-sizing: border-box;
-}
-
-
-.swiper-slide {
-    flex-shrink: 0;
-    position: relative;
-    transition-property: transform;
-}
-
-
-button {
-    appearance: none;
-    line-height: inherit;
-    border-radius: 0;
-    touch-action: manipulation;
-    cursor: pointer;
-    text-transform: none;
-    overflow: visible;
-    font: inherit;
-    color: inherit;
-}
-
-
-.TabItemWithSwiper_btn.TabItemWithSwiper_active.TabItemWithSwiper_gray { /* 메뉴바(티켓 선택) */
-    color: #343a40;
-}
-
-.TabItemWithSwiper_btn.TabItemWithSwiper_gray { /* 메뉴바(상품 소개, 이용 안내, 환불 안내, 후기) */
-    color: #666d75;
-}
-
-.TabItemWithSwiper_btn { /* 메뉴바(상품 소개, 이용 안내, 환불 안내, 후기) */
+/* 상품 번호 섹션 */
+.offer-container_prd_id {
     background-color: #fff;
-    border: 0;
-    display: inline-block;
+    border-top: 1px solid #e9ecef;
+    color: #000;
+    font-size: 14px;
+    text-align: center;
+}
+
+.offer-container_prd_id-content {
     font-size: 16px;
     font-weight: 700;
-    height: calc(100% - 1px);
-    letter-spacing: -.4px;
-    padding: 0;
-    width: auto!important;
+    padding: 40px;
 }
 
-.TabItemWithSwiper_large {
-    line-height: 52px;
-}
 
-.css-ClientProvider--Container {
-    position: fixed;
-    left: 0px;
-    bottom: 0px;
-    z-index: 9999;
-}
+
