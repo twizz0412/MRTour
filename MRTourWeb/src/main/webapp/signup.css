@@ -1,0 +1,571 @@
+@charset "UTF-8";
+
+:root {
+    --white: #fff;
+    --black: #000;
+    --primary: #51abf3;
+    --secondary: #33b893;
+    --warning: #ffbf00;
+    --error: #fa5b4a;
+    --gray-50: #f8f9fa;
+    --gray-60: #f5f6f7;
+    --gray-80: #f1f3f5;
+    --gray-100: #e9ecef;
+    --gray-200: #dee2e6;
+    --gray-300: #ced4da;
+    --gray-400: #adb5bd;
+    --gray-500: #848c94;
+    --gray-600: #666d75;
+    --gray-700: #495056;
+    --gray-800: #343a40;
+    --gray-900: #212529;
+    --gray-1000: #141719;
+    --blue-50: #f5fbff;
+    --blue-80: #e7f4fd;
+    --blue-100: #cbe7fd;
+    --blue-200: #a7d4f9;
+    --blue-300: #79bef5;
+    --blue-400: #51abf3;
+    --blue-500: #2b96ed;
+    --blue-600: #1583db;
+    --blue-700: #0a70c2;
+    --blue-800: #025ba5;
+    --blue-900: #01457d;
+    --green-50: #e6f8f3;
+    --green-80: #d7f6ee;
+    --green-100: #94e7d1;
+    --green-200: #71d2b8;
+    --green-300: #58caab;
+    --green-400: #33b893;
+    --green-500: #27ab86;
+    --green-600: #1c9674;
+    --green-700: #137b5e;
+    --green-800: #10634c;
+    --green-900: #0a4534;
+    --yellow-50: #fff8e1;
+    --yellow-80: #fff2c6;
+    --yellow-100: #ffe182;
+    --yellow-200: #ffd74e;
+    --yellow-300: #ffc929;
+    --yellow-400: #ffbf00;
+    --yellow-500: #ffad01;
+    --yellow-600: #ff9a00;
+    --yellow-700: #f78000;
+    --yellow-800: #db5600;
+    --yellow-900: #b94100;
+    --red-50: #fbf1ef;
+    --red-80: #ffd4cc;
+    --red-100: #ffaea1;
+    --red-200: #ff8d7c;
+    --red-300: #fe6a54;
+    --red-400: #fa5b4a;
+    --red-500: #ec4937;
+    --red-600: #dd3c2a;
+    --red-700: #c83323;
+    --red-800: #aa2a1b;
+    --red-900: #8d2115;
+    --elevation-z1: 0 2px 4px 0 rgba(33, 37, 41, 0.1);
+    --elevation-z2: 0 4px 8px 0 rgba(33, 37, 41, 0.1);
+    --elevation-z3: 0 8px 16px 0 rgba(33, 37, 41, 0.15);
+    --elevation-z4: 0 12px 24px 0 rgba(33, 37, 41, 0.15);
+    --elevation-z0-border: 0 0 0 1px var(--gray-100);
+    --elevation-z1-border: 0 2px 4px 0 rgba(0, 0, 0, 0.1),0 0 0 1px var(--gray-100);
+    --elevation-z2-border: 0 4px 8px 0 rgba(33, 37, 41, 0.1),0 0 0 1px var(--gray-100);
+    --elevation-z3-border: 0 8px 16px 0 rgba(33, 37, 41, 0.15),0 0 0 1px var(--gray-100);
+    --elevation-z4-border: 0 12px 24px 0 rgba(33, 37, 41, 0.15),0 0 0 1px var(--gray-100);
+    --motion-easing-basic: cubic-bezier(0.4, 0, 0.2, 1);
+    --motion-easing-linear-out: cubic-bezier(0, 0, 0.2, 1);
+    --motion-easing-linear-in: cubic-bezier(0.4, 0, 1, 1);
+    --z-toast: 60000;
+    --z-screen-loading: 50000;
+    --z-alert: 40000;
+    --z-alert-above-screen-loading: 51000;
+    --z-popup: 30000;
+    --z-dialog: 20000;
+    --z-bottomsheet: 10000;
+    --z-bottomsheet-above-dialog: 21000;
+}
+
+:root {
+    --white: #fff;
+    --black: #000;
+    --primary: #51abf3;
+    --secondary: #33b893;
+    --warning: #ffbf00;
+    --error: #fa5b4a;
+    --gray-50: #f8f9fa;
+    --gray-60: #f5f6f7;
+    --gray-80: #f1f3f5;
+    --gray-100: #e9ecef;
+    --gray-200: #dee2e6;
+    --gray-300: #ced4da;
+    --gray-400: #adb5bd;
+    --gray-500: #848c94;
+    --gray-600: #666d75;
+    --gray-700: #495056;
+    --gray-800: #343a40;
+    --gray-900: #212529;
+    --gray-1000: #141719;
+    --blue-50: #f5fbff;
+    --blue-80: #e7f4fd;
+    --blue-100: #cbe7fd;
+    --blue-200: #a7d4f9;
+    --blue-300: #79bef5;
+    --blue-400: #51abf3;
+    --blue-500: #2b96ed;
+    --blue-600: #1583db;
+    --blue-700: #0a70c2;
+    --blue-800: #025ba5;
+    --blue-900: #01457d;
+    --green-50: #e6f8f3;
+    --green-80: #d7f6ee;
+    --green-100: #94e7d1;
+    --green-200: #71d2b8;
+    --green-300: #58caab;
+    --green-400: #33b893;
+    --green-500: #27ab86;
+    --green-600: #1c9674;
+    --green-700: #137b5e;
+    --green-800: #10634c;
+    --green-900: #0a4534;
+    --yellow-50: #fff8e1;
+    --yellow-80: #fff2c6;
+    --yellow-100: #ffe182;
+    --yellow-200: #ffd74e;
+    --yellow-300: #ffc929;
+    --yellow-400: #ffbf00;
+    --yellow-500: #ffad01;
+    --yellow-600: #ff9a00;
+    --yellow-700: #f78000;
+    --yellow-800: #db5600;
+    --yellow-900: #b94100;
+    --red-50: #fbf1ef;
+    --red-80: #ffd4cc;
+    --red-100: #ffaea1;
+    --red-200: #ff8d7c;
+    --red-300: #fe6a54;
+    --red-400: #fa5b4a;
+    --red-500: #ec4937;
+    --red-600: #dd3c2a;
+    --red-700: #c83323;
+    --red-800: #aa2a1b;
+    --red-900: #8d2115;
+    --elevation-z1: 0 2px 4px 0 rgba(33, 37, 41, 0.1);
+    --elevation-z2: 0 4px 8px 0 rgba(33, 37, 41, 0.1);
+    --elevation-z3: 0 8px 16px 0 rgba(33, 37, 41, 0.15);
+    --elevation-z4: 0 12px 24px 0 rgba(33, 37, 41, 0.15);
+    --elevation-z0-border: 0 0 0 1px var(--gray-100);
+    --elevation-z1-border: 0 2px 4px 0 rgba(0, 0, 0, 0.1),0 0 0 1px var(--gray-100);
+    --elevation-z2-border: 0 4px 8px 0 rgba(33, 37, 41, 0.1),0 0 0 1px var(--gray-100);
+    --elevation-z3-border: 0 8px 16px 0 rgba(33, 37, 41, 0.15),0 0 0 1px var(--gray-100);
+    --elevation-z4-border: 0 12px 24px 0 rgba(33, 37, 41, 0.15),0 0 0 1px var(--gray-100);
+    --motion-easing-basic: cubic-bezier(0.4, 0, 0.2, 1);
+    --motion-easing-linear-out: cubic-bezier(0, 0, 0.2, 1);
+    --motion-easing-linear-in: cubic-bezier(0.4, 0, 1, 1);
+    --z-toast: 60000;
+    --z-screen-loading: 50000;
+    --z-alert: 40000;
+    --z-alert-above-screen-loading: 51000;
+    --z-popup: 30000;
+    --z-dialog: 20000;
+    --z-bottomsheet: 10000;
+    --z-bottomsheet-above-dialog: 21000;
+}
+
+:root {
+    --white: #fff;
+    --black: #000;
+    --primary: #51abf3;
+    --secondary: #33b893;
+    --warning: #ffbf00;
+    --error: #fa5b4a;
+    --gray-50: #f8f9fa;
+    --gray-60: #f5f6f7;
+    --gray-80: #f1f3f5;
+    --gray-100: #e9ecef;
+    --gray-200: #dee2e6;
+    --gray-300: #ced4da;
+    --gray-400: #adb5bd;
+    --gray-500: #848c94;
+    --gray-600: #666d75;
+    --gray-700: #495056;
+    --gray-800: #343a40;
+    --gray-900: #212529;
+    --gray-1000: #141719;
+    --blue-50: #f5fbff;
+    --blue-80: #e7f4fd;
+    --blue-100: #cbe7fd;
+    --blue-200: #a7d4f9;
+    --blue-300: #79bef5;
+    --blue-400: #51abf3;
+    --blue-500: #2b96ed;
+    --blue-600: #1583db;
+    --blue-700: #0a70c2;
+    --blue-800: #025ba5;
+    --blue-900: #01457d;
+    --green-50: #e6f8f3;
+    --green-80: #d7f6ee;
+    --green-100: #94e7d1;
+    --green-200: #71d2b8;
+    --green-300: #58caab;
+    --green-400: #33b893;
+    --green-500: #27ab86;
+    --green-600: #1c9674;
+    --green-700: #137b5e;
+    --green-800: #10634c;
+    --green-900: #0a4534;
+    --yellow-50: #fff8e1;
+    --yellow-80: #fff2c6;
+    --yellow-100: #ffe182;
+    --yellow-200: #ffd74e;
+    --yellow-300: #ffc929;
+    --yellow-400: #ffbf00;
+    --yellow-500: #ffad01;
+    --yellow-600: #ff9a00;
+    --yellow-700: #f78000;
+    --yellow-800: #db5600;
+    --yellow-900: #b94100;
+    --red-50: #fbf1ef;
+    --red-80: #ffd4cc;
+    --red-100: #ffaea1;
+    --red-200: #ff8d7c;
+    --red-300: #fe6a54;
+    --red-400: #fa5b4a;
+    --red-500: #ec4937;
+    --red-600: #dd3c2a;
+    --red-700: #c83323;
+    --red-800: #aa2a1b;
+    --red-900: #8d2115;
+    --elevation-z1: 0 2px 4px 0 rgba(33, 37, 41, 0.1);
+    --elevation-z2: 0 4px 8px 0 rgba(33, 37, 41, 0.1);
+    --elevation-z3: 0 8px 16px 0 rgba(33, 37, 41, 0.15);
+    --elevation-z4: 0 12px 24px 0 rgba(33, 37, 41, 0.15);
+    --elevation-z0-border: 0 0 0 1px var(--gray-100);
+    --elevation-z1-border: 0 2px 4px 0 rgba(0, 0, 0, 0.1),0 0 0 1px var(--gray-100);
+    --elevation-z2-border: 0 4px 8px 0 rgba(33, 37, 41, 0.1),0 0 0 1px var(--gray-100);
+    --elevation-z3-border: 0 8px 16px 0 rgba(33, 37, 41, 0.15),0 0 0 1px var(--gray-100);
+    --elevation-z4-border: 0 12px 24px 0 rgba(33, 37, 41, 0.15),0 0 0 1px var(--gray-100);
+    --motion-easing-basic: cubic-bezier(0.4, 0, 0.2, 1);
+    --motion-easing-linear-out: cubic-bezier(0, 0, 0.2, 1);
+    --motion-easing-linear-in: cubic-bezier(0.4, 0, 1, 1);
+    --z-toast: 60000;
+    --z-screen-loading: 50000;
+    --z-alert: 40000;
+    --z-alert-above-screen-loading: 51000;
+    --z-popup: 30000;
+    --z-dialog: 20000;
+    --z-bottomsheet: 10000;
+    --z-bottomsheet-above-dialog: 21000;
+}
+
+:root {
+    --swiper-navigation-size: 44px;
+}
+
+:root {
+    --swiper-theme-color: #007aff;
+}
+
+
+*, ::before, ::after {
+    font-family: "SF Pro KR", "SF Pro Display", "SF Pro Icons", -apple-system, BlinkMacSystemFont, "Noto Sans KR", "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    box-sizing: border-box;
+    letter-spacing: 0px;
+    -webkit-font-smoothing: antialiased;
+    overflow-anchor: none;
+}
+
+main {
+    display: block;
+    position: relative;
+}
+
+.SignUpEmail-Container { /* 가입 폼 메인 전체*/
+    width: 430px;
+    padding: 48px;
+    margin: 64px auto;
+    border: 1px solid var(--gray-200);
+    border-radius: 2px;
+}
+
+.SignUpEmail-Form { /* 가입 폼(레이블+입력칸) 전체 */
+    position: relative;
+}
+
+.SignUpEmail-Section { /* 각 섹션 */
+    margin-bottom: 16px;
+}
+
+.FormTextInput-Container {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+}
+
+.FormTextInput-Label {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--gray-700);
+    letter-spacing: -0.2px;
+    margin-bottom: 8px;
+}
+
+label {
+    margin: 0;
+    font-weight: normal;
+}
+
+input:not([type="checkbox"]):not([type="radio"]), button, textarea, select {
+    appearance: none;
+}
+
+.FormTextInput-Input {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    height: 40px;
+    padding: 11px;
+    border-radius: 4px;
+    border: 0px;
+    box-shadow: inset 0 0 0 1px var(--gray-300);
+    outline-style: none;
+    color: var(--gray-800);
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: -0.2px;
+    width: 100%;
+}
+
+.AgreementList-Container { /* 약관 섹션*/
+    margin-top: 27px;
+    margin-bottom: 16px;
+}
+
+.AgreementList-TitleSection {
+    position: relative;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+
+.Checkbox {
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    border-radius: 2px;
+    box-shadow: 0 0 0 1px var(--gray-300);
+    background-color: var(--white);
+    position: relative;
+    transition: background 0.25s var(--motion-easing-basic),box-shadow 0.25s var(--motion-easing-basic);
+    width: 18px;
+    height: 18px;
+}
+
+p, span, strong, small {
+    color: inherit;
+}
+
+.inputCheckbox {
+    display: block;
+    position: absolute;
+    inset: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+    opacity: 0;
+    padding: 0px;
+    margin: 0px;
+    cursor: pointer;
+}
+
+.AgreeLabel {
+    flex: 1 1 auto;
+    font-size: 14px;
+    line-height: 18px;
+    padding-left: 10px;
+}
+
+ul, ol, dl {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 0;
+}
+
+li {
+    outline: none;
+}
+
+.FormTextInput-Label::after {
+    content: " *";
+}
+
+.AgreementList-List {
+    margin-top: 16px;
+    margin-bottom: 10px;
+    padding: 16px 8px 16px 16px;
+    border: 1px solid var(--gray-200);
+    border-radius: 4px;
+}
+
+.AgreementItem-Row {
+    width: 100%;
+    margin-bottom: 24px;
+}
+
+.AgreementItem-Item {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 100%;
+}
+
+.Item-Checkbox {
+    position: relative;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.AgreementItem-LabelBtn {
+    flex: 1 1 0%;
+    display: inline-block;
+    width: 100%;
+    min-height: 16px;
+    background: none;
+    border: none;
+    font-size: 14px;
+    text-align: left;
+    line-height: 16px;
+    cursor: pointer;
+}
+
+.AgreementItem-ArrowBox { /* 더보기 화살표 */
+    float: right;
+    height: 16px;
+    width: 16px;
+    cursor: pointer;
+}
+
+.ArrowBox {
+    display: inline-block;
+    border: 0px;
+}
+
+img {
+    vertical-align: middle;
+}
+
+.Changeable {
+    margin-top: 4px;
+    margin-left: 28px;
+    color: var(--gray-500);
+    font-size: 12px;
+}
+
+p, dt, dd {
+    margin: 0px;
+    padding: 0px;
+}
+
+[role="button"] {
+    cursor: pointer;
+}
+
+.ButtonArea {
+    position: relative;
+    display: inline-flex;
+    width: 100%;
+}
+
+button[disabled], html input[disabled] {
+    cursor: default;
+}
+
+button[disabled], a[disabled] {
+    pointer-events: none !important;
+}
+
+button, a {
+    outline: none;
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+button, select {
+    text-transform: none;
+}
+
+button {
+    overflow: visible;
+}
+
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font: inherit;
+    color: inherit;
+}
+
+.Button {
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    text-align: center;
+    border: 0px;
+    border-radius: 4px;
+    font-weight: bold;
+    letter-spacing: -0.2px;
+    transition: all 0.3s ease 0s;
+    user-select: none;
+    outline-style: none;
+    cursor: pointer;
+    height: 48px;
+    padding: 0px 32px;
+    font-size: 16px;
+    color: white;
+    background-color: var(--blue-400);
+    width: 100%;
+}
+
+.css-jgs6n:disabled {
+    background-color: var(--blue-200);
+    pointer-events: none;
+}
+
+.ButtonArea > button {
+    width: 100%;
+    padding: 0px 8px;
+}
+
+
+.Join {
+    display: flex;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.AgreementList-Notices {
+    width: 100%;
+}
+
+.AgreementList-Notices-Content {
+    color: var(--gray-500);
+    font-size: 12px;
+    line-height: 1.5;
+}
