@@ -9,6 +9,9 @@
 </head>
 
 <body>
+	<!-- 임시 로그인 링크(후에 헤더에 추가예정) -->
+	<h2 onclick="location.href='login'">로그인</h2>
+	
 	<div class="main">
 		<section class="upper">
 			<div class="ftitle">

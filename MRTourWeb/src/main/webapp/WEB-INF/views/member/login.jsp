@@ -5,7 +5,7 @@
 	<meta charset = "utf-8">
 	<title>로그인</title>
 	<style>
-		@import "../css/login.css";
+		@import "resources/css/login.css";
 	</style>
 	<script>
 		window.onload = function () {
@@ -40,7 +40,7 @@
 		<!-- 상단 로고 배치 -->
 		
 			<div class = "logo">
-				<span class = "mr_logo"><img src = "../img/mr_logo.png"></span>
+				<span class = "mr_logo"><img src = "resources/img/mr_logo.png"></span>
 			</div>
 			
 		<!-- 아아디/비밀번호 입력 폼 -->
@@ -61,7 +61,7 @@
 				<button type="button" class="btn">로그인</button>
 			</div>
 			<div class = "signup_btn">
-				<button type="button" class="btn" onclick="location.href='signup.jsp'">회원가입</button>
+				<button type="button" class="btn" onclick="location.href='signup'">회원가입</button>
 			</div>
 		</div>
 	</div>
