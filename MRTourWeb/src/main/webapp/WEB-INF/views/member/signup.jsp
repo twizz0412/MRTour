@@ -1,6 +1,6 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -8,83 +8,8 @@
 	<title>회원가입</title>
 	<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 	<script src = "http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-	<script>
-	//주소입력
-    function searchPost() {
-        new daum.Postcode({
-            oncomplete: function(data) {
-                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
-
-                // 각 주소의 노출 규칙에 따라 주소를 조합한다.
-                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
-                var addr = ''; // 주소 변수
-                var extraAddr = ''; // 참고항목 변수
-
-                //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
-                if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
-                    addr = data.roadAddress;
-                } else { // 사용자가 지번 주소를 선택했을 경우(J)
-                    addr = data.jibunAddress;
-                }
-
-                // 우편번호와 주소 정보를 해당 필드에 넣는다.
-                document.getElementById('member_zipcode').value = data.zonecode;
-                document.getElementById("member_faddr").value = addr;
-                // 커서를 상세주소 필드로 이동한다.
-                document.getElementById("member_laddr").focus();
-            }
-        }).open();
-    }
-	</script>
-
-	<script>
-	//전체 선택 및 해제
-		function check_all() {
-		  // 전체 체크박스
-		  const checkAll = document.getElementById("checkAll");
-
-		  // 각 체크박스
-		  const checkboxes = document.getElementsByName("chk");
-
-		  // 전체 체크박스 체크되면
-		  if (checkAll.checked) {
-		    
-			 // 각 체크박스 선택
-		    for (let i = 0; i < checkboxes.length; i++) {
-		      checkboxes[i].checked = true;
-		    }
-			 
-		  } else {
-		    // 모든 체크박스 선택 해제
-		    for (let i = 0; i < checkboxes.length; i++) {
-		      checkboxes[i].checked = false;
-		    }
-		  }
-		}
-	</script>
+	<script src = "resources/js/signup.js"></script>
 	
-	<script>
-		$(document).ready(function() {
-		  var checkAll = document.getElementById("checkAll");
-		  var checkboxes = document.getElementsByName("chk");
-
-		  function onoffCheckItem() {
-		    var allChecked = true;
-		    for (var i = 0; i < checkboxes.length; i++) {
-		      if (!checkboxes[i].checked) {
-		        allChecked = false;
-		        break;
-		      }
-		    }
-		    checkAll.checked = allChecked;
-		  }
-
-		  for (var i = 0; i < checkboxes.length; i++) {
-			  checkboxes[i].addEventListener('click', onoffCheckItem);
-		  };
-		});
-	</script>
 	<style type="text/css">
 		@import url("resources/css/signup.css");
 	</style>
@@ -180,9 +105,10 @@
 			<div class="SignUpEmail-Section">
 				<div class="FormTextInput-Container">
 					<label for="userEmail" required="" class="FormTextInput-Label">이메일</label><br>
-					<input id="userEmail" name="user[email]" type="email" class="FormTextInput-email" value="">
+					<input type = "text" size = "15" id="email_id" class="input">
 						<span class = "sp_mail">@</span>
-						<select id="email_select" class="FormTextInput-email">
+					<input type="text" size="15" id="email_addr" class="input" disabled>
+						<select id="email_select">
 							<option value="" selected>::선택하세요::</option>
 							<option value="naver.com">naver.com</option>
 							<option value="gmail.com">gmail.com</option>
@@ -262,7 +188,7 @@
 					</li>
 					
 					<!-- 위치정보 이용약관 (필수) -->
-					<li class="AgreementItem-Row">
+					<li class="AgreementItem-Row" style = "margin-bottom : 5px;">
 						<div class="AgreementItem-Item">
 						<div class="Item-Checkbox">
 							<input type="checkbox" name="chk" value="" id = "chk04">
@@ -275,32 +201,17 @@
 						</button>
 						</div>
 					</li>
-					
-					<!-- 마케팅 동의 (선택) -->
-					<li class="AgreementItem-Row">
-					<div class="AgreementItem-Item">
-						<div class="Item-Checkbox">
-							<input type="checkbox" name="chk" value="" id = "chk05">
-							<label class="check-label AgreeLabel"></label>
-						</div>
-						<button type="button" class="AgreementItem-LabelBtn">마케팅 동의 (선택)
-							<div class="AgreementItem-ArrowBox">
-								<img class="ArrowBox" src="https://dffoxz5he03rp.cloudfront.net/icons/ic_arrow_right_xs_gray_300.svg" alt="icon">
-							</div>
-						</button>
-					</div>
-					<p class="Changeable">프로필 &gt; 알림 설정에서 변경 가능</p></li>	
 				</ul>	
 				
 				<ul class="AgreementList-Notices">
-					<li class="AgreementList-Notices-Content">*선택 항목을 동의하지 않아도 서비스를 이용하실 수 있습니다.</li>
+					<li class="AgreementList-Notices-Content">*필수 항목을 동의하지 않으면 서비스를 이용하실 수 없습니다.</li>
 				</ul>
 			
 			</div>
 			
 			<!-- 회원가입 버튼 -->
 			<span role="button" class="ButtonArea">
-				<button type="button" class="mrt-button Button" disabled="" onclick="doSignup()">
+				<button type="button" class="mrt-button Button" onclick="doSignup()">
 					<span class="Join">회원가입</span>
 				</button>
 			</span>
