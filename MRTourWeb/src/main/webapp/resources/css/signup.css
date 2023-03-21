@@ -97,10 +97,6 @@ label {
     font-weight: normal;
 }
 
-input:not([type="checkbox"]):not([type="radio"]), button, textarea, select {
-    appearance: none;
-}
-
 .FormTextInput-Input {
     display: flex;
     -webkit-box-align: center;
@@ -131,9 +127,26 @@ input:not([type="checkbox"]):not([type="radio"]), button, textarea, select {
     font-weight: 500;
     font-size: 14px;
     width: 156px;
+    letter-spacing : 5px;
+    text-align : center;
 }
 
-.FormTextInput-email {
+.SignUpEmail-Section select {
+    -webkit-box-align: center;
+    align-items: center;
+    height: 39px;
+    padding: 11px;
+    border-radius: 4px;
+    border: 0px;
+    box-shadow: inset 0 0 0 1px var(--gray-300);
+    outline-style: none;
+    color: var(--gray-800);
+    font-weight: 400;
+    font-size: 12px;
+    width: 130px;
+}
+
+.SignUpEmail-Section .input {
     -webkit-box-align: center;
     align-items: center;
     height: 40px;
@@ -145,12 +158,14 @@ input:not([type="checkbox"]):not([type="radio"]), button, textarea, select {
     color: var(--gray-800);
     font-weight: 500;
     font-size: 14px;
-    width: 222px;
+    width: 156px;
 }
+
 .sp_mail {
-	margin-left : 15px;
-	margin-right : 15px;
+	margin-left : 2px;
+	margin-right : 2px;
 }
+
 .AgreementList-Container { /* 약관 섹션*/
     margin-top: 27px;
     margin-bottom: 16px;
@@ -200,8 +215,8 @@ li {
 
 .AgreementList-List {
     margin-top: 16px;
-    margin-bottom: 10px;
-    padding: 16px 8px 16px 16px;
+    margin-bottom: 6px;
+    padding: 16px 8px 10px 16px;
     border: 1px solid var(--gray-200);
     border-radius: 4px;
 }
