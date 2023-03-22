@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<link rel="stylesheet" href="ticket_page.css">
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<link rel="stylesheet" href="/resources/css/ticket_page.css">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>[홍천] 초록의 설렘 가득한, 알파카월드</title>
 </head>
