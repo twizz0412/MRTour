@@ -1,4 +1,33 @@
-	//주소입력
+//ES6 Modules or TypeScript
+
+//[중복확인]버튼을 클릭하면 자동실행
+	//입력한 아이디 값을 갖고 confirmId.jsp페이지 실행
+	
+	function idChk(){
+		var member_id = $("#member_id").val();
+		if (!member_id) {
+			 swal("", "아이디를 먼저 입력하세요", "warning"); 
+			 $("#member_id").focus();
+		} else {
+			$.ajax({
+				type : "POST",
+				url : "checkID",
+				data : {
+					"member_id" : member_id
+				},
+				success : function(data) {
+					if (data == 0) {
+						 swal("", "사용할 수 있는 아이디", "success");
+					} else if (data != 0) {
+						swal("이미 사용되는 아이디", "다른 아이디를 입력해주세요", "warning"); 
+		    	    	$("#member_id").val("");
+					} else { console.log('ERROR'); }
+				}, error : function(error) { swal("", member_id, "error"); }
+			});
+		}
+	}
+	
+//주소입력
     function searchPost() {
         new daum.Postcode({
             oncomplete: function(data) {
@@ -86,4 +115,112 @@
 			}
 		});
 	})	
+	
+//회원가입 버튼 클릭 시 누락여부 체크
+function Signup() {
+    
+    if(!$("#member_id").val()) {//아이디를 입력하지 않으면 수행
+        swal("입력 누락", "아이디를 입력하세요", "warning"); 
+        $("#member_id").focus();
+        return false;
+    }
+    
+    else if(!$("#member_pwd").val()) {//비밀번호를 입력하지 않으면 수행
+    	swal("입력 누락", "비밀번호를 입력하세요", "warning"); 
+        $("#member_pwd").focus();
+        return false;
+    }
+    
+    //비밀번호와 재입력비밀번호가 같지않으면 수행
+    else if($("#member_pwd").val() != $("#member_pwd_chk").val()){
+    	swal("비밀번호 오류", "비밀번호가 다릅니다. 다시 입력하세요", "error");
+        $("#member_pwd_chk").focus();
+        return false;
+    }
+    
+    else if(!$("#member_name").val()) {//이름을 입력하지 않으면 수행
+    	swal("입력 누락", "이름을 입력하세요", "warning");
+    	 return false;
+    }
+    
+    else if(!$("#birth_year").val()) {//년도 입력하지 않으면 수행
+    	swal("선택 누락", "생일(년)도를 선택하세요", "warning");
+        $("#birth_year").focus();
+        return false;
+    } else if(!$("#birth_month").val()) {//년도 입력하지 않으면 수행
+    	swal("선택 누락", "생일(월)을 선택하세요", "warning");
+        $("#birth_month").focus();
+        return false;
+    } else if(!$("#birth_day").val()) {//년도 입력하지 않으면 수행
+    	swal("입력 누락", "생일(일)을 선택하세요", "warning");
+        $("#birth_day").focus();
+        return false;
+    }
+    
+    else if(!$("#Numst").val()) {//전화번호를 입력하지 않으면 수행
+    	swal("입력 누락", "전화번호를 입력하세요", "warning");
+        $("#Numst").focus();
+        return false;
+    }   else if(!$("#Numnd").val()) {//전화번호를 입력하지 않으면 수행
+    	swal("입력 누락", "전화번호를 전부 입력하세요", "warning");
+        $("#Numnd").focus();
+        return false;
+    }     else if(!$("#Numrd").val()) {//전화번호를 입력하지 않으면 수행
+    	swal("입력 누락", "전화번호를 전부 입력하세요", "warning");
+        $("#Numrd").focus();
+        return false;
+    }
+    
+    else if(!$("#email_id").val()) {//이메일을 입력하지 않으면 수행
+    	swal("입력 누락", "이메일을 입력하세요", "warning");
+        $("#email_id").focus();
+        return false;
+    }   else if(!$("#email_select").val()) {//메일주소를 입력하지 않으면 수행
+    	swal("선택 누락", "메일 주소를 선택하세요", "warning");
+        $("#email_select").focus();
+        return false;
+    }
+    
+    else if(!$("#member_faddr").val()) {//주소를 입력하지 않으면 수행
+    	swal("입력 누락", "주소를 입력하세요", "warning");
+        $("#member_faddr").focus();
+        return false;
+    } else if(!$("#member_laddr").val()) {//주소를 입력하지 않으면 수행
+    	swal("입력 누락", "상세주소를 입력하세요", "warning");
+        $("#member_laddr").focus();
+        return false;
+        
+    } else if (!checkAll.checked) { //모든 약관에 동의해야 함
+    	swal("약관 동의 누락", "필수 약관 동의여부를 확인하세요", "warning");
+        return false;
+	}  else {
+		var member_id = $("#member_id").val();
+		var member_pwd = $("#member_pwd").val();
+		var member_name = $("#member_name").val();
+		var member_birth = $("#birth_year").val() + "-" + $("#birth_month").val() + "-" + $("#birth_day").val();
+		var member_email = $("#email_id").val() + "@" + $("#email_addr").val(); 
+		var member_phone = $("#Numst").val() + "-" + $("#Numnd").val() + "-" + $("#Numrd").val();
+		var member_zipcode = $("#member_zipcode").val();
+		var member_faddr = $("#member_faddr").val();
+		var member_laddr = $("#member_laddr").val();
 		
+		$.ajax({
+			type : "POST",
+			url : "insertMember",
+			data : {
+				"member_id" : member_id,
+				"member_pwd" : member_pwd,
+				"member_name" : member_name,
+				"member_birth" : member_birth,
+				"member_email" : member_email,
+				"member_phone" : member_phone,
+				"member_zipcode" : member_zipcode,
+				"member_faddr" : member_faddr,
+				"member_laddr" : member_laddr
+			},
+			success : function(data) {
+				window.location.href="main";
+			}
+		});
+	}
+}

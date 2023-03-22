@@ -133,7 +133,7 @@ public class MemberController {
 	}
 
 	// 회원가입
-	@RequestMapping("/join")
+	@RequestMapping("/insertMember")
 	public String signUp(MemberVO vo) {
 		System.out.println("가입 성공....");
 		memberService.insertMember(vo);

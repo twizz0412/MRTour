@@ -14,7 +14,7 @@
 	<div class = "main-page">
 		<div class="main-visual">
 			<div  class="main-banner" style="height : 470px; opacity: 1; ">
-				<a  href="">
+				<a href="ticket_page">
 					<img  src="resources/img/test_img.jpg" alt="기분좋은 날 서핑">
 				</a>
 			</div>
@@ -57,21 +57,21 @@
 					<div class="rec-loc"> <!-- container -->
 						<div class="rec-loc-in">
 							
-							<div class="rec-loc-each" style="width: 440px; margin-right: 40px;">
-								<a href="" class="theme-card" data-lazy-view="true" data-in-view="true">
+							<div class="rec-loc-each" style="width: 400px; margin-right: 40px;">
+								<a href="ticket_page" class="theme-card" data-lazy-view="true" data-in-view="true">
 								<div class="item-tn">
 									<div class = "item_tk">
 										<img src="" alt="" class="img-cover">
 									</div>
-								</div>
+								</div> 
 									<div class="loc-item">
 										<p class="loc-item-city">제주도</p> 
 										<p class="loc-item-desc">유채꽃 보러, JEJU</p>
 									</div>
 								</a>
 							</div>
-							<div  class="rec-loc-each" style="width: 440px; margin-right: 40px;">
-								<a href="" class="theme-card" data-lazy-view="true" data-in-view="true" >
+							<div class="rec-loc-each" style="width: 400px; margin-right: 40px;">
+								<a href="ticket_page" class="theme-card" data-lazy-view="true" data-in-view="true" >
 									<div class="item-tn">
 										<div class = "item_tk">
 											<img src="" alt="" class="img-cover">
@@ -83,7 +83,7 @@
 									</div>
 								</a>
 							</div>
-							<div class="rec-loc-each" style="width: 440px; margin-right: 40px;">
+							<div class="rec-loc-each" style="width: 400px; margin-right: 40px;">
 								<a href="" class="theme-card" data-lazy-view="true" data-in-view="true">
 									<div class="item-tn">
 										<div class = "item_tk">
@@ -96,7 +96,7 @@
 									</div>
 								</a>
 							</div>
-							<div class="rec-loc-each" style="width: 440px; margin-right: 40px;">
+							<div class="rec-loc-each" style="width: 400px; margin-right: 40px;">
 								<a href="" class="theme-card" data-lazy-view="true" data-in-view="true">
 									<div class="item-tn">
 										<div class = "item_tk">
@@ -109,7 +109,7 @@
 									</div>
 								</a>
 							</div>
-							<div class="rec-loc-each" style = "width: 440px; margin-right: 40px;">
+							<div class="rec-loc-each" style = "width: 400px; margin-right: 40px;">
 								<a href="" class="theme-card" data-lazy-view="true" data-in-view="true">
 									<div class="item-tn">
 										<div class = "item_tk">
@@ -122,7 +122,7 @@
 									</div>
 								</a>
 							</div>
-							<div class="rec-loc-each" style="width: 440px; margin-right: 40px;">
+							<div class="rec-loc-each" style="width: 400px; margin-right: 40px;">
 								<a href="" class="theme-card" data-lazy-view="true" data-in-view="true">
 									<div class="item-tn">
 										<div class = "item_tk">

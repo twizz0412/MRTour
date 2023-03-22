@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" type="text/css" href="resources/css/hotel_main.css" />
+<link rel="stylesheet" type="text/css" href="resources/css/hotel_page.css" />
 <title>골드원 호텔 &amp; 스위트</title>
 </head>
 <body>
@@ -508,8 +508,8 @@ alt="프리미어 더블룸, 바다 전망" class="room_img e1nunbqm6">
 <div class="price e1mya5qx2">
 <span class="price_span e1mya5qx5">216,081원/박</span></div>
 
-<div class="room_reserve_btn"><button class="e1mya5qx10 room_reserve_btn_2">
-<div class="moreBtnArea"><span class="BtnSpan">예약하기</span></div></button></div></div></div></div></div></div></div></div></div>
+<div class="room_reserve_btn"><a href = "hotel_checkout"><button class="e1mya5qx10 room_reserve_btn_2">
+<div class="moreBtnArea"><span class="BtnSpan" >예약하기</span></div></button></a></div></div></div></div></div></div></div></div></div>
 
 </body>
 </html>
