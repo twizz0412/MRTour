@@ -213,7 +213,7 @@ li, ol, ul {
     flex: 1 auto;
 }
 
-.summary-header strong.line-bottom, .heading-title1.line-bottom, .line-bottom.title {
+.heading-title1.line-bottom, .line-bottom.title { /* h2 */
     border-bottom: 1px solid #888;
     padding-bottom: 15px;
     margin-bottom: 20px;
@@ -421,6 +421,341 @@ img {
 .rentalcar-schedule-box .schedule-information .option-list .option.wifi:before {
     background-size: 16px auto!important;
 }
+
+
+/* 예약자 정보 입력 섹션 */
+#container .contents-area .contents-item+.contents-item {
+    margin-top: 60px;
+}
+
+.heading-title1 {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.color-sub6 { /* 타이틀 아래 안내문구 */
+    color: #666!important;
+}
+
+.mt40 {
+    margin-top: 40px!important;
+}
+
+.row-list .row-item {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.row-list .row-item .row-label { /* 레이블 */
+    max-width: 175px;
+    align-self: center;
+}
+
+
+.row-list .row-item>div { /* 입력창 */
+    flex: 1;
+}
+
+.input {
+    position: relative;
+}
+
+.input.lg input[type=text] {
+    font-size: 16px;
+    font-weight: 400;
+    height: 52px;
+    border-radius: 12px;
+}
+
+.input.line input[type=text] {
+    border-color: #e0e0e0;
+}
+
+.input.line input[type=text] {
+    width: 100%;
+    padding: 0 41px 0 20px;
+    background-color: #fff;
+    border: 1px solid transparent;
+}
+
+input[type=email], input[type=text] {
+    caret-color: #ff682c;
+}
+
+.input .valid-msg { /* 입력된 게 없을 때 입력창 밑에 뜨는 메시지 */
+    font-size: 13px;
+    font-weight: 400;
+    color: #ff682c;
+    margin-top: 10px;
+    padding-left: 5px;
+    display: none;
+}
+
+.row-list .row-item+.row-item { /* 두 번째 줄부터 */
+    margin-top: 20px;
+}
+
+.c-input.valid-error { /* 이메일을 입력하지 않으면 입력창에 나오는 경고 이미지 */
+    border-color: #ff682c!important;
+    background: url(/assets/images/icons/ico-valid-error.png) #fff center right 18px no-repeat;
+    background-size: 16px auto;
+}
+
+.c-input.valid-error~.valid-msg {
+    display: block;
+}
+
+/* 최종 결제 정보 섹션 */
+/* 총 결제 금액 섹션 */
+.contents-item .payment li:last-child:not(:only-child) { 
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px dashed #e0e0e0;
+}
+
+.contents-item .payment li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.contents-item .payment li>span:first-child {
+    color: #888;
+}
+
+.color-main2 {
+    color: #000!important; /* !important : 우선 적용 */
+}
+
+.aside-payment .payment li:last-child:not(:only-child) strong {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.color-point2 { /* 가격 강조 컬러 */
+    color: #ff682c!important;
+}
+
+.mr5 { /* 원 표시 */
+    margin-right: 5px!important;
+}
+
+.font-md {
+    font-weight: 400;
+    font-size: 14px!important;
+}
+
+.color-sub5 {
+    color: #888!important;
+}
+
+/* 약관 동의 섹션 */
+.contents-item .payment-rule {
+    border-top: 1px solid #e0e0e0;
+    padding-top: 30px;
+    margin-top: 30px;
+}
+
+.mb10 { /* 취소 수수료 규정 안내, 기타 안내사항 타이틀 */
+    margin-bottom: 10px!important;
+}
+
+.font-lg, .font-lg-b { /* 취소 수수료 규정 안내 , 기타 안내사항 타이틀 */
+    font-weight: 400;
+    font-size: 16px!important;
+}
+
+.font-lg-b {
+    font-family: Noto_m;
+}
+
+.lh160 {
+				line-height: 160%!important;
+}
+
+.color-sub6 {
+    color: #666!important;
+}
+
+.mt20 { /* 동의 리스트 */
+    margin-top: 20px!important;
+}
+
+.contents-item .payment-rule ul li.line {
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px dashed #e0e0e0;
+}
+
+.checkbox.lg {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.checkbox {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    vertical-align: middle;
+}
+
+.checkbox .checkbox-control-input { 
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    z-index: -1;
+}
+
+.checkbox.lg .checkbox-control-text {
+    padding-left: 32px;
+}
+
+.checkbox .checkbox-control-text {
+    font-family: Noto_m;
+    color: #999;
+    line-height: 140%;
+    cursor: default;
+}
+
+.checkbox.lg .checkbox-control-text:before { /* 체크박스 */    
+				top: -1px;
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    background-size: 16px auto!important;
+}
+
+.checkbox .checkbox-control-text:before {
+    content: "";
+    left: 0;
+}
+
+.checkbox .checkbox-control-text:before {
+    position: absolute;
+    display: inline-block;
+    vertical-align: middle;
+    align-self: flex-start;
+    background-image: url(ico-checkbox-default.303739c….png);
+    background-color: #fff;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.contents-item .payment-rule ul li+li { /* 리스트 두 번째 항목부터 적용 */
+    margin-top: 10px;
+}
+
+.checkbox .checkbox-control-text span { 
+    color: #666;
+    text-decoration: underline;
+}
+
+/* 기타 안내사항 섹션 */
+.contents-item .other-information {
+    border-top: 1px solid #e0e0e0;
+    padding-top: 30px;
+    margin-top: 30px;
+}
+
+.text-list.md {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.text-list {
+    font-size: 16px;
+    font-weight: 400;
+    color: #555;
+    line-height: 160%;
+}
+
+.text-list.dot>li {
+    position: relative;
+    padding-left: 10px;
+}
+
+.text-list.dot>li {
+    list-style-type: none;
+}
+
+.text-list.md.dot li:before {
+    top: 9px;
+}
+
+.text-list.dot>li:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    background: #666;
+}
+
+.color-red { /* [필독] 강조 표시 */
+    color: red!important;
+}
+
+
+/* 결제정보 입력하기 버튼 */
+.btn-group.flex-around {
+    display: flex;
+}
+
+.mt20 {
+    margin-top: 20px!important;
+}
+
+button {
+    cursor: pointer;
+}
+
+.btn.active, .btn.default {
+    color: #000;
+    background: #ffc72c;
+    border-color: transparent;
+}
+
+.btn.lg {
+    font-family: Noto_m;
+    font-weight: 400;
+    font-size: 16px;
+    height: 52px;
+    border-radius: 12px;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid transparent;
+    width: 100%;
+}
+
+button, input {
+    border-width: 0;
+    border-radius: 0;
+    background: 0 0;
+    outline: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
