@@ -181,8 +181,6 @@
 
 
 
-
-
 	<!-- section4 -->
 	<section id="section4">
 		<div class="sc4t">
@@ -263,17 +261,14 @@
 	<section id="section5">
 		<div class="scn5">
 			<div class="sc5">
-				<div class="sc55">
+				<div class="sc55" onclick = "location.href='Notice_board'">
 					<img src="resources/images/ft.JPG"
 						style="width: 50px; height: 50px; border: solid 1px #afafaf; border-radius: 50%; padding: 5px;">
 					<div class="tt5">
 						<p>
-							<b>자유 여행 상담</b>
+							<b>공지 사항</b>
 						</p>
-						<p style="color: rgb(98, 112, 136); font-size: 22px;">0000-0000</p>
-						<p
-							style="color: rgb(98, 112, 136); font-size: 16px; padding-top: 10px;">국내항공
-							직통 0000-0000</p>
+						<p style="color: rgb(98, 112, 136); font-size: 25px; padding-top: 26.9px;">최근 소식</p>
 					</div>
 				</div>
 
@@ -285,14 +280,14 @@
 					<div class="tt5">
 						<p>1:1문의</p>
 						<p
-							style="color: rgb(98, 112, 136); font-size: 25px; padding-top: 20px;">실시간
+							style="color: rgb(98, 112, 136); font-size: 25px; padding-top: 20px;">개별
 							맞춤상담</p>
 					</div>
 				</div>
 				<div class="text51">
 					<ul>
 						상담시간 : 평일 오전 9시 ~ 오후 6시 (토,일요일 및 공휴일 휴무)
-						<li>항공, 투어&티켓, 렌터카 취소/변경/환불 업무: 평일 오후 5시까지</li>
+						<li>투어&티켓, 렌터카 취소/변경/환불 업무: 평일 오후 5시까지</li>
 						<li>호텔 취소/변경/환불 업무: 평일 오후 4시까지</li>
 					</ul>
 					</ul>
@@ -391,7 +386,7 @@
 			<div class="fott">
 				<span>고객센터</span>
 				<li>0000-0000</li>
-				<li>해외항공권문의</li>
+				<li>국내항공권문의</li>
 				<li>0000-0000</li>
 				</ul>
 			</div>

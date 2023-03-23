@@ -151,6 +151,7 @@ public class MemberController {
 		MemberVO member = memberService.login(vo);
 		if (member != null) {
 			session.setAttribute("member", member);
+			System.out.println(member + "로그인 성공....");
 			return "main";
 		} else {
 			return "member/login";

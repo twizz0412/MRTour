@@ -31,8 +31,8 @@ body {
     pointer-events: none;
 }
 
-*, :after, :before {
-    box-sizing: border-box;
+div {
+    display: block;
 }
 
 * {
@@ -138,6 +138,7 @@ p {
 }
 
 .search-form-top .search-area-form .form-column .text.calendar:after { /* 달력 모양 아이콘 */
+    content: "";
     background-image: url(ico-calendar-medium.3eaa3f1….png);
 }
 
@@ -271,6 +272,7 @@ li {
 }
 
 .breadcrumbs .step li .num:after {
+				content: "";
     left: 100%;
     right: -60px;
 }
@@ -299,6 +301,7 @@ li {
 }
 
 .breadcrumbs .step li .num:before {
+    content: "";
     left: -60px;
     right: 100%;
 }
@@ -654,6 +657,7 @@ label {
 }
 
 /* 상품 섹션 */
+
 .result-card-list {
     display: flex;
     flex-wrap: wrap;
@@ -728,6 +732,17 @@ img {
     padding: 20px;
 }
 
+/* 상품 설명 - 타이틀 영역 */
+.rentalcar-card-item .list-item-title, .rentalcar-list-item .list-item-title {
+    font-family: Noto_m;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.rentalcar-card-item .list-item-title {
+    height: 69px;
+}
+
 .rentalcar-card-item .name, .rentalcar-list-item .name { /* 상품명 */
     font-family: Noto_m;
     font-weight: 400;
@@ -767,6 +782,7 @@ img {
 
 /* ::before */
 .rentalcar-card-item .include li.type:before, .rentalcar-list-item .include li.type:before {
+    content: "";
     background-image: url(ico-include-type-small.0ff371c….png);
     background-size: 14px auto!important;
 }
@@ -785,14 +801,17 @@ img {
 }
 
 .rentalcar-card-item .include li.person:before, .rentalcar-list-item .include li.person:before {
+    content: "";
     background-image: url(ico-include-person-small.710a10b….png);
 }
 
 .rentalcar-card-item .include li.gear:before, .rentalcar-list-item .include li.gear:before {
+    content: "";
     background-image: url(ico-include-gear-small.247c67b….png);
 }
 
 .rentalcar-card-item .include li.fuel:before, .rentalcar-list-item .include li.fuel:before {
+    content: "";
     background-image: url(ico-include-fuel-small.35fafa4….png);
 }
 

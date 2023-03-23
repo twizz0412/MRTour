@@ -421,7 +421,7 @@ Visa, Mastercard, American Express, JCB International, Discover, UnionPay, Diner
 <div class="room_condition e1nunbqm1">
 <span class="e1nunbqm2 room_condition_span">퀸베드 1개 + 소파베드 1개 · 최대 3명 · 일부 바다 전망,객실 크기(㎡) - 45</span>
 <div class="css-0 e1nunbqm3">
-<button class="e1nunbqm4 more_condition"><div class="more_condition_2"><span class="more_condition_3">
+<button a href="hotel_checkout" class="e1nunbqm4 more_condition"><div class="more_condition_2"><span class="more_condition_3">
 <span class="more_condition_span">객실 정보 더보기</span></span></div></button></div></div></div></div>
 
 <div class="room_content_right eyxccd64">
