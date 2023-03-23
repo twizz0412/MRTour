@@ -8,7 +8,7 @@
 		<id property="member_id" column="MEMBER_ID" />
 		<result property="member_name" column="MEMBER_NAME" />
 		<result property="member_pwd" column="MEMBER_PWD" />
-		<result property="member_year" column="MEMBER_YEAR" />
+		<result property="member_birth" column="MEMBER_BIRTH" />
 		<result property="member_regdate" column="MEMBER_REGDATE" />
 		<result property="member_email" column="MEMBER_EMAIL" />
 		<result property="member_phone" column="MEMBER_PHONE" />
@@ -17,6 +17,7 @@
 		<result property="member_laddr" column="MEMBER_LADDR" />
 	</resultMap>
 
+	<!-- 아이디 중복여부 확인 -->
 	<select id="checkID" resultType="java.lang.Integer">
 		SELECT COUNT(*) FROM MEMBER
 		WHERE MEMBER_ID=#{member_id}
@@ -35,18 +36,18 @@
 			MEMBER_ID, 
 			MEMBER_PWD, 
 			MEMBER_NAME, 
-			MEMBER_YEAR, 
+			MEMBER_BIRTH, 
 			MEMBER_EMAIL, 
 			MEMBER_PHONE, 
 			MEMBER_ZIPCODE,
 			MEMBER_FADDR,
 			MEMBER_LADDR
 		) VALUES(
-			ID_SEQ.NEXTVAL, 
+			MEMBER_SEQ.NEXTVAL, 
 			#{member_id}, 
 			#{member_pwd}, 
 			#{member_name}, 
-			TO_DATE(#{member_year}, 'yyyy-mm-dd'), 
+			TO_DATE(#{member_birth}, 'yyyy-mm-dd'), 
 			#{member_email},
 			#{member_phone},
 			#{member_zipcode},

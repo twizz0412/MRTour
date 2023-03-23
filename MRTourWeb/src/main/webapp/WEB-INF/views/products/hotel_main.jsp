@@ -60,7 +60,7 @@
 			</div>
 			<div class="locs">
 				<div class="location">
-					<a href="">
+					<a href="hotel_page">
 						<div class="eachloc">
 							<img alt="서울" src="resources/img/sl4.jpg" data-nimg="fill"  style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">
 							<div class="locBinB"></div>

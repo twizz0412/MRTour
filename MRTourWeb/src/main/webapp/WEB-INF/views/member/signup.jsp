@@ -9,6 +9,7 @@
 	<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 	<script src = "http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src = "resources/js/signup.js"></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 	
 	<style type="text/css">
 		@import url("resources/css/signup.css");
@@ -23,7 +24,7 @@
 		<span class = "mr_logo"><img src = "resources/img/mr_logo.png"></span>
 	</div>
 	<!-- 입력 칸 -->
-		<form action="#" method="POST" class="SignUpEmail-Form">
+		<form action="signup" method="POST" class="SignUpEmail-Form">
 		
 			<!-- 아이디 섹션 -->
 			<div class="SignUpEmail-Section">
@@ -33,7 +34,7 @@
 					<input type="button" onClick="idChk()" class = "idchk" cursor = "pointer" value="중복확인" /><br>
 						<label id="idchk"></label>
 					<!-- 입력칸 -->
-					<input id="member_id" type="email" placeholder="ID@example.com" class="FormTextInput-Input" value="">
+					<input id="member_id" type="text" placeholder="ID를 입력해주세요" class="FormTextInput-Input" value="">
 				</div>
 			</div>
 			
@@ -41,7 +42,7 @@
 			<div class="SignUpEmail-Section">
 				<div class="FormTextInput-Container">
 					<label for="userPasswordCurrent" required="" class="FormTextInput-Label">비밀번호</label>
-					<input id="member_pw" name="user[password]" type="password" placeholder="영문, 숫자, 특수문자 2가지 조합 8~15자" 
+					<input id="member_pwd" name="user[password]" type="password" placeholder="영문, 숫자, 특수문자 2가지 조합 8~15자" 
 						   class="FormTextInput-Input" value="">
 				</div>
 			</div>
@@ -49,8 +50,8 @@
 			<!-- 비밀번호 확인 섹션 -->
 			<div class="SignUpEmail-Section">
 				<div class="FormTextInput-Container">
-					<label for="userPasswordConfirm" required="" class="FormTextInput-Label">비밀번호 확인</label>
-					<input id="userPasswordConfirm" name="user[confirm]" type="password" placeholder="비밀번호를 한번 더 입력해주세요." 
+					<label for="member_pwd_chk" required="" class="FormTextInput-Label">비밀번호 확인</label>
+					<input id="member_pwd_chk" name="user[confirm]" type="password" placeholder="비밀번호를 한번 더 입력해주세요." 
 					       class="FormTextInput-Input" value="">
 				</div>
 			</div>
@@ -58,15 +59,15 @@
 			<!-- 이름 섹션 -->
 			<div class="SignUpEmail-Section">
 				<div class="FormTextInput-Container">
-					<label for="userName" required="" class="FormTextInput-Label">이름</label>
-					<input id="userName" name="user[name]" type="text" placeholder="이름을 입력해주세요." class="FormTextInput-Input" value="">
+					<label for="member_name" required="" class="FormTextInput-Label">이름</label>
+					<input id="member_name" name="user[name]" type="text" placeholder="이름을 입력해주세요." class="FormTextInput-Input" value="">
 				</div>
 			</div>	
 								
 			<!-- 생년월일 섹션 -->
 			<div class="SignUpEmail-Section">
 				<div class="FormTextInput-Container">
-					<label for="userBirth" required="" class="FormTextInput-Label">생년월일</label><br>
+					<label for="member_birth" required="" class="FormTextInput-Label">생년월일</label><br>
 					<select id="birth_year" class="FormTextInput-third"  style = "margin-right : 11px">
 						<option value="">년</option>
 							<c:forEach var="i" begin="0" end="${2019-1900}">
@@ -90,21 +91,21 @@
 			<div class="SignUpEmail-Section">
 				<div class="FormTextInput-Container">
 					<label for="userPhone" required="" class="FormTextInput-Label">전화번호</label><br>
-						<select id="NUMst" class="FormTextInput-third" >
+						<select id="Numst" class="FormTextInput-third" >
 							<option value="" selected>::선택::</option>
 							<option value="010">010</option>
 							<option value="011">011</option>
 							<option value="016">016</option>
 						</select> - 
-						<input type="text" id="NUMnd" class="FormTextInput-third"  maxlength="4" size="4" /> - 
-						<input type="text" id="NUMrd" class="FormTextInput-third"  maxlength="4" size="4" />
+						<input type="text" id="Numnd" class="FormTextInput-third"  maxlength="4" size="4" /> - 
+						<input type="text" id="Numrd" class="FormTextInput-third"  maxlength="4" size="4" />
 				</div>
 			</div>	
 											
 			<!-- 이메일 섹션 -->
 			<div class="SignUpEmail-Section">
 				<div class="FormTextInput-Container">
-					<label for="userEmail" required="" class="FormTextInput-Label">이메일</label><br>
+					<label for="member_email" required="" class="FormTextInput-Label">이메일</label><br>
 					<input type = "text" size = "15" id="email_id" class="input">
 						<span class = "sp_mail">@</span>
 					<input type="text" size="15" id="email_addr" class="input" disabled>
@@ -211,7 +212,7 @@
 			
 			<!-- 회원가입 버튼 -->
 			<span role="button" class="ButtonArea">
-				<button type="button" class="mrt-button Button" onclick="doSignup()">
+				<button type="button" class="mrt-button Button" onclick="Signup()">
 					<span class="Join">회원가입</span>
 				</button>
 			</span>
