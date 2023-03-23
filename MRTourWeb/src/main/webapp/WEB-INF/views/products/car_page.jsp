@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="/resources/css/car_page.css" />
+<link rel="stylesheet" type="text/css" href="resources/css/car_page.css" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>미래투어 렌트카</title>
 </head>
@@ -220,7 +220,7 @@
 </ul>
 <div _ class="flex-group">
 <div _ class="price"><p _ class="primary">13,600<span _>원</span></p></div><!----></div>
-<div _ class="btn-group"><a _ class="btn md light hover line">선택</a></div><!----></div></div>
+<div _ class="btn-group"><a href="car_checkout"_ class="btn md light hover line">선택</a></div><!----></div></div>
 
 
 <!-- 상품 2 -->
