@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="resources/css/hotel_checkout.css" />
+	<link rel="stylesheet" type="text/css" href="resources/css/ticket_checkout.css" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>호텔 결제 페이지</title>
 </head>
@@ -43,31 +43,24 @@ data-sign-in data-turbolinks="false" style>
 <div class="sectionContainer--Body">
 <div class="productInfoSummary--TitleWrapper">
 <div class="productInfoSummary--ImageWrapper">
-<img src="https://i.travelapi.com/lodging/38000000/37630000/37622900/37622802/3e004903_z.jpg" 
+<img src="	https://d2ur7st6jjikze.cloudfront.net/offer_photos/40487/675401_medium_1662004535.jpg?1662004535" 
 					alt="상품 이미지" class="productInfoSummary--Image"></div>
 <div class="productInfoSummary--TextWrapper">
-<h3 class="productInfoSummary--Title">골드원 호텔 &amp; 스위트(GoldOne Hotel &amp; Suites)</h3>
+<h3 class="productInfoSummary--Title">[홍천] 초록의 설렘 가득한, 알파카월드</h3>
 <div class="productInfoSummary--Schedule">
-<div class="reservationDate--Container">
-<time class="reservationDate--Time">23년 04월 10일 (월) 15시 00분부터 ~ </time>
-<div class="reservationDate--Wrapper">
-<time class="reservationDate--Time">23년 04월 11일 (화) 11시 00분까지</time><span>, 1박</span>
-</div></div></div></div></div>
+<time>23년 04월 15일 (토)</time>
+</div></div></div>
 
 <ul class="productInfoOptions--OptionWrapper">
 <li class="productInfoOptions--Option">
 <div class="productInfoOptions--OptionText">
-<span class="productInfoOptions--OptionName">프리미어 트윈룸, 바다 전망, 슈퍼싱글침대 2개, 성인 2인 / 1박</span></div>
-<div class="productInfoOptions--OptionPrice">196,437원</div></li>
-<li class="productInfoOptions--Option">
-<div class="productInfoOptions--OptionText">
-<span class="productInfoOptions--OptionName">세금 및 수수료</span></div>
-<div class="productInfoOptions--OptionPrice">19,644원</div></li></ul>
+<span class="productInfoOptions--OptionName">알파카월드 1인 입장권</span></div>
+<div class="productInfoOptions--OptionPrice">18,480원</div></li></ul>
 
 <div class="productInfoPrice--Container">
 <div class="productInfoPrice--TotalPriceWrapper">
 <div class="productInfoPrice--TotalPriceText">총 상품 금액</div>
-<strong class="productInfoPrice--TotalPriceNumber">216,081원</strong></div></div></div></div>
+<strong class="productInfoPrice--TotalPriceNumber">18,480원</strong></div></div></div></div>
 
 
 <!-- 예약자 정보 섹션 -->
@@ -105,42 +98,11 @@ data-sign-in data-turbolinks="false" style>
 <hr class="title--Underbar">
 <div class="sectionContainer--Body">
 
-<div class="productRequireInfos--FlagWrapper">
-<div class="productRequireInfos--FlagTitle">체크인 고객 정보</div>
-<div class="productRequireInfos--FlagSubTitle">숙소에 실제 체크인하는 분의 정보를 여권과 동일하게 입력해주세요.</div>
-<div class="productRequireInfos--TitleWrapper">
-<div class="productRequireInfos--Title">체크인 고객 이름</div>
 <div class="additionalInfoContainer--Container">
-<div class="additionalInfoContainer--Label">영문 이름</div>
-<input type="text" maxlength="50" class="text--TextInput" value="" placeholder="Gil Dong">
+<div class="additionalInfoContainer--Label">예약자의 한글 이름을 기입해 주세요.</div>
+<input type="text" maxlength="50" class="text--TextInput" value="" placeholder="홍길동">
 <div class="additionalInfoContainer--Caption"></div></div>
-<div class="additionalInfoContainer--Container">
-<div class="additionalInfoContainer--Label">영문 성</div>
-<input type="text" maxlength="50" class="text--TextInput" value="" placeholder="Hong">
-<div class="additionalInfoContainer--Caption"></div></div></div></div>
-
-<div class="productRequireInfos--FlagWrapper">
-<div class="productRequireInfos--FlagTitle">예약자 정보</div>
-<div class="productRequireInfos--FlagSubTitle">예약하시는 분의 정보를 여권과 동일하게 입력해주세요.</div>
-<div class="productRequireInfos--TitleWrapper">
-<div class="productRequireInfos--Title">예약자 이름</div>
-<div class="additionalInfoContainer--Container">
-<div class="additionalInfoContainer--Label">영문 이름</div>
-<input type="text" maxlength="50" class="text--TextInput" value="" placeholder="Gil Dong">
-<div class="additionalInfoContainer--Caption"></div></div>
-<div class="additionalInfoContainer--Container">
-<div class="additionalInfoContainer--Label">영문 성</div>
-<input type="text" maxlength="50" class="text--TextInput" value="" placeholder="Hong">
-<div class="additionalInfoContainer--Caption"></div></div></div></div>
-
-<div class="partnerCustomInfos--OptionWrapper">
-<div class="partnerCustomInfos--OptionTitle">기타 요청 사항</div>
-<div class="additionalInfoContainer--Container">
-<div class="additionalInfoContainer--Label">숙소에 전달할 요청사항을 현지 언어로 작성해주세요.</div>
-<textarea maxlength="100" placeholder="답변을 입력해 주세요." class="textArea--TextAreaInput"></textarea>
-<div class="additionalInfoContainer--Caption"></div></div>
-<div class="partnerCustomInfos--GuideText">고객님의 요청사항이 전달되나, 간혹 현장 사정에 따라 반영되지 않을 수 있습니다.</div></div></div></div>
-
+</div></div>
 
 
 
@@ -157,14 +119,10 @@ data-sign-in data-turbolinks="false" style>
 <div class="settledInfo--Container">
 <div class="settledInfo--Info">
 <span class="settledInfo--Text">주문 금액</span>
-<span class="settledInfo--Text">216,081원</span></div></div>
+<span class="settledInfo--Text">18,480원</span></div></div>
 <div class="totalPriceInfo--Container">
 <span class="totalPriceInfo--Text">총 결제 금액</span>
-<span class="totalPriceInfo--Price">216,081원</span></div>
-<div class="paymentInfo--Wrapper">
-<div class="productNoticeInfo--Wrapper">
-<span class="productNoticeInfo--Text--productNoticeInfo--Button">숙소에 대해 알아두실 사항</span>
-<img class="productNoticeInfo--customIconStyle" src="https://dffoxz5he03rp.cloudfront.net/icons/ic_info_12x12_line_gray_500.svg" alt="icon"></div></div></div></div>
+<span class="totalPriceInfo--Price">18,480원</span></div></div></div>
 
 <!-- 약관 안내 섹션 -->
 <div class="sectionContainer--Container">
@@ -205,14 +163,15 @@ data-sign-in data-turbolinks="false" style>
 <div class="notice--Container">
 <div class="notice--Text--notice--Title">예약 취소 규정</div>
 <div class="notice--Text">
-<p class="css-0">숙박일 3일 전 23시 59분까지 취소 : 전액 환불</p>
-<p class="css-0">숙박일 3일 전 23시 59분 이후 취소 : 환불 불가</p></div></div></div></div></div>
+<p class="css-0">- 유효기간 내 미사용 티켓 100% 환불 가능</p>
+<p class="css-0">- 유효기간 후 100% 환불 가능</p>
+<p class="css-0">- 사용한 티켓은 환불 불가능 합니다.</p></div></div></div></div></div>
 
 <!-- 결제하기 버튼 -->
 <div class="purchaseButton--Wrapper">
 <span role="button" class="purchaseButton--disabled">
 <button type="button" class="mrt-button purchaseBtn" disabled="">
-<span class="buttonSpan">216,081원 결제하기</span></button></span></div></div></div>
+<span class="buttonSpan">18,480원 결제하기</span></button></span></div></div></div>
 
 </main>
 </div>

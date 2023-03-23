@@ -653,36 +653,6 @@ p, dt, dd {
     padding-left: 4px;
 }
 
-.productRequireInfos--FlagWrapper:not(:last-of-type) {
-    border-bottom: 1px solid rgb(233, 236, 239);
-}
-
-.productRequireInfos--FlagWrapper {
-    padding: 32px 0px;
-}
-
-.productRequireInfos--FlagTitle {
-    font-weight: 700;
-    font-size: 17px;
-    line-height: 24px;
-    margin-bottom: 6px;
-}
-
-.productRequireInfos--FlagSubTitle {
-    font-size: 14px;
-    line-height: 22px;
-}
-
-.productRequireInfos--TitleWrapper:last-of-type {
-    padding-top: 24px;
-}
-
-.productRequireInfos--Title { /* 체크인 고객 이름/예약자 이름 */
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 22px;
-}
-
 .additionalInfoContainer--Container:not(:first-of-type) {
     margin-top: 16px;
 }
@@ -735,55 +705,6 @@ button, input, optgroup, select, textarea {
     font-weight: 500;
     letter-spacing: -0.2px;
     color: var(--gray-500);
-}
-
-
-.partnerCustomInfos--OptionWrapper:not(:first-of-type) {
-    padding-top: 32px;
-}
-
-.partnerCustomInfos--OptionTitle { /*기타 요청 사항*/
-    font-weight: 700;
-    font-size: 17px;
-    line-height: 24px;
-    margin-bottom: 6px;
-}
-
-.additionalInfoContainer--Container:not(:first-of-type) {
-    margin-top: 16px;
-}
-
-.textArea--TextAreaInput {
-    width: 100%;
-    padding: 12px;
-    min-width: 238px;
-    min-height: 85px;
-    font-size: 14px;
-    font-weight: 500;
-    letter-spacing: -0.2px;
-    color: var(--gray-800);
-    border-radius: 4px;
-    border: 0px;
-    box-shadow: inset 0 0 0 1px var(--gray-300);
-}
-
-textarea, textarea:focus {
-    outline: 0px;
-}
-
-textarea {
-    overflow: hidden;
-    overflow-y: auto;
-    resize: none;
-    -webkit-overflow-scrolling: touch;
-}
-
-.partnerCustomInfos--GuideText {
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 16px;
-    letter-spacing: -0.2px;
-    color: var(--gray-700);
 }
 
 
@@ -886,36 +807,7 @@ textarea {
     line-height: 29px;
 }
 
-.paymentInfo--Wrapper { /* 숙소에 대해 알아두실 사항 */
-    display: flex;
-    flex-direction: column;
-    padding: 16px 0px 0px;
-    gap: 8px;
-}
 
-.productNoticeInfo--Wrapper {
-    display: flex;
-    -webkit-box-align: center;
-    align-items: center;
-}
-
-.productNoticeInfo--Text--productNoticeInfo--Button { 
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 22px;
-    letter-spacing: -0.4px;
-    text-decoration: underline;
-    margin-right: 2px;
-    cursor: pointer;
-    color: var(--gray-500);
-}
-
-.productNoticeInfo--customIconStyle { /* i 아이콘 */
-    display: inline-block;
-    border: 0px;
-    width: 12px;
-    height: 12px;
-}
 
 @media (min-width: 768px)
 .css-1fqnim8--SectionContainer--Body {
