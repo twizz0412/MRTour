@@ -3,23 +3,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="resources/css/hotel_checkout.css" />
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>호텔 결제 페이지</title>
-</head>
-<body class="body" data-action="index" data-controller-path="mrt3/payment" data-controller="payment"
-data-sign-in data-turbolinks="false" style>
-
-<div id="Mrt3Payment-react-component-a92f35c0-6ea8-48dc-8477-7eb3bb3206cc">
-<main class="orderForm--Container">
-<form class="orderForm--Form">
-<h1 class="orderForm--Title">예약하기</h1>
-
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
 <link rel="stylesheet" type="text/css" href="/hotel_checkout.css" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>호텔 결제 페이지</title>
