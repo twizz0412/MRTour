@@ -27,7 +27,7 @@
 <strong _>제주</strong></p></div>
 
 <div _ class="form-column">
-<p _ class="title">운전자 생년월일</p>
+<p _ class="title">운전자 연령</p>
 <p _ class="text">
 <strong _>1995-03-01</strong></p></div>
 
@@ -200,27 +200,32 @@
 
 <app-rent-tab-body class="tab-body" _nghost-serverapp-c375="">
 <div _ class="tab-pane active">
+
 <!-- 상품 위 검색 결과 섹션 -->
-<div _ class="search-result-header">
-<p _ class="total">
-<span _>935</span> 개의 상품이 검색되었습니다. </p>
+<div class="search-result-header">
+<p class="total">
+<span>935</span> 개의 상품이 검색되었습니다. </p></div>
 
 <!-- 상품 리스트 -->
-<div _ class="result-card-list">
+<div class="result-card-list">
 <!-- 상품 1 -->
-<div _ class="rentalcar-card-item">
-<div _ class="rentalcar-image">
-<img _ alt="" src="https://jtns1.jeju.com/images/upload/contents/rc/239_rc_con_1.jpg"></div>
-<div _ class="rentalcar-information">
-<p _ class="name"><strong _>무지개렌트카</strong></p>
-<p _ class="name"><strong _>더넥스트스파크</strong><strong _ class="year"> [16~19년식]</strong></p>
-<ul _ class="include">
+<div class="rentalcar-card-item">
+<div class="rentalcar-image">
+<img alt="" src="https://jtns1.jeju.com/images/upload/contents/rc/239_rc_con_1.jpg"></div>
+<div class="rentalcar-information">
+<div class="list-item-title"><!---->
+<div_ngcontent-serverapp-c375=""><!---->
+<strong>무지개렌트카</strong><!----></div>
+<p>20~22 모닝 어반 [20~22년식]</p><!----><!----></div>
+<p class="name"><strong _>더넥스트스파크</strong>
+<strong class="year"> [16~19년식]</strong></p>
+<ul class="include">
 	<li class="type">Economy</li><li class="person">5인승</li>
-	<li _ class="gear">자동변속</li><li _ class="fuel">Gasoline</li>
+	<li class="gear">자동변속</li><li class="fuel">Gasoline</li>
 </ul>
-<div _ class="flex-group">
-<div _ class="price"><p _ class="primary">13,600<span _>원</span></p></div><!----></div>
-<div _ class="btn-group"><a href="car_checkout"_ class="btn md light hover line">선택</a></div><!----></div></div>
+<div class="flex-group">
+<div class="price"><p class="primary">13,600<span _>원</span></p></div><!----></div>
+<div class="btn-group"><a href="car_checkout" class="btn md light hover line">선택</a></div><!----></div></div>
 
 
 <!-- 상품 2 -->
@@ -228,7 +233,6 @@
 <div _ class="rentalcar-image">
 <img _ alt="" src="https://jtns1.jeju.com/images/upload/contents/rc/239_rc_con_1.jpg"><!----></div>
 <div _ class="rentalcar-information"><!---->
-<p _ class="name"><!----><strong _>패밀리렌트카</strong><!----></p><!---->
 <p _ class="name"><strong _>더넥스트스파크</strong><strong _ class="year"> [16~19년식]</strong></p><!---->
 <ul _ class="include">
 <li _ class="type">Economy</li><li _ class="person">5인승</li>

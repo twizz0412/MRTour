@@ -86,7 +86,6 @@
 <h2 class="heading-title1 line-bottom">최종 결제 정보</h2>
 <!-- 총 결제 금액 섹션 -->
 <ul class="payment">
-	<li></li>
 	<li><span class="color-main2">총 결제 금액</span>
 	<strong class="color-point2"> 12,100 
 	<span class="font-md color-sub5 mr5">원</span></strong></li></ul>
