@@ -24,6 +24,6 @@ public class BoardController {
 	// 공지사항 화면으로 가기
 		@RequestMapping("/Notice_board")
 		public String Notice_board() {
-			return "Board/Notice_board";
+			return "board/Notice_board";
 		}
 }
