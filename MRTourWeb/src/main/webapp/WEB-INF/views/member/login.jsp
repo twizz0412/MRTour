@@ -7,35 +7,13 @@
 	<style>
 		@import "resources/css/login.css";
 	</style>
-	<script>
-		window.onload = function () {
-		    var text1 = document.getElementById("input_id");
-		    var text2 = document.getElementById("input_pw");		    
-	
-		    text1.onclick = function() {
-		        var fontSize = "2";
-		        
-		        var labels = text1.getElementsByTagName("label");
-		        for (var i = 0; i < labels.length; i++) {
-		            labels[i].style.fontSize = fontSize + "px";
-		        }
-		    };
-		    
-		    text2.onclick = function() {
-		        var fontSize = "2";
-		        
-		        var labels = text2.getElementsByTagName("label");
-		        for (var i = 0; i < labels.length; i++) {
-		            labels[i].style.fontSize = fontSize + "px";
-		        }
-		    };
-		};
-
-	</script>
+	<script src = "resources/js/login.js"></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<script src = "http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
 	<div id = "contaner">
-		<form action = "login" method : "post"> 
+		<form action = "login" method = "post"> 
 			<div class = login_form>
 			
 			<!-- 상단 로고 배치 -->
@@ -49,17 +27,17 @@
 				<div class = "login_input">
 					<div class = "input_duo">
 						<span class="input_text" id = "input_id">
-							<input id="input_id" type="email" title="아이디(이메일계정)" autocomplete="off" value="">
-							<label for="input_id" >아이디(이메일계정)</label>
+							<input id="member_id" type="text" title="아이디" autocomplete="off" value="">
+							<label for="input_id" >아이디</label>
 						</span>
-						<span class="input_text" id = "input_pw">
-							<input id="input_pw" type="password" title="비밀번호" autocomplete="off" placeholder=" " value="">
-							<label for="input_pw">비밀번호</label>
+						<span class="input_text" id = "input_pwd">
+							<input id="member_pwd" type="password" title="비밀번호" autocomplete="off" placeholder=" " value="">
+							<label for="input_pwd">비밀번호</label>
 						</span>
 					</div>
 				</div>
 				<div class = "login_btn">
-					<button type="submit" class="btn">로그인</button>
+					<button type="button" class="btn" onclick="memberCheck()">로그인</button>
 				</div>
 				<div class = "signup_btn">
 					<button type="button" class="btn" onclick="location.href='signup'">회원가입</button>

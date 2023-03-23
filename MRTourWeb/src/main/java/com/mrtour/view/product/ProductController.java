@@ -36,6 +36,7 @@ public class ProductController {
 	@RequestMapping("/hotel_page")
 	public String hotel_page() {return "products/hotel_page";}
 	
+	
 	// 호텔 상세페이지
 	@RequestMapping("/hotel_checkout")
 	public String hotel_checkout() {return "products/hotel_checkout";}
