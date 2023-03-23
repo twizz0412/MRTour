@@ -1,8 +1,11 @@
 @charset "UTF-8";
 
-#lnb.lnb + .contents {
-    float: right;
-    width: 1010px;
+/*검색기능*/
+.contents {
+    float: left;
+    width: 1200px;
+    padding-left : 10%;
+    padding-top : 100px;
 }
 .contents {
     min-height: 350px;
@@ -27,8 +30,354 @@
     line-height: 1;
 }
 
-.right_cont {
+.notice-board {
     float: right;
+}
+
+.search_field {
+    display: inline-block;
+}
+
+form {
+    display: block;
+    margin-top: 0em;
+}
+
+
+fieldset {
+    display: block;
+    margin-inline-start: 2px;
+    margin-inline-end: 2px;
+    padding-block-start: 0.35em;
+    padding-inline-start: 0.75em;
+    padding-inline-end: 0.75em;
+    padding-block-end: 0.625em;
+    min-inline-size: min-content;
+    border-width: 2px;
+    border-style: groove;
+    border-color: rgb(192, 192, 192);
+    border-image: initial;
+}
+
+img, fieldset, iframe {
+    border: 0;
+}
+
+.blind {
+    overflow: hidden;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    clip: rect(0 0 0 0);
+    margin: -1px;
+    color: transparent;
+}
+
+.text_wrap .notice-board .select_item, .option_wrap .notice-board .select_item {
+    height: 36px;
+    vertical-align: top;
+}
+.search_field .select_item:first-child {
+    margin-left: 0;
+}
+.search_field .select_item {
+    float: left;
+    margin-left: 8px/*width:140px*/;
+}
+div.select_item {
+    display: block;
+}
+.select_item {
+    position: relative;
+    height: 42px;
+    line-height: 1;
+    display: inline-block;
+    text-align: left;
+}
+div.select_item .selectbox {
+    width: 100% !important;
+}
+.selectbox {
+    margin: 0;
+    position: relative;
+    vertical-align: middle;
+    min-width: 140px;
+}
+
+
+.text_wrap .notice-board .select_item .selectbox .display, .option_wrap .notice-board .select_item .selectbox .display {
+    height: 36px;
+    line-height: 34px;
+}
+.selectbox .display {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    padding: 0 30px 0 15px;
+    border: 1px solid #cdcdcd;
+    outline: none;
+    color: #aaa;
+    cursor: default;
+    line-height: 40px;
+    text-decoration: none;
+    box-shadow: none;
+    /* height: 100%; */
+}
+
+.selectbox.items li.selected > .item {
+    background: #e6e8ec;
+}
+.selectbox.items li.selected > .item {
+}
+.selectbox.items li > .item {
+    color: #111;
+    cursor: default;
+    display: block;
+    height: 34px;
+    line-height: 34px;
+    padding: 0 15px;
+    text-decoration: none;
+}
+
+.selectbox.items li > .item > .text {
+    display: inline-block;
+    zoom: 1;
+}
+
+.selectbox.items {
+    display: block;
+    overflow-x: hidden;
+    overflow-y: auto;
+    z-index: 99999;
+    margin: 0;
+    padding: 0 0 1px 0;
+    background: #fff;
+    border: solid 1px #5e2bb8;
+    border-top: 0;
+    list-style-type: none;
+    color: #333;
+    /* height: 100px; */
+}
+
+div.select_item .selectbox {
+    width: 100% !important;
+}
+
+
+/*게시판 목록*/
+
+.text_wrap .notice-board .select_item .selectbox .display .text, .option_wrap .notice-board .select_item .selectbox .display .text {
+    height: 34px;
+}
+.selectbox .display .text {
+    color: #333;
+    cursor: pointer;
+}
+.selectbox .display .text {
+    height: 40px;
+}
+
+.text_wrap .notice-board .select_item .selectbox .display .arrow_btn {
+    top: 15px;
+}
+.notice-board .selectbox .display .arrow_btn {
+    top: 15px;
+}
+.selectbox .display .arrow_btn {
+    background: #fff url(https://image.hanatour.com/usr/static/img2/pc/com/spr_com.png) no-repeat -240px -20px;
+    display: block;
+    width: 10px;
+    height: 6px;
+    position: absolute;
+    top: 18px;
+    right: 16px;
+    text-align: center;
+}
+
+.selectbox .display .arrow_btn .arrow {
+    display: none;
+}
+
+
+
+div.select_item .selectbox {
+    width: 100% !important;
+}
+
+.selectbox.items li.first {
+    margin-top: 0;
+}
+.selectbox.items li {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+ol, ul, li {
+    list-style: none;
+}
+.btn {
+    position: relative;
+    display: inline-block;
+    height: 25px;
+    line-height: 23px;
+    font-size: 12px;
+    padding: 0 10px;
+    margin: 0;
+    color: #666;
+    background-color: #fff;
+    font-weight: 400;
+    text-align: center;
+    border-radius: 4px;
+    border: solid 1px #c2c2c2;
+}
+
+.text_wrap .notice-board input[type=text], .text_wrap .notice-board input[type=number], 
+.text_wrap .notice-board input[type=date], .text_wrap .notice-board input[type=password], 
+.option_wrap .notice-board input[type=text], .option_wrap .notice-board input[type=number], 
+.option_wrap .notice-board input[type=date], .option_wrap .notice-board input[type=password] {
+    height: 36px;
+}
+.search_field input[type=text] {
+    width: 200px;
+    margin-left: 8px;
+    float: left;
+}
+input[type=text], input[type=number], input[type=date], input[type=password] {
+    height: 42px;
+    padding: 0 15px;
+    border: 1px solid #cdcdcd;
+    background-color: #fff;
+    border-radius: 2px;
+}
+input[type='text'], input[type='email'], input[type='search'], input[type='password'] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+button, input, textarea {
+    -webkit-border-radius: 0;
+    border-radius: 0;
+}
+input, select, textarea, button {
+    font-size: 14px;
+    vertical-align: top;
+}
+body, h1, h2, h3, h4, h5, h6, th, td, select, input, textarea, button {
+    font-family: 'Inter', 'AppleSDGothicNeo', 'AppleSDGothicNeo-Regular', 'Apple Gothic', 'Noto Sans KR', 'Malgun Gothic', Arial, Helvetica, serif , sans-serif;
+    letter-spacing: -.4px;
+}
+button, input, select {
+    overflow: visible;
+}
+button, input, select, textarea {
+    font: inherit;
+    margin: 0;
+}
+.text_wrap .notice-board .select_item select, .option_wrap .notice-board .select_item select {
+    height: 36px;
+    vertical-align: top;
+}
+.has_sb {
+    position: absolute;
+    left: -999999em;
+    text-indent: -999999em;
+}
+select {
+    height: 42px;
+    line-height: 42px;
+    font-size: 14px;
+    color: #333;
+    padding: 0 15px;
+    border-radius: 2px;
+}
+option {
+    font-weight: normal;
+    display: block;
+    white-space: nowrap;
+    min-height: 1.2em;
+    padding: 0px 2px 1px;
+}
+
+input {
+    writing-mode: horizontal-tb !important;
+    font-style: ;
+    font-variant-ligatures: ;
+    font-variant-caps: ;
+    font-variant-numeric: ;
+    font-variant-east-asian: ;
+    font-variant-alternates: ;
+    font-weight: ;
+    font-stretch: ;
+    font-size: ;
+    font-family: ;
+    font-optical-sizing: ;
+    font-kerning: ;
+    font-feature-settings: ;
+    font-variation-settings: ;
+    text-rendering: auto;
+    color: fieldtext;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    appearance: auto;
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    background-color: field;
+    margin: 0em;
+    padding: 1px 2px;
+    border-width: 2px;
+    border-style: inset;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-image: initial;
+}
+
+.search_field input[type=text] {
+    width: 200px;
+    margin-left: 8px;
+    float: left;
+}
+
+input[type="text" i] {
+    padding: 1px 2px;
+}
+
+.text_wrap .notice-board .search_field .btn, .text_wrap .notice-board .form_holder .btn, .text_wrap .notice-board .form_holder .divider, .text_wrap .notice-board .cal_wrap .btn, .option_wrap .notice-board .search_field .btn, .option_wrap .notice-board .form_holder .btn, .option_wrap .notice-board .form_holder .divider {
+    height: 36px;
+    line-height: 30px;
+}
+.btn.line, .search_field .btn.line, .form_holder .btn.line {
+    color: #5e2bb8 !important;
+    border: solid 1px #c2c2c2;
+}
+.search_field .btn, .form_holder .btn, .cal_wrap .btn {
+    min-width: 90px;
+}
+[type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+    cursor: pointer;
+}
+
+.btn {
+    position: relative;
+    display: inline-block;
+    height: 25px;
+    line-height: 23px;
+    font-size: 12px;
+    padding: 0 10px;
+    margin: 0;
+    color: #666;
+    background-color: #fff;
+    font-weight: 400;
+    text-align: center;
+    border-radius: 4px;
+    border: solid 1px #c2c2c2;
+}
+button {
+    background-color: transparent;
+    cursor: pointer;
 }
 
 .text_wrap.fix + .cont_unit, .text_wrap.fix + .tbl, .text_wrap.fix + .js_tabs {
@@ -41,9 +390,6 @@
 
 .tabs {
     overflow: hidden;
-}
-ol, ul, li {
-    list-style: none;
 }
 
 .type1 .tabs>li.selected {
