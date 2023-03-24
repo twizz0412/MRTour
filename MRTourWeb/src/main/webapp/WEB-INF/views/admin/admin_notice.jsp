@@ -5,8 +5,8 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="admin_css/admin_notice.css">
-    <title>mirae admin</title>
+    <link rel="stylesheet" href="resources/css/admin_css/admin_notice.css">
+    <title>MRT Admin</title>
 </head>
 
 <body>
@@ -75,7 +75,7 @@
                         <a href="#" class="bt last">>></a>
                     </div>
                     <div class="bt_wrap">
-                        <a href="write.html" class="on">등록</a>
+                        <a href="admin_write" class="on">등록</a>
                         <!--<a href="#">수정</a>-->
                     </div>
                     </div>
@@ -89,7 +89,7 @@
             <div class="overlay">
                 <div class="overlay__panel overlay--left">
                     <p style="font-size: 80px; color:#fff; text-shadow:0px 0px 50px #a1e4ff">
-                        <a href="#"><b>MIREA<br>TOUR</b></a>
+                        <a href="admin_main"><b>MIREA<br>TOUR</b></a>
                     </p>
                 </div>
             </div>

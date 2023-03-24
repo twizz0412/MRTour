@@ -11,7 +11,7 @@ window.onload = function () {
 			labels[i].style.fontSize = fontSize + "px";
 		}
 	};
-		    
+	
 	text2.onclick = function() {
 		var fontSize = "2";
 		        
@@ -20,6 +20,15 @@ window.onload = function () {
 		    labels[i].style.fontSize = fontSize + "px";
 		}
 	};
+	
+	text2.addEventListener("mousemove",  function() {
+		var fontSize = "2";
+		        
+		var labels = text2.getElementsByTagName("label");
+		for (var i = 0; i < labels.length; i++) {
+		    labels[i].style.fontSize = fontSize + "px";
+		}
+	});
 }
 
  function memberCheck() {
@@ -33,6 +42,7 @@ window.onload = function () {
 	   swal("", "비밀번호를 입력하세요", "warning"); 
 	   $("#member_pwd").focus();
 	   return false;
+	   
 	} else {
 		var member_id = $("#member_id").val();
 		var member_pwd = $("#member_pwd").val();	

@@ -15,6 +15,7 @@ public class MemberVO {
 	private String member_zipcode; // 우편번호
 	private String member_faddr; // 주소
 	private String member_laddr; // 상세주소
+	private String member_access; // 상세주소
 	
 	public int getMember_seq() {
 		return member_seq;
@@ -81,6 +82,12 @@ public class MemberVO {
 	}
 	public void setMember_laddr(String member_laddr) {
 		this.member_laddr = member_laddr;
+	}
+	public String getMember_access() {
+		return member_access;
+	}
+	public void setMember_access(String member_access) {
+		this.member_access = member_access;
 	}
 	
 	@Override

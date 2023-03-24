@@ -3,76 +3,26 @@
 
 <!DOCTYPE html>
 <html>
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
-
-<title>미래투어</title>
-<link rel="stylesheet" href="resources/css/main.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link
-	href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap"
-	rel="stylesheet">
-<link rel="stylesheet"
-	href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-<link rel="stylesheet"
-	href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link
-	href="https://fonts.googleapis.com/css2?family=Hi+Melody&display=swap"
-	rel="stylesheet">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+	
+	<title>미래투어</title>
+	
+	<link rel="stylesheet" href="resources/css/main.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+	<link href="https://fonts.googleapis.com/css2?family=Hi+Melody&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
 	<!-- header -->
-	<header>
-		<div class="login">
-			<p>
-				<a href="login"><b>로그인</a> | <a href="signup"><b>회원가입</a> | <a
-					href="#"><b>고객센터</a>
-			</p>
-			<br>
-			<p>
-				<a href="#"><img src="resources/images/menu.JPG" width="50"
-					height="50" style="float: right;"></a> <a href="#"><img
-					src="resources/images/jjim.JPG" width="50" height="50"
-					style="float: right"></a>
-			</p>
-		</div>
-
-		<div class="logo">
-			<a href="#"><img src="resources/images/logo.jpg"></a>
-		</div>
-
-		<div class="search">
-			<input type="text" placeholder="검색어 입력"> <a href="#"><img
-				src="resources/images/search.png" style="width: 30px; height: 30px;"></a>
-		</div>
-
-		<!-- category -->
-
-		<nav>
-			<ul>
-				<li><a href="car_page"><b>렌트카 </a></li>
-				<li><a href="hotel_main"><b>호텔 </a></li>
-				<li><a href="ticket_main"><b> 투어 | 입장권</a>
-				<li><a href="#"><b> 골프</a>
-				<li><a href="#"><b> 미래LIVE </a>
-				<li><a href="#"><b> FAQ</a></li>
-			</ul>
-		</nav>
-
-	</header>
-
-
-
-
-
+	<%@ include file="include/header.jsp"%>
 
 	<!-- section1 -->
 	<section id="section1">
@@ -350,63 +300,7 @@
 
 
 	<!--footer-->
-	<section id="footer">
-		<div class="ft">
-			<div class="foo_div">
-				<ul>
-					<li>회사소개</li>
-					<li>이용약관</li>
-					<li>개인정보처리방침</li>
-					<li>여행약관</li>
-					<li>해외여행자보험</li>
-					<li>마케팅제휴</li>
-					<li>공식인증예약센터 검색</li>
-				</ul>
-
-				<ul>
-					<li><p style="color: #333;">(주)미래투어</p></li>
-					<li>대표 : 김XX</li>
-					<li>주소 : 서울시 성동구 왕십리로 315</li>
-				</ul>
-
-				<ul>
-					<li>사업자등록번호 : 000-00-00000</li>
-					<li>사업자정보확인</li>
-					<li>통신판매업신고번호 : 서울00-0000호</li>
-					<li>관광사업자 등록번호 : 제0000-000000호</li>
-				</ul>
-
-				<ul>
-					<li>개인정보 보호책임자 : 김XX</li>
-					<li>영업보증보험: 22억 2천만원 가입</li>
-					<li>팩스:00-000-0000</li>
-					<li>이메일 : 00000@miraetour.com</li>
-				</ul>
-			</div>
-			<div class="fott">
-				<span>고객센터</span>
-				<li>0000-0000</li>
-				<li>국내항공권문의</li>
-				<li>0000-0000</li>
-				</ul>
-			</div>
-
-			<div class="foot">
-				<ul>
-					<li>※ 부득이한 사정에 의해 여행일정이 변경되는 경우 사전 동의를 받습니다.</li>
-					<li>※ 미래투어는 개별 항공권, 단품 및 일부 여행상품에 대하여 통신판매중개자로서 통신판매의 당사자가 아니며
-						해당상품의 거래정보 밑 거래등에 대해 책임을 지지 않습니다.</li>
-				</ul>
-			</div>
-
-			<div class="fooot">
-				<ul>
-					<li>COPYRIGHTⓒ MIRAETOUR SERVICE INC.ALL RIGHTS RESERVED</li>
-				</ul>
-			</div>
-		</div>
-	</section>
-
+	<%@ include file="include/footer.jsp"%>
 
 	<!-- Swiper JS -->
 	<script
