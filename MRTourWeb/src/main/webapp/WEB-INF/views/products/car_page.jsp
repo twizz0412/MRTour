@@ -9,7 +9,7 @@
 </head>
 <body class="bg" style="padding-right: 0px;">
 <app-car-page>
-<div id="wrap" class="car_page">
+<div id="wrap" class="p-rent-result">
 <!-- header 들어갈 자리 -->
 <!-- 본문 시작 -->
 <div id="container">
@@ -50,7 +50,7 @@
 <!--검색창 아래 본문-->
 <div class="contents-area">
 <!--검색창 바로 아래-->
-<app-rent-breadcrumbs class="breadcrumbs" _nghost-serverapp-c364="">
+<app-rent-breadcrumbs class="breadcrumbs">
 <div _ class="text-article">
 <p _ class="text">
 <strong _>제주</strong>에서 이용할 렌터카를 선택해 주세요. </p>
@@ -67,7 +67,7 @@
 </app-rent-breadcrumbs>
 
 <!-- 좌측 검색 필터 섹션 -->
-<app-rent-aside-filter class="aside filter" _nghost-serverapp-c367="">
+<app-rent-aside-filter class="aside filter">
 <div _ class="list-filter">
 
 <div _ class="filter-title">
@@ -210,22 +210,23 @@
 <div class="result-card-list">
 <!-- 상품 1 -->
 <div class="rentalcar-card-item">
+<div class="list-item-box">
 <div class="rentalcar-image">
 <img alt="" src="https://jtns1.jeju.com/images/upload/contents/rc/239_rc_con_1.jpg"></div>
 <div class="rentalcar-information">
-<div class="list-item-title"><!---->
-<div_ngcontent-serverapp-c375=""><!---->
-<strong>무지개렌트카</strong><!----></div>
+<div class="list-item-title">
+<div>
+</div>
 <p>20~22 모닝 어반 [20~22년식]</p><!----><!----></div>
-<p class="name"><strong _>더넥스트스파크</strong>
-<strong class="year"> [16~19년식]</strong></p>
+
 <ul class="include">
 	<li class="type">Economy</li><li class="person">5인승</li>
 	<li class="gear">자동변속</li><li class="fuel">Gasoline</li>
 </ul>
+
 <div class="flex-group">
-<div class="price"><p class="primary">13,600<span _>원</span></p></div><!----></div>
-<div class="btn-group"><a href="car_checkout" class="btn md light hover line">선택</a></div><!----></div></div>
+<div class="price"><p class="primary">13,600<span>원</span></p></div><!----></div>
+<div class="btn-group"><a href="car_checkout" class="btn md light hover line">선택</a></div><!----></div></div></div>
 
 
 <!-- 상품 2 -->

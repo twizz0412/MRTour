@@ -94,15 +94,19 @@
 <div class="payment-rule">
 <p class="font-lg-b mb10">요금 규정, 취소수수료 규정을 확인하세요.</p>
 <p class="color-sub6 lh160">아래 규정 및 약관을 읽어보고, 동의하는 경우에 체크하고 최종 예약을 완료해 주세요.</p>
-<ul class="mt20">
+
+<ul class="AgreementList-List">
+
 	<li data-target="agreeAllChk" class="line">
 		<label class="checkbox lg">
 		<input type="checkbox" class="checkbox-control-input">
 		<span class="checkbox-control-text">모든 약관에 동의함</span></label></li>
+					
 	<li>
 		<label data-target="agreeChk" class="checkbox lg">
 		<input type="checkbox" class="checkbox-control-input ng-untouched ng-pristine ng-valid">
 		<span class="checkbox-control-text"><!---->  만 14세 이상입니다. </span></label></li>
+	
 	<li>
 		<label data-target="agreeChk" class="checkbox lg">
 		<input type="checkbox" class="checkbox-control-input ng-untouched ng-pristine ng-valid">

@@ -428,13 +428,41 @@ img {
     margin-top: 60px;
 }
 
+.contents-item+.contents-item {
+    margin-top: 90px;
+}
+
 .heading-title1 {
     font-size: 22px;
     font-weight: 500;
 }
 
+.heading-title1.line-bottom {
+    border-bottom: 1px solid #888;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
 .color-sub6 { /* 타이틀 아래 안내문구 */
     color: #666!important;
+}
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
 }
 
 .mt40 {
@@ -481,6 +509,39 @@ img {
 
 input[type=email], input[type=text] {
     caret-color: #ff682c;
+}
+
+input {
+    writing-mode: horizontal-tb !important;
+    font-style: ;
+    font-variant-ligatures: ;
+    font-variant-caps: ;
+    font-variant-numeric: ;
+    font-variant-east-asian: ;
+    font-weight: ;
+    font-stretch: ;
+    font-size: ;
+    font-family: ;
+    text-rendering: auto;
+    color: fieldtext;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    appearance: auto;
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    background-color: field;
+    margin: 0em;
+    padding: 1px 2px;
+    border-width: 2px;
+    border-style: inset;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-image: initial;
 }
 
 .input .valid-msg { /* 입력된 게 없을 때 입력창 밑에 뜨는 메시지 */
@@ -577,7 +638,9 @@ input[type=email], input[type=text] {
     color: #666!important;
 }
 
-.mt20 { /* 동의 리스트 */
+
+============================================================================
+.AgreementList-List { /* 약관 동의 리스트(ul) */
     margin-top: 20px!important;
 }
 
@@ -618,7 +681,8 @@ input[type=email], input[type=text] {
     cursor: default;
 }
 
-.checkbox.lg .checkbox-control-text:before { /* 체크박스 */    
+/*
+.checkbox.lg .checkbox-control-text:before {     
 				top: -1px;
     width: 24px;
     height: 24px;
@@ -643,6 +707,7 @@ input[type=email], input[type=text] {
     border: 1px solid #ccc;
     border-radius: 3px;
 }
+*/
 
 .contents-item .payment-rule ul li+li { /* 리스트 두 번째 항목부터 적용 */
     margin-top: 10px;
@@ -706,10 +771,6 @@ input[type=email], input[type=text] {
     display: flex;
 }
 
-.mt20 {
-    margin-top: 20px!important;
-}
-
 button {
     cursor: pointer;
 }
@@ -741,7 +802,7 @@ button, input {
     border-radius: 0;
     background: 0 0;
     outline: 0;
-    -webkit-appearance: none;
+   
     -moz-appearance: none;
     appearance: none;
 }

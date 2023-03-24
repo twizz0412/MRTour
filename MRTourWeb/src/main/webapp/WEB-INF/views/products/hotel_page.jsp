@@ -6,6 +6,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" type="text/css" href="resources/css/hotel_page.css" />
+<script src = "resources/js/hotel_page.js"></script>
+<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyA3ZtWcrT0oQhZ7sytTylhtODsVqXqjL1A&callback=googleMap"></script>
+
 <title>골드원 호텔 &amp; 스위트</title>
 </head>
 <body>
@@ -15,23 +18,23 @@
 <div style="position:fixed;z-index:99999999;top:16px;left:16px;right:16px;bottom:16px;
 pointer-events:none" class="fixed"></div>
 
-<main class="e1e533zr0 main e97qg262">
-<div class="entire e11ughn50">
+<main class="main">
+<div class="entire">
 
 
 <!-- 처음부터 편의 시설, 숙소 위치 위까지 -->
-<div class="upper elt39qa0">
+<div class="upper">
 <!-- 맨 위 검색창 -->
-<div class="searchArea e14k94jy0">
-<div class="search e1xg2uq70">
+<div class="searchArea">
+<div class="search">
 
 <!-- 여행지 -->
-<div class="section selectionArea e1xg2uq72" data-section="place">
-<div class="place e18ae3yx0">
-<div class="selectionLabel e18ae3yx1">
+<div class="section selectionArea" data-section="place">
+<div class="place">
+<div class="selectionLabel">
 <span class="selectionSpan">여행지</span>
-<span class="e18ae3yx3 selectionSpan2">골드원 호텔 &amp; 스위트</span></div>
-<button class="e18ae3yx2 closeBtn">
+<span class="selectionSpan2">골드원 호텔 &amp; 스위트</span></div>
+<button class="closeBtn">
 <!-- 
 <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" 
 style="color:#848c94;opacity:0.5" role="presentation" height="20" width="20" 
@@ -53,15 +56,15 @@ xmlns="http://www.w3.org/2000/svg"><path d="M7.72505 16.275C7.92505 16.475 8.171
 21.9334 14.746 21.4 15.988C20.8667 17.2293 20.1417 18.3083 19.225 19.225C18.3084 20.1417 17.2294 
 20.8667 15.988 21.4C14.746 21.9333 13.4167 22.2 12 22.2Z"></path></svg> --></button></div></div>
 
-<div class="gap e1xg2uq73"></div>
+<div class="gap"></div>
 
 <!-- 일정 선택 -->
-<div class="section selectionArea e1xg2uq72" data-section="date">
-<div class="selection e18ae3yx0">
-<div class="selectionLabel e18ae3yx1">
+<div class="section selectionArea" data-section="date">
+<div class="selection">
+<div class="selectionLabel">
 <span class="selectionSpan">일정</span>
-<span class="e18ae3yx3 selectionSpan2">04월 10일 (월) - 04월 11일 (화)</span></div>
-<button class="e18ae3yx2 closeBtn">
+<span class="selectionSpan2">04월 10일 (월) - 04월 11일 (화)</span></div>
+<button class="closeBtn">
 <!--
 <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" 
 style="color:#848c94;opacity:0.5" role="presentation" height="20" width="20" 
@@ -84,125 +87,128 @@ xmlns="http://www.w3.org/2000/svg">
  8667 17.2293 20.1417 18.3083 19.225 19.225C18.3084 20.1417 17.2294 20.8667 15.988 21.4C14.746 
  21.9333 13.4167 22.2 12 22.2Z"></path></svg>  --> </button></div></div>
  
-<div class="gap e1xg2uq73"></div>
+<div class="gap"></div>
 
 <!-- 숙박 인원 -->
-<div class="section selectionArea e1xg2uq72" data-section="guest">
-<div class="selection e18ae3yx0">
-<div class="selectionLabel e18ae3yx1">
+<div class="section selectionArea" data-section="guest">
+<div class="selection">
+<div class="selectionLabel">
 <span class="selectionSpan">숙박 인원</span>
-<span class="e18ae3yx3 selectionSpan2">성인 2명</span></div></div></div>
+<span class="selectionSpan2">성인 2명</span></div></div></div>
 
 <!-- 숙소 검색 버튼 -->
-<div class="searchBtnArea e1xg2uq71">
+<div class="searchBtnArea">
 <button class="searchBtn">
 <div class="btnTitle">
 <span class="btnSpan">숙소 검색</span></div></button></div></div></div>
 
 
 <!-- 메인 사진 섹션 -->
-<div class="main_pic elt39qa1">
-<div class="main_pic2 e1anypyg0">
-<div class="pic_grid e1anypyg1">
+<div class="main_pic">
+<div class="main_pic2">
+<div class="pic_grid">
 <img src="https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2023/02/03/ugm0/WtmkOqxilm.jpg?
-width=1080&amp;quality=90" loading="lazy" class="grid_img e1anypyg2">
+width=1080&amp;quality=90" loading="lazy" class="grid_img">
 <img src="https://i.travelapi.com/lodging/38000000/37630000/37622900/37622802/ad72606c_z.jpg" 
-loading="lazy" class="grid_img e1anypyg2">
+loading="lazy" class="grid_img">
 <img src="https://i.travelapi.com/lodging/38000000/37630000/37622900/37622802/662d0752_z.jpg" 
-loading="lazy" class="grid_img e1anypyg2">
+loading="lazy" class="grid_img">
 <img src="https://i.travelapi.com/lodging/38000000/37630000/37622900/37622802/adb19fdd_z.jpg" 
-loading="lazy" class="grid_img e1anypyg2">
+loading="lazy" class="grid_img">
 <img src="https://i.travelapi.com/lodging/38000000/37630000/37622900/37622802/a655586c_z.jpg" 
-loading="lazy" class="grid_img e1anypyg2"></div>
-<button class="e1anypyg3 moreBtn">
-<div class="moreBtnArea">
+loading="lazy" class="grid_img"></div>
+<button class="moreBtn">
+<div class="btnTitle">
 <span class="moreBtnSpan">
-<span class="moreBtnSpan2">사진 모두 보기</span></span></div></button></div><div></div></div>
+<span class="btnSpan2">사진 모두 보기</span></span></div></button></div><div></div></div>
 
 <!-- 사진 아래 호텔명, 가격 표시된 부분 -->
-<div class="main_info elt39qa2">
-<div class="main_info_left elt39qa3">
-<div class="hotelNameArea elt39qa4">
-<div class="hotelName e1jq03dn0">
-<div class="content e1jq03dn1">
-<span class="hotelNameSpan e1jq03dn2 hotelNameSpan2">골드원 호텔 &amp; 스위트</span></div>
+<div class="main_info">
+<div class="main_info_left">
+<div class="hotelNameArea">
+<div class="hotelName">
+<div class="content">
+<span class="hotelNameSpan hotelNameSpan2">골드원 호텔 &amp; 스위트</span></div>
 
-<div class="content e1jq03dn1">
-<span class="e1jq03dn3 hotelRates">4성급 · 호텔</span></div></div></div>
+<div class="content">
+<span class="hotelRates">4성급 · 호텔</span></div></div></div>
 
-<div class="hotelPriceArea elt39qa5">
-<div class="hotelPriceArea2 elt39qa6">
+<div class="hotelPriceArea">
+<div class="hotelPriceArea2">
 <span class="hotelBold">216,080원/박</span></div></div></div>
 
 <!-- 객실 선택 부분 -->
-<div class="main_info_right elt39qa10">
+<div class="main_info_right">
 
-<button class="elt39qa11 submitBtn">
-<div class="moreBtnArea">
+<button class="submitBtn">
+<div class="btnTitle">
 <span class="BtnSpan">
-<span class="BtnSpan2">객실 선택</span></span></div></button></div></div>
+<span class="btnSpan3">객실 선택</span></span></div></button></div></div>
 
 </div>
 
 <!-- 편의 시설, 숙소 위치부터 끝까지 -->
-<div class="lower e1olyq820">
+<div class="lower">
 
 <!-- 편의 시설부터 객실 선택 위까지 -->
-<div class="lower-1 e1olyq821">
-<div class="lower-1-upper eqnup2r0">
+<div class="lower-1">
+<div class="lower-1-upper">
 <!-- 편의 시설 -->
-<div class="convenienceArea eqnup2r2">
-<div class="info e13hcpj10">
-<div class="css-0 e13hcpj11">
+<div class="convenienceArea">
+<div class="info">
+<div class="css-0">
 <span class="infoTitle">편의 시설</span></div>
-<div class="convenience_container e13hcpj12">
 
-<div class="convenience e1b7g1ll0">
-<div class="content e1b7g1ll2"><img alt="24시간 운영 프런트 데스크" src="https://dffoxz5he03rp.cloudfront.net/contents/person_FILL1_wght500_GRAD0_opsz24+1_2x.png" class="iconImg e1b7g1ll1"></div>
-<div class="content e1b7g1ll2"><span class="detailSpan moreBtnSpan2">24시간 운영 프런트 데스크</span></div></div>
+<div class="convenience_container">
 
-<div class="convenience e1b7g1ll0">
-<div class="content e1b7g1ll2"><img alt="수영장" src="https://dffoxz5he03rp.cloudfront.net/contents/pool_FILL1_wght500_GRAD0_opsz24+1_2x.png" class="iconImg e1b7g1ll1"></div>
-<div class="content e1b7g1ll2"><span class="detailSpan moreBtnSpan2">수영장</span></div></div>
+<div class="convenience">
+<div class="content"><img alt="24시간 운영 프런트 데스크" src="resources/img/icon/24hr.png" class="iconImg"></div>
+<div class="content"><span class="detailSpan moreBtnSpan2">24시간 운영 프런트 데스크</span></div></div>
 
-<div class="convenience e1b7g1ll0">
-<div class="content e1b7g1ll2"><img alt="전기차 충전소" src="https://dffoxz5he03rp.cloudfront.net/contents/apartment_FILL1_wght500_GRAD0_opsz24+1_2x.png" class="iconImg e1b7g1ll1"></div>
-<div class="content e1b7g1ll2"><span class="detailSpan moreBtnSpan2">전기차 충전소</span></div></div>
+<div class="convenience">
+<div class="content"><img alt="수영장" src="resources/img/icon/indoorpool.png" class="iconImg"></div>
+<div class="content"><span class="detailSpan moreBtnSpan2">수영장</span></div></div>
 
-<div class="convenience e1b7g1ll0">
-<div class="content e1b7g1ll2"><img alt="무료 셀프 주차" src="https://dffoxz5he03rp.cloudfront.net/contents/local_parking_FILL1_wght500_GRAD0_opsz24+1_2x.png" class="iconImg e1b7g1ll1"></div>
-<div class="content e1b7g1ll2"><span class="detailSpan moreBtnSpan2">무료 셀프 주차</span></div></div>
+<div class="convenience">
+<div class="content"><img alt="전기차 충전소" src="resources/img/icon/evcharge.png" class="iconImg"></div>
+<div class="content"><span class="detailSpan moreBtnSpan2">전기차 충전소</span></div></div>
 
-<div class="convenience e1b7g1ll0">
-<div class="content e1b7g1ll2"><img alt="객실 내 장애인 편의 시설" src="https://dffoxz5he03rp.cloudfront.net/contents/accessible_FILL1_wght500_GRAD0_opsz24+1_2x.png" class="iconImg e1b7g1ll1"></div>
-<div class="content e1b7g1ll2"><span class="detailSpan moreBtnSpan2">객실 내 장애인 편의 시설</span></div></div>
+<div class="convenience">
+<div class="content"><img alt="무료 셀프 주차" src="resources/img/icon/selfparking.png" class="iconImg"></div>
+<div class="content"><span class="detailSpan moreBtnSpan2">무료 셀프 주차</span></div></div>
 
-<div class="convenience e1b7g1ll0">
-<div class="content e1b7g1ll2"><img alt="피트니스 시설" src="https://dffoxz5he03rp.cloudfront.net/contents/spa_FILL1_wght500_GRAD0_opsz24+1_2x.png" class="iconImg e1b7g1ll1"></div>
-<div class="content e1b7g1ll2"><span class="detailSpan moreBtnSpan2">피트니스 시설</span></div></div>
+<div class="convenience">
+<div class="content"><img alt="객실 내 장애인 편의 시설" src="resources/img/icon/wheelchair.png" class="iconImg"></div>
+<div class="content"><span class="detailSpan moreBtnSpan2">객실 내 장애인 편의 시설</span></div></div>
 
-<div class="convenience e1b7g1ll0">
-<div class="content e1b7g1ll2"><img alt="회의 공간" src="https://dffoxz5he03rp.cloudfront.net/contents/business_center_FILL1_wght500_GRAD0_opsz24+1_2x.png" class="iconImg e1b7g1ll1"></div>
-<div class="content e1b7g1ll2"><span class="detailSpan moreBtnSpan2">회의 공간</span></div></div>
+<div class="convenience">
+<div class="content"><img alt="피트니스 시설" src="resources/img/icon/spa.png" class="iconImg"></div>
+<div class="content"><span class="detailSpan moreBtnSpan2">피트니스 시설</span></div></div>
 
-<div class="convenience e1b7g1ll0">
-<div class="content e1b7g1ll2"><img alt="아케이드/게임룸" src="https://dffoxz5he03rp.cloudfront.net/contents/casino_FILL1_wght500_GRAD0_opsz24+1_2x.png" class="iconImg e1b7g1ll1"></div>
-<div class="content e1b7g1ll2"><span class="detailSpan moreBtnSpan2">아케이드/게임룸</span></div></div></div></div></div>
+<div class="convenience">
+<div class="content"><img alt="회의 공간" src="resources/img/icon/concierge.png" class="iconImg"></div>
+<div class="content"><span class="detailSpan moreBtnSpan2">회의 공간</span></div></div>
+
+<div class="convenience">
+<div class="content"><img alt="아케이드/게임룸" src="resources/img/icon/casino.png" class="iconImg"></div>
+<div class="content"><span class="detailSpan moreBtnSpan2">아케이드/게임룸</span></div></div></div></div></div>
 
 <!-- 숙소 위치 -->
-<div class="locationArea eqnup2r1">
-<div class="info e1m3tgj80">
-<div class="css-1mnf8qz e1m3tgj81"><span class="infoTitle">숙소 위치</span></div>
-<div class="mapArea e1m3tgj82"><div class="css-0 e1m3tgj83">
-<div class="map e2r5t0q0">
-<img alt="Google Map" src="https://maps.googleapis.com/maps/api/staticmap?size=400x200&amp;zoom=14&amp;scale=2&amp;center=33.244601,126.522142&amp;key=AIzaSyDIKCScTCOK-yllVbHvDboEnpKtKDs2vFU&amp;signature=SkCR3jGPf5Ma1NcepLU9jjIhSNs%3D" class="gooleMap e2r5t0q1">
-<img alt="33.244601,126.522142" src="https://dffoxz5he03rp.cloudfront.net/contents/ic_location_50x54_filled_gray_1000.svg" width="46" height="53" decoding="async" data-nimg="1" class="houseIcon" loading="lazy" style="color:transparent"></div></div>
+<div class="locationArea">
+<div class="info">
+<div class="info_title"><span class="infoTitle">숙소 위치</span></div>
+<div class="mapArea"><div class="css-0">
+<div class="map">
+<img alt="Google Map" src="https://maps.googleapis.com/maps/api/staticmap?size=400x200&amp;zoom=14&amp;scale=2&amp;center=33.244601,126.522142&amp;key=AIzaSyA3ZtWcrT0oQhZ7sytTylhtODsVqXqjL1A&amp;signature=SkCR3jGPf5Ma1NcepLU9jjIhSNs%3D" id="gooleMap" class="gooleMap">
+<img alt="33.244601,126.522142" src="resources/img/icon/location.svg" width="46" height="53" decoding="async" data-nimg="1" class="houseIcon" loading="lazy" style="color:transparent">
+
+</div></div>
 
 <!-- 주소 -->
-<div class="content e1m3tgj84">
-<span class="e1m3tgj85 hotelAddress">1032, Ieodo-ro, Seogwipo, Jeju, 63571</span>
-<button class="e1m3tgj86 addressCopyBtn">
-<div class="moreBtnArea">
+<div class="content">
+<span class="hotelAddress">1032, Ieodo-ro, Seogwipo, Jeju, 63571</span>
+<button class="addressCopyBtn">
+<div class="btnTitle">
 <span class="BtnSpan">주소복사</span></div></button></div></div></div></div></div>
 
 <!-- 숙소 정보 섹션 -->
@@ -287,7 +293,7 @@ LeeJoongSeop Art Museum - 4.3km
 <!-- 더보기 -->
 <div class="gradation e176nd084"></div></div>
 <div><button class="e176nd086 moreContentBtn">
-<div class="moreBtnArea"><span class="BtnSpan">더보기</span></div></button></div></div>
+<div class="btnTitle"><span class="BtnSpan">더보기</span></div></button></div></div>
 
 <!-- 숙소 정책 -->
 <div class="infoSection e176nd080">
@@ -346,7 +352,7 @@ Visa, Mastercard, American Express, JCB International, Discover, UnionPay, Diner
 <!-- 더보기 -->
 <div class="gradation e176nd084"></div></div>
 <div><button class="e176nd086 moreContentBtn">
-<div class="moreBtnArea"><span class="BtnSpan">더보기</span></div></button></div></div>
+<div class="btnTitle"><span class="BtnSpan">더보기</span></div></button></div></div>
 
 <!-- 보건 & 안전 -->
 <div class="infoSection e176nd080">
@@ -386,7 +392,7 @@ Visa, Mastercard, American Express, JCB International, Discover, UnionPay, Diner
 <!-- 더보기 -->
 <div class="gradation e176nd084"></div></div>
 <div><button class="e176nd086 moreContentBtn">
-<div class="moreBtnArea">
+<div class="btnTitle">
 <span class="BtnSpan">더보기</span></div></button></div></div></div></div>
 
 
@@ -404,7 +410,7 @@ Visa, Mastercard, American Express, JCB International, Discover, UnionPay, Diner
 <span class="choseDate">04월 10일 (월) - 04월 11일 (화)</span></div>
 
 <button class="changeDate">
-<div class="moreBtnArea">
+<div class="btnTitle">
 <span class="moreBtnSpan">
 <span class="moreBtnSpan2">일정 변경</span></span></div></button></div></div>
 
@@ -440,7 +446,7 @@ Visa, Mastercard, American Express, JCB International, Discover, UnionPay, Diner
 <div class="price e1mya5qx2"><span class="price_span e1mya5qx5">216,080원/박</span></div>
 </div>
 <div class="room_reserve_btn"><button class="e1mya5qx10 room_reserve_btn_2">
-<div class="moreBtnArea"><span class="BtnSpan">예약하기</span></div></button></div></div></div></div>
+<div class="btnTitle"><span class="BtnSpan">예약하기</span></div></button></div></div></div></div>
 </div>
 
 
@@ -475,7 +481,7 @@ Visa, Mastercard, American Express, JCB International, Discover, UnionPay, Diner
 <div class="price e1mya5qx2"><span class="price_span e1mya5qx5">216,080원/박</span></div>
 
 <div class="room_reserve_btn"><button class="e1mya5qx10 room_reserve_btn_2">
-<div class="moreBtnArea"><span class="BtnSpan">예약하기</span></div></button></div></div></div></div>
+<div class="btnTitle"><span class="BtnSpan">예약하기</span></div></button></div></div></div></div>
 </div>
 
 
@@ -509,7 +515,7 @@ alt="프리미어 더블룸, 바다 전망" class="room_img e1nunbqm6">
 <span class="price_span e1mya5qx5">216,081원/박</span></div>
 
 <div class="room_reserve_btn"><a href = "hotel_checkout"><button class="e1mya5qx10 room_reserve_btn_2">
-<div class="moreBtnArea"><span class="BtnSpan" >예약하기</span></div></button></a></div></div></div></div></div></div></div></div></div>
+<div class="btnTitle"><span class="BtnSpan" >예약하기</span></div></button></a></div></div></div></div></div></div></div></div></div>
 
 </body>
 </html>
