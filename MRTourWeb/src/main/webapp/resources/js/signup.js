@@ -8,7 +8,10 @@
 		if (!member_id) {
 			 swal("", "아이디를 먼저 입력하세요", "warning"); 
 			 $("#member_id").focus();
-		} else {
+		} else if($("#member_id").val().includes('Admin') || $("#member_id").val().includes('admin')){//ID생성 시 Admin사용 불가(보안)
+	    	swal("", "이 ID는 사용할 수 없습니다.", "error");
+	    	 return false;
+	    } else {
 			$.ajax({
 				type : "POST",
 				url : "checkID",
@@ -123,6 +126,11 @@ function Signup() {
         swal("입력 누락", "아이디를 입력하세요", "warning"); 
         $("#member_id").focus();
         return false;
+    }
+    
+    else if($("#member_id").val().includes('Admin') || $("#member_id").val().includes('admin')){//ID생성 시 Admin사용 불가(보안)
+    	swal("", "이 ID는 사용할 수 없습니다.", "error");
+    	 return false;
     }
     
     else if(!$("#member_pwd").val()) {//비밀번호를 입력하지 않으면 수행

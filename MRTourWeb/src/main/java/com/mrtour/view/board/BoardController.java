@@ -20,7 +20,7 @@ import com.mrtour.model.board.BoardVO;
 
 @Controller
 public class BoardController {
-
+	
 	// 공지사항 화면으로 가기
 		@RequestMapping("/Notice_board")
 		public String Notice_board() {

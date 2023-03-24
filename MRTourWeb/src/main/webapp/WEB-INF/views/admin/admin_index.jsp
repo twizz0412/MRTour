@@ -3,8 +3,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="admin_css/admin_index.css">
-    <title>mirae admin</title>
+    <link rel="stylesheet" href="resources/css/admin_css/admin_index.css">
+    <script src = "resources/js/admin_login.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src = "http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>MRT Admin</title>
 </head>
 
 <body>
@@ -12,11 +15,10 @@
         <!-- Sign Up -->
         <div class="container__form container--signup">
             <form action="#" class="form" id="form1">
-                <h2 class="form__title">Sign Up</h2>
-                <input type="text" placeholder="User" class="input" />
-                <input type="email" placeholder="Email" class="input" />
-                <input type="password" placeholder="Password" class="input" />
-                <button class="btn">Sign Up</button>
+                <h2 class="form__title">Login</h2>
+                <input type="text" placeholder="User" class="input" id = "member_id" />
+                <input type="password" placeholder="Password" class="input" id = "member_pwd"/>
+                <button class="btn" id = "signUp" onclick = "admin_login()">Login</button>
             </form>
         </div>
 

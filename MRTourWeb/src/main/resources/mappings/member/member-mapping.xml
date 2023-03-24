@@ -15,6 +15,7 @@
 		<result property="member_zipcode" column="MEMBER_ZIPCODE" />
 		<result property="member_faddr" column="MEMBER_FADDR" />
 		<result property="member_laddr" column="MEMBER_LADDR" />
+		<result property="member_access" column="MEMBER_ACCESS" />
 	</resultMap>
 
 	<!-- 아이디 중복여부 확인 -->
@@ -116,4 +117,12 @@
 	<sql id="myp">
 		AND PAYMENT_DATE BETWEEN ADD_MONTHS(SYSDATE, -3) AND SYSDATE
 	</sql>
+		
+	<!-- 관리자 페이지  -->
+	<select id="admin_login" resultMap="member">
+		<![CDATA[
+			SELECT * FROM MEMBER
+			WHERE MEMBER_ACCESS = '관리자' AND MEMBER_ID=#{member_id} AND MEMBER_PWD=#{member_pwd} ;
+		]]>
+	</select>
 </mapper>

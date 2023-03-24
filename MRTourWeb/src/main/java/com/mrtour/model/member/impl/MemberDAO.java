@@ -75,4 +75,9 @@ public class MemberDAO {
 	public int getCountMember(MemberVO vo) {
 		return mybatis.selectOne("MemberDAO.getCountMember", vo);
 	}
+	
+	// 관리자 로그인
+	public MemberVO admin_login(MemberVO vo) {
+		return (MemberVO) mybatis.selectOne("MemberDAO.admin_login", vo);
+	}
 }

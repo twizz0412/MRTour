@@ -33,7 +33,7 @@ header .login {
 	font-family: 'Nanum Gothic', sans-serif;
 	word-spacing: 5px;
 	/* 글자 사이의 간격*/
-	font-size: 13px;
+	font-size: 20px;
 }
 
 header .login a {
@@ -86,7 +86,7 @@ nav ul {
 	list-style: none;
 	/* 목록 앞 점 없앰 */
 	font-family: 'Nanum Gothic', sans-serif;
-	font-size: 25px;
+	font-size: 40px;
 	/*글자크기*/
 	font-weight: 100;
 	/*글자를 굵게 */
