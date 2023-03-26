@@ -236,7 +236,7 @@ section.recommend-section {
 section.recommend-section .container {
   position: absolute;
   left: 50%;
-  top: 22%; /* top 값을 50%로 조정합니다. */
+  top: 22%; 
   transform: translate(-50%, -50%);
   display: block;
 }

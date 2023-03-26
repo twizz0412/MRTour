@@ -6,7 +6,7 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
 	
-<link rel="stylesheet" href="resources/css/main.css">
+<link rel="stylesheet" href="resources/css/header.css">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,10 +33,12 @@
 	}
 </script>
 <header>
-	<div class="login">
-			<p>
+	<div>
+		<div class="login">
+			<div>
 				<c:choose>
 					<c:when test="${member.member_id eq 'admin'}">
+						관리자 접속
 						<a href="login"><b>로그아웃</a> 
 						| 
 						<a href="admin_main"><b>관리페이지</a>
@@ -51,32 +53,37 @@
 					</c:when>
 					
 					<c:otherwise>
-						<input type="hidden" id="member_id" name="member_id"
-							value="${member.member_id}" />
+						<input type="hidden" id="member_id" name="member_id" value="${member.member_id}" />
+						${member.member_name}님 환영합니다.
 						<a href="login"><b>로그아웃</a> 
 						| 
 						<a href=""><b>고객센터</a>
 					</c:otherwise>
 				</c:choose>
-			</p>
+			</div>
 			<br>
-			<p>
-				<a href="main"><img src="resources/images/menu.JPG" width="50"
-					height="50" style="float: right;"></a> <a href="#"><img
-					src="resources/images/jjim.JPG" width="50" height="50"
-					style="float: right"></a>
-			</p>
+			<div class = "mymenu">
+				<a href="main">
+					<img src="resources/images/menu.JPG" width="50" height="50" style="float: right;">
+				</a> 
+				<a href="#">
+					<img src="resources/images/jjim.JPG" width="50" height="50" style="float: right">
+				</a>
+			</div>
 		</div>
 
 		<div class="logo">
 			<a href="#"><img src="resources/images/logo.jpg"></a>
 		</div>
 
-		<div class="search">
-			<input type="text" placeholder="검색어 입력"> <a href="#"><img
-				src="resources/images/search.png" style="width: 30px; height: 30px;"></a>
+		<div class="main_search">
+			<div class="search">
+				<input type="text" placeholder="검색어 입력">
+				<img src="resources/images/search.png" style="width: 30px; height: 30px;">
+			</div>
 		</div>
-
+			
+			
 		<!-- category -->
 
 		<nav>
@@ -89,5 +96,5 @@
 				<li><a href="#"><b> FAQ</a></li>
 			</ul>
 		</nav>
+	</div>
 	</header>
-</div>

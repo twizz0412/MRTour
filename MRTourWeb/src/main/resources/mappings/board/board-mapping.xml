@@ -4,18 +4,19 @@
 
 <mapper namespace="BoardDAO">
 
+<!-- 1:1문의 = BOARD -->
 	<!-- 글쓰기 -->
 	<insert id="createBoard">
 		INSERT INTO BOARD (
-			BNO, 
-			TITLE, 
-			CONTENT, 
-			WRITER
+			BOARD_NO, 
+			B_TITLE, 
+			B_CONTENT, 
+			MEMBER_ID
 		) VALUES(
 			BOARD_SEQ.NEXTVAL, 
-			#{title}, 
-			#{content}, 
-			#{writer}
+			#{b_title}, 
+			#{b_content}, 
+			#{MEMBER_id}
 		)
 	</insert>
 
@@ -106,5 +107,30 @@
 			</otherwise>
 		</choose>
 	</sql>
+
+<!-- 공지사항 = NOTICE -->
+		<!-- 글쓰기 -->
+	<insert id="createNotice">
+		INSERT INTO NOTICE (
+			NOTICE_NO, 
+			NOTICE_TITLE,
+			NOTICE_SUB,
+			MEMBER_NAME,
+			NOTICE_CONTENT 
+		) VALUES(
+			NOTICE_SEQ.NEXTVAL, 
+			#{notice_title}, 
+			#{notice_sub}, 
+			#{member_name},
+			#{notice_content} 
+		)
+	</insert>
+	
+		<!-- 목록 -->
+		<select id="listAllNotice">
+		    SELECT NOTICE_NO, NOTICE_SUB, NOTICE_TITLE,  NOTICE_DATE
+		    FROM NOTICE
+		    ORDER BY NOTICE_NO DESC
+		</select>
 	
 </mapper>

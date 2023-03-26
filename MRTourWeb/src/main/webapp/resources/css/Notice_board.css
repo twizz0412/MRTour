@@ -74,7 +74,7 @@ img, fieldset, iframe {
 }
 
 .text_wrap .notice-board .select_item, .option_wrap .notice-board .select_item {
-    height: 36px;
+    height: 38px;
     vertical-align: top;
 }
 .search_field .select_item:first-child {
@@ -101,7 +101,7 @@ div.select_item .selectbox {
     margin: 0;
     position: relative;
     vertical-align: middle;
-    min-width: 140px;
+    min-width: 80px;
 }
 
 
@@ -286,7 +286,6 @@ select {
     line-height: 42px;
     font-size: 14px;
     color: #333;
-    padding: 0 15px;
     border-radius: 2px;
 }
 option {
@@ -363,7 +362,7 @@ input[type="text" i] {
 .btn {
     position: relative;
     display: inline-block;
-    height: 25px;
+    height: 26px;
     line-height: 23px;
     font-size: 12px;
     padding: 0 10px;

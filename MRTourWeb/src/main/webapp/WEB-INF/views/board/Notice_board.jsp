@@ -1,8 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import = "java.util.List" %>
-<%@ page import = "com.mrtour.model.board.impl.BoardDAO" %>
-<%@ page import = "com.mrtour.model.board.BoardVO" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="c" uri = "http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -10,6 +11,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>미래투어[공지사항]</title>
 	<link rel="stylesheet" type="text/css" href="resources/css/Notice_board.css" />
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
 </head>
 <body>
 	<div id="contents" class="contents">
@@ -24,35 +26,11 @@
 							<legend class="blind">공지사항 검색</legend> 
 							<div class="box_search">
 								<div class="select_item">
-									<div class="sb selectbox " role="listbox" aria-has-popup="true" aria-labelledby="" aria-disabled="false" style="width: 106.75px;" >
-										<div class="display " >
-											<div class="text">제목</div>
-											<div class="arrow_btn">
-												<span class="arrow"></span>
-											</div>
-										</div>
-										<ul class="selectbox items" role="menu" aria-hidden="true" style="max-height: 493px; position: absolute; visibility: visible; width: 141px; display: none; left: 0px; top: 36px;">
-											<li role="option" class="selected first" aria-disabled="">
-												<div class="item">
-													<div class="text">제목</div>
-												</div>
-											</li>
-											<li role="option" aria-disabled="">
-												<div class="item">
-													<div class="text">내용</div>
-												</div>
-											</li>
-											<li role="option" aria-disabled="" class="last">
-												<div class="item">
-													<div class="text">제목+내용</div>
-												</div>
-											</li>
-										</ul>
-									</div>
-									<select class="has_sb" style="">
-										<option value="TIT">제목</option>
-										<option value="CTN">내용</option>
-										<option value="TCN">제목+내용</option>
+									<select class="selectbox" name="searchOption" id="searchOption">
+										<option value="" ></option>
+										<option value="TITLE" <c:out value="${map.searchOption=='TITLE'?'selected':''}"/> >제목</option>
+										<option value="CONTENT" <c:out value="${map.searchOption=='CONTENT'?'selected':''}"/> >내용</option>
+										<option value="ALL" <c:out value="${map.searchOption=='ALL'?'selected':''}"/> >제목+내용</option>
 									</select>
 								</div>
 								 <input type="text" id="input_keyword" value="" name="" title="검색어" placeholder="검색어를 입력해 주세요." class="input_keyword"> 
@@ -71,101 +49,32 @@
 		 <div>
 			<div class="tbl">
 				<table class="type1">
-					<colgroup>
-						<col style="width: 10%;">
-						<col style="width: 12%;">
-						<col>
-						<col style="width: 13%;">
-					</colgroup> 
-					<thead>
-						<tr>
-							<th>번호</th>
-							<th>작성자</th>
-							<th>제목</th>
-							<th>등록일</th>
-						</tr>
-					</thead> 
-					<tbody>
-						<tr>
-							<td class="txc">688</td>
-							<td class="txc">관리자</td>
-							<td class="txl">
-								<a rowindex="0" datafield="postTitlNm" style="cursor: pointer;">
-									&lt;퇴근길LIVE&gt; 23년 03월 20일 방송 소통 이벤트 당첨자 안내 (투썸플레이스 기프티콘)</a></td>
-							<td class="txc">2023.03.21</td>
-						</tr>
-						<tr>
-							<td class="txc">687</td>
-							<td class="txc">관리자</td>
-							<td class="txl">
-								<a rowindex="1" datafield="postTitlNm" style="cursor: pointer;">
-									[개인정보보호] 개인정보 처리방침 변경</a></td>
-							<td class="txc">2023.03.17</td>
-						</tr>
-						<tr>
-							<td class="txc">686</td>
-							<td class="txc">관리자</td>
-							<td class="txl">
-								<a rowindex="2" datafield="postTitlNm" style="cursor: pointer;">
-									&lt;하나LIVE&gt; 23년 03월 15일 방송 이벤트 당첨자 안내 (쉐라톤 룸 업그레이드)</a></td>
-							<td class="txc">2023.03.17</td>
-						</tr>
-						<tr>
-							<td class="txc">685</td>
-							<td class="txc">관리자</td>
-							<td class="txl">
-								<a rowindex="3" datafield="postTitlNm" style="cursor: pointer;">
-									&lt;하나LIVE&gt; 23년 03월 15일 방송 이벤트 당첨자 안내 (스타벅스 기프티콘)</a></td>
-							<td class="txc">2023.03.16</td>
-						</tr>
-						<tr>
-							<td class="txc">684</td>
-							<td class="txc">관리자</td>
-							<td class="txl">
-								<a rowindex="4" datafield="postTitlNm" style="cursor: pointer;">
-									&lt;하나LIVE&gt; 23년 03월 08일 구매자 대상 이벤트 당첨자 안내</a></td>
-							<td class="txc">2023.03.10</td>
-						</tr>
-						<tr>
-							<td class="txc">683</td>
-							<td class="txc">관리자</td>
-							<td class="txl">
-								<a rowindex="5" datafield="postTitlNm" style="cursor: pointer;">
-									&lt;하나LIVE&gt; 23년 03월 08일 방송 이벤트 당첨자 안내 (스타벅스 기프티콘)</a></td>
-							<td class="txc">2023.03.10</td>
-						</tr>
-						<tr>
-							<td class="txc">682</td>
-							<td class="txc">관리자</td>
-							<td class="txl">
-								<a rowindex="6" datafield="postTitlNm" style="cursor: pointer;">
-									&lt;하나LIVE&gt; 23년 03월 02일 방송 선착순 이벤트 당첨자 안내 (고급 어메니티 세트)</a></td>
-							<td class="txc">2023.03.03</td>
-						</tr>
-						<tr>
-							<td class="txc">681</td>
-							<td class="txc">관리자</td>
-							<td class="txl">
-								<a rowindex="7" datafield="postTitlNm" style="cursor: pointer;">
-									&lt;하나LIVE&gt; 23년 03월 02일 방송 소통 이벤트 당첨자 안내 (스타벅스 기프티콘)</a></td>
-							<td class="txc">2023.03.03</td>
-						</tr>
-						<tr>
-							<td class="txc">680</td>
-							<td class="txc">관리자</td>
-							<td class="txl">
-								<a rowindex="8" datafield="postTitlNm" style="cursor: pointer;">
-									&lt;하나LIVE&gt; 23년 02월 22일 구매인증 이벤트 당첨자 안내 (카야토스트+커피 쿠폰)</a></td>
-							<td class="txc">2023.02.23</td>
-						</tr>
-						<tr>
-							<td class="txc">679</td>
-							<td class="txc">관리자</td>
-							<td class="txl">
-								<a rowindex="9" datafield="postTitlNm" style="cursor: pointer;">
-									&lt;하나LIVE&gt; 23년 02월 22일 방송 이벤트 당첨자 안내 (스타벅스 기프티콘)</a></td>
-							<td class="txc">2023.02.23</td>
-						</tr>
+					  <colgroup>
+					  	<col style="width: 10%;">
+					    <col style="width: 12%;">
+					    <col>
+					    <col style="width: 13%;">
+					  </colgroup> 
+					  <thead>
+					    <tr>
+					      <th>번호</th>
+					      <th>구분</th>
+					      <th>제목</th>
+					      <th>등록일</th>
+					    </tr>
+					  </thead> 
+					  <tbody>
+					    <c:forEach begin="1" end="${fn:length(map['list'])}" var="i">
+					      <c:set var="row" value="${map['list'][i-1]}" />
+					        <tr>
+					          	<td class="txc">${row.notice_no}</td>
+					          	<td  class="txc" style="text-align:center;">${row.notice_sub}</td>
+					          	<td class="txl" style="text-align:left;">
+					           		<a href="view?notice_no=${row.notice_no}&show=Y">${row.notice_title}</a>
+					          	</td>
+					          	<td class="txc">${row.notice_date}</td>
+					        </tr>
+					    </c:forEach>
 					</tbody>
 				</table>				
 			</div> 
