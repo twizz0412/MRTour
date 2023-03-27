@@ -856,7 +856,28 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 
 
+
+
 /* 상품 소개 섹션 */
+
+.showstep1{
+        max-height: 1000px;
+        overflow: hidden;
+    }
+    .showstep2{
+        max-height: 3000px;
+        overflow: hidden;
+    }
+    .OfferFlexibleBox_body{
+        height: 6000px;
+        background-color: white;
+    }
+    .hide{
+        display: none;
+    }
+
+
+
 
 .OfferSectionBox_container.OfferSectionBox_noBorder {
     border-top: 0;
@@ -913,6 +934,8 @@ img {
     text-align: center;
     width: 100%;
 }
+
+
 
 .OfferMoreButton_label { /* 상품설명 더보기 */
     vertical-align: middle;
@@ -1073,6 +1096,10 @@ p {
     margin-inline-end: 0px;
 }
 
+html { /* 스크롤 이동 부드럽게 */
+			scroll-behavior : smooth; 
+}
+
 html {
     font-size: 16px;
     -webkit-tap-highlight-color: transparent;
@@ -1163,6 +1190,7 @@ aside {
 .OfferSideBarMainButton_buttonIcon { /* 티켓 선택 버튼 아이콘 */
     margin-right: 8px;
 }
+
 
 .OfferSideBarMainButton_buttonLabel { /* 티켓 선택 버튼 레이블 */
     vertical-align: middle;

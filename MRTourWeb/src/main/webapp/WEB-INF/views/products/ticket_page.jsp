@@ -5,6 +5,7 @@
 <head>
 <link rel="stylesheet" href="resources/css/ticket_page.css">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script src = "resources/js/ticket_page.js"></script>
 <title>[홍천] 초록의 설렘 가득한, 알파카월드</title>
 </head>
 <body>
@@ -32,7 +33,7 @@ data-location-region="asia" data-offer-id="40487" itemscope="" itemtype="http://
 <nav id="OFFER-SECTION-BAR" class="TabsWithSwiper_container TabsWithSwiper_large TabsWithSwiper_hideBorder">
 <div class="swiper-container swiper-container-horizontal swiper-container-free-mode" style="cursor: grab;">
 <div class="swiper-wrapper" style="width: 1084px; transform: translate3d(0px, 0px, 0px);">
-<button id="OFFER-SECTION-TICKET_TAB" type="button" class="swiper-slide TabItemWithSwiper_btn TabItemWithSwiper_gray TabItemWithSwiper-module__large--m0bDm TabItemWithSwiper_active swiper-slide-active" style="margin-right: 24px;">티켓 선택</button>
+<button id="OFFER-SECTION-TICKET_TAB" type="button" class="swiper-slide TabItemWithSwiper_btn TabItemWithSwiper_gray TabItemWithSwiper-module__large--m0bDm TabItemWithSwiper_active swiper-slide-active" style="margin-right: 24px;">티켓 안내</button>
 <button id="OFFER-SECTION-INTRODUCTION_TAB" type="button" class="swiper-slide TabItemWithSwiper_btn TabItemWithSwiper_gray TabItemWithSwiper-module__large--m0bDm swiper-slide-next" style="margin-right: 24px;">상품 소개</button>
 <button id="OFFER-SECTION-GUIDANCE_TAB" type="button" class="swiper-slide TabItemWithSwiper_btn TabItemWithSwiper_gray TabItemWithSwiper-module__large--m0bDm" style="margin-right: 24px;">이용 안내</button>
 <button id="OFFER-SECTION-REFUND_TAB" type="button" class="swiper-slide TabItemWithSwiper_btn TabItemWithSwiper_gray TabItemWithSwiper-module__large--m0bDm" style="margin-right: 24px;">환불 안내</button>
@@ -85,6 +86,7 @@ data-location-region="asia" data-offer-id="40487" itemscope="" itemtype="http://
 <div class="OfferIntro_container"></div>
 
 <!-- 티켓 선택 구역 -->
+<a href="ticket"></a>
 <section class="OfferSectionBox_container OfferSectionBox_noBorder OfferSectionBox_noPadding" id="OFFER-SECTION-TICKET">
 <div class="OfferSectionBox_body OfferOptionSection_container">
 <h2 class="OfferSectionBox_title">티켓 선택</h2>
@@ -142,11 +144,12 @@ data-location-region="asia" data-offer-id="40487" itemscope="" itemtype="http://
 
 
 <!-- 상품 소개 이미지 -->
+<a href="introduce"></a>
 <section class="OfferSectionBox_container OfferSectionBox_noBorder" id="OFFER-SECTION-INTRODUCTION">
 <div class="OfferSectionBox_body">
 <div>
-<div class="OfferFlexibleBox_container">
-<div class="OfferFlexibleBox_body" style="max-height: 1000px;">
+<div class="OfferFlexibleBox_container showstep1">
+<div class="OfferFlexibleBox_body">
 <img src="https://d2ur7st6jjikze.cloudfront.net/offer_descriptive_images/40487/343523_medium_1677834930.jpg?1677834930" class="OfferDetailSection_image">
 <img src="https://d2ur7st6jjikze.cloudfront.net/offer_descriptive_images/40487/343524_medium_1677834936.jpg?1677834936" class="OfferDetailSection_image">
 <img src="https://d2ur7st6jjikze.cloudfront.net/offer_descriptive_images/40487/343525_medium_1677834941.jpg?1677834941" class="OfferDetailSection_image">
@@ -155,22 +158,21 @@ data-location-region="asia" data-offer-id="40487" itemscope="" itemtype="http://
 <img src="https://d2ur7st6jjikze.cloudfront.net/offer_descriptive_images/40487/343528_medium_1677834956.jpg?1677834956" class="OfferDetailSection_image">
 <img src="https://d2ur7st6jjikze.cloudfront.net/offer_descriptive_images/40487/343529_medium_1677834962.jpg?1677834962" class="OfferDetailSection_image">
 <img src="https://d2ur7st6jjikze.cloudfront.net/offer_descriptive_images/40487/343530_medium_1677834967.jpg?1677834967" class="OfferDetailSection_image">
-<img src="https://d2ur7st6jjikze.cloudfront.net/offer_descriptive_images/40487/343531_medium_1677834972.jpg?1677834972" class="OfferDetailSection_image">
-<img src="https://d2ur7st6jjikze.cloudfront.net/offer_descriptive_images/40487/343532_medium_1677834977.jpg?1677834977" class="OfferDetailSection_image">
-<img src="https://d2ur7st6jjikze.cloudfront.net/offer_descriptive_images/40487/343533_medium_1677834983.jpg?1677834983" class="OfferDetailSection_image">
 <img src="https://d2ur7st6jjikze.cloudfront.net/offer_descriptive_images/40487/343534_medium_1677834988.jpg?1677834988" class="OfferDetailSection_image">
 <img src="https://d2ur7st6jjikze.cloudfront.net/offer_descriptive_images/40487/343536_medium_1677834993.jpg?1677834993" class="OfferDetailSection_image"></div>
 
 <!-- 상품 설명 더보기 -->
 <div class="OfferFlexibleBox_more OfferFlexibleBox_absolute">
 <div class="OfferFlexibleBox_gradation"></div>
-<div class="OfferFlexibleBox_button">
-<button type="button" class="Button_button Button_outline Button_large">
-<span class="OfferMoreButton_label">상품 설명 더 보기</span>
-<img src="https://dffoxz5he03rp.cloudfront.net/icons/ic_arrowdown_md_gray_700.svg" alt="더보기" class="OfferMoreButton_icon"></button></div></div></div></div></div></section>
+
+<button class="showmore">더보기</button><button class="showless">감추기</button>
+
+
+</div></div></div></div></section>
 
 
 <!-- 이용안내 -->
+<a href="guide"></a>
 <section class="OfferSectionBox_container" id="OFFER-SECTION-GUIDANCE">
 <div class="OfferSectionBox_body">
 <h2 class="OfferSectionBox_title">이용 안내</h2>
@@ -229,14 +231,10 @@ AIzaSyDIKCScTCOK-yllVbHvDboEnpKtKDs2vFU&amp;signature=KXHUkHIrb0_D52XZG3NSYQuQGL
 <br class="">• 무료입장나이 : 36개월 미만 (유료체험시설 또는 유아시설 이용 시 별도이용요금)
 <br class="">   * 증빙서류 : 아기수첩, 의료보험증,등본, 가족관계 등록부, 여권 등
 <br class="">• 주차가능여부 : 가능 / 무료</p>
-</div>
-<div class="OfferFlexibleBox_more">
-<div class="OfferFlexibleBox_text">
-<a class="Link_link Link_medium Button_button Button_link Button_medium" href="" style="left: -6px;">
-<span class="OfferFlexibleBox-module__textLabel--P4h_Y">더 보기</span>
-<img src="https://dffoxz5he03rp.cloudfront.net/icons/ic_arrowdown_12x12_blue_500.svg" alt="" class="OfferFlexibleBox-module__textIcon--3xWIt"></a></div></div></div></div></div></div></section>
+</div></div></div></div></div></section>
 
 <!-- 취소 및 환불 규정 -->
+<a href="refund"></a>
 <section class="OfferSectionBox_container" id="OFFER-SECTION-REFUND">
 <div class="OfferSectionBox_body">
 <h2 class="OfferSectionBox_title">취소 및 환불 규정</h2>
