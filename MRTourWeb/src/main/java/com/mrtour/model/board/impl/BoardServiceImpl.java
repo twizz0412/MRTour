@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import com.mrtour.model.board.BoardService;
 import com.mrtour.model.board.BoardVO;
-import com.mrtour.model.board.NoticeVO;
 
 @Service("BoardService")
 public class BoardServiceImpl implements BoardService {
@@ -58,21 +57,21 @@ public class BoardServiceImpl implements BoardService {
 	}
 	
 	// 조회수
-	public void viewCnt(int bno, HttpSession session) throws Exception {
+	public void b_viewCnt(int board_no, HttpSession session) throws Exception {
 		// 타이머 설정
 		long update_time = 0;
 
-		if (session.getAttribute("update_time_" + bno) != null) {
+		if (session.getAttribute("update_time_" + board_no) != null) {
 			// 최근에 조회수를 올린 시간
-			update_time = (Long) session.getAttribute("update_time_" + bno);
+			update_time = (Long) session.getAttribute("update_time_" + board_no);
 		}
 		long current_time = System.currentTimeMillis();
 		// 일정 시간이 경과한 후 조회수 증가 처리
 		if (current_time - update_time > 5 * 10000) {
 			// 조회수 증가 처리
-			boardDAO.viewCnt(bno);
+			boardDAO.b_viewCnt(board_no);
 			// 조회수를 올린 시간 저장
-			session.setAttribute("update_time_" + bno, current_time);
+			session.setAttribute("update_time_" + board_no, current_time);
 		}
 	}
 
@@ -80,55 +79,4 @@ public class BoardServiceImpl implements BoardService {
 	public int getCountBoard(String searchOption, String keyword) throws Exception {
 		return boardDAO.getCountBoard(searchOption, keyword);
 	}
-	
-	
-//공지사항 : Notice	
-	
-	// 공지사항 쓰기
-	public void createNotice(NoticeVO vo) throws Exception {
-		boardDAO.createNotice(vo);
-	}
-	
-	// 게시글 수정
-	public void updateNotice(NoticeVO vo) throws Exception {
-		boardDAO.updateNotice(vo);
-	}
-
-	// 게시글 삭제
-	public void deleteNotice(int notice_no) throws Exception {
-		boardDAO.deleteNotice(notice_no);
-	}
-	
-	// 게시글 삭제 체크
-	public int checkNotice(int notice_no) throws Exception {
-		return boardDAO.checkNotice(notice_no);
-	}
-
-	// 게시글 읽기
-	public NoticeVO readNotice(int notice_no) throws Exception {
-		return boardDAO.readNotice(notice_no);
-	}
-	
-	// 게시글 목록
-	public List<NoticeVO> listAllNotice() throws Exception {
-		return boardDAO.listAllNotice(null);
-	}
-	
-	// 이전글
-	public NoticeVO previousN(int notice_no) throws Exception {
-		return boardDAO.previousN(notice_no);
-	}
-	
-	// 다음글
-	public NoticeVO nextN(int notice_no) throws Exception {
-		return boardDAO.nextN(notice_no);
-	}
-	
-
-	// 게시글 갯수
-	public int getCountNotice(String searchOption, String keyword) throws Exception {
-		return boardDAO.getCountNotice(searchOption, keyword);
-	}
-	
-
 }

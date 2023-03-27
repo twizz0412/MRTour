@@ -1,4 +1,4 @@
-package com.mrtour.model.board;
+package com.mrtour.model.notice;
 
 import java.sql.Date;
 
@@ -12,7 +12,25 @@ public class NoticeVO {
 	private String notice_content;// 게시글 내용		
 	private String searchCondition;
 	private String searchKeyword;
+	private int n_viewCnt;				// 조회수
+	private String n_show;	// 화면 표시 여부
 	
+	public int getN_viewCnt() {
+		return n_viewCnt;
+	}
+
+	public void setN_viewCnt(int n_viewCnt) {
+		this.n_viewCnt = n_viewCnt;
+	}
+
+	public String getN_show() {
+		return n_show;
+	}
+
+	public void setN_show(String n_show) {
+		this.n_show = n_show;
+	}
+
 	public int getNotice_no() {
 		return notice_no;
 	}
@@ -81,6 +99,7 @@ public class NoticeVO {
 	public String toString() {
 		return "NoticeDTO [notice_no=" + notice_no + ", notice_title=" + notice_title 
 				+ ", notice_sub=" + notice_sub + ", member_name=" + member_name 
-				+ ", notice_date="+ notice_date + ", notice_content=" + notice_content + "]";
+				+ ", notice_date="+ notice_date + ", notice_content=" + notice_content
+				+ ", n_show=" + n_show+ ", n_viewCnt=" + n_viewCnt + "]";
 	}
 }

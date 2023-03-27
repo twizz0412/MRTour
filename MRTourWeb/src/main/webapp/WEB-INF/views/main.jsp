@@ -228,7 +228,7 @@
 							style="width: 50px; height: 50px; border: solid 1px #afafaf; border-radius: 50%; padding: 3px;">
 					</div>
 					<div class="tt5">
-						<p>1:1문의</p>
+						<p onclick = "location.href='board'">1:1문의</p>
 						<p
 							style="color: rgb(98, 112, 136); font-size: 25px; padding-top: 20px;">개별
 							맞춤상담</p>

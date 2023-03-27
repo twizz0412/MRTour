@@ -11,6 +11,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<typeAlias alias="productcart" type="com.mrtour.model.cart.ProductCartVO" />
 		<typeAlias alias="payment" type="com.mrtour.model.payment.PaymentVO" />
 		<typeAlias alias="board" type="com.mrtour.model.board.BoardVO" />
+		<typeAlias alias="notice" type="com.mrtour.model.notice.NoticeVO" />		
 	</typeAliases>
 	
 	<!-- Sql Mapper 설정 -->
@@ -21,5 +22,6 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<mapper resource="mappings/product/productcart-mapping.xml" />
 		<mapper resource="mappings/product/payment-mapping.xml" />
 		<mapper resource="mappings/board/board-mapping.xml" />
+		<mapper resource="mappings/board/notice-mapping.xml" />
 	</mappers>
 </configuration>
