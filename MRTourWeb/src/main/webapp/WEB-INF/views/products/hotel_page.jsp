@@ -207,62 +207,62 @@ loading="lazy" class="grid_img"></div>
 <!-- 주소 -->
 <div class="content">
 <span class="hotelAddress">1032, Ieodo-ro, Seogwipo, Jeju, 63571</span>
-<button class="addressCopyBtn">
-<div class="btnTitle">
-<span class="BtnSpan">주소복사</span></div></button></div></div></div></div></div>
+</div></div></div></div></div>
+
+
 
 <!-- 숙소 정보 섹션 -->
-<div class="lower-1-lower eqnup2r3">
-<div class="infoSection e176nd080">
-<div class="infoSectionTitle e176nd081">
-<span class="e176nd082 infoSectionTitleSpan">숙소 정보</span></div>
+<div class="lower-1-lower">
+<div class="infoSection">
+<div class="infoSectionTitle">
+<span class="infoSectionTitleSpan">숙소 정보</span></div>
 
-<div class="infoContent e176nd083">
-<div height="100%" class="everyContent e176nd085">
+<div class="infoContent">
+<div height="100%" class="everyContent">
 
-<div class="contentBox e1f1ocow0">
-<div><span class="e1f1ocow1 contentTitle">골드원 호텔 &amp; 스위트</span></div>
-<div><span class="e1f1ocow2 contentContent">Seri World 부근에 위치</span></div></div>
+<div class="contentBox">
+<div><span class="contentTitle">골드원 호텔 &amp; 스위트</span></div>
+<div><span class="contentContent">Seri World 부근에 위치</span></div></div>
 
-<div class="contentBox e1f1ocow0">
-<div><span class="e1f1ocow1 contentTitle">숙소 소개</span></div>
-<div><span class="e1f1ocow2 contentContent">서귀포 지역에 위치한 GoldOne Hotel N Suites에서 제주도의 탐험을 시작하세요. 
+<div class="contentBox">
+<div><span class="contentTitle">숙소 소개</span></div>
+<div><span class="contentContent">서귀포 지역에 위치한 GoldOne Hotel N Suites에서 제주도의 탐험을 시작하세요. 
 본 숙소는 편안한 숙박에 필요한 많은 것들을 갖추고 있습니다. 본 숙소에서 Wi-Fi (무료/전 객실), 전기 자동차 충전소, 일일 청소 서비스, 기념품 가게, 
 휠체어 접근 가능 등을 즐길 수 있습니다. 객실은 아늑하게 디자인되어 있으며, 일부 객실에서는 편안한 투숙을 위한 평면 TV, 추가 화장실, 옷걸이, 무료
  인스턴트 커피, 무료 차 등을 이용할 수 있습니다. 등산로, 온수 욕조, 피트니스센터, 실외 수영장, 놀이터 등과 같은 여가 시설을 통해 즐거운 시간을 보낼
   수 있습니다. 본 숙소(GoldOne Hotel N Suites)의 편리함과 안락함은 제주도 여행을 완벽하게 만들어드립니다.</span></div></div>
   
-<div class="contentBox e1f1ocow0">
-<div><span class="e1f1ocow1 contentTitle">위치 정보</span></div>
-<div><span class="e1f1ocow2 contentContent">서귀포(서귀포시)에 위치한 골드원 호텔 &amp; 스위트에 숙박하실 경우 차로 5분 정도 
+<div class="contentBox">
+<div><span class="contentTitle">위치 정보</span></div>
+<div><span class="contentContent">서귀포(서귀포시)에 위치한 골드원 호텔 &amp; 스위트에 숙박하실 경우 차로 5분 정도 
 이동하면 Seri World 및 Oedolgae에 가실 수 있습니다.  이 4성급 호텔에서 서귀포 매일 올레 시장까지는 4.3km 떨어져 있으며, 14.6km 거리에는 한라산국립공원도 있습니다.</span></div></div>
 
-<div class="contentBox e1f1ocow0">
-<div><span class="e1f1ocow1 contentTitle">시설 및 제공 서비스</span></div>
-<div><span class="e1f1ocow2 contentContent">헬스클럽 및 야외 수영장 같은 레크리에이션 시설을 놓치지 말고 즐기세요. 이 호텔에는
+<div class="contentBox">
+<div><span class="contentTitle">시설 및 제공 서비스</span></div>
+<div><span class="contentContent">헬스클럽 및 야외 수영장 같은 레크리에이션 시설을 놓치지 말고 즐기세요. 이 호텔에는
  콘시어지 서비스 및 아케이드/게임룸도 마련되어 있습니다.</span></div></div>
 
-<div class="contentBox e1f1ocow0">
-<div><span class="e1f1ocow1 contentTitle">객실 정보</span></div>
-<div><span class="e1f1ocow2 contentContent">51개 객실에는 냉장고 및 평면 TV도 갖추어져 있어 편하게 머무실 수 있습니다. 
+<div class="contentBox">
+<div><span class="contentTitle">객실 정보</span></div>
+<div><span class="contentContent">51개 객실에는 냉장고 및 평면 TV도 갖추어져 있어 편하게 머무실 수 있습니다. 
 필로우탑 침대에는 오리/거위털 이불 및 고급 침구 등이 갖추어져 있습니다. 객실에 딸린 전용 발코니에서 전망을 감상하실 수 있습니다. 무료 무선 인터넷도 
 지원되며 케이블 프로그램을 시청하실 수 있습니다. 욕실에는 샤워, 고급 세면용품, 비데 등이 마련되어 있습니다.</span></div></div>
 
-<div class="contentBox e1f1ocow0">
-<div><span class="e1f1ocow1 contentTitle">식당 소개</span></div>
-<div><span class="e1f1ocow2 contentContent">호텔의 레스토랑에서 맛있는 식사를 즐겨보세요. 커피숍/카페에서는 스낵이 제공되며, 
+<div class="contentBox">
+<div><span class="contentTitle">식당 소개</span></div>
+<div><span class="contentContent">호텔의 레스토랑에서 맛있는 식사를 즐겨보세요. 커피숍/카페에서는 스낵이 제공되며, 
 편하게 객실에서 룸서비스(이용 시간 제한)를 이용하실 수도 있습니다. 풀사이드 바에서는 좋아하는 음료를 마시며 갈증을 해소하실 수 있어요. 아침 식사(뷔페)를 
 매일 7:30 ~ 10:30에 유료로 이용하실 수 있습니다.</span></div></div>
 
-<div class="contentBox e1f1ocow0">
-<div><span class="e1f1ocow1 contentTitle">편의 시설</span></div>
-<div><span class="e1f1ocow2 contentContent">대표적인 편의 시설과 서비스로는 24시간 운영 비즈니스 센터, 드라이클리닝/세탁 서비스, 
+<div class="contentBox">
+<div><span class="contentTitle">편의 시설</span></div>
+<div><span class="contentContent">대표적인 편의 시설과 서비스로는 24시간 운영 비즈니스 센터, 드라이클리닝/세탁 서비스, 
 24시간 운영되는 프런트 데스크 등이 있습니다. 서귀포에서의 행사를 계획하시나요? 이 호텔에는 회의 공간 등을 비롯하여 93 제곱미터 크기의 시설이 마련되어 
 있습니다. 시설 내에서 무료 셀프 주차 이용이 가능합니다.</span></div></div>
 
-<div class="contentBox e1f1ocow0">
-<div><span class="e1f1ocow1 contentTitle">주변 정보</span></div>
-<div><span class="e1f1ocow2 contentContent">거리는 0.1km 단위로 최대한 가깝게 표시됩니다. 
+<div class="contentBox">
+<div><span class="contentTitle">주변 정보</span></div>
+<div><span class="contentContent">거리는 0.1km 단위로 최대한 가깝게 표시됩니다. 
 
 Seri World - 1.4km 
 석부작 박물관 - 1.6km 
@@ -282,35 +282,36 @@ LeeJoongSeop Art Museum - 4.3km
 
 가장 가까운 주요 공항은 제주국제공항 (CJU)이며, 42.3km 거리에 있습니다.</span></div></div>
 
-<div class="contentBox e1f1ocow0">
-<div><span class="e1f1ocow1 contentTitle">공인 등급</span></div>
-<div><span class="e1f1ocow2 contentContent">고객 편의를 위해 저희 등급 시스템을 기준으로 해당 정보를 제공했습니다.</span></div></div>
+<div class="contentBox">
+<div><span class="contentTitle">공인 등급</span></div>
+<div><span class="contentContent">고객 편의를 위해 저희 등급 시스템을 기준으로 해당 정보를 제공했습니다.</span></div></div>
 
-<div class="contentBox e1f1ocow0">
-<div><span class="e1f1ocow1 contentTitle">서비스 지원 언어</span></div>
-<div><span class="e1f1ocow2 contentContent">한국어 영어</span></div></div></div>
+<div class="contentBox">
+<div><span class="contentTitle">서비스 지원 언어</span></div>
+<div><span class="contentContent">한국어 영어</span></div></div></div>
 
 <!-- 더보기 -->
-<div class="gradation e176nd084"></div></div>
-<div><button class="e176nd086 moreContentBtn">
+<div class="gradation"></div></div>
+<div><button class="moreContentBtn">
 <div class="btnTitle"><span class="BtnSpan">더보기</span></div></button></div></div>
 
+
 <!-- 숙소 정책 -->
-<div class="infoSection e176nd080">
-<div class="infoSectionTitle e176nd081">
-<span class="e176nd082 infoSectionTitleSpan">숙소 정책</span></div>
+<div class="infoSection">
+<div class="infoSectionTitle">
+<span class="infoSectionTitleSpan">숙소 정책</span></div>
 
-<div class="policyBox e176nd083">
-<div height="100%" class="everyContent e176nd085">
+<div class="policyBox">
+<div height="100%" class="everyContent">
 
-<div class="contentBox e1f1ocow0">
-<div><span class="e1f1ocow1 contentTitle">체크인/체크아웃</span></div>
-<div><span class="e1f1ocow2 contentContent">- 체크인 : 15:00 부터 
+<div class="contentBox">
+<div><span class="contentTitle">체크인/체크아웃</span></div>
+<div><span class="contentContent">- 체크인 : 15:00 부터 
 - 체크아웃 : 11:00 까지</span></div></div>
 
-<div class="contentBox e1f1ocow0">
-<div><span class="e1f1ocow1 contentTitle">알아두실 사항</span></div>
-<div><span class="e1f1ocow2 contentContent">[뷔페 조식 또는 룸서비스 조식 요금]
+<div class="contentBox">
+<div><span class="contentTitle">알아두실 사항</span></div>
+<div><span class="contentContent">[뷔페 조식 또는 룸서비스 조식 요금]
 성인 (13세 이상): KRW 32,000 (사전 예약 시 KRW 26,000)
 아동 (37개월 이상 ~ 12세): KRW 26,000 (사전 예약 시 KRW 19,000 )
 * 룸서비스 미국식 조식: 쥬스, 빵, 달걀, 햄, 커피
@@ -324,47 +325,48 @@ LeeJoongSeop Art Museum - 4.3km
 이 숙박 시설은 안전을 위해 소화기, 연기 감지기, 구급상자 등을 갖추고 있습니다.
 이 목적지의 최신 코로나19 여행 요건 및 시행 중인 조치를 여행 전에 확인해 주세요.</span></div></div>
 
-<div class="contentBox e1f1ocow0">
-<div><span class="e1f1ocow1 contentTitle">특별 체크인 지침</span></div>
-<div><span class="e1f1ocow2 contentContent">도착 시 프런트 데스크 직원이 도와드립니다.</span></div></div>
+<div class="contentBox">
+<div><span class="contentTitle">특별 체크인 지침</span></div>
+<div><span class="contentContent">도착 시 프런트 데스크 직원이 도와드립니다.</span></div></div>
 
-<div class="contentBox e1f1ocow0">
-<div><span class="e1f1ocow1 contentTitle">기타 선택 사항</span></div>
-<div><span class="e1f1ocow2 contentContent">뷔페아침 식사 요금: 성인 KRW 26000, 어린이 KRW 19000(대략적인 금액)               
+<div class="contentBox">
+<div><span class="contentTitle">기타 선택 사항</span></div>
+<div><span class="contentContent">뷔페아침 식사 요금: 성인 KRW 26000, 어린이 KRW 19000(대략적인 금액)               
 추가 요금 지불 시 늦은 체크아웃 가능(객실 이용 상황에 따라 다름)   
 간이 침대 이용 요금: 1박 기준, KRW 20000.0             
 위 목록에 명시되지 않은 다른 항목이 있을 수 있습니다. 요금 및 보증금은 세전 금액일 수 있으며 변경될 수 있습니다.</span></div></div>
 
-<div class="contentBox e1f1ocow0">
-<div><span class="e1f1ocow1 contentTitle">반려 동물</span></div>
-<div><span class="e1f1ocow2 contentContent">반려동물 동반 불가</span></div></div>
+<div class="contentBox">
+<div><span class="contentTitle">반려 동물</span></div>
+<div><span class="contentContent">반려동물 동반 불가</span></div></div>
 
-<div class="contentBox e1f1ocow0">
-<div><span class="e1f1ocow1 contentTitle">기타 정책</span></div>
-<div><span class="e1f1ocow2 contentContent">금연 숙박 시설</span></div></div>
+<div class="contentBox">
+<div><span class="contentTitle">기타 정책</span></div>
+<div><span class="contentContent">금연 숙박 시설</span></div></div>
 
-<div class="contentBox e1f1ocow0">
-<div><span class="e1f1ocow1 contentTitle">현장 결제 수단</span></div>
-<div><span class="e1f1ocow2 contentContent">직불카드
+<div class="contentBox">
+<div><span class="contentTitle">현장 결제 수단</span></div>
+<div><span class="contentContent">직불카드
 현금 결제 가능
 Visa, Mastercard, American Express, JCB International, Discover, UnionPay, Diners Club</span></div></div></div>
 
 <!-- 더보기 -->
-<div class="gradation e176nd084"></div></div>
-<div><button class="e176nd086 moreContentBtn">
+<div class="gradation"></div></div>
+<div><button class="moreContentBtn">
 <div class="btnTitle"><span class="BtnSpan">더보기</span></div></button></div></div>
 
-<!-- 보건 & 안전 -->
-<div class="infoSection e176nd080">
-<div class="infoSectionTitle e176nd081">
-<span class="e176nd082 infoSectionTitleSpan">보건 &amp; 안전</span></div>
 
-<div class="policyBox e176nd083">
-<div height="100%" class="everyContent e176nd085">
+<!-- 보건 & 안전 섹션 -->
+<div class="infoSection">
+<div class="infoSectionTitle">
+<span class="infoSectionTitleSpan">보건 &amp; 안전</span></div>
 
-<div class="contentBox e1f1ocow0">
-<div><span class="e1f1ocow1 contentTitle">청결 및 안전</span></div>
-<div><span class="e1f1ocow2 contentContent">수영장 이용 시간은 9:00 ~ 21:30입니다.
+<div class="policyBox">
+<div height="100%" class="everyContent">
+
+<div class="contentBox">
+<div><span class="contentTitle">청결 및 안전</span></div>
+<div><span class="contentContent">수영장 이용 시간은 9:00 ~ 21:30입니다.
 이 숙박 시설은 현재 강화된 청소 및 고객 안전 조치를 시행 중입니다.
 청소 시 소독제를 사용하고, 고객 숙박 간에 접촉이 많은 표면을 소독하며 침대 시트 및 타월을 60℃ 이상에서 세탁합니다.
 고객의 안전을 위해 사회적 거리두기, 숙박 시설 직원의 개인 보호 장비 착용, 정기적으로 직원 체온 측정, 고객 체온 측정 가능, 
@@ -372,9 +374,9 @@ Visa, Mastercard, American Express, JCB International, Discover, UnionPay, Diner
 개별 포장된 음식 옵션이 아침 식사와 룸서비스를 통해 제공됩니다.
 이 숙박 시설은 세스코(한국)의 청소 및 소독 지침을 준수합니다.</span></div></div>
 
-<div class="contentBox e1f1ocow0">
-<div><span class="e1f1ocow1 contentTitle">청소 &amp; 소독</span></div>
-<div><span class="e1f1ocow2 contentContent">지원 대상 체온 검사를 정기적으로 실시함
+<div class="contentBox">
+<div><span class="contentTitle">청소 &amp; 소독</span></div>
+<div><span class="contentContent">지원 대상 체온 검사를 정기적으로 실시함
 고객 체온 검사 실시 가능
 침구 및 타월을 60°C 이상의 고온으로 세탁함
 자주 만지는 표면을 소독제로 청소함
@@ -382,31 +384,31 @@ Visa, Mastercard, American Express, JCB International, Discover, UnionPay, Diner
 숙박 시설에서 지역 위생 지침을 따름 Safe Tourism Certified(스페인)
 숙박 시설에서 현재 강화된 청소 조치 시행 중</span></div></div>
 
-<div class="contentBox e1f1ocow0">
-<div><span class="e1f1ocow1 contentTitle">사회적 거리두기</span></div>
-<div><span class="e1f1ocow2 contentContent">숙박 시설을 소독제로 청소함
+<div class="contentBox">
+<div><span class="contentTitle">사회적 거리두기</span></div>
+<div><span class="contentContent">숙박 시설을 소독제로 청소함
 직원이 개인 보호 장비 착용함
 고객에게 무료 손 소독제 제공
 사회적 거리두기 시행 중</span></div></div></div>
 
 <!-- 더보기 -->
-<div class="gradation e176nd084"></div></div>
-<div><button class="e176nd086 moreContentBtn">
+<div class="gradation"></div></div>
+<div><button class="moreContentBtn">
 <div class="btnTitle">
 <span class="BtnSpan">더보기</span></div></button></div></div></div></div>
 
 
 
 <!-- 객실 선택 섹션 -->
-<div class="lower-2 ezu957w0">
-<div class="lower-2-css ezu957w1">
+<div class="lower-2">
+<div class="lower-2-Container">
 
-<div class="lower-2-upper ezu957w2">
+<div class="lower-2-upper">
 <span class="infoTitle">객실 선택</span>
 
-<div class="lower-2-upper-right e1b8vz5y0">
-<div class="mrt-detail-room-schedule schedule e1b8vz5y2"></div>
-<div class="dateArea e1b8vz5y1">
+<div class="lower-2-upper-right">
+<div class="mrt-detail-room-schedule schedule"></div>
+<div class="dateArea">
 <span class="choseDate">04월 10일 (월) - 04월 11일 (화)</span></div>
 
 <button class="changeDate">
@@ -415,107 +417,115 @@ Visa, Mastercard, American Express, JCB International, Discover, UnionPay, Diner
 <span class="moreBtnSpan2">일정 변경</span></span></div></button></div></div>
 
 <!-- 전체 객실 -->
-<div class="room_entire ezu957w3">
+<div class="room_entire">
 <!-- 룸 1 -->
-<div class="each_room eyxccd60">
-<div class="css-0 eyxccd61"><span class="hotelBold">Premier Ocean View Double Room</span></div>
-<div class="room_content eyxccd62">
-<div class="room_content_left eyxccd63">
-<div class="left_entire e1nunbqm0">
-<div class="room_pic e1nunbqm5">
-<img src="https://pix8.agoda.net/hotelImages/7385346/-1/06bf918ece1248fefd93215e7a4a81f7.jpg?ca=20&amp;ce=0&amp;s=1000x" alt="Premier Ocean View Double Room" class="room_img e1nunbqm6"></div>
-<div class="room_condition e1nunbqm1">
-<span class="e1nunbqm2 room_condition_span">퀸베드 1개 + 소파베드 1개 · 최대 3명 · 일부 바다 전망,객실 크기(㎡) - 45</span>
-<div class="css-0 e1nunbqm3">
-<button a href="hotel_checkout" class="e1nunbqm4 more_condition"><div class="more_condition_2"><span class="more_condition_3">
+<div class="each_room">
+<div class="room_title"><span class="hotelBold">Premier Ocean View Double Room</span></div>
+<div class="room_content">
+<div class="room_content_left">
+<div class="left_entire">
+<div class="room_pic">
+<img src="https://pix8.agoda.net/hotelImages/7385346/-1/06bf918ece1248fefd93215e7a4a81f7.jpg?ca=20&amp;ce=0&amp;s=1000x" alt="Premier Ocean View Double Room" class="room_img"></div>
+<div class="room_condition">
+<span class="room_condition_span">퀸베드 1개 + 소파베드 1개 · 최대 3명 · 일부 바다 전망,객실 크기(㎡) - 45</span>
+<div class="more_condition_box">
+<button a href="hotel_checkout" class="more_condition">
+<div class="more_condition_2"><span class="more_condition_3">
 <span class="more_condition_span">객실 정보 더보기</span></span></div></button></div></div></div></div>
 
-<div class="room_content_right eyxccd64">
-<div class="reserve_box"><div class="reserve_area eh5rq1l0">
-<div class="free_cancel_box eh5rq1l1">
-<div class="free_cancel ekcs3yx0">
-<span class="free_cancel_entire_span evziq6a0" style="background-color:#E7F4FD">
-<span style="font-weight:600;font-size:13px;color:#1583DB" class="free_cancel_span evziq6a1">무료취소</span>
-<span style="font-weight:500;font-size:13px;color:#0792E9" class="free_cancel_span evziq6a1"> 4월 7일 까지</span></span></div>
+<div class="room_content_right">
+<div class="reserve_box"><div class="reserve_area">
+<div class="free_cancel_box">
+<div class="free_cancel">
+<span class="free_cancel_entire_span" style="background-color:#E7F4FD">
+<span style="font-weight:600;font-size:13px;color:#1583DB" class="free_cancel_span">무료취소</span>
+<span style="font-weight:500;font-size:13px;color:#0792E9" class="free_cancel_span"> 4월 7일 까지</span></span></div>
 
-<div><ul class="perksList eh5rq1l2">
-<li class="perk eh5rq1l3"><div class="css-9e0yw eh5rq1l4">무료 생수</div></li>
-<li class="perk eh5rq1l3"><div class="css-9e0yw eh5rq1l4">무료 피트니스 센터</div></li></ul></div></div>
-<div class="reserve_right e1mya5qx0">
-<div class="price_box e1mya5qx1">
-<div class="price e1mya5qx2"><span class="price_span e1mya5qx5">216,080원/박</span></div>
+<div><ul class="perksList">
+<li class="perk"><div class="perk_content">무료 생수</div></li>
+<li class="perk"><div class="perk_content">무료 피트니스 센터</div></li></ul></div></div>
+<div class="reserve_right">
+<div class="price_box">
+<div class="price">
+<span class="price_span">216,080원/박</span></div>
 </div>
-<div class="room_reserve_btn"><button class="e1mya5qx10 room_reserve_btn_2">
+<div class="room_reserve_btn_area">
+<button class="room_reserve_btn" onclick="location.href='hotel_checkout'">
 <div class="btnTitle"><span class="BtnSpan">예약하기</span></div></button></div></div></div></div>
-</div>
+</div></div></div></div>
 
 
 <!-- 룸 2 -->
-<div class="each_room eyxccd60">
-<div class="css-0 eyxccd61"><span class="hotelBold">Premier Ocean View Twin Room</span></div>
-<div class="room_content eyxccd62">
-<div class="room_content_left eyxccd63">
-<div class="left_entire e1nunbqm0">
-<div class="room_pic e1nunbqm5">
-<img src="https://pix8.agoda.net/hotelImages/7385346/-1/1d2649b6c67e8f2738eafc7f20636ef7.jpg?ca=20&amp;ce=0&amp;s=1000x" alt="Premier Ocean View Twin Room" class="room_img e1nunbqm6"></div>
-<div class="room_condition e1nunbqm1">
-<span class="e1nunbqm2 room_condition_span">싱글베드 2개 + 소파베드 1개 · 최대 3명 · 바다 전망,객실 크기(㎡) - 45</span>
-<div class="css-0 e1nunbqm3">
-<button class="e1nunbqm4 more_condition"><div class="more_condition_2"><span class="more_condition_3">
+<div class="each_room">
+<div class="room_title"><span class="hotelBold">Premier Ocean View Twin Room</span></div>
+<div class="room_content">
+<div class="room_content_left">
+<div class="left_entire">
+<div class="room_pic">
+<img src="https://pix8.agoda.net/hotelImages/7385346/-1/1d2649b6c67e8f2738eafc7f20636ef7.jpg?ca=20&amp;ce=0&amp;s=1000x" alt="Premier Ocean View Twin Room" class="room_img"></div>
+<div class="room_condition">
+<span class="room_condition_span">싱글베드 2개 + 소파베드 1개 · 최대 3명 · 바다 전망,객실 크기(㎡) - 45</span>
+<div class="more_condition_box">
+<button class="more_condition">
+<div class="more_condition_2"><span class="more_condition_3">
 <span class="more_condition_span">객실 정보 더보기</span></span></div></button></div></div></div></div>
 
-<div class="room_content_right eyxccd64">
-<div class="reserve_box"><div class="reserve_area eh5rq1l0">
-<div class="free_cancel_box eh5rq1l1">
-<div class="free_cancel ekcs3yx0">
-<span class="free_cancel_entire_span evziq6a0" style="background-color:#E7F4FD">
-<span style="font-weight:600;font-size:13px;color:#1583DB" class="free_cancel_span evziq6a1">무료취소</span>
-<span style="font-weight:500;font-size:13px;color:#0792E9" class="free_cancel_span evziq6a1"> 4월 7일 까지</span></span></div>
+<div class="room_content_right">
+<div class="reserve_box"><div class="reserve_area">
+<div class="free_cancel_box">
+<div class="free_cancel">
+<span class="free_cancel_entire_span" style="background-color:#E7F4FD">
+<span style="font-weight:600;font-size:13px;color:#1583DB" class="free_cancel_span">무료취소</span>
+<span style="font-weight:500;font-size:13px;color:#0792E9" class="free_cancel_span"> 4월 7일 까지</span></span></div>
 
-<div><ul class="perksList eh5rq1l2">
-<li class="perk eh5rq1l3"><div class="css-9e0yw eh5rq1l4">무료 생수</div></li>
-<li class="perk eh5rq1l3"><div class="css-9e0yw eh5rq1l4">무료 피트니스 센터</div></li></ul></div></div>
+<div><ul class="perksList">
+<li class="perk"><div class="perk_content">무료 생수</div></li>
+<li class="perk"><div class="perk_content">무료 피트니스 센터</div></li></ul></div></div>
 
-<div class="reserve_right e1mya5qx0">
-<div class="price_box e1mya5qx1">
-<div class="price e1mya5qx2"><span class="price_span e1mya5qx5">216,080원/박</span></div>
+<div class="reserve_right">
+<div class="price_box">
+<div class="price">
+<span class="price_span">216,080원/박</span></div>
 
-<div class="room_reserve_btn"><button class="e1mya5qx10 room_reserve_btn_2">
-<div class="btnTitle"><span class="BtnSpan">예약하기</span></div></button></div></div></div></div>
-</div>
+<div class="room_reserve_btn_area">
+<button class="room_reserve_btn">
+<div class="btnTitle" onclick="location.href='hotel_checkout'">
+<span class="BtnSpan">예약하기</span></div></button></div></div></div></div>
+</div></div></div></div>
 
 
 <!-- 룸 3 -->
-<div class="each_room eyxccd60">
-<div class="css-0 eyxccd61"><span class="hotelBold">프리미어 더블룸, 바다 전망</span></div>
-<div class="room_content eyxccd62">
-<div class="room_content_left eyxccd63">
-<div class="left_entire e1nunbqm0">
-<div class="room_pic e1nunbqm5">
-<img src="https://i.travelapi.com/lodging/38000000/37630000/37622900/37622802/12d74e35_z.jpg" 
-alt="프리미어 더블룸, 바다 전망" class="room_img e1nunbqm6">
+<div class="each_room">
+<div class="room_title"><span class="hotelBold">프리미어 더블룸, 바다 전망</span></div>
+<div class="room_content">
+<div class="room_content_left">
+<div class="left_entire">
+<div class="room_pic">
+<img src="https://i.travelapi.com/lodging/38000000/37630000/37622900/37622802/12d74e35_z.jpg" alt="프리미어 더블룸, 바다 전망" class="room_img">
 <div class="css-r5esnv e1nunbqm7"><span>10+</span></div></div>
-<div class="room_condition e1nunbqm1">
-<span class="e1nunbqm2 room_condition_span">퀸사이즈침대 1개 · 최대 3명 · 바다 전망</span>
-<div class="css-0 e1nunbqm3">
-<button class="e1nunbqm4 more_condition"><div class="more_condition_2"><span class="more_condition_3">
+<div class="room_condition">
+<span class="room_condition_span">퀸사이즈침대 1개 · 최대 3명 · 바다 전망</span>
+<div class="more_condition_box">
+<button class="more_condition">
+<div class="more_condition_2"><span class="more_condition_3">
 <span class="more_condition_span">객실 정보 더보기</span></span></div></button></div></div></div></div>
 
-<div class="room_content_right eyxccd64">
-<div class="reserve_box"><div class="reserve_area eh5rq1l0">
-<div class="free_cancel_box eh5rq1l1">
-<div class="free_cancel ekcs3yx0">
-<span class="free_cancel_entire_span evziq6a0" style="background-color:#E7F4FD">
-<span style="font-weight:600;font-size:13px;color:#1583DB" class="free_cancel_span evziq6a1">무료취소</span>
-<span style="font-weight:500;font-size:13px;color:#0792E9" class="free_cancel_span evziq6a1"> 4월 7일 까지</span></span></div></div>
+<div class="room_content_right">
+<div class="reserve_box"><div class="reserve_area">
+<div class="free_cancel_box">
+<div class="free_cancel">
+<span class="free_cancel_entire_span" style="background-color:#E7F4FD">
+<span style="font-weight:600;font-size:13px;color:#1583DB" class="free_cancel_span">무료취소</span>
+<span style="font-weight:500;font-size:13px;color:#0792E9" class="free_cancel_span"> 4월 7일 까지</span></span></div></div>
 
-<div class="reserve_right e1mya5qx0">
-<div class="price_box e1mya5qx1">
-<div class="price e1mya5qx2">
-<span class="price_span e1mya5qx5">216,081원/박</span></div>
+<div class="reserve_right">
+<div class="price_box">
+<div class="price">
+<span class="price_span">216,081원/박</span></div>
 
-<div class="room_reserve_btn"><a href = "hotel_checkout"><button class="e1mya5qx10 room_reserve_btn_2">
-<div class="btnTitle"><span class="BtnSpan" >예약하기</span></div></button></a></div></div></div></div></div></div></div></div></div>
+<div class="room_reserve_btn_area"><a href = "hotel_checkout">
+<button class="room_reserve_btn" onclick="location.href='hotel_checkout'"> 
+<div class="btnTitle"><span class="BtnSpan">예약하기</span></div></button></a></div></div></div></div></div></div></div></div></div></div>
 
 </body>
 </html>
