@@ -13,6 +13,8 @@
 	<link rel="stylesheet" type="text/css" href="resources/css/Notice_board.css" />
 	<script src="http://code.jquery.com/jquery-latest.js"></script>
 </head>
+
+
 <body>
 	<!-- header -->
 	<%@ include file="../include/header.jsp"%>
