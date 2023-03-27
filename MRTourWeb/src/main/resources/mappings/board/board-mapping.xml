@@ -11,12 +11,12 @@
 			BOARD_NO, 
 			B_TITLE, 
 			B_CONTENT, 
-			MEMBER_ID
+			B_NAME
 		) VALUES(
 			BOARD_SEQ.NEXTVAL, 
 			#{b_title}, 
 			#{b_content}, 
-			#{MEMBER_id}
+			#{b_name}
 		)
 	</insert>
 
@@ -24,29 +24,29 @@
 	<update id="updateBoard">
 		UPDATE BOARD
 		SET
-		TITLE = #{title},
-		CONTENT = #{content}
+		B_TITLE = #{b_title},
+		B_CONTENT = #{b_content}
 		WHERE
-		BNO = #{bno}
+		BOARD_NO = #{board_no}
 	</update>
 
 	<!-- 글 삭제 -->
 	<delete id="deleteBoard">
-		UPDATE BOARD SET SHOW='N' WHERE BNO = #{bno}
+		UPDATE BOARD SET B_SHOW='N' WHERE BOARD_NO = #{board_no}
 	</delete>
 
 	<!-- 글 삭제 체크 -->
 	<select id="checkBoard" resultType="java.lang.Integer"> 
-		SELECT COUNT(*) FROM BOARD WHERE BNO = #{bno} AND SHOW = 'Y' 
+		SELECT COUNT(*) FROM BOARD WHERE BOARD_NO = #{board_no} AND B_SHOW = 'Y' 
 	</select>
 
 	<!-- 조회수 -->
-	<update id="viewCnt">
+	<update id="b_viewCnt">
 		UPDATE BOARD
 		SET
-		VIEWCNT = VIEWCNT+1
+		B_VIEWCNT = B_VIEWCNT+1
 		WHERE
-		BNO = #{bno}
+		BOARD_NO = #{board_no}
 	</update>
 
 	<!-- 게시글 보기 -->
@@ -56,22 +56,22 @@
 		FROM 
 		BOARD
 		WHERE
-		BNO = #{bno} AND SHOW = 'Y'
+		BOARD_NO = #{board_no} AND B_SHOW = 'Y'
 	</select>
 	
 	<!-- 이전글 -->
 	<select id="previousB" resultType="board">
 	<![CDATA[
-	SELECT * FROM BOARD WHERE BNO = 
-	(SELECT MAX(BNO) FROM BOARD WHERE SHOW='Y' AND BNO < #{bno})
+	SELECT * FROM BOARD WHERE BOARD_NO = 
+	(SELECT MAX(BOARD_NO) FROM BOARD WHERE B_SHOW='Y' AND BOARD_NO < #{board_no})
 	]]>
 	</select>
 	
 	<!-- 다음글 -->
 	<select id="nextB" resultType="board">
 	<![CDATA[
-	SELECT * FROM BOARD WHERE BNO = 
-	(SELECT MIN(BNO) FROM BOARD WHERE SHOW='Y' AND BNO > #{bno})
+	SELECT * FROM BOARD WHERE BOARD_NO = 
+	(SELECT MIN(BOARD_NO) FROM BOARD WHERE B_SHOW='Y' AND BOARD_NO > #{board_no})
 	]]>
 	</select>
 
@@ -80,7 +80,7 @@
 		SELECT * FROM 
 		(SELECT ROWNUM AS RN, A.* FROM (SELECT * FROM (
 		SELECT * FROM BOARD <include refid="search"></include>
-		) ORDER BY BNO DESC, REGDATE DESC) A ) 
+		) ORDER BY BOARD_NO DESC, B_WRITEDATE DESC) A ) 
 		WHERE RN BETWEEN #{start} AND #{end}
 	</select>
 	
@@ -90,47 +90,22 @@
 	</select>
 	
 	<!-- 검색조건 -->
-	<sql id="search">
-		<choose>
-			<when test="searchOption == 'ALL'">
-				WHERE SHOW='Y' AND (WRITER LIKE '%'||#{keyword}||'%'
-				OR CONTENT LIKE LOWER('%'||#{keyword}||'%')
-				OR CONTENT LIKE UPPER('%'||#{keyword}||'%')
-				OR TITLE LIKE LOWER('%'||#{keyword}||'%')
-				OR TITLE LIKE UPPER('%'||#{keyword}||'%')
-				)
-			</when>
-			<otherwise>
-				WHERE SHOW='Y' AND 
-				(${searchOption} LIKE LOWER('%'||#{keyword}||'%') OR
-				${searchOption} LIKE UPPER('%'||#{keyword}||'%'))
-			</otherwise>
-		</choose>
-	</sql>
-
-<!-- 공지사항 = NOTICE -->
-		<!-- 글쓰기 -->
-	<insert id="createNotice">
-		INSERT INTO NOTICE (
-			NOTICE_NO, 
-			NOTICE_TITLE,
-			NOTICE_SUB,
-			MEMBER_NAME,
-			NOTICE_CONTENT 
-		) VALUES(
-			NOTICE_SEQ.NEXTVAL, 
-			#{notice_title}, 
-			#{notice_sub}, 
-			#{member_name},
-			#{notice_content} 
-		)
-	</insert>
-	
-		<!-- 목록 -->
-		<select id="listAllNotice">
-		    SELECT NOTICE_NO, NOTICE_SUB, NOTICE_TITLE,  NOTICE_DATE
-		    FROM NOTICE
-		    ORDER BY NOTICE_NO DESC
-		</select>
-	
+		<sql id="search">
+		    <choose>
+		        <when test="searchOption == 'ALL'">
+		            WHERE B_SHOW='Y' AND 
+		            (B_NAME LIKE '%'||#{keyword}||'%' 
+		                OR B_CONTENT LIKE LOWER('%'||#{keyword}||'%')
+		                OR B_CONTENT LIKE UPPER('%'||#{keyword}||'%')
+		                OR B_TITLE LIKE LOWER('%'||#{keyword}||'%')
+		                OR B_TITLE LIKE UPPER('%'||#{keyword}||'%')
+		            )
+		        </when>
+		        <otherwise>
+		            WHERE B_SHOW='Y' AND 
+		            (${searchOption} LIKE LOWER('%'||#{keyword}||'%') OR
+		            ${searchOption} LIKE UPPER('%'||#{keyword}||'%'))
+		        </otherwise>
+		    </choose>
+		</sql>
 </mapper>

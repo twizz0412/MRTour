@@ -37,7 +37,7 @@
 			<p>
 				<c:choose>
 					<c:when test="${member.member_id eq 'admin'}">
-						<a href="login"><b>로그아웃</a> 
+						<a onclick="location.href='logout'"><b>로그아웃</a> 
 						| 
 						<a href="admin_main"><b>관리페이지</a>
 					</c:when>
@@ -53,7 +53,7 @@
 					<c:otherwise>
 						<input type="hidden" id="member_id" name="member_id"
 							value="${member.member_id}" />
-						<a href="login"><b>로그아웃</a> 
+						<a href="logout"><b>로그아웃</a> 
 						| 
 						<a href=""><b>고객센터</a>
 					</c:otherwise>

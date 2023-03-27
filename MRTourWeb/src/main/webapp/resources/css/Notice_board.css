@@ -3,12 +3,19 @@
 /*검색기능*/
 .contents {
     float: left;
-    width: 1200px;
+    width: 1350px;
     padding-left : 10%;
     padding-top : 100px;
+    display : block;
 }
 .contents {
     min-height: 350px;
+}
+
+.in-contents{
+    float: left;
+    width: 1300px;
+    padding-left : 10%;
 }
 
 .text_wrap.big.fix, .text_wrap.fix {

@@ -9,7 +9,7 @@ public class BoardVO {
 	private String b_content;// 게시글 내용			
 	private String member_id;	// 작성자 id
 	private Date b_writedate;// 작성일(java.util.Date)
-	private int b_viewcnt;	// 조회수
+	private int b_viewCnt;	// 조회수
 	private String b_name;	// 작성자 이름
 	private int b_comments;	// 댓글 수
 	private String b_show;	// 화면 표시 여부
@@ -44,10 +44,10 @@ public class BoardVO {
 		this.b_writedate = b_writedate;
 	}
 	public int getB_viewcnt() {
-		return b_viewcnt;
+		return b_viewCnt;
 	}
 	public void setB_viewcnt(int b_viewcnt) {
-		this.b_viewcnt = b_viewcnt;
+		this.b_viewCnt = b_viewcnt;
 	}
 	public String getB_name() {
 		return b_name;
@@ -72,7 +72,7 @@ public class BoardVO {
 	public String toString() {
 		return "BoardDTO [board_no=" + board_no + ", b_title=" + b_title 
 				+ ", b_content=" + b_content + ", member_id=" + member_id 
-				+ ", b_writedate="+ b_writedate + ", b_viewcnt=" + b_viewcnt 
+				+ ", b_writedate="+ b_writedate + ", b_viewCnt=" + b_viewCnt 
 				+ ", b_name=" + b_name + ", b_comments=" + b_comments 
 				+ ", b_show=" + b_show + "]";
 	}
