@@ -682,7 +682,7 @@ img {
     height: 40px;
 }
 
-.hotelBold {
+.hotelBold { /* 룸 이름 */
     font-size: 22px;
     font-weight: 700;
     line-height: 124%;
@@ -982,36 +982,6 @@ element.style {
     margin-right: 16px;
 }
 
-.addressCopyBtn { /* 주소복사 버튼 */
-    position: relative;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-align-items: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    border-radius: 99px;
-    border: 0;
-    overflow: hidden;
-    cursor: pointer;
-    background-color: #f1f3f5;
-    color: #141719;
-    height: 48px;
-    padding: 0px 16px;
-    width: auto;
-    font-size: 15px;
-    font-weight: 600;
-    line-height: 138%;
-    letter-spacing: -0.02em;
-    height: 40px;
-    padding: 9.5px 12px;
-}
 
 
 /* 숙소 정보 섹션 */
@@ -1064,13 +1034,13 @@ element.style {
     flex: 1;
 }
 
-.infoContent {
+.infoContent { /* 내용 */
     position: relative;
     max-height: 320px;
     overflow: hidden;
 }
 
-.everyContent {
+.everyContent { /* 더보기로 잘려서 안 보이는 부분 */
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1087,7 +1057,7 @@ element.style {
     margin-bottom: 12px;
 }
 
-.contentTitle {
+.contentTitle { /* 소제목 */
     font-size: 18px;
     font-weight: 600;
     line-height: 124%;
@@ -1096,7 +1066,7 @@ element.style {
     color: #141719;
 }
 
-.contentContent {
+.contentContent { /* 내용 */
     font-size: 15px;
     font-weight: 500;
     line-height: 138%;
@@ -1162,7 +1132,7 @@ element.style {
     padding: 80px 40px;
 }
 
-.lower-2-css {
+.lower-2-Container {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1174,7 +1144,7 @@ element.style {
     max-width: 1060px;
 }
 
-.lower-2-css >*:not(:last-of-type) {
+.lower-2-Container >*:not(:last-of-type) {
     margin-bottom: 40px;
 }
 
@@ -1216,11 +1186,11 @@ element.style {
     width: 100%;
 }
 
-.dateArea {
+.dateArea { /* 객실 선택 옆 날짜 표시 부분 */
     padding: 0 32px;
 }
 
-.choseDate {
+.choseDate { /* 선택된 날짜 */
     font-size: 16px;
     font-weight: 600;
     line-height: 138%;
@@ -1253,7 +1223,7 @@ element.style {
     width: auto;
 }
 
-.room_entire {
+.room_entire { /* 전체 객실 */
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1311,7 +1281,7 @@ element.style {
     overflow: hidden;
 }
 
-.room_pic { /* 룸 사진 */
+.room_pic { /* 객실 사진 */
     position: relative;
     display: -webkit-box;
     display: -webkit-flex;
@@ -1324,7 +1294,7 @@ element.style {
     cursor: pointer;
 }
 
-.room_img { /* 룸 사진 img 태그 */
+.room_img { /* 객실 사진 img 태그 */
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1363,7 +1333,7 @@ element.style {
     overflow: hidden;
 }
 
-.more_condition { /* 객실 정보 더보기 */
+.more_condition { /* 객실 정보 더보기 버튼 */
     position: relative;
     display: -webkit-box;
     display: -webkit-flex;
@@ -1428,13 +1398,13 @@ element.style {
     -webkit-box-pack: end;
     -ms-flex-pack: end;
     -webkit-justify-content: flex-end;
-    justify-content: flex-end;
+    justify-content: flex-start;
     width: 100%;
     gap: 58px;
 }
 
 
-@media (min-width: 768px)
+
 .reserve_area {
     min-height: 64px;
     padding: 0;
@@ -1457,12 +1427,12 @@ element.style {
 }
 
 
-@media (min-width: 768px)
+
 .reserve_area >*:not(:last-of-type) {
     margin-right: 48px;
 }
 
-@media (min-width: 768px)
+
 .free_cancel_box {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
@@ -1501,7 +1471,7 @@ element.style {
     background-color: #E7F4FD;
 }
 
-@media (min-width: 768px)
+
 .free_cancel_entire_span {
     border-radius: 6px;
 }
@@ -1537,7 +1507,7 @@ element.style {
     letter-spacing: -0.02em;
 }
 
-@media (min-width: 768px) 
+ 
 .perksList {
     padding: 0 4px;
     gap: 3px;
@@ -1577,7 +1547,17 @@ ul, ol, dl {
     height: 18px;
 }
 
-@media (min-width: 768px)
+
+.perk_content {
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 138%;
+    letter-spacing: -0.02em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
 .reserve_right {
     -webkit-flex-direction: row;
     -ms-flex-direction: row;
@@ -1602,13 +1582,13 @@ ul, ol, dl {
     align-items: flex-end;
 }
 
-@media (min-width: 768px)
+
 .reserve_right >*:not(:last-of-type) {
     margin-bottom: 0;
     margin-right: 54px;
 }
 
-@media (min-width: 768px)
+
 .price_box {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
@@ -1650,7 +1630,7 @@ ul, ol, dl {
 }
 
 
-@media (min-width: 768px)
+
 .price_span {
     font-size: 20px;
     font-weight: 700;
@@ -1667,7 +1647,8 @@ ul, ol, dl {
     text-align: right;
 }
 
-.room_reserve_btn { /* 예약하기 버튼 */
+
+.room_reserve_btn_area { /* 예약하기 버튼 */
     position: relative;
     display: -webkit-box;
     display: -webkit-flex;
@@ -1683,13 +1664,13 @@ ul, ol, dl {
     align-items: center;
 }
 
-@media (min-width: 768px)
-.room_reserve_btn_2 {
+
+.room_reserve_btn {
     height: 40px;
     padding: 9px 16px;
 }
 
-.room_reserve_btn_2 {
+.room_reserve_btn {
     position: relative;
     display: -webkit-box;
     display: -webkit-flex;
