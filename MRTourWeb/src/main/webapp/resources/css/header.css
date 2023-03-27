@@ -1,22 +1,21 @@
-@charset "UTF-8";
-
-/* */
-.logo {
+/* header */
+header .logo {
 	text-align: center;
 	padding-top: 30px;
+	margin-left: 150px;
 	margin-bottom: 10px;
 }
 
-.login {
+header .login {
 	padding: 20px;
 	float: right;
 	font-family: 'Nanum Gothic', sans-serif;
 	word-spacing: 5px;
 	/* 글자 사이의 간격*/
-	font-size: 15px;
+	font-size: 20px;
 }
 
-.login a {
+header .login a {
 	/*하이퍼링크 된곳 css 효과 */
 	text-decoration: none;
 	/*원래 하이퍼링크가 걸리면 밑줄
@@ -25,61 +24,31 @@
 	/*하이퍼링크 된곳 글자색 지정*/
 }
 
-.login a:hover {
+header .login a:hover {
 	/* 하이퍼링크 된곳 마우스 오버시 css효과*/
 	color: rgb(86, 221, 255);
 }
 
-.search {
+header .search {
 	text-align: center;
 	width: 200px;
+	margin-left: 70px;
 }
 
-.search img {
+header .search>input {
+	width: 500px;
+	border: 1px solid #000000;
+	border-radius: 15px;
+	padding: 10px 12px;
+	font-size: 14px;
+	margin-left: 615px;
+}
+
+header .search a {
 	position: absolute;
 	top: 97px;
-	left: 400px;
+	left: 1150px;
 	margin-top: 0px;
 }
-div .main_search {
-    position: relative;
-    left: 50%;
-    width: 50%;
-    height: 100%;
-}
-.main_search .search{
-    position: absolute;
-    top: 20px;
-    width: 500px;
-    height: 40px;
-    padding-top :-50px;
-    padding-left : -250px;
-    background-color: #fff;
-    box-sizing: border-box;
-    border-top-left-radius: 35px;
-    border-top-right-radius: 35px;
-    border-bottom-right-radius: 35px;
-    border-bottom-left-radius: 35px;
-    box-shadow: 6px 6px 10px hsla(0,0%,41.6%,.4);
-}
 
-.search input {
-	position: absolute;
-    z-index: 3;
-    cursor: pointer;
-	white-space: nowrap;
-	text-decoration: none;
-	background: transparent;
-	border: none;
-	outline: 0 ;
-	font-size : 22px;
-	text-align : left;
-	left: 5%;
-	top : 22%;
-	width: 500px;
-	none;
-	border-radius: 15px;
-	padding: 5px 8px;
-	font-size: 14px;
-	padding-left : -250px;
-}
+/* //header */

@@ -116,7 +116,7 @@ public class BoardDAO {
 	}
 	
 	//공지사항 목록
-	public List<NoticeVO> listAllNotice() {
+	public List<NoticeVO> listAllNotice(NoticeVO vo) {
 	    return mybatis.selectList("BoardDAO.listAllNotice");
 	}
 

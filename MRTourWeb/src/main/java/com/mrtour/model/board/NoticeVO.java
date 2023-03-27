@@ -10,6 +10,8 @@ public class NoticeVO {
 	private String member_name; //작성자 이름
 	private Date notice_date; // 작성일(java.util.Date)
 	private String notice_content;// 게시글 내용		
+	private String searchCondition;
+	private String searchKeyword;
 	
 	public int getNotice_no() {
 		return notice_no;
@@ -59,6 +61,22 @@ public class NoticeVO {
 		this.notice_content = notice_content;
 	}	
 	
+	public String getSearchCondition() {
+		return searchCondition;
+	}
+	
+	public void setSearchCondition(String searchCondition) {
+		this.searchCondition = searchCondition;
+	}
+	
+	public String getSearchKeyword() {
+		return searchKeyword;
+	}
+	
+	public void setSearchKeyword(String searchKeyword) {
+		this.searchKeyword = searchKeyword;
+	}
+		
 	@Override
 	public String toString() {
 		return "NoticeDTO [notice_no=" + notice_no + ", notice_title=" + notice_title 

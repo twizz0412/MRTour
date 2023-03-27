@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.mrtour.home.Pager;
 import com.mrtour.model.board.BoardService;
@@ -42,14 +43,12 @@ public class BoardController {
 		
 	// 공지사항 목록 가져오기
 		@RequestMapping("/listAllNotice")
-		public String listAllNotice(Model model) {
-		    List<NoticeVO> noticeList = null;
-		    try {
-		        noticeList = boardService.listAllNotice();
-		    } catch (Exception e) {
-		        e.printStackTrace();
-		    }
-		    model.addAttribute("noticeList", noticeList);
-		    return "noticeList";
+		public ModelAndView listAllNotice(NoticeVO vo, BoardDAO boardDAO, ModelAndView mav) {
+		System.out.println("글 목록 검색 처리");
+
+		mav.addObject("listAllNotice", boardDAO.listAllNotice(vo)); //Model 정보 저장
+		mav.setViewName("Notice_board.jsp"); // View 정보 저장
+		return mav;
 		}
+		
 }

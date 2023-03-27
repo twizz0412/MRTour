@@ -111,7 +111,7 @@ public class BoardServiceImpl implements BoardService {
 	
 	// 게시글 목록
 	public List<NoticeVO> listAllNotice() throws Exception {
-		return boardDAO.listAllNotice();
+		return boardDAO.listAllNotice(null);
 	}
 	
 	// 이전글
