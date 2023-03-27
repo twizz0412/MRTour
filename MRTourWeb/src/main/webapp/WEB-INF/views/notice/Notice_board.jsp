@@ -32,8 +32,7 @@
 							<div class="box_search">
 								<div class="select_item">
 									<form action="notice" class="boardsearch" align="left">
-										<select class="selectbox" 
-="searchOption" id="searchOption">
+										<select class="selectbox" name="searchOption" id="searchOption">
 											<option value="" ></option>
 											<option value="NOTICE_TITLE" <c:out value="${map.searchOption=='NOTICE_TITLE'?'selected':''}"/> >제목</option>
 											<option value="NOTICE_CONTENT" <c:out value="${map.searchOption=='NOTICE_CONTENT'?'selected':''}"/> >내용</option>
