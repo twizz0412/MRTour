@@ -1,11 +1,6 @@
 
 /* footer */
 
-section #footer {
-  position : relative;
-  transform : translateY(-100%);
-}
-
 #footer .ft {
 	position: relative;
 	border-top: 1px solid #d1cece;

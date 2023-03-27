@@ -57,8 +57,9 @@
 	<!-- 목록 -->
 	<select id="listAllNotice" resultType="notice">
 		SELECT * FROM 
-		(SELECT ROWNUM AS RN, A.* FROM (SELECT * FROM (SELECT * FROM NOTICE)
-		 ORDER BY NOTICE_NO DESC, NOTICE_DATE DESC) A ) 
+		(SELECT ROWNUM AS RN, A.* FROM (SELECT * FROM (
+		SELECT * FROM NOTICE <include refid="n_search"></include>
+		) ORDER BY NOTICE_NO DESC, NOTICE_DATE DESC) A ) 
 		WHERE RN BETWEEN #{start} AND #{end}
 	</select>
 	

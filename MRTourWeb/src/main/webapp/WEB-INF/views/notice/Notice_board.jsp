@@ -9,9 +9,15 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>미래투어[공지사항]</title>
-	<link rel="stylesheet" type="text/css" href="resources/css/Notice_board.css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+	<head>
+	<style scoped>
+		@import "resources/css/Notice_board.css";
+	</style>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	
+	<title>미래투어[공지사항]</title>
 </head>
 
 
@@ -27,21 +33,21 @@
 			<strong class="tit big">공지사항</strong> 
 			<span class="notice-board">
 				<div class="search_field">
-					<form action="#" role="search">
+					<form action="#" role="n_search">
 						<fieldset>
 						<!-- 검색 조건 뷰 -->
 							<legend class="blind">공지사항 검색</legend> 
 							<div class="box_search">
 								<div class="select_item">
 									<form action="notice" class="boardsearch" align="left">
-										<select class="selectbox" name="searchOption" id="searchOption">
-											<option value="" ></option>
+										<select name="searchOption" id="searchOption">
 											<option value="NOTICE_TITLE" <c:out value="${map.searchOption=='NOTICE_TITLE'?'selected':''}"/> >제목</option>
 											<option value="NOTICE_CONTENT" <c:out value="${map.searchOption=='NOTICE_CONTENT'?'selected':''}"/> >내용</option>
+											<option value="ALL" <c:out value="${map.searchOption=='ALL'?'selected':''}"/> >제목+내용</option>
 										</select>
-										<input type="text" id="input_keyword"  value="${keyword}" name="keyword" title="검색어" placeholder="검색어를 입력해 주세요." class="input_keyword"> 
+										<input type="text" name="keyword" placeholder="검색어 입력" id="keyword" value="${keyword}"  class="input_keyword"> 
 									 	<input type="hidden" name="search" id="search" value="s"/>
-									 	<button type="submit" class="btn line">검색</button>
+									 	<input type="submit" class="btn" value="조회"/>
 								 	</form>
 								</div> 
 							 </div>
@@ -52,10 +58,10 @@
 		 </div>
 		 <div class="js_tabs type1">
 			 <ul class="tabs" style = "width:100%">
-				 <li class="selected" style="width: 24.9%;"><a href="Notice_board">공지사항</a></li>
+				 <li class="selected" style="width: 24.9%;"><a href="notice">공지사항</a></li>
+				 <li class="disselected" style="width: 24.9%;"><a href="board">1:1문의</a></li>
 			 </ul>
 		 </div>
-		 
 		 	<div style="float: right;">
 			
 			<!-- 검색했을 때 카운트-->
@@ -70,9 +76,9 @@
 					</c:choose>
 				</c:if>
 				
-			<!-- 회원만 작성 가능 -->
+			<!-- 관리자만 작성 가능 -->
 				<c:if test="${member.member_id eq 'admin'}">
-					<button type="button" class="text" onClick="location.href='createNotice'">글쓰기</button>
+					<button type="button" class="text"><a href="admin_write">글쓰기</a></button>
 				</c:if>
 			</div>
 		 
@@ -99,6 +105,7 @@
 						<c:forEach begin="0" end="${(fn:length(map.list))}" var="i">
 							<c:set var="row" value="${map.list[i]}" />
 							<input type="hidden" id="notice_no" name="notice_no" value="${row.notice_no}"/>
+						
 							<c:choose>
 							<%-- 검색결과가 있을 때 --%>
 								<c:when test="${not empty row}">
@@ -110,20 +117,20 @@
 										<fmt:formatDate value="${row.notice_date}" pattern="yyyyMMdd" var="regDate"/>
 										<c:choose>
 											<c:when test="${today == notice_date}" >
-												<td class="txc" style="color:red;">오늘</td>					
+												<td class="txc" style="color:red;">Today</td>					
 											</c:when>
 											<c:otherwise>
 												<td class="txc">${row.notice_date}</td>
-												<td class="txc">${row.n_viewcnt}</td>
 											</c:otherwise>
 										</c:choose>
+											<td class="txc">${row.n_viewCnt}</td>
 									</tr>
 								</c:when>
 								<%-- 검색결과가 없을 떄 --%>
 								<c:when test="${map.count == 0}">
 									<tr style="text-align:center;">
 										<td colspan='5' size="30px">
-											<b style="color: red; font-size:30px;">'${keyword}'</b> 에 대한 검색결과가 없습니다.
+											<b style="color: blue; font-size:30px;">'${keyword}'</b> 에 대한 검색결과가 없습니다.
 										</td>
 									</tr>
 								</c:when>
@@ -134,7 +141,7 @@
 				<br>
 				<br>
 			
-							<!-- 페이지 네비게이션 출력 -->
+				<!-- 페이지 네비게이션 출력 -->
 				<div align="center">
 					<c:if test="${map.pager.curBlock > 1}">
 						<a href="notice?curPage=1
@@ -177,9 +184,6 @@
 				</div>
 		</center>
 	</div>
-	<!-- footer -->
-	<div>
-	<%@ include file="../include/footer.jsp"%>
-	</div>
+	<!-- footer import 필요 -->
 </body>
 </html>
