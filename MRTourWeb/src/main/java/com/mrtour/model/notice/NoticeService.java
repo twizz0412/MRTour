@@ -7,8 +7,6 @@ import javax.servlet.http.HttpSession;
 import org.springframework.ui.Model;
 
 public interface NoticeService {
-
-	void n_viewCnt(int bno, HttpSession session) throws Exception;	// 조회수
 	
 	void createNotice(NoticeVO vo) throws Exception;					// 공지사항 쓰기 
 	void updateNotice(NoticeVO vo) throws Exception;					// 게시글 수정
@@ -19,4 +17,5 @@ public interface NoticeService {
 	NoticeVO nextN(int notice_no) throws Exception;						// 다음글
 	List<NoticeVO> listAllNotice(String searchOption,String keyword,int start, int end) throws Exception;	// 게시글 목록
 	int getCountNotice(String searchOption,String keyword) throws Exception;	// 게시글 갯수
+	void n_viewCnt(int notice_no, HttpSession session) throws Exception;	// 조회수
 }

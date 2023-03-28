@@ -22,7 +22,6 @@ public class BoardDAO {
 	
 	// 1:1문의
 	
-
 	// 게시글 쓰기
 	public void createBoard(BoardVO vo) {
 		mybatis.insert("BoardDAO.createBoard", vo);

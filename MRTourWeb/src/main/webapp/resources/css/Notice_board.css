@@ -3,8 +3,9 @@
 /*검색기능*/
 .contents {
     float: left;
-    width: 1350px;
-    padding-left : 10%;
+    width: 70%;
+    padding-left : 15%;
+    padding-right : 15%;
     padding-top : 100px;
     display : block;
 }
@@ -28,7 +29,7 @@
 }
 
 .text_wrap.fix strong, .text_wrap.big strong.tit {
-    font-size: 22px;
+    font-size: 2em;
     font-weight: 600;
     color: #111;
 }
@@ -230,7 +231,7 @@ ol, ul, li {
     display: inline-block;
     height: 25px;
     line-height: 23px;
-    font-size: 12px;
+    font-size: 1em;
     padding: 0 10px;
     margin: 0;
     color: #666;
@@ -268,7 +269,7 @@ button, input, textarea {
     border-radius: 0;
 }
 input, select, textarea, button {
-    font-size: 14px;
+    font-size: 1em;
     vertical-align: top;
 }
 body, h1, h2, h3, h4, h5, h6, th, td, select, input, textarea, button {
@@ -294,7 +295,7 @@ button, input, select, textarea {
 select {
     height: 42px;
     line-height: 42px;
-    font-size: 14px;
+    font-size: 1em;
     color: #333;
     border-radius: 2px;
 }
@@ -308,20 +309,6 @@ option {
 
 input {
     writing-mode: horizontal-tb !important;
-    font-style: ;
-    font-variant-ligatures: ;
-    font-variant-caps: ;
-    font-variant-numeric: ;
-    font-variant-east-asian: ;
-    font-variant-alternates: ;
-    font-weight: ;
-    font-stretch: ;
-    font-size: ;
-    font-family: ;
-    font-optical-sizing: ;
-    font-kerning: ;
-    font-feature-settings: ;
-    font-variation-settings: ;
     text-rendering: auto;
     color: fieldtext;
     letter-spacing: normal;
@@ -374,7 +361,7 @@ input[type="text" i] {
     display: inline-block;
     height: 26px;
     line-height: 23px;
-    font-size: 12px;
+    font-size: 0.8em;
     padding: 0 10px;
     margin: 0;
     color: #666;
@@ -450,7 +437,7 @@ ol, ul, li {
 }
 .type1 .tabs>li>a {
     color: #333;
-    font-size: 15px;
+    font-size: 1.1em;
     line-height: 20px;
     vertical-align: middle;
 }
@@ -463,7 +450,7 @@ ol, ul, li {
     display: block;
     height: 100%;
     color: #111;
-    font-size: 18px;
+    font-size: 1.5em;
     line-height: 57px;
     font-weight: 400;
 }
@@ -507,7 +494,7 @@ a {
     border-bottom: 1px solid #ddd;
     border-collapse: separate;
     table-layout: fixed;
-    font-size: 15px;
+    font-size: 1.1em;
 }
 table {
     width: 100%;
@@ -558,7 +545,7 @@ tbody {
 }
 .tbl td {
     color: #333;
-    font-size: 15px;
+    font-size: 1.1em;
 }
 .tbl th, .tbl td {
     text-align: left;
@@ -639,15 +626,6 @@ div {
     display: block;
 }
 
-body {
-    -webkit-text-size-adjust: none;
-    font-size: 14px;
-    font-weight: 400;
-    color: #333;
-    word-break: break-all;
-    line-height: 1;
-    letter-spacing: -.4px;
-}
 body, h1, h2, h3, h4, h5, h6, th, td, select, input, textarea, button {
     font-family: 'Inter', 'AppleSDGothicNeo', 'AppleSDGothicNeo-Regular', 'Apple Gothic', 'Noto Sans KR', 'Malgun Gothic', Arial, Helvetica, serif , sans-serif;
     letter-spacing: -.4px;
@@ -662,7 +640,11 @@ body {
     -moz-osx-font-smoothing: grayscale;
     font-smoothing: antialiased;
     line-height: 1.5;
-    font-size: 14px;
+    font-size: 1em;
+    font-weight: 400;
+    color: #333;
+    word-break: break-all;
+    letter-spacing: -.4px;
 }
 html, body, #q-app {
     width: 100%;
@@ -706,7 +688,7 @@ html, body, #q-app {
 }
 
 html {
-    font-size: 10px;
+    font-size: 0.8em;
 }
 *:before, *:after {
     box-sizing: initial;
@@ -723,4 +705,62 @@ html {
     box-sizing: inherit;
     -webkit-tap-highlight-color: transparent;
     -moz-tap-highlight-color: transparent;
+}
+
+
+
+/*view css*/
+.b {
+	border-bottom: 2px solid #000;
+	border-top: 1px dashed black;
+}
+
+.tdS {
+	width: 100px;
+}
+
+.previous {
+	font-family: 돋움;
+	background-color:#708090;
+	width: 70px;
+	height: 25px;
+	border: 0px;
+	outline: none;
+	color: white;
+}
+.previous:hover {
+	color: #483d8b;
+}
+.next {
+	font-family: 돋움;
+	background-color:#708090;
+	width: 70px;
+	height: 25px;
+	border: 0px;
+	outline: none;
+	color: white;
+}
+.next:hover {
+	color: #483D8B;
+}
+#list_btn {
+	font-family: 돋움;
+	background-color:#7FB3FA;
+	width: 50px;
+	height: 25px;
+	border: 0px;
+	outline: none;
+	color: white;
+}
+
+.simpleView { 
+    border-collapse: collapse; 
+    border-spacing: 0px;
+}
+
+.nextprev {
+	width: 70%;
+    padding-left : 15%;
+    padding-right : 15%;
+    float: left;
 }

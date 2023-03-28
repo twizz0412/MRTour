@@ -82,7 +82,7 @@
 	
 		<!-- 조회수 -->
 	<update id="n_viewCnt">
-		UPDATE notice
+		UPDATE NOTICE
 		SET
 		N_VIEWCNT = N_VIEWCNT+1
 		WHERE

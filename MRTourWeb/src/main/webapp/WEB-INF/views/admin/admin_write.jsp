@@ -98,7 +98,7 @@
                                 </div>
                                 <div class="bt_wrap">
                                     <input type = "button" class = "on" value = "등록" onclick = "createNotice()">
-                                    <a href="admin_notice">취소/목록으로 가기</a>
+                                    <a href="notice">취소/목록으로 가기</a>
                                 </div>
                             </div>
                         </div>
@@ -116,21 +116,6 @@
         </div>
     </div>
 
-
-
-    <script>
-        const signUpBtn = document.getElementById("signUp");
-        const fistForm = document.getElementById("form1");
-        const container = document.querySelector(".container");
-
-
-        signUpBtn.addEventListener("click", () => {
-            container.classList.add("right-panel-active");
-        });
-
-        fistForm.addEventListener("submit", (e) => e.preventDefault());
-
-    </script>
 </body>
 
 </html>
