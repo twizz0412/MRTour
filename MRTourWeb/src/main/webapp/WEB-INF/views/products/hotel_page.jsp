@@ -117,10 +117,7 @@ loading="lazy" class="grid_img">
 loading="lazy" class="grid_img">
 <img src="https://i.travelapi.com/lodging/38000000/37630000/37622900/37622802/a655586c_z.jpg" 
 loading="lazy" class="grid_img"></div>
-<button class="moreBtn">
-<div class="btnTitle">
-<span class="moreBtnSpan">
-<span class="btnSpan2">사진 모두 보기</span></span></div></button></div><div></div></div>
+</div><div></div></div>
 
 <!-- 사진 아래 호텔명, 가격 표시된 부분 -->
 <div class="main_info">
@@ -140,10 +137,10 @@ loading="lazy" class="grid_img"></div>
 <!-- 객실 선택 부분 -->
 <div class="main_info_right">
 
-<button class="submitBtn">
+<button class="submitBtn"> <!-- 객실 선택 버튼 클릭시 객실 선택 섹션으로 이동 -->
 <div class="btnTitle">
-<span class="BtnSpan">
-<span class="btnSpan3">객실 선택</span></span></div></button></div></div>
+<a href="#room"><span class="BtnSpan">
+<span class="btnSpan3">객실 선택</span></span></a></div></button></div></div>
 
 </div>
 
@@ -231,70 +228,8 @@ loading="lazy" class="grid_img"></div>
 휠체어 접근 가능 등을 즐길 수 있습니다. 객실은 아늑하게 디자인되어 있으며, 일부 객실에서는 편안한 투숙을 위한 평면 TV, 추가 화장실, 옷걸이, 무료
  인스턴트 커피, 무료 차 등을 이용할 수 있습니다. 등산로, 온수 욕조, 피트니스센터, 실외 수영장, 놀이터 등과 같은 여가 시설을 통해 즐거운 시간을 보낼
   수 있습니다. 본 숙소(GoldOne Hotel N Suites)의 편리함과 안락함은 제주도 여행을 완벽하게 만들어드립니다.</span></div></div>
-  
-<div class="contentBox">
-<div><span class="contentTitle">위치 정보</span></div>
-<div><span class="contentContent">서귀포(서귀포시)에 위치한 골드원 호텔 &amp; 스위트에 숙박하실 경우 차로 5분 정도 
-이동하면 Seri World 및 Oedolgae에 가실 수 있습니다.  이 4성급 호텔에서 서귀포 매일 올레 시장까지는 4.3km 떨어져 있으며, 14.6km 거리에는 한라산국립공원도 있습니다.</span></div></div>
 
-<div class="contentBox">
-<div><span class="contentTitle">시설 및 제공 서비스</span></div>
-<div><span class="contentContent">헬스클럽 및 야외 수영장 같은 레크리에이션 시설을 놓치지 말고 즐기세요. 이 호텔에는
- 콘시어지 서비스 및 아케이드/게임룸도 마련되어 있습니다.</span></div></div>
-
-<div class="contentBox">
-<div><span class="contentTitle">객실 정보</span></div>
-<div><span class="contentContent">51개 객실에는 냉장고 및 평면 TV도 갖추어져 있어 편하게 머무실 수 있습니다. 
-필로우탑 침대에는 오리/거위털 이불 및 고급 침구 등이 갖추어져 있습니다. 객실에 딸린 전용 발코니에서 전망을 감상하실 수 있습니다. 무료 무선 인터넷도 
-지원되며 케이블 프로그램을 시청하실 수 있습니다. 욕실에는 샤워, 고급 세면용품, 비데 등이 마련되어 있습니다.</span></div></div>
-
-<div class="contentBox">
-<div><span class="contentTitle">식당 소개</span></div>
-<div><span class="contentContent">호텔의 레스토랑에서 맛있는 식사를 즐겨보세요. 커피숍/카페에서는 스낵이 제공되며, 
-편하게 객실에서 룸서비스(이용 시간 제한)를 이용하실 수도 있습니다. 풀사이드 바에서는 좋아하는 음료를 마시며 갈증을 해소하실 수 있어요. 아침 식사(뷔페)를 
-매일 7:30 ~ 10:30에 유료로 이용하실 수 있습니다.</span></div></div>
-
-<div class="contentBox">
-<div><span class="contentTitle">편의 시설</span></div>
-<div><span class="contentContent">대표적인 편의 시설과 서비스로는 24시간 운영 비즈니스 센터, 드라이클리닝/세탁 서비스, 
-24시간 운영되는 프런트 데스크 등이 있습니다. 서귀포에서의 행사를 계획하시나요? 이 호텔에는 회의 공간 등을 비롯하여 93 제곱미터 크기의 시설이 마련되어 
-있습니다. 시설 내에서 무료 셀프 주차 이용이 가능합니다.</span></div></div>
-
-<div class="contentBox">
-<div><span class="contentTitle">주변 정보</span></div>
-<div><span class="contentContent">거리는 0.1km 단위로 최대한 가깝게 표시됩니다. 
-
-Seri World - 1.4km 
-석부작 박물관 - 1.6km 
-제주워터월드 - 2.4km 
-제주월드컵경기장 - 2.5km 
-황우지 해안 열두 굴 - 3km 
-Oedolgae - 3.1km 
-천지연 폭포 - 3.4km 
-고근산 - 3.4km 
-Gidang Art Museum - 3.6km 
-삼매봉 - 3.8km 
-이중섭거리 - 4.2km 
-LeeJoongSeop Art Museum - 4.3km 
-서귀포 매일 올레 시장 - 4.3km 
-새연교 - 4.6km 
-엉또폭포 - 4.6km 
-
-가장 가까운 주요 공항은 제주국제공항 (CJU)이며, 42.3km 거리에 있습니다.</span></div></div>
-
-<div class="contentBox">
-<div><span class="contentTitle">공인 등급</span></div>
-<div><span class="contentContent">고객 편의를 위해 저희 등급 시스템을 기준으로 해당 정보를 제공했습니다.</span></div></div>
-
-<div class="contentBox">
-<div><span class="contentTitle">서비스 지원 언어</span></div>
-<div><span class="contentContent">한국어 영어</span></div></div></div>
-
-<!-- 더보기 -->
-<div class="gradation"></div></div>
-<div><button class="moreContentBtn">
-<div class="btnTitle"><span class="BtnSpan">더보기</span></div></button></div></div>
-
+</div></div></div>
 
 <!-- 숙소 정책 -->
 <div class="infoSection">
@@ -326,10 +261,6 @@ LeeJoongSeop Art Museum - 4.3km
 이 목적지의 최신 코로나19 여행 요건 및 시행 중인 조치를 여행 전에 확인해 주세요.</span></div></div>
 
 <div class="contentBox">
-<div><span class="contentTitle">특별 체크인 지침</span></div>
-<div><span class="contentContent">도착 시 프런트 데스크 직원이 도와드립니다.</span></div></div>
-
-<div class="contentBox">
 <div><span class="contentTitle">기타 선택 사항</span></div>
 <div><span class="contentContent">뷔페아침 식사 요금: 성인 KRW 26000, 어린이 KRW 19000(대략적인 금액)               
 추가 요금 지불 시 늦은 체크아웃 가능(객실 이용 상황에 따라 다름)   
@@ -350,10 +281,7 @@ LeeJoongSeop Art Museum - 4.3km
 현금 결제 가능
 Visa, Mastercard, American Express, JCB International, Discover, UnionPay, Diners Club</span></div></div></div>
 
-<!-- 더보기 -->
-<div class="gradation"></div></div>
-<div><button class="moreContentBtn">
-<div class="btnTitle"><span class="BtnSpan">더보기</span></div></button></div></div>
+</div></div>
 
 
 <!-- 보건 & 안전 섹션 -->
@@ -391,15 +319,13 @@ Visa, Mastercard, American Express, JCB International, Discover, UnionPay, Diner
 고객에게 무료 손 소독제 제공
 사회적 거리두기 시행 중</span></div></div></div>
 
-<!-- 더보기 -->
-<div class="gradation"></div></div>
-<div><button class="moreContentBtn">
-<div class="btnTitle">
-<span class="BtnSpan">더보기</span></div></button></div></div></div></div>
+</div></div></div>
+
 
 
 
 <!-- 객실 선택 섹션 -->
+<a name="room"></a> <!-- 상단 객실 선택 버튼 클릭시 여기로 이동 -->
 <div class="lower-2">
 <div class="lower-2-Container">
 
@@ -529,3 +455,4 @@ Visa, Mastercard, American Express, JCB International, Discover, UnionPay, Diner
 
 </body>
 </html>
+		
