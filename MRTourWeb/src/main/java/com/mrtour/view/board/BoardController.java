@@ -30,14 +30,14 @@ public class BoardController {
 	// 게시글 등록 뷰
 	@RequestMapping("/write")
 	public String write(BoardVO vo) throws Exception {
-		return "board/write";
+		return "board/Ask_board_write";
 	}
 
 	// 게시글 등록
 	@RequestMapping(value = "/createBoard", method = RequestMethod.POST)
 	public String createBoard(BoardVO vo) throws Exception {
 		boardService.createBoard(vo);
-		return "board/list";
+		return "board/Ask_board";
 	}
 
 	// 게시글 수정 뷰
@@ -51,9 +51,9 @@ public class BoardController {
 	public String updateBoard(BoardVO vo) throws Exception {
 		if (vo.getB_title() != null) {
 			boardService.updateBoard(vo);
-			return "board/view";
+			return "board/Ask_board_view";
 		} else {
-			return "board/write";
+			return "board/Ask_board_write";
 		}
 		// return "redirect:/board";
 	}
@@ -105,7 +105,7 @@ public class BoardController {
 	@RequestMapping("/view")
 	public String readBoard(@RequestParam("board_no") int board_no, 
 							@RequestParam("b_show") String b_show, Model model, HttpSession session, 
-							@RequestParam(defaultValue = "TITLE") String searchOption,
+							@RequestParam(defaultValue = "B_TITLE") String searchOption,
 							@RequestParam(defaultValue = "") String keyword, 
 							@RequestParam(defaultValue = "") String search,
 							@RequestParam(defaultValue = "1") int curPage) throws Exception {
@@ -139,7 +139,6 @@ public class BoardController {
 		search = (String) session.getAttribute("search");
 		session.setAttribute("search", search);
 
-//		curPage = (int) session.getAttribute("curPage");
 		curPage = (Integer) session.getAttribute("curPage");
 		session.setAttribute("curPage", curPage);
 
@@ -151,6 +150,6 @@ public class BoardController {
 		map.put("nextB", nlist);
 		model.addAttribute("map", map);
 
-		return "board/view";
+		return "board/Ask_board_view";
 	}
 }

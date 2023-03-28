@@ -174,54 +174,10 @@ public class MemberController {
 
 	//관리자 화면
 
-	// 관리자 로그인(인증)화면으로 가기
-		@RequestMapping("/admin_index")
-		public String Admin_index() {
-			return "admin/admin_index";
-		}
-		
-	// 관리자 로그인
-		@RequestMapping(value = "/admin_login", method = RequestMethod.POST)
-		public String admin_login(MemberVO vo, HttpSession session) {
-			MemberVO member = memberService.login(vo);
-			if (member != null) {
-				session.setAttribute("member", member);
-				System.out.println(member + "로그인 성공....");
-				return "admin/admin_main";
-			} else {
-				return "admin/admin_index";
-			}
-		}
-			
-		
 	// 관리자 메인화면으로 가기
 		@RequestMapping("/admin_main")
 		public String Admin_main() {
 			return "admin/admin_main";
-		}
-		
-	// 관리자 공지사항 화면으로 가기
-		@RequestMapping("/admin_notice")
-		public String Admin_notice() {
-			return "admin/admin_notice";
-		}	
-		
-	// 관리자 공지사항 작성화면으로 가기
-		@RequestMapping("/admin_write")
-		public String Admin_write() {
-			return "admin/admin_write";
-		}	
-		
-	// 관리자 공지사항 수정화면으로 가기
-		@RequestMapping("/admin_edit")
-		public String Admin_edit() {
-			return "admin/admin_edit";
-		}	
-		
-	// 관리자 공지사항 상세조회 view화면으로 가기
-		@RequestMapping("/admin_view")
-		public String Admin_view() {
-			return "admin/admin_view";
 		}
 		
 	// 관리자 회원관리 화면으로 가기

@@ -31,13 +31,13 @@ public class NoticeController {
 		@RequestMapping(value = "/createNotice", method = RequestMethod.POST)
 		public String createNotice(NoticeVO vo) throws Exception {
 			noticeService.createNotice(vo);
-			return "notice/admin_notice";
+			return "notice/Notice_board";
 		}
 		
 		// 게시글 등록 뷰
-		@RequestMapping("/writeNotice")
-		public String write(NoticeVO vo) throws Exception {
-			return "notice/write_notice";
+		@RequestMapping("/Notice_write")
+		public String Notice_write(NoticeVO vo) throws Exception {
+			return "notice/Notice_write";
 		}
 		
 		// 게시글 수정 뷰
@@ -104,7 +104,7 @@ public class NoticeController {
 		}
 		
 		// 공지사항 상세보기
-		@RequestMapping("/notice/view")
+		@RequestMapping("/n_view")
 		public String readNotice(@RequestParam("notice_no") int notice_no, 
 								@RequestParam("n_show") String n_show, Model model, HttpSession session, 
 								@RequestParam(defaultValue = "NOTICE_TITLE") String searchOption,
@@ -152,6 +152,6 @@ public class NoticeController {
 			map.put("nextN", nlist);
 			model.addAttribute("map", map);
 
-			return "notice/view";
+			return "notice/Notice_board_view";
 		}
 }

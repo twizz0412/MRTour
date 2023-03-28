@@ -11,7 +11,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
 	<head>
-	<style scoped>
+	<style>
 		@import "resources/css/Notice_board.css";
 	</style>
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -78,7 +78,7 @@
 				
 			<!-- 관리자만 작성 가능 -->
 				<c:if test="${member.member_id eq 'admin'}">
-					<button type="button" class="text"><a href="admin_write">글쓰기</a></button>
+					<button type="button" class="text"><a href="Notice_write">글쓰기</a></button>
 				</c:if>
 			</div>
 		 
@@ -112,9 +112,9 @@
 									<tr>
 										<td class="txc">${row.notice_no}</td>
 										<td class="txc" style="text-align:center;">${row.notice_sub}</td>
-										<td class="txl" style="text-align:left;"><a href="view?notice_no=${row.notice_no}&n_show=Y">${row.notice_title}</a>
+										<td class="txl" style="text-align:left;"><a href="n_view?notice_no=${row.notice_no}&n_show=Y">${row.notice_title}</a>
 										<fmt:formatDate value="${now}" pattern="yyyyMMdd" var="today" />
-										<fmt:formatDate value="${row.notice_date}" pattern="yyyyMMdd" var="regDate"/>
+										<fmt:formatDate value="${row.notice_date}" pattern="yyyyMMdd" var="notice_date"/>
 										<c:choose>
 											<c:when test="${today == notice_date}" >
 												<td class="txc" style="color:red;">Today</td>					

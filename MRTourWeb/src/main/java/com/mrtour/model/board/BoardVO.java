@@ -13,6 +13,7 @@ public class BoardVO {
 	private String b_name;	// 작성자 이름
 	private int b_comments;	// 댓글 수
 	private String b_show;	// 화면 표시 여부
+	
 	public int getBoard_no() {
 		return board_no;
 	}

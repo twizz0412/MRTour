@@ -10,12 +10,12 @@
 		INSERT INTO BOARD (
 			BOARD_NO, 
 			B_TITLE, 
-			B_CONTENT, 
+			B_CONTENT,
 			B_NAME
 		) VALUES(
 			BOARD_SEQ.NEXTVAL, 
 			#{b_title}, 
-			#{b_content}, 
+			#{b_content},
 			#{b_name}
 		)
 	</insert>
