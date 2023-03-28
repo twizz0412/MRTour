@@ -80,7 +80,7 @@
                                 <div class="notice_write">
                                 	<input type="hidden" name="member_name" id="member_name" value="${member.member_name}"/>
                                 	<div class="subject">
-				                        <select id="notice_sub">
+				                        <select id="notice_sub" style = "width : 150px">
 											<option value="" selected>::선택::</option>
 											<option value="일반">일반</option>
 											<option value="안전정보">안전정보</option>
@@ -88,8 +88,8 @@
 										</select>
                                     </div>
                                     <div class="title">
-                                        <dl>
-                                            <dd><input type="text" name = "notice_title" id = "notice_title" placeholder="제목 입력"></dd>
+                                        <dl >
+                                            <dd><input type="text" style = "width : 500px" name = "notice_title" id = "notice_title" placeholder="제목 입력"></dd>
                                         </dl>
                                     </div>
                                     <div class="cont">

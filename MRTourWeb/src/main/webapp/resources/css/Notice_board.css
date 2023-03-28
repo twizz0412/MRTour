@@ -134,8 +134,11 @@ div.select_item .selectbox {
 .selectbox.items li.selected > .item {
     background: #e6e8ec;
 }
-.selectbox.items li.selected > .item {
+
+.selectbox.items li.disselected > .item {
+    background: #ffffff;
 }
+
 .selectbox.items li > .item {
     color: #111;
     cursor: default;
@@ -413,8 +416,8 @@ button {
     background-color: #fff;
 }
 .tabs>li.selected {
-    border-color: #5e2bb8;
-    border-left: 1px solid #5e2bb8;
+    border-color: #0e709a;
+    border-left: 1px solid #0e709a;
     z-index: 2;
 }
 .tabs>li {
@@ -433,8 +436,13 @@ ol, ul, li {
 }
 
 .type1 .tabs>li.selected>a {
-    color: #5e2bb8;
+    color: #0e709a;
     background-color: #fff;
+}
+
+.type1 .tabs>li.disselected>a {
+    color: #000000;
+    background-color: #ebebeb;
 }
 
 .type1 > .tabs>li>a {
@@ -448,7 +456,7 @@ ol, ul, li {
 }
 .tabs>li.selected>a {
     color: #fff;
-    background-color: #5e2bb8;
+    background-color: #0a4965;
     font-weight: 600;
 }
 .tabs>li>a {
@@ -630,6 +638,7 @@ header, hgroup, menu, nav, section, summary, time, mark, audio, video {
 div {
     display: block;
 }
+
 body {
     -webkit-text-size-adjust: none;
     font-size: 14px;

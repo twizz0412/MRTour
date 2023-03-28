@@ -211,7 +211,7 @@
 	<section id="section5">
 		<div class="scn5">
 			<div class="sc5">
-				<div class="sc55" onclick = "location.href='Notice_board'">
+				<div class="sc55" onclick = "location.href='notice'">
 					<img src="resources/images/ft.JPG"
 						style="width: 50px; height: 50px; border: solid 1px #afafaf; border-radius: 50%; padding: 5px;">
 					<div class="tt5">

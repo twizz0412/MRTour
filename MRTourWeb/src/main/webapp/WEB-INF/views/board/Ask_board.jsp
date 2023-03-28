@@ -6,21 +6,20 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1.0, user-scalable=no" />
-<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style scoped>
+		@import "resources/css/Notice_board.css";
+	</style>
 
-<link rel="stylesheet" type="text/css"
-	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="resources/css/Notice_board.css">
-
-<title>미래투어[1:1 문의]</title>
+	<title>미래투어[1:1 문의]</title>
 </head>
 <body>
 	<!-- header -->
 	<%@ include file="../include/header.jsp"%>
-	
+<div id = "inc_foot">	
 	<div id="contents" class="contents">
 		<input type="hidden" id="curPage" value="${curPage }"/>
 		<center>
@@ -38,9 +37,9 @@
 										<select name="searchOption" id="searchOption">
 											<option value="B_NAME" <c:out value="${map.searchOption=='B_NAME'?'selected':''}"/> >이름</option>
 										</select> 
-										<input type="text" name="keyword" placeholder="검색어 입력" id="keyword" value="${keyword}">
+										<input type="text" name="keyword" placeholder="검색어 입력" id="keyword" value="${keyword}"  class="input_keyword">
 										<input type="hidden" name="search" id="search" value="s"/>
-										<input type="submit" class="check2" value="조회"/>
+										<input type="submit" class="btn" value="조회"/>
 									</form>	
 								</div> 
 							 </div>
@@ -50,12 +49,12 @@
 			</span>
 		</div>
 		<div class="js_tabs type1">
-			 <ul class="tabs" style = "width:100%">
-				 <li class="selected" style="width: 24.9%;">1:1문의</li>
+			<ul class="tabs" style = "width:100%">
+				 <li class="disselected" style="width: 24.9%;"><a href="notice">공지사항</a></li>
+				 <li class="selected" style="width: 24.9%;"><a href="board">1:1문의</a></li>
 			 </ul>
 		 </div> 
-		 
-		 
+		 	 
 			<div style="float: right;">
 			
 			<!-- 검색했을 때 카운트-->
@@ -75,8 +74,7 @@
 					<button type="button" class="text" onClick="location.href='write'">글쓰기</button>
 				</c:if>
 			</div>
-			
-			
+					
 			<br/><br/><br/>
 			<div class="tbl">
 				<table class="type1">
@@ -100,19 +98,19 @@
 							<c:forEach begin="0" end="${(fn:length(map.list))}" var="i">
 								<c:set var="row" value="${map.list[i]}" />
 									<input type="hidden" id="board_no" name="board_no" value="${row.board_no}"/>
-							<!--	<input type="hidden" id="b_show" value="${row.b_show}"/>	 -->
+
 								<c:choose>
 								<%-- 검색결과가 있을 때 --%>
 									<c:when test="${not empty row}">
 										<tr>
 											<td class="txc">${row.board_no}</td>
-											<td  class="txl" style="text-align:left;"><a href="view?board_no=${row.board_no}&b_show=Y">${row.b_title}</a>
-											<td  class="txc" style="text-align:center;">${row.b_name}</td>
+											<td class="txl" style="text-align:left;"><a href="view?board_no=${row.board_no}&b_show=Y">${row.b_title}</a>
+											<td class="txc" style="text-align:center;">${row.b_name}</td>
 											<fmt:formatDate value="${now}" pattern="yyyyMMdd" var="today" />
 											<fmt:formatDate value="${row.b_writedate}" pattern="yyyyMMdd" var="regDate"/>
 											<c:choose>
 												<c:when test="${today == b_writedate}" >
-													<td class="txc" style="color:red;">오늘</td>					
+													<td class="txc" style="color:red;">Today</td>					
 												</c:when>
 												<c:otherwise>
 													<td class="txc">${row.b_writedate}</td>
@@ -125,7 +123,7 @@
 									<c:when test="${map.count == 0}">
 										<tr style="text-align:center;">
 											<td colspan='5' size="30px">
-												<b style="color: red; font-size:30px;">'${keyword}'</b> 에 대한 검색결과가 없습니다.
+												<b style="color: blue; font-size:30px;">'${keyword}'</b> 에 대한 검색결과가 없습니다.
 											</td>
 										</tr>
 									</c:when>
@@ -179,9 +177,9 @@
 			</div>
 		</center>
 	</div>
-	<!-- footer -->
-	<div>
-	<%@ include file="../include/footer.jsp"%>
-	</div>
+
+	<!-- footer import 필요 -->
+
+</div>
 </body>
 </html>
