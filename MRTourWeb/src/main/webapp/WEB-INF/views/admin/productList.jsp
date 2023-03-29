@@ -23,6 +23,10 @@
 	
 		<section>
 			<h2 align="center">등록한 상품 보기</h2>
+			<button type="button" class="btn" onclick="location.href='admin_main'">관리자 메인 페이지</button>
+			<button type="button" class="btn" onclick="location.href='admin_insertProduct'">상품 등록 페이지</button>
+			<button type="button" class="btn" onclick="location.href='./main'">메인 페이지</button>
+			
 			<form name="f3rm" id="f3rm" enctype="multipart/form-data">
 				<table align="center">
 					<tr>

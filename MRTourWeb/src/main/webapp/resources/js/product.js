@@ -78,6 +78,15 @@ function doInsertProduct() {
 	}
 }
 
+function imageChange() {
+	var input = document.memberform.file;
+	var fReader = new FileReader();
+	fReader.readAsDataURL(input.files[0]);
+	fReader.onloadend = function(event) {
+		document.memberform.image.src = event.target.result;
+	}
+}
+
 // 상품 등록 시 상품 코드 중복 체크
 function prdCheckID() {
 	var prd_id=$("#prd_id").val();

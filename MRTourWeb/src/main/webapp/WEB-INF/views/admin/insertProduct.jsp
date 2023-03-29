@@ -88,9 +88,7 @@
 					
 					<tr>
 						<td colspan="2">
-						<button type="button" onclick="doInsertProduct()">
-								<span>등록</span>
-						</button>
+						<input type = "button" id="button" value = "등록" onclick = "doInsertProduct()">			
 						</td>
 					</tr>
 				</table>
