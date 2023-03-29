@@ -17,7 +17,8 @@
 		function createB() {
 			var b_title=$("#b_title").val();
 			var b_content=$("#b_content").val();
-			var b_name = $("#b_name").val();
+			var member_name = $("#member_name").val();
+			var member_id = $("#member_id").val();
 			var titleLength=b_title.length;
 			
 			if(!b_title) {
@@ -34,7 +35,8 @@
 						data : {
 							"b_title" : b_title,
 							"b_content" : b_content,
-							"b_name" : b_name
+							"member_name" : member_name,
+							"member_id" : member_id
 						}, success : function(data) {
 								location.href='board';
 						}
@@ -77,15 +79,19 @@
 			 <ul class="tabs" style = "width:100%">
 				 <li class="disselected" style="width: 24.9%;"><a href="notice">공지사항</a></li>
 				 <li class="selected" style="width: 24.9%;"><a href="board">1:1문의</a></li>
+				 <li class="disselected" style="width: 24.9%;"><a href="FAQ">FAQ(자주하는 질문)</a></li>
 			 </ul>
 		 </div>
 		<br/><br/>
 		<form action = "#" method="post"  id="form1">
 			<div class="tbl">
 				<!-- 수정,삭제에 필요한 글번호를 hidden 태그에 저장 -->
-				<table border="1" bordercolor="#E1DCDC"class="type1" cellpadding="0" cellspacing="0" width="100%">
-				<input type="hidden" name="member_id" id="member_id" value="${board.member_id}"/>
-				<input type = "hidden" name = "b_name" id = "b_name" value = "${board.b_name}" />
+				<table border="1" bordercolor="#E1DCDC" class="type1" cellpadding="0" cellspacing="0" width="100%">
+					<!-- member테이블의 값을 가져옴 -->
+				 	<c:if test="${member.member_id != null && member.member_name != null}">
+						<input type="hidden" name="member_id" id="member_id" value="${member.member_id}"/>
+						<input type="hidden" name="member_name" id="member_name" value="${member.member_name}" />
+					</c:if>
 					<tr>
 						<td>제목</td>
 						<td colspan = "5" align="left">
@@ -101,7 +107,7 @@
 				</table>
 			</div>
 			<div style="margin-top: 10px; margin-bottom:20px;">
-					<input type = "button" id="list_btn" value = "등록" onclick = "createB()">
+				<input type = "button" id="list_btn" value = "등록" onclick = "createB()">
 				<button type="button" id="list_btn" onClick="location.href='board'">취소/목록</button>
 			</div>
 		</form>

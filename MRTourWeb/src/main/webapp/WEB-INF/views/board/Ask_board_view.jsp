@@ -8,6 +8,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
 	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<style>
 		@import "resources/css/Notice_board.css";
@@ -54,14 +55,21 @@
 			 <ul class="tabs" style = "width:100%">
 				 <li class="disselected" style="width: 24.9%;"><a href="notice">공지사항</a></li>
 				 <li class="selected" style="width: 24.9%;"><a href="board">1:1문의</a></li>
+				 <li class="disselected" style="width: 24.9%;"><a href="FAQ">FAQ(자주하는 질문)</a></li>
 			 </ul>
 		 </div>
 		<br/><br/>
 		
-		<!-- 회원만 작성 가능 -->
+		<!-- 본인만 수정 가능 -->
 			<div style="float: right;">
-				<c:if test="${member.member_id != null}">
-					<button type="button" class="text" onClick="location.href='write'">글쓰기</button>
+				<c:if test="${member.member_id == board.member_id && board.b_comments eq '기본'}">
+					<button type="button" id="list_btn" class="text"><a href="updateWrite">수정</a></button>
+				</c:if>
+				<c:if test="${member.member_id == board.member_id && board.b_comments != '기본'}">
+					<span>관리자의 답변이 등록된 문의는 수정할 수 없습니다.</span>
+				</c:if>
+				<c:if test="${member.member_id eq 'admin'}">
+					<button type="button" width = "50px" id="list_btn" class="text"><a href="updateWrite">답변 등록</a></button>
 				</c:if>
 			</div>
 			
@@ -77,7 +85,7 @@
 				
 			<tr>
 			<td>작성자</td>
-			<td colspan='3' align="left">${board.b_name}</td>
+			<td colspan='3' align="left">${board.member_name}</td>
 			</tr>
 				
 			<tr>
@@ -95,17 +103,13 @@
 			<tr valign="top">
 			<td colspan='4' height="500px">${board.b_content}</td>
 			</tr>
-			
-			<tr>
-				<td colspan = "4" height = "30px" border = "none"></td>
-			</tr>
 		</table>	
 		<br>
 		<table border="1" bordercolor="#E1DCDC" class="view" cellpadding="0" cellspacing="0" width="100%" height = "100px">
 			<tr>
 				<td align="left">관리자 답변</td>
 				<c:choose>
-				<c:when test = "${board.b_comments == 0}">
+				<c:when test = "${board.b_comments eq '기본'}">
 					<td colspan = "3" align="left" style = "color:darkgray">[답변예정]1~2일이 소요될 수 있으니 양해 부탁드립니다.</td>
 				</c:when>
 				<c:otherwise>
@@ -129,58 +133,23 @@
 	
 			<div style="float:right;">
 			
-				<!-- 본인만 수정,삭제 버튼 표시 -->
-				<c:if test="${member.member_id == board.member_id}">
-					<a href="updateWrite">수정</a>&nbsp;&nbsp;&nbsp;
-					<a href="#" onClick="deleteB()">삭제</a>&nbsp;&nbsp;&nbsp;
+				<!-- 본인, 관리자만 삭제 버튼 표시 -->
+				<c:if test="${member.member_id != board.member_id}">
+					<a href="#" id="list_btn"onClick="deleteB()">삭제</a>&nbsp;&nbsp;&nbsp;
 				</c:if>
 			
 				<button type="button" id="list_btn" onClick="location.href='board'">목록</button>
 			</div>
 		</div>
 	</div>
-		<!-- 현재 글을 기준으로 이전글,다음글 리스트 -->
-				<div align="center" class = "nextprev">					
-					<table class="simpleView" width="800">
-						<c:choose>
-							<c:when test="${map.previousB != null}">
-								<tr class="a">
-									<td onClick="location.href='view?board_no=${map.previousB.board_no}&show=Y'" style="cursor: pointer">이전글</td>
-									<td onClick="location.href='view?board_no=${map.previousB.board_no}&show=Y'" style="cursor: pointer;width:400px;">${map.previousB.b_title}</td>
-									<td class="tdS">${map.previousB.b_name}</td><td class="tdS">${map.previousB.b_writedate}</td>
-								</tr>
-							</c:when>
-							<c:otherwise>
-								<tr class="a">
-									<td rowspan = "4"></td>
-								</tr>
-							</c:otherwise>
-						</c:choose>
-						<c:choose>
-							<c:when test="${map.nextB != null}">
-							<tr class="b">
-								<td onClick="location.href='view?board_no=${map.nextB.board_no}&show=Y'" style="cursor: pointer">다음글</td>
-								<td  onClick="location.href='view?board_no=${map.nextB.board_no}&show=Y'" style="cursor: pointer;width:400px;">${map.nextB.b_title}</td>
-								<td class="tdS">${map.nextB.b_name}</td><td class="tdS">${map.nextB.b_writedate}</td>
-							</tr>
-							</c:when>
-							<c:otherwise>
-								<tr class="b">
-								<td rowspan = "4"></td>
-							</tr>
-							</c:otherwise>
-						</c:choose>
-					</table>
-				</div>
-		</center>
+	</center>
 	</c:when>
 	<c:otherwise>
 		<table border="1" bordercolor="#E1DCDC" class="view" cellpadding="0" cellspacing="0" width="100%" height = "600px">
 			<tr>
 			<td align="center">"작성자만 조회할 수 있는 화면입니다"</td>
 			</tr>
-		</table>
-		
+		</table>	
 	</c:otherwise>
 </c:choose>
 </body>

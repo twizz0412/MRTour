@@ -40,31 +40,26 @@ public class BoardController {
 		return "board/Ask_board";
 	}
 
-	// 게시글 수정 뷰
+	// 게시글 수정하러 가기
 	@RequestMapping("/updateWrite")
 	public String updateWrite(BoardVO vo) throws Exception {
-		return "board/updateWrite";
+		return "board/Ask_board_update";
 	}
 
-	// 게시글 수정
+	// 게시글 수정 후
 	@RequestMapping(value = "/updateBoard", method = RequestMethod.POST)
 	public String updateBoard(BoardVO vo) throws Exception {
-		if (vo.getB_title() != null) {
-			boardService.updateBoard(vo);
-			return "board/Ask_board_view";
-		} else {
-			return "board/Ask_board_write";
-		}
-		// return "redirect:/board";
+		boardService.updateBoard(vo);
+		return "board/Ask_board_view";
 	}
-
+	
 	// 게시글 삭제
 	@RequestMapping("/delete")
-	public String deleteBoard(int board_no) throws Exception {
+	public String deleteBoard(Integer board_no) throws Exception {
 		boardService.deleteBoard(board_no); // 삭제 처리
 		return "redirect:/board"; // 목록으로 이동
 	}
-
+	
 	// 게시글 목록 + 검색 + 페이징
 	@RequestMapping("/board")
 	public String listAllBoard(Model model, HttpSession session,
@@ -152,4 +147,10 @@ public class BoardController {
 
 		return "board/Ask_board_view";
 	}
+	
+	// FAQ화면으로 가기
+	@RequestMapping("/FAQ")
+	public String Faq() {
+		return "board/FAQ";
+	}	
 }

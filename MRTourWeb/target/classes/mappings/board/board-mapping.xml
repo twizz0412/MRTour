@@ -11,12 +11,14 @@
 			BOARD_NO, 
 			B_TITLE, 
 			B_CONTENT,
-			B_NAME
+			MEMBER_NAME,
+			MEMBER_ID
 		) VALUES(
 			BOARD_SEQ.NEXTVAL, 
 			#{b_title}, 
 			#{b_content},
-			#{b_name}
+			#{member_name},
+			#{member_id}
 		)
 	</insert>
 
@@ -25,7 +27,8 @@
 		UPDATE BOARD
 		SET
 		B_TITLE = #{b_title},
-		B_CONTENT = #{b_content}
+		B_CONTENT = #{b_content},
+		B_COMMENTS = #{b_comments}
 		WHERE
 		BOARD_NO = #{board_no}
 	</update>
@@ -34,7 +37,7 @@
 	<delete id="deleteBoard">
 		UPDATE BOARD SET B_SHOW='N' WHERE BOARD_NO = #{board_no}
 	</delete>
-
+	
 	<!-- 글 삭제 체크 -->
 	<select id="checkBoard" resultType="java.lang.Integer"> 
 		SELECT COUNT(*) FROM BOARD WHERE BOARD_NO = #{board_no} AND B_SHOW = 'Y' 
@@ -94,7 +97,7 @@
 		    <choose>
 		        <when test="searchOption == 'ALL'">
 		            WHERE B_SHOW='Y' AND 
-		            (B_NAME LIKE '%'||#{keyword}||'%' 
+		            (MEMBER_NAME LIKE '%'||#{keyword}||'%' 
 		                OR B_CONTENT LIKE LOWER('%'||#{keyword}||'%')
 		                OR B_CONTENT LIKE UPPER('%'||#{keyword}||'%')
 		                OR B_TITLE LIKE LOWER('%'||#{keyword}||'%')

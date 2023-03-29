@@ -8,6 +8,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
 	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<style>
 		@import "resources/css/Notice_board.css";
@@ -25,7 +26,7 @@
 				  if (isConfirm) {
 				    swal('삭제 완료!','게시글을 삭제했습니다.','success').then(function(isConfirm)
 				   		{
-							location.href='delete?notice_no='+${notice.notice_no};
+							location.href='deleteNotice?notice_no='+${notice.notice_no};
 				    	});
 				  }
 				})
@@ -52,6 +53,7 @@
 			 <ul class="tabs" style = "width:100%">
 				 <li class="selected" style="width: 24.9%;"><a href="notice">공지사항</a></li>
 				 <li class="disselected" style="width: 24.9%;"><a href="board">1:1문의</a></li>
+				 <li class="disselected" style="width: 24.9%;"><a href="FAQ">FAQ(자주하는 질문)</a></li>
 			 </ul>
 		 </div>
 		<br/><br/>
@@ -105,7 +107,6 @@
 		
 		<!-- 관리자만 생성/수정/삭제 가능 -->
 		<c:if test="${member.member_id eq 'admin'}">
-			<a href="writeNotice">글쓰기</a>&nbsp;&nbsp;&nbsp;
 			<a href="updateNotice">수정</a>&nbsp;&nbsp;&nbsp;
 			<a href="#" onClick="deleteN()">삭제</a>&nbsp;&nbsp;&nbsp;
 		</c:if>
