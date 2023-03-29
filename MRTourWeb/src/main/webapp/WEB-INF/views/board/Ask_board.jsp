@@ -24,7 +24,6 @@
 		<input type="hidden" id="curPage" value="${curPage }"/>
 		<center>
 		<div class="text_wrap fix">
-			<strong class="tit big">1:1 문의</strong> 
 			<span class="notice-board">
 				<div class="search_field">
 					<form action="#" role="search">
@@ -35,7 +34,7 @@
 								<div class="select_item">
 									<form action="board" class="boardsearch" align="left">
 										<select name="searchOption" id="searchOption">
-											<option value="B_NAME" <c:out value="${map.searchOption=='B_NAME'?'selected':''}"/> >이름</option>
+											<option value="MEMBER_NAME" <c:out value="${map.searchOption=='MEMBER_NAME'?'selected':''}"/> >이름</option>
 										</select> 
 										<input type="text" name="keyword" placeholder="검색어 입력" id="keyword" value="${keyword}"  class="input_keyword">
 										<input type="hidden" name="search" id="search" value="s"/>
@@ -52,6 +51,7 @@
 			<ul class="tabs" style = "width:100%">
 				 <li class="disselected" style="width: 24.9%;"><a href="notice">공지사항</a></li>
 				 <li class="selected" style="width: 24.9%;"><a href="board">1:1문의</a></li>
+				 <li class="disselected" style="width: 24.9%;"><a href="FAQ">FAQ(자주하는 질문)</a></li>
 			 </ul>
 		 </div> 
 		 	 
@@ -105,7 +105,7 @@
 										<tr>
 											<td class="txc">${row.board_no}</td>
 											<td class="txl" style="text-align:left;"><a href="view?board_no=${row.board_no}&b_show=Y">${row.b_title}</a>
-											<td class="txc" style="text-align:center;">${row.b_name}</td>
+											<td class="txc" style="text-align:center;">${row.member_name}</td>
 											<fmt:formatDate value="${now}" pattern="yyyyMMdd" var="today" />
 											<fmt:formatDate value="${row.b_writedate}" pattern="yyyyMMdd" var="regDate"/>
 											<c:choose>

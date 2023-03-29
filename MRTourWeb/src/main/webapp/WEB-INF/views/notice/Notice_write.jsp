@@ -82,6 +82,7 @@
 			 <ul class="tabs" style = "width:100%">
 				 <li class="selected" style="width: 24.9%;"><a href="notice">공지사항</a></li>
 				 <li class="disselected" style="width: 24.9%;"><a href="board">1:1문의</a></li>
+				 <li class="disselected" style="width: 24.9%;"><a href="FAQ">FAQ(자주하는 질문)</a></li>
 			 </ul>
 		 </div>
 		<br/><br/>

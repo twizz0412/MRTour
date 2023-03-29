@@ -25,6 +25,7 @@
 			 <ul class="tabs" style = "width:100%">
 				 <li class="selected" style="width: 24.9%;"><a href="notice">공지사항</a></li>
 				 <li class="disselected" style="width: 24.9%;"><a href="board">1:1문의</a></li>
+				 <li class="disselected" style="width: 24.9%;"><a href="FAQ">FAQ(자주하는 질문)</a></li>
 			 </ul>
 		 </div>
 		<br/><br/>
@@ -34,7 +35,7 @@
 				<input type="hidden" name="notice_no" value="${notice.notice_no}">
 				<table border="1" bordercolor="#E1DCDC"class="type1" cellpadding="0" cellspacing="0" width="100%">
 					<tr>
-						<td>관리자에 의해 삭제된 공지사항입니다.</td>
+						<td>회원 또는 관리자에 의해 삭제된 공지사항입니다.</td>
 					</tr>
 				</table>
 			</div>

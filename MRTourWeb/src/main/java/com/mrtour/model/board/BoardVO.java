@@ -10,9 +10,22 @@ public class BoardVO {
 	private String member_id;	// 작성자 id
 	private Date b_writedate;// 작성일(java.util.Date)
 	private int b_viewCnt;	// 조회수
-	private String b_name;	// 작성자 이름
-	private int b_comments;	// 댓글 수
+	private String member_name;	// 작성자 이름
+	private String b_comments;	// 댓글 수
 	private String b_show;	// 화면 표시 여부
+	
+	public int getB_viewCnt() {
+		return b_viewCnt;
+	}
+	public void setB_viewCnt(int b_viewCnt) {
+		this.b_viewCnt = b_viewCnt;
+	}
+	public String getMember_name() {
+		return member_name;
+	}
+	public void setMember_name(String member_name) {
+		this.member_name = member_name;
+	}
 	
 	public int getBoard_no() {
 		return board_no;
@@ -50,16 +63,10 @@ public class BoardVO {
 	public void setB_viewcnt(int b_viewcnt) {
 		this.b_viewCnt = b_viewcnt;
 	}
-	public String getB_name() {
-		return b_name;
-	}
-	public void setB_name(String b_name) {
-		this.b_name = b_name;
-	}
-	public int getB_comments() {
+	public String getB_comments() {
 		return b_comments;
 	}
-	public void setB_comments(int b_comments) {
+	public void setB_comments(String b_comments) {
 		this.b_comments = b_comments;
 	}
 	public String getB_show() {
@@ -74,7 +81,7 @@ public class BoardVO {
 		return "BoardDTO [board_no=" + board_no + ", b_title=" + b_title 
 				+ ", b_content=" + b_content + ", member_id=" + member_id 
 				+ ", b_writedate="+ b_writedate + ", b_viewCnt=" + b_viewCnt 
-				+ ", b_name=" + b_name + ", b_comments=" + b_comments 
+				+ ", member_name=" + member_name + ", b_comments=" + b_comments 
 				+ ", b_show=" + b_show + "]";
 	}
 }
