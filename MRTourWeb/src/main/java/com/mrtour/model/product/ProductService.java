@@ -12,7 +12,7 @@ public interface ProductService {
 
 	int countSearchPrd(String sPrd);
 
-	// 물품 등ㄹ고
+	// 물품 등록
 	void insertProduct(ProductInfoVO vo);
 
 	// 물품 리스트

@@ -3,26 +3,27 @@ package com.mrtour.model.cart;
 import java.util.List;
 
 public class ProductCartVO {
-	private String prd_img;
-	private String prd_name;
-	private int prd_price;
-	private int prd_delivery;
-	private int prd_sum;
+	private String cate_id; // 상품 종류 코드 (FK)
+	private String prd_name; // 상품명
+	private String prd_opt; // 상품 옵션	
+	private int prd_price; // 상품 가격
+	private int prd_sum; // 가격 합계
+	private String prd_img; // 상품 이미지
+	private String member_id; // 회원 아이디(FK)
+	private String prd_id; // 상품 코드(FK)
+	private int buy_quantity; // 주문 수량
+	private int cart_no; // 장바구니 고유번호
 
-	private String member_id;
-	private String prd_id;
-	private int buy_quantity;
-	private int cart_id;
-	private String prd_opt;
+	private List<String> cartPayList; // 장바구니 리스트
 
-	private List<String> cartPayList;
+	
 
-	public String getPrd_img() {
-		return prd_img;
+	public String getCate_id() {
+		return cate_id;
 	}
 
-	public void setPrd_img(String prd_img) {
-		this.prd_img = prd_img;
+	public void setCate_id(String cate_id) {
+		this.cate_id = cate_id;
 	}
 
 	public String getPrd_name() {
@@ -33,6 +34,14 @@ public class ProductCartVO {
 		this.prd_name = prd_name;
 	}
 
+	public String getPrd_opt() {
+		return prd_opt;
+	}
+
+	public void setPrd_opt(String prd_opt) {
+		this.prd_opt = prd_opt;
+	}
+
 	public int getPrd_price() {
 		return prd_price;
 	}
@@ -40,21 +49,13 @@ public class ProductCartVO {
 	public void setPrd_price(int prd_price) {
 		this.prd_price = prd_price;
 	}
-
-	public int getPrd_delivery() {
-		return prd_delivery;
-	}
-
-	public void setPrd_delivery(int prd_delivery) {
-		this.prd_delivery = prd_delivery;
-	}
-
+	
 	public int getPrd_sum() {
 		return prd_sum;
 	}
 
 	public void setPrd_sum(int buy_quantity, int prd_price) {
-		this.prd_sum = buy_quantity * prd_price;
+		this.prd_sum = buy_quantity * prd_price; // 합계 = 주문 수량 * 상품 가격
 	}
 
 	public String getMember_id() {
@@ -81,20 +82,12 @@ public class ProductCartVO {
 		this.buy_quantity = buy_quantity;
 	}
 
-	public int getCart_id() {
-		return cart_id;
+	public int getCart_no() {
+		return cart_no;
 	}
 
-	public void setCart_id(int cart_id) {
-		this.cart_id = cart_id;
-	}
-
-	public String getPrd_opt() {
-		return prd_opt;
-	}
-
-	public void setPrd_opt(String prd_opt) {
-		this.prd_opt = prd_opt;
+	public void setCart_no(int cart_no) {
+		this.cart_no = cart_no;
 	}
 
 	public List<String> getCartPayList() {
@@ -104,4 +97,6 @@ public class ProductCartVO {
 	public void setCartPayList(List<String> cartPayList) {
 		this.cartPayList = cartPayList;
 	}
+
+	
 }

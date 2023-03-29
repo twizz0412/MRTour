@@ -19,7 +19,7 @@
                 <button type="button" class="btn" onclick="location.href='admin_notice'">공지사항</button>
                 <button type="button" class="btn" onclick="location.href=''">1:1 문의</button>
                 <button type="button" class="btn" onclick="location.href='admin_mem'">회원관리</button>
-                <button type="button" class="btn" onclick="location.href=''">예약관리</button>
+                <button type="button" class="btn" onclick="location.href='admin_insertProduct'">상품등록</button>
             </form>
         </div>
 
