@@ -243,49 +243,7 @@ a {
     flex: 1 100%;
 }
 
-.breadcrumbs {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 60px 0;
-}
 
-.breadcrumbs .text-article .text {
-    font-size: 32px;
-    font-weight: 400;
-    letter-spacing: -2px;
-}
-
-strong {
-    /* "제주" 강조 */
-    font-weight: 500 !important;
-    /* !important : 우선 적용 */
-    font-family: Noto_m !important;
-}
-
-.breadcrumbs .text-article .text+.sub-text {
-    /* 이용일자 표시 부분 */
-    margin-top: 15px;
-}
-
-.breadcrumbs .text-article .sub-text {
-    font-size: 16px;
-    font-weight: 400;
-    color: #999;
-}
-
-
-
-/* 오른쪽 상품선택, 결제하기 부분 */
-.breadcrumbs .step {
-    display: flex;
-}
-
-li,
-ol,
-ul {
-    list-style: none;
-}
 
 ul {
     display: block;
@@ -297,90 +255,6 @@ ul {
     padding-inline-start: 40px;
 }
 
-.breadcrumbs .step li:first-child {
-    /* 상품선택 */
-    padding: 0 30px 0 0;
-}
-
-.breadcrumbs .step li {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding: 0 30px;
-}
-
-li {
-    display: list-item;
-    text-align: -webkit-match-parent;
-}
-
-.breadcrumbs .step li.active .num {
-    /* 상품선택 위 숫자 마크 */
-    background: #000;
-}
-
-.breadcrumbs .step li .num {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: Noto_m;
-    font-weight: 400;
-    font-size: 16px;
-    position: relative;
-    z-index: 1;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background: #ccc;
-    color: #fff;
-    margin-bottom: 25px;
-}
-
-.breadcrumbs .step li .num:after {
-    content: "";
-    left: 100%;
-    right: -60px;
-}
-
-.breadcrumbs .step li .num:after,
-.breadcrumbs .step li .num:before {
-    content: "";
-    position: absolute;
-    z-index: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    height: 1px;
-    background: #e0e0e0;
-}
-
-
-
-
-.breadcrumbs .step li.active .text {
-    /* "상품 선택" 텍스트 */
-    font-family: Noto_m;
-    font-weight: 400;
-    font-size: 16px;
-    color: #000;
-}
-
-.breadcrumbs .step li:last-child {
-    /* 우측 결제하기 부분 */
-    padding: 0 0 0 30px;
-}
-
-.breadcrumbs .step li .num:before {
-    content: "";
-    left: -60px;
-    right: 100%;
-}
-
-.breadcrumbs .step li .text {
-    /* "결제하기" 텍스트(active 상태 아님) */
-    font-size: 16px;
-    font-weight: 400;
-    color: #999;
-}
 
 /* 상품 위 검색 결과 섹션 */
 .search-result-header {
@@ -388,6 +262,7 @@ li {
     align-items: center;
     justify-content: space-between;
     margin-bottom: 10px;
+    margin-top: 20px;
 }
 
 .search-result-header .total {
@@ -400,65 +275,7 @@ li {
 }
 
 
-.product-list {
-    width: 1500px;
-    margin: auto;
-    padding: 0 50px;
-}
 
-
-.product {
-    display: block;
-    width: 275px;
-    text-align: center;
-    text-decoration: none;
-    color: black;
-    float: left;
-    margin-left: 10px;
-    margin-right: 100px;
-    margin-top: 100px;
-    width: 300px;
-    height: 500px;
-    box-sizing: border-box;
-    border: 1px solid #b4b4b4;
-    padding: 10px;
-    border-radius: 5%;
-}
-
-button {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-
-    background: #058fff;
-    color: #ffffff;
-
-    margin: 0;
-    padding: 0.5rem 1rem;
-
-    font-family: 'Nanum Gothic', sans-serif;
-    font-size: 1rem;
-    font-weight: 600;
-    text-align: center;
-    text-decoration: none;
-
-    border: none;
-    border-radius: 4px;
-
-    display: inline-block;
-    width: auto;
-
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-
-    cursor: pointer;
-
-    transition: 0.5s;
-}
-
-
-.product-name {
-    margin-top: 15px;
-}
 
 .clearfix {
     clear: both;
@@ -472,7 +289,7 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 30px;
+    margin-top: 100px;
 }
 
 .c-pagination .pagination-first,
@@ -559,12 +376,47 @@ button {
 
 
 
+.product {
+    margin-top: 20px;
+    float: left;
+    height: 300px;
+
+}
+
+.product-list {
+    width: 100%;
+    float: left;
+}
+
+.product-list li {
+    display: list-item;
+    list-style: none;
+    float: left;
+
+}
 
 
+.pro {
+    margin-top: 35px;
+    margin-left: 20px;
+    font-size: 20px;
+}
 
 
+.product::after {
+    content: "";
+    width: 70%;
+    border-bottom: 3px solid #CECECE;
+    position: absolute;
+    top: 400px;
+    right: 15%;
+}
 
-
-
-
-
+.product:last-child:after {
+    content: "";
+    width: 63%;
+    border-bottom: 3px solid #CECECE;
+    position: absolute;
+    top: 400px;
+    right: 19%;
+}
