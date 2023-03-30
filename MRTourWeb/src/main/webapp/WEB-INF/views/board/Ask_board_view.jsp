@@ -31,6 +31,7 @@
 				  }
 				})
 		}
+		
 		$("#list_btn").click(function(){
 			self.location="board?"
 					+ "searchOption=${searchOption}&keyword=${keyword}"

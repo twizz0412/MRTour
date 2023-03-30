@@ -12,13 +12,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.mrtour.home.Pager;
 import com.mrtour.model.member.MemberService;
 import com.mrtour.model.member.MemberVO;
+import com.mrtour.model.notice.NoticeVO;
 import com.mrtour.model.payment.PaymentVO;
+import com.mrtour.model.product.ProductInfoVO;
 
 @Controller
+@SessionAttributes("member")
 public class MemberController {
 	@Autowired
 	private MemberService memberService;
@@ -171,6 +175,7 @@ public class MemberController {
 	}
 	
 	
+	
 
 	//관리자 화면
 
@@ -180,9 +185,32 @@ public class MemberController {
 			return "admin/admin_main";
 		}
 		
-	// 관리자 회원관리 화면으로 가기
-		@RequestMapping("/admin_mem")
-		public String Admin_mem() {
+		
+	//회원관리 목록화면 + 구현
+		@RequestMapping(value = "/admin_mem", method = RequestMethod.GET)
+		public String listAllMember(@RequestParam(defaultValue = "1") int curPage, MemberVO vo, Model model) {
+			int count = memberService.getCountMember(vo);
+			Pager pager = new Pager(count, curPage);
+			int start = pager.getPageBegin();
+			int end = pager.getPageEnd();
+			
+			List<MemberVO> list = memberService.getMemberList(start, end, vo);
+			HashMap<String, Object> map = new HashMap<String, Object>();
+			map.put("list", list);
+			map.put("count", count);
+			map.put("pager", pager);
+			model.addAttribute("map", map);
+
 			return "admin/admin_mem";
+		}
+		
+		// 게시글 삭제
+		@RequestMapping("/delete_mem")
+		public String deleteMember(Integer member_id) throws Exception {
+			memberService.deleteMember(member_id); // 삭제 처리
+			return "redirect:/admin_mem"; // 목록으로 이동
 		}	
+		
+		
+
 }

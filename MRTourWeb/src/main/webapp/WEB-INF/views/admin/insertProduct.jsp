@@ -17,7 +17,7 @@
 		 -->
 	</head>
 	<body>
-		
+		<button type="button" class="btn" onclick="location.href='productList'">상품관리</button>
 		<section>
 			<h2 align="center">상품 등록</h2>
 			<form id="fileForm" action="insertProduct" method="POST" enctype="multipart/form-data">
@@ -63,13 +63,13 @@
 					<tr>
 						<th>상품 가격</th>
 						<td>
-							<input type="text" name="prd_price" id="prd_price" />
+							<input type="number" name="prd_price" id="prd_price" />
 						</td>
 					</tr>
 					<tr>
 						<th>상품 옵션</th>
 						<td>							
-						<select name="prd_option" id="prd_option" style="width: 150px; height: 24px;">
+						<select name="prd_opt" id="prd_opt" style="width: 150px; height: 24px;">
 								<option value="" selected>::선택::</option>
 								<option value="sgl">싱글룸</option>
 								<option value="dbl">더블룸</option>
@@ -82,7 +82,7 @@
 					<tr>
 						<th>이미지</th>
 						<td>
-							<input type="file" id = "prd_img" name="uploadFile"/>
+							<input type="file" name="uploadFile" id="uploadFile" />
 						</td>
 					</tr>
 					

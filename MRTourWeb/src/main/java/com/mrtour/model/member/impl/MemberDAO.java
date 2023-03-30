@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 
 import com.mrtour.model.member.MemberVO;
 import com.mrtour.model.payment.PaymentVO;
+import com.mrtour.model.product.ProductInfoVO;
 
 @Repository
 public class MemberDAO {
@@ -39,6 +40,11 @@ public class MemberDAO {
 	// 회원정보 수정
 	public void updateMember(MemberVO vo) {
 		mybatis.update("MemberDAO.updateMember", vo);
+	}
+	
+	// 회원 탈퇴/추방
+	public void deleteMember(int member_id) {
+		mybatis.update("MemberDAO.deleteMember", member_id);
 	}
 
 	// 회원 주문내역
@@ -72,6 +78,7 @@ public class MemberDAO {
 		return mybatis.selectList("MemberDAO.getMemberList", map);
 	}
 
+	// 멤버 수
 	public int getCountMember(MemberVO vo) {
 		return mybatis.selectOne("MemberDAO.getCountMember", vo);
 	}
@@ -79,5 +86,14 @@ public class MemberDAO {
 	// 관리자 로그인
 	public MemberVO admin_login(MemberVO vo) {
 		return (MemberVO) mybatis.selectOne("MemberDAO.admin_login", vo);
+	}
+	
+	// 멤버 검색
+	public List<MemberVO> listSearchMem(String sMem, int start, int end) {
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("sPrd", sMem);
+		map.put("start", start);
+		map.put("end", end);
+		return mybatis.selectList("MemberDAO.listSearchMem", map);
 	}
 }

@@ -10,9 +10,8 @@
 		<script src="http://code.jquery.com/jquery-latest.js"></script>
 		<script src="resources/js/product.js" charset="UTF-8"></script>
 		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<!--  	<link rel="stylesheet" type="text/css" href="resources/css/admin_css/admin_notice.css"> -->	
 		
-<!-- 		<link rel="stylesheet" type="text/css" href="resources/css/admin_css/admin_notice.css">
- -->		
 		<script>
 			function list(page) {
 				location.href="productList?curPage="+page;
@@ -23,6 +22,7 @@
 	
 		<section>
 			<h2 align="center">등록한 상품 보기</h2>
+			
 			<button type="button" class="btn" onclick="location.href='admin_main'">관리자 메인 페이지</button>
 			<button type="button" class="btn" onclick="location.href='admin_insertProduct'">상품 등록 페이지</button>
 			<button type="button" class="btn" onclick="location.href='./main'">메인 페이지</button>
@@ -31,22 +31,26 @@
 				<table align="center">
 					<tr>
 						<th>카테고리</th>
-						<th>이미지</th>
+						<th>이미지 경로</th>
 						<th>상품명</th>
 						<th>상품 코드</th>
 						<th>가격</th>
 						<th>옵션</th>
+						<th>지역</th>
 					</tr>
 					<c:forEach begin="0" end="${(fn:length(map.list))}" var="i">
 						<c:set var="product" value="${map.list[i]}" />
+						
+						
 						<c:if test="${not empty product}">
 							<tr>
 								<td>${product.cate_id}</td>
-								<td><img src="${product.prd_img}" width="100" height="100"></td>
+								<td><img src="${product.prd_img}" width="100" height="100" alt = "사진변경필요"></td>
 								<td>${product.prd_name}</td>
 								<td>${product.prd_id}</td>
 								<td>${product.prd_price}</td>
 								<td>${product.prd_opt}</td>
+								<td>${product.city_no}</td>
 							</tr>
 						</c:if>
 					</c:forEach>

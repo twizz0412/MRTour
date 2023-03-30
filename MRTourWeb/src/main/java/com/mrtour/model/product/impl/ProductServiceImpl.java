@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.mrtour.model.product.impl.ProductInfoDAO;
 import com.mrtour.model.product.ProductInfoVO;
 import com.mrtour.model.product.ProductService;
 

@@ -1,13 +1,11 @@
 package com.mrtour.model.product;
 
-import java.sql.Date;
-
 import org.springframework.web.multipart.MultipartFile;
 
 public class ProductInfoVO {
 	private String prd_id; // 상품 코드
 	private String prd_name; // 상품명
-	private int city_no; // 지역 번호
+	private String city_no; // 지역 번호
 	private String prd_opt; // 상품 옵션
 	private String cate_id; // 상품 종류 코드
 	private int prd_price; // 상품 가격
@@ -43,11 +41,11 @@ public class ProductInfoVO {
 		this.prd_name = prd_name;
 	}
 
-	public int getCity_no() {
+	public String getCity_no() {
 		return city_no;
 	}
 
-	public void setCity_no(int city_no) {
+	public void setCity_no(String city_no) {
 		this.city_no = city_no;
 	}
 
