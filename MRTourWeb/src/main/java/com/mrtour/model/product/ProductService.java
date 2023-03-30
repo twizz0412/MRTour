@@ -8,9 +8,9 @@ public interface ProductService {
 	int prdCheckID(ProductInfoVO vo);
 
 	// 물품 검색
-	List<ProductInfoVO> listSearchPrd(String sPrd, int start, int end);
+	List<ProductInfoVO> listSearchPrd(String searchOption, int start, int end);
 
-	int countSearchPrd(String sPrd);
+	int countSearchPrd(String searchOption, String prd_opt);
 
 	// 물품 등록
 	void insertProduct(ProductInfoVO vo);

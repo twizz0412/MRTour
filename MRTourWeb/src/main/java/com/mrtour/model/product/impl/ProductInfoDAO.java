@@ -30,9 +30,10 @@ public class ProductInfoDAO {
 		}
 		
 		// 검색 품목 카운트
-		public int countSearchPrd(String sPrd) {
+		public int countSearchPrd(String searchOption, String prd_opt) {
 			Map<String, Object> map = new HashMap<String, Object>();
-			map.put("sPrd", sPrd);
+			map.put("searchOption", searchOption);
+			map.put("prd_opt", prd_opt);
 			return mybatis.selectOne("ProductInfoDAO.countSearchPrd", map);
 		}
 

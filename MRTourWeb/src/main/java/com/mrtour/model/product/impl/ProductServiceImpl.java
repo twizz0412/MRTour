@@ -24,8 +24,8 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	// 검색 품목 카운트
-	public int countSearchPrd(String sPrd) {
-		return productInfoDAO.countSearchPrd(sPrd);
+	public int countSearchPrd(String searchOption, String prd_opt) {
+		return productInfoDAO.countSearchPrd(searchOption, prd_opt);
 	}
 
 	// 상품 등록
