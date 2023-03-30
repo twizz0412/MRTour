@@ -20,9 +20,6 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import com.mrtour.model.product.ProductInfoVO;
 import com.mrtour.model.product.ProductService;
 import com.mrtour.home.Pager;
-import com.mrtour.model.member.MemberService;
-import com.mrtour.model.member.MemberVO;
-import com.mrtour.model.payment.PaymentVO;
 
 @Controller
 public class ProductController {
@@ -61,29 +58,79 @@ public class ProductController {
 	@RequestMapping("/car_page")
 	public String car_page() {return "products/car_page";}
 	
+	
 	// 렌트카 예약페이지
 	@RequestMapping("/car_checkout")
 	public String car_checkout() {return "products/car_checkout";}
 	
+	// 제품 상세페이지
+	@RequestMapping("/productpage")
+	public String productPage(ProductInfoVO vo, Model model) {
+		model.addAttribute("product", productService.productDetail(vo));
+		return "product/productpage";
+	}
 	
+	// 카테고리 품목 출력
+	@RequestMapping("/category")
+	public String getfbMirrorList(@RequestParam(defaultValue = "1") int curPage, ProductInfoVO vo, Model model) {
+		int count = productService.getCountProduct(vo);
+		Pager pager = new Pager(count, curPage);
+		int start = pager.getPageBegin();
+		int end = pager.getPageEnd();
+
+		List<ProductInfoVO> list = productService.getProductList(start, end, vo);
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		map.put("cate_id", vo.getCate_id());
+		map.put("list", list);
+		map.put("count", count);
+		map.put("pager", pager);
+		model.addAttribute("map", map);
+		return "product/category";
+	}
 	
+	// 품목 리스트 + 페이징 + 검색
+		@RequestMapping(value = "/searchPrd", method = RequestMethod.GET)
+		public String listPage(Model model, HttpSession session, ProductInfoVO vo,
+				@RequestParam(defaultValue = "") String sPrd, @RequestParam(defaultValue = "1") int curPage) {
+			// 게시글 갯수 계산
+			int count = productService.countSearchPrd(sPrd);
+
+			// 페이지 관련 설정
+			Pager pager = new Pager(count, curPage);
+			int start = pager.getPageBegin();
+			int end = pager.getPageEnd();
+
+			session.setAttribute("sPrd", sPrd); // 상품 이름 검색
+			session.setAttribute("curPage", curPage);
+
+			List<ProductInfoVO> list = productService.listSearchPrd(sPrd, start, end); // 게시글 목록
+			HashMap<String, Object> map = new HashMap<String, Object>();
+			map.put("list", list); // map에 자료 저장
+			map.put("count", count);
+			map.put("pager", pager); // 페이지 네버게이션을 위한 변수
+			map.put("sPrd", sPrd);
+			model.addAttribute("map", map);
+
+			return "product/search";
+		}
+
 	
 	
 	
 	
 	//관리자 상품관리
 	
-	// 관리자 상품관리 화면으로 가기
+	// 관리자 상품관리 화면으로 가기(상품등록)
 	@RequestMapping("/admin_insertProduct")
-	public String InsertProduct() {
+	public String InsertProduct(ProductInfoVO vo)  {
 		return "admin/insertProduct";
 	}
 	
 	// 상품목록 페이지
-		@RequestMapping("/Listpage")
-		public String ListPage(ProductInfoVO vo) {
-			return "admin/productList";
-		}
+	@RequestMapping("/Listpage")
+	public String ListPage(ProductInfoVO vo) {
+		return "admin/productList";
+	}
 		
 	// 상품코드 중복검사
 	@ResponseBody
@@ -94,10 +141,10 @@ public class ProductController {
 	}
 	
 	// (진) 상품등록
-		@RequestMapping(value = "/insertProduct")
+		@RequestMapping("/insertProduct")
 		public String insertProduct(MultipartHttpServletRequest multi, ProductInfoVO vo) {
 			System.out.println(vo.toString());
-			String root = "../stcwk/MRTourWeb/src/main/webapp/";
+			String root = "C:/Users/minn/git/MRTour/MRTourWeb/src/main/webapp/";
 			String path = "resources/img/product/" + vo.getCate_id() + "/";
 			String realpath = root + "resources/img/product/" + vo.getCate_id() + "/";
 
@@ -121,6 +168,23 @@ public class ProductController {
 				}
 			}
 			productService.insertProduct(vo);
-			return "main";
+			return "admin/productList";
+		}
+
+		// 관리자 용 상품 목록
+		@RequestMapping(value = "/productList", method = RequestMethod.GET)
+		public String productListView(@RequestParam(defaultValue = "1") int curPage, ProductInfoVO vo, Model model) {
+			int count = productService.getAdminCountProduct(vo);
+			Pager pager = new Pager(count, curPage);
+			int start = pager.getPageBegin();
+			int end = pager.getPageEnd();
+
+			List<ProductInfoVO> list = productService.getAdminProductList(start, end, vo);
+			HashMap<String, Object> map = new HashMap<String, Object>();
+			map.put("list", list);
+			map.put("count", count);
+			map.put("pager", pager);
+			model.addAttribute("map", map);
+			return "admin/productList";
 		}
 }

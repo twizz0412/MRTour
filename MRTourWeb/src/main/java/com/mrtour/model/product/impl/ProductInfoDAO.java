@@ -58,6 +58,7 @@ public class ProductInfoDAO {
 			map.put("product", vo);
 			return mybatis.selectList("ProductInfoDAO.getAdminProductList", map);
 		}
+		
 
 		// 품목 갯수 카운트
 		public int getCountProduct(ProductInfoVO vo) {

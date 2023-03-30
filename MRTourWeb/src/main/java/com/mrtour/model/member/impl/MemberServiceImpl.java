@@ -86,7 +86,12 @@ public class MemberServiceImpl implements MemberService {
 	public void forgotPWUpdate(MemberVO vo) {
 		memberDAO.forgotPWUpdate(vo);
 	}
-
+	
+	// 멤버 탈퇴/추방
+	public void deleteMember(int member_id) throws Exception {
+		memberDAO.deleteMember(member_id);
+	}
+	
 	// 테스트
 	public List<MemberVO> getMemberList(int start, int end, MemberVO vo) {
 		return memberDAO.getMemberList(start, end, vo);
@@ -94,5 +99,9 @@ public class MemberServiceImpl implements MemberService {
 
 	public int getCountMember(MemberVO vo) {
 		return memberDAO.getCountMember(vo);
+	}
+	
+	public List<MemberVO> listSearchMem(String sMem, int start, int end){
+		return memberDAO.listSearchMem(sMem, start, end);
 	}
 }

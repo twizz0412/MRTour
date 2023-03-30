@@ -35,55 +35,25 @@ function buyProduct() {
 
 // 상품 등록 관련
 function doInsertProduct() {
-	var cate_id = $("#cate_id").val();
-	
-	if (!cate_id) {
+	if (!$("#cate_id").val()) {
 		swal("", "카테고리를 선택해주세요.", "error");
 	} else {
-		var prd_id = $("#prd_id").val();
-		var prd_name = $("#prd_name").val();
-		var city_no = $("#city_no").val();
-		var prd_opt = $("#prd_opt").val();
-		var cate_id = $("#cate_id").val();
-		var prd_price = $("#prd_price").val();
-		var prd_img = $("#prd_img").val();
-		alert(city_no);
-		alert(prd_img);
-		
+		var formData = new FormData($("#fileForm")[0]);
 		$.ajax({
 			type : "POST",
 			url : "insertProduct",
-			enctype: "multipart/form-data",
-			contentType: false,
-			processData: false,
-			cache: false,
-			data : {
-				"prd_id" : prd_id,
-				"prd_name" : prd_name,
-				"city_no" : city_no,
-				"prd_opt" : prd_opt,
-				"cate_id" : cate_id,
-				"prd_price" : prd_price,
-				"prd_img" : prd_img
-			},
+			data : formData,
+			processData : false,
+			contentType : false,
 			success : function(data) {
 				swal("", "상품이 등록되었습니다.", "success")
 				.then(function(isConfirm){
-					window.location.href="Listpage";
+					window.location.href="admin_insertProduct";
 				});
 			}, error : function(error) {
 				swal("왜", "에러일까", "error");
 			}
 		});
-	}
-}
-
-function imageChange() {
-	var input = document.memberform.file;
-	var fReader = new FileReader();
-	fReader.readAsDataURL(input.files[0]);
-	fReader.onloadend = function(event) {
-		document.memberform.image.src = event.target.result;
 	}
 }
 
