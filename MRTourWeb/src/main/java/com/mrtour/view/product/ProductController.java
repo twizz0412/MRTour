@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.mrtour.model.product.ProductInfoVO;
 import com.mrtour.model.product.ProductService;
@@ -30,10 +31,6 @@ public class ProductController {
 	@RequestMapping("/hotel_main")
 	public String hotel_main() {return "products/hotel_main";}
 	
-	// 호텔 리스트 페이지
-	@RequestMapping("/hotel_list")
-	public String hotel_list() {return "products/hotel_list";}
-	
 	// 호텔 상세페이지
 	@RequestMapping("/hotel_page")
 	public String hotel_page() {return "products/hotel_page";}
@@ -43,12 +40,6 @@ public class ProductController {
 	@RequestMapping("/hotel_checkout")
 	public String hotel_checkout() {return "products/hotel_checkout";}
 		
-	
-	// 티켓 메인(=리스트)페이지
-	@RequestMapping("/ticket_main")
-	public String ticket_main() {return "products/ticket_main";}
-	
-	
 	// 티켓 상세페이지
 	@RequestMapping("/ticket_page")
 	public String ticket_page() {return "products/ticket_page";}
@@ -57,12 +48,12 @@ public class ProductController {
 	@RequestMapping("/car_checkout")
 	public String car_checkout() {return "products/car_checkout";}
 	
-	// 제품(티켓) 메인 페이지 -- 장바구니 기능에 사용
+	// 제품 상세페이지
 	@RequestMapping("/productpage")
 	public String productPage(ProductInfoVO vo, Model model) {
-	    model.addAttribute("product", productService.productDetail(vo));
-	    return "products/ticket_main";
-	   }
+		model.addAttribute("product", productService.productDetail(vo));
+		return "product/productpage";
+	}
 	
 	// 카테고리 품목 출력
 	@RequestMapping("/category")
@@ -137,7 +128,7 @@ public class ProductController {
 		@RequestMapping("/insertProduct")
 		public String insertProduct(MultipartHttpServletRequest multi, ProductInfoVO vo) {
 			System.out.println(vo.toString());
-			String root = "C:/Users/YOUNGJEE SEO/git/MRTour/MRTourWeb/src/main/webapp/";
+			String root = "C:/Users/minn/git/MRTour/MRTourWeb/src/main/webapp/";
 			String path = "resources/img/product/" + vo.getCate_id() + "/";
 			String realpath = root + "resources/img/product/" + vo.getCate_id() + "/";
 
@@ -186,9 +177,9 @@ public class ProductController {
 		@RequestMapping(value = "/car_page", method = RequestMethod.GET)
 		public String listCarPage(Model model, HttpSession session, ProductInfoVO vo,
 				@RequestParam(defaultValue = "") String keyword,
-				@RequestParam(name = "city_no", required = false, defaultValue = "") String city_no,
-				@RequestParam(name = "prd_opt", required = false, defaultValue = "") String prd_opt, 
-				@RequestParam(defaultValue = "1") int curPage) 
+				@RequestParam(name = "city_no", required = false, defaultValue = "전체") String city_no,
+				@RequestParam(name = "prd_opt", required = false, defaultValue = "전체") String prd_opt,
+				@RequestParam(defaultValue = "1") int curPage)
 			throws Exception {
 			
 			// 상품 개수 계산
@@ -202,7 +193,7 @@ public class ProductController {
 			session.setAttribute("city_no", city_no); // 지역명 검색
 			session.setAttribute("prd_opt", prd_opt); // 상품옵션으로 검색
 			session.setAttribute("curPage", curPage);
-
+		
 			List<ProductInfoVO> list = productService.listSearchCar(city_no, prd_opt, start, end); // 게시글 목록
 			HashMap<String, Object> map = new HashMap<String, Object>();
 			map.put("list", list); // map에 자료 저장
@@ -214,4 +205,64 @@ public class ProductController {
 
 			return "products/car_page";
 		}
+		
+		@RequestMapping(value = "/hotel_list", method = RequestMethod.GET)
+		public String listHotelPage(Model model, HttpSession session, ProductInfoVO vo,
+				@RequestParam(defaultValue = "") String keyword,
+				@RequestParam(name = "city_no", required = false, defaultValue = "전체") String city_no,
+				@RequestParam(name = "prd_opt", required = false, defaultValue = "전체") String prd_opt,
+				@RequestParam(defaultValue = "1") int curPage)
+			throws Exception {
+			
+			// 상품 개수 계산
+			int count = productService.countSearchCar(city_no, prd_opt);
+
+			// 페이지 관련 설정
+			Pager pager = new Pager(count, curPage);
+			int start = pager.getPageBegin();
+			int end = pager.getPageEnd();
+
+			session.setAttribute("city_no", city_no); // 지역명 검색
+			session.setAttribute("prd_opt", prd_opt); // 상품옵션으로 검색
+			session.setAttribute("curPage", curPage);
+		
+			List<ProductInfoVO> list = productService.listSearchCar(city_no, prd_opt, start, end); // 게시글 목록
+			HashMap<String, Object> map = new HashMap<String, Object>();
+			map.put("list", list); // map에 자료 저장
+			map.put("count", count);
+			map.put("pager", pager); // 페이지 네버게이션을 위한 변수
+			map.put("city_no", city_no);
+			map.put("prd_opt", prd_opt);			
+			model.addAttribute("map", map);
+
+			return "products/hotel_list";
+		}
+		
+		// 티켓
+		@RequestMapping(value = "/ticket_main", method = RequestMethod.GET)
+		public String listCarPage(Model model, HttpSession session, ProductInfoVO vo,
+				@RequestParam(defaultValue = "") String city_no, 
+				@RequestParam(defaultValue = "1") int curPage) {
+			// 게시글 갯수 계산
+			int count = productService.countSearchPrd(city_no);
+
+			// 페이지 관련 설정
+			Pager pager = new Pager(count, curPage);
+			int start = pager.getPageBegin();
+			int end = pager.getPageEnd();
+
+			session.setAttribute("city_no", city_no); // 상품 이름 검색
+			session.setAttribute("curPage", curPage);
+
+			List<ProductInfoVO> list = productService.listSearchPrd(city_no, start, end); // 게시글 목록
+			HashMap<String, Object> map = new HashMap<String, Object>();
+			map.put("list", list); // map에 자료 저장
+			map.put("count", count);
+			map.put("pager", pager); // 페이지 네버게이션을 위한 변수
+			map.put("city_no", city_no);
+			model.addAttribute("map", map);
+
+			return "products/ticket_main";
+		}
+		
 }
