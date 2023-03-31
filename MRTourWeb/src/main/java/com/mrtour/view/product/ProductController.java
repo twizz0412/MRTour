@@ -30,7 +30,7 @@ public class ProductController {
 	@RequestMapping("/hotel_main")
 	public String hotel_main() {return "products/hotel_main";}
 	
-	// 호텔 메인페이지
+	// 호텔 리스트 페이지
 	@RequestMapping("/hotel_list")
 	public String hotel_list() {return "products/hotel_list";}
 	
@@ -44,7 +44,7 @@ public class ProductController {
 	public String hotel_checkout() {return "products/hotel_checkout";}
 		
 	
-	// 티켓 메인페이지
+	// 티켓 메인(=리스트)페이지
 	@RequestMapping("/ticket_main")
 	public String ticket_main() {return "products/ticket_main";}
 	
@@ -57,12 +57,12 @@ public class ProductController {
 	@RequestMapping("/car_checkout")
 	public String car_checkout() {return "products/car_checkout";}
 	
-	// 제품 상세페이지
+	// 제품(티켓) 메인 페이지 -- 장바구니 기능에 사용
 	@RequestMapping("/productpage")
 	public String productPage(ProductInfoVO vo, Model model) {
-		model.addAttribute("product", productService.productDetail(vo));
-		return "product/productpage";
-	}
+	    model.addAttribute("product", productService.productDetail(vo));
+	    return "products/ticket_main";
+	   }
 	
 	// 카테고리 품목 출력
 	@RequestMapping("/category")
@@ -137,7 +137,7 @@ public class ProductController {
 		@RequestMapping("/insertProduct")
 		public String insertProduct(MultipartHttpServletRequest multi, ProductInfoVO vo) {
 			System.out.println(vo.toString());
-			String root = "C:/Users/minn/git/MRTour/MRTourWeb/src/main/webapp/";
+			String root = "C:/Users/YOUNGJEE SEO/git/MRTour/MRTourWeb/src/main/webapp/";
 			String path = "resources/img/product/" + vo.getCate_id() + "/";
 			String realpath = root + "resources/img/product/" + vo.getCate_id() + "/";
 

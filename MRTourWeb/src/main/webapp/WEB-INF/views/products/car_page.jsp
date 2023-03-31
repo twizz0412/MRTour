@@ -172,7 +172,7 @@
 							</div>
 							<br>
 							<div class="product-button" style="padding:5px;">
-								<button id="product">선택</button>
+								<button id="product" onclick="location.href='car_checkout'">선택</button>
 							</div>
 						</a>
 						</c:when>

@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -9,7 +13,17 @@
 <title>[홍천] 초록의 설렘 가득한, 알파카월드</title>
 </head>
 <body>
-
+<script>
+			// 인원수 증감
+			$("#buy_quantity").keyup(function(e){
+				var regNumber = /^([0-9]{2})$/;
+				var str = $(this).val();
+				if(!regNumber.test(str)) {
+					var res = str.substring(0, str.length-1);
+					$(this).val(res);
+				}
+			});
+		</script>
 <main class="offer-detail" data-category="ticket" data-location-city="Gangwondo" data-location-country="Korea, Republic of" 
 data-location-region="asia" data-offer-id="40487" itemscope="" itemtype="http://schema.org/Product">
 <meta content="마이리얼트립" itemprop="brand">
@@ -61,7 +75,7 @@ data-location-region="asia" data-offer-id="40487" itemscope="" itemtype="http://
 <article class="Offer_article">
 <!-- article (header) -->
 <header class="OfferHeader_container">
-<h1 class="OfferHeaderTitle_container">[홍천] 초록의 설렘 가득한, 알파카월드</h1>
+<h1 class="OfferHeaderTitle_container">${product.prd_name}</h1>
 </header>
 
 <!-- 구분선 -->

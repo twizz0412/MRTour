@@ -5,7 +5,7 @@
 
 <mapper namespace="PaymentDAO">
 	<resultMap id="payment" type="payment">
-		<result property="payment_id" column="PAYMENT_ID" />
+		<result property="order_no" column="ORDER_NO" />
 		<result property="member_id" column="MEMBER_ID" />
 		<result property="prd_id" column="PRD_ID" />
 		<result property="buy_quantity" column="BUY_QUANTITY" />
@@ -14,22 +14,22 @@
 		<result property="member_laddr" column="MEMBER_LADDR" />
 		<result property="member_phone" column="MEMBER_PHONE" />
 		<result property="credit_number" column="CREDIT_NUMBER" />
-		<result property="prd_img" column="PRD_IMG" />
+		<result property="payment_date" column="PAYMENT_DATE" />
 		<result property="prd_name" column="PRD_NAME" />
-		<result property="prd_opt" column="PRD_OPT" />
 		<result property="prd_price" column="PRD_PRICE" />
-		<result property="prd_delivery" column="PRD_DELIVERY" />
-		<result property="prd_discount" column="PRD_DISCOUNT" />
-		<result property="delivery" column="DELIVERY" />
 		<result property="prd_sum" column="PRD_SUM" />
+		<result property="cate_id" column="CATE_ID" />
+		<result property="prd_opt" column="PRD_OPT" />
+		<result property="prd_img" column="PRD_IMG" />
+		
 	</resultMap>
 	
 	<insert id="insertPayment">
 		<![CDATA[
-			INSERT INTO PRODUCT_PAYMENT
-			(PAYMENT_ID, MEMBER_ID, PRD_ID, BUY_QUANTITY, MEMBER_ZIPCODE, MEMBER_FADDR, MEMBER_LADDR, MEMBER_PHONE, CREDIT_NUMBER, PRD_OPT, DELIVERY)
+			INSERT INTO PAYMENT
+			(ORDER_NO, MEMBER_ID, PRD_ID, BUY_QUANTITY, MEMBER_ZIPCODE, MEMBER_FADDR, MEMBER_LADDR, MEMBER_PHONE, CREDIT_NUMBER, PRD_OPT)
 			VALUES
-			(PAYMENT_SEQ.NEXTVAL, #{member_id}, #{prd_id}, #{buy_quantity}, #{member_zipcode}, #{member_faddr}, #{member_laddr}, #{member_phone}, #{credit_number}, #{prd_opt}, '배송중')
+			(PAYMENT_SEQ.NEXTVAL, #{member_id}, #{prd_id}, #{buy_quantity}, #{member_zipcode}, #{member_faddr}, #{member_laddr}, #{member_phone}, #{credit_number}, #{prd_opt})
 		]]>
 	</insert>
 	

@@ -15,6 +15,9 @@
 		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 	</head>
 	<body>
+	<button type="button" class="btn" onclick="location.href='./main'">메인 페이지</button>
+		<button type="button" class="btn" onclick="location.href='category'">카테고리별 상품 보기</button>
+		<button type="button" class="btn" onclick="location.href='searchPrd'">상품 검색</button>
 	
 		<h1>상품목록</h1>
 		<table class="cart" align="center">
@@ -29,7 +32,6 @@
 				<th>선택</th>
 			</tr>
 			<c:set var="priceSum" value="0" />
-			<c:set var="deliverySum" value="0" />
 			<c:forEach items="${cartPrd}" var="cartprd"><!-- 카트에 담긴 각 상품 -->
 				<tr align="center">
 					<!--체크박스-->
@@ -92,6 +94,7 @@
 				})
 			})
 			
+			// 결제
 			function payCart() {
 				var member_id = $("#member_id").val();
 				var hiddenbtn = $("#hiddenbtn").val();

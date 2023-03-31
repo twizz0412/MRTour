@@ -4,22 +4,22 @@
 
 <mapper namespace="ProductCartDAO">
 	<resultMap id="productcart" type="productcart">
-		<result property="prd_img" column="PRD_IMG" />
 		<result property="prd_name" column="PRD_NAME" />
 		<result property="prd_price" column="PRD_PRICE" />
-		<result property="prd_delivery" column="PRD_DELIVERY" />
 		<result property="prd_sum" column="PRD_SUM" />
 		<result property="member_id" column="MEMBER_ID" />
 		<result property="prd_id" column="PRD_ID" />
 		<result property="buy_quantity" column="BUY_QUANTITY" />
 		<result property="cart_id" column="CART_ID" />
+		<result property="cate_id" column="CATE_ID" />
 		<result property="prd_opt" column="PRD_OPT" />
+		<result property="prd_img" column="PRD_IMG" />
 		<result property="pay_chk" column="PAY_CHK" />
 	</resultMap>
 	
 	<insert id="insertProductCart">
 		<![CDATA[
-			MERGE INTO PRODUCT_CART
+			MERGE INTO CART
 			USING DUAL ON (MEMBER_ID=#{member_id} AND PRD_ID=#{prd_id} AND PRD_OPT=#{prd_opt})
 			WHEN MATCHED THEN
 			UPDATE SET BUY_QUANTITY = BUY_QUANTITY + #{buy_quantity}
@@ -30,30 +30,28 @@
 	
 	<delete id="deleteProductCart">
 		<![CDATA[
-			DELETE PRODUCT_CART WHERE MEMBER_ID=#{member_id}
+			DELETE CART WHERE MEMBER_ID=#{member_id}
 		]]>
 	</delete>
 	
 	<delete id="deleteCart">
 		<![CDATA[
-			DELETE PRODUCT_CART WHERE MEMBER_ID=#{member_id} AND PRD_ID=#{prd_id}
+			DELETE CART WHERE MEMBER_ID=#{member_id} AND PRD_ID=#{prd_id}
 		]]>
 	</delete>
 	
 	<delete id="deleteThisProduct">
 		<![CDATA[
-			DELETE PRODUCT_CART WHERE MEMBER_ID=#{member_id} AND CART_ID=#{cart_id}
+			DELETE CART WHERE MEMBER_ID=#{member_id} AND CART_ID=#{cart_id}
 		]]>
 	</delete>
 	
 	<select id="productCart" resultMap="productcart">
 		<![CDATA[
 			SELECT 
-				PRD_NAME, PRD_ID, PRD_PRICE, 
-				PRD_IMG, PRD_DISCOUNT, PRD_DELIVERY, 
-				PRD_DATE, BUY_QUANTITY, (PRD_PRICE * BUY_QUANTITY) AS PRD_SUM, 
-				PRD_OPT
-			FROM PRODUCT_CART NATURAL JOIN PRODUCT_INFO
+				PRD_NAME, PRD_PRICE, BUY_QUANTITY, (PRD_PRICE * BUY_QUANTITY) AS PRD_SUM, 
+				MEMBER_ID, PRD_ID, CATE_ID, PRD_OPT, PRD_IMG
+			FROM CART NATURAL JOIN PRODUCT_INFO
 			WHERE MEMBER_ID=#{member_id} ORDER BY PRD_ID
 		]]>
 	</select>

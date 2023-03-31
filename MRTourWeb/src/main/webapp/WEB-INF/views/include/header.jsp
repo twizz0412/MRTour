@@ -85,7 +85,7 @@
 				<li><a href="hotel_main"><b>호텔 </a></li>
 				<li><a href="ticket_main"><b> 투어 | 입장권</a></li>
 				<li><a href="#"><b> 골프</a></li>
-				<li><a href="#"><b> 미래LIVE </a></li>
+				<li><a href="MyCart"><b> 미래LIVE </a></li>
 				<li><a href="#"><b> FAQ</a></li>
 			</ul>
 		</nav>

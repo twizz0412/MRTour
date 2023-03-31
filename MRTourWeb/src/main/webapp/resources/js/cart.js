@@ -1,6 +1,8 @@
 /**
  * 장바구니
  */
+
+// 장바구니 담기
 function insertCart() {
 	var member_id = $("#member_id").val();
 	var prd_id = $("#prd_id").val();
@@ -29,6 +31,7 @@ function insertCart() {
 	}
 }
 
+// 장바구니에 담긴 품목 결제
 function buyCart(prd_id, member_id) {
 	if (!member_id) {
 		console.log('a');
@@ -49,6 +52,7 @@ function buyCart(prd_id, member_id) {
 	}
 }
 
+// 장바구니 품목 삭제
 function delCart(prd_id, member_id) {
 	if (!member_id) {
 		swal("", "로그인 해주세요.", "error")
@@ -67,6 +71,7 @@ function delCart(prd_id, member_id) {
 	}
 }
 
+// 장바구니 비우기
 function cartClear() {
 	var member_id = $("#member_id").val();
 	if (!member_id) {
@@ -85,18 +90,15 @@ function cartClear() {
 	}
 }
 
+// 장바구니 계산(체크박스 선택 할 때)
 function calCart() {
-	var prd_delivery = 0;
 	var prd_sum = 0;
 	for (i = 0; i < $("input[name=chk]").length; i++) {
 		if ($("input[name=chk]")[i].checked == true) {
-			prd_delivery += parseInt($("input[name=prd_delivery]")[i].value);
 			prd_sum += parseInt($("input[name=prd_sum]")[i].value);
 		}
 	}
-	document.getElementById("prd_delivery").innerHTML = numberWithCommas(prd_delivery);
 	document.getElementById("prd_sum").innerHTML = numberWithCommas(prd_sum);
-	document.getElementById("total").innerHTML = numberWithCommas(prd_delivery + prd_sum);
 }
 
 function numberWithCommas(x) {

@@ -1,14 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 
 <head>
-	<link rel="stylesheet" type="text/css" href="resources/css/ticket_main.css" />
+	<link rel="stylesheet" type="text/css" href="resources/css/ticket_list.css" />
 	<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
 	<meta charset="UTF-8">
-	<title>미래투어 호텔</title>
+	<title>미래투어 티켓</title>
 
 </head>
 
@@ -58,11 +60,27 @@
 								<select name="city">
 									<option value="">도시선택</option>
 									<option value="서울">서울</option>
-									<option value="제주">제주</option>
 									<option value="강릉">강릉</option>
+									<option value="여수">여수</option>
 									<option value="부산">부산</option>
 									<option value="경주">경주</option>
+									<option value="제주">제주</option>
 								</select>
+								</p>
+							</div>
+
+
+							<div class="form-column">
+								<p class="title">숙박인원</p>
+								<p class="text">
+									<select name="car">
+										<option value="">인원선택</option>
+										<option value="a">a</option>
+										<option value="b">b</option>
+										<option value="c">c</option>
+										<option value="d">d</option>
+										<option value="e">e</option>
+									</select>
 								</p>
 							</div>
 
@@ -96,21 +114,16 @@
 						<li>
 							<div class="pro_img" style="float: left;">
 								<a href="#" class="product">
-									<img src="resources/images/2.jpg" width="275" height="200px">
+									<img src="${product.prd_img}" href="ticket_page" width="275" height="200px">
 							</div>
-							<div class="pro">상품명<p><br>
+							<div class="pro">${product.prd_name}<p><br>
 									<span>후쿠오카 호빵맨 어린이박물관 부근에 위치</span>
 								<p><br>
-									<span>198,045원 ~ </span>
+									<span><fmt:formatNumber value="${product.prd_price}" pattern="#,###"/>원</span>
 							</div>
 							</a>
 						</li>
-
-
 					</div>
-
-
-
 
 
 					<div class="clearfix"></div>
