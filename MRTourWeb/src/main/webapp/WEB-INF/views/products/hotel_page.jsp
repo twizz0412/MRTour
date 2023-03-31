@@ -1,13 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" type="text/css" href="resources/css/hotel_page.css" />
-<script src = "resources/js/hotel_page.js"></script>
-<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyA3ZtWcrT0oQhZ7sytTylhtODsVqXqjL1A&callback=googleMap"></script>
+
 
 <title>골드원 호텔 &amp; 스위트</title>
 </head>
@@ -28,79 +27,10 @@ pointer-events:none" class="fixed"></div>
 <div class="searchArea">
 <div class="search">
 
-<!-- 여행지 -->
-<div class="section selectionArea" data-section="place">
-<div class="place">
-<div class="selectionLabel">
-<span class="selectionSpan">여행지</span>
-<span class="selectionSpan2">골드원 호텔 &amp; 스위트</span></div>
-<button class="closeBtn">
-<!-- 
-<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" 
-style="color:#848c94;opacity:0.5" role="presentation" height="20" width="20" 
-xmlns="http://www.w3.org/2000/svg"><path d="M7.72505 16.275C7.92505 16.475 8.17105 16.575 8.46305 
-16.575C8.75438 16.575 9.00005 16.475 9.20005 16.275L12 13.475L14.825 16.3C15.025 16.5 15.2667 16.
-5957 15.55 16.587C15.8334 16.579 16.075 16.475 16.275 16.275C16.475 16.075 16.575 15.829 16.575 
-15.537C16.575 15.2457 16.475 15 16.275 14.8L13.475 12L16.3 9.17499C16.5 8.97499 16.5957 8.73332 
-16.587 8.44999C16.579 8.16665 16.475 7.92499 16.275 7.72499C16.075 7.52499 15.8294 7.42499 15.538 
-7.42499C15.246 7.42499 15 7.52499 14.8 7.72499L12 10.525L9.17505 7.69999C8.97505 7.49999 8.73338 
-7.40399 8.45005 7.41199C8.16672 7.42065 7.92505 7.52499 7.72505 7.72499C7.52505 7.92499 7.42505 
-8.17065 7.42505 8.46199C7.42505 8.75399 7.52505 8.99999 7.72505 9.19999L10.525 12L7.70005 14.825C7.
-50005 15.025 7.40438 15.2667 7.41305 15.55C7.42105 15.8333 7.52505 16.075 7.72505 16.275ZM12 
-22.2C10.5834 22.2 9.25405 21.9333 8.01205 21.4C6.77072 20.8667 5.69172 20.1417 4.77505 19.225C3.
-85838 18.3083 3.13338 17.2293 2.60005 15.988C2.06672 14.746 1.80005 13.4167 1.80005 12C1.80005 
-10.5833 2.06672 9.25399 2.60005 8.01199C3.13338 6.77065 3.85838 5.69165 4.77505 4.77499C5.69172 
-3.85832 6.77072 3.13332 8.01205 2.59999C9.25405 2.06665 10.5834 1.79999 12 1.79999C13.4167 
-1.79999 14.746 2.06665 15.988 2.59999C17.2294 3.13332 18.3084 3.85832 19.225 4.77499C20.1417 
-5.69165 20.8667 6.77065 21.4 8.01199C21.9334 9.25399 22.2001 10.5833 22.2001 12C22.2001 13.4167 
-21.9334 14.746 21.4 15.988C20.8667 17.2293 20.1417 18.3083 19.225 19.225C18.3084 20.1417 17.2294 
-20.8667 15.988 21.4C14.746 21.9333 13.4167 22.2 12 22.2Z"></path></svg> --></button></div></div>
 
-<div class="gap"></div>
 
-<!-- 일정 선택 -->
-<div class="section selectionArea" data-section="date">
-<div class="selection">
-<div class="selectionLabel">
-<span class="selectionSpan">일정</span>
-<span class="selectionSpan2">04월 10일 (월) - 04월 11일 (화)</span></div>
-<button class="closeBtn">
-<!--
-<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" 
-style="color:#848c94;opacity:0.5" role="presentation" height="20" width="20" 
-xmlns="http://www.w3.org/2000/svg">
-<path d="M7.72505 16.275C7.92505 16.475 8.17105 16.575 8.46305 16.575C8.75438 16.575 9.00005 
-16.475 9.20005 16.275L12 13.475L14.825 16.3C15.025 16.5 15.2667 16.5957 15.55 16.587C15.8334 
-16.579 16.075 16.475 16.275 16.275C16.475 16.075 16.575 15.829 16.575 15.537C16.575 15.2457 
-16.475 15 16.275 14.8L13.475 12L16.3 9.17499C16.5 8.97499 16.5957 8.73332 16.587 8.44999C16.579 
-8.16665 16.475 7.92499 16.275 7.72499C16.075 7.52499 15.8294 7.42499 15.538 7.42499C15.246 7.42499 
-15 7.52499 14.8 7.72499L12 10.525L9.17505 7.69999C8.97505 7.49999 8.73338 7.40399 8.45005 
-7.41199C8.16672 7.42065 7.92505 7.52499 7.72505 7.72499C7.52505 7.92499 7.42505 8.17065 7.42505 
-8.46199C7.42505 8.75399 7.52505 8.99999 7.72505 9.19999L10.525 12L7.70005 14.825C7.50005 15.025 
-7.40438 15.2667 7.41305 15.55C7.42105 15.8333 7.52505 16.075 7.72505 16.275ZM12 22.2C10.5834 22.2 
-9.25405 21.9333 8.01205 21.4C6.77072 20.8667 5.69172 20.1417 4.77505 19.225C3.85838 18.3083 
-3.13338 17.2293 2.60005 15.988C2.06672 14.746 1.80005 13.4167 1.80005 12C1.80005 10.5833 2.06672 
-9.25399 2.60005 8.01199C3.13338 6.77065 3.85838 5.69165 4.77505 4.77499C5.69172 3.85832 6.77072 
-3.13332 8.01205 2.59999C9.25405 2.06665 10.5834 1.79999 12 1.79999C13.4167 1.79999 14.746 2.06665 
-15.988 2.59999C17.2294 3.13332 18.3084 3.85832 19.225 4.77499C20.1417 5.69165 20.8667 6.77065 21.4
- 8.01199C21.9334 9.25399 22.2001 10.5833 22.2001 12C22.2001 13.4167 21.9334 14.746 21.4 15.988C20.
- 8667 17.2293 20.1417 18.3083 19.225 19.225C18.3084 20.1417 17.2294 20.8667 15.988 21.4C14.746 
- 21.9333 13.4167 22.2 12 22.2Z"></path></svg>  --> </button></div></div>
- 
-<div class="gap"></div>
 
-<!-- 숙박 인원 -->
-<div class="section selectionArea" data-section="guest">
-<div class="selection">
-<div class="selectionLabel">
-<span class="selectionSpan">숙박 인원</span>
-<span class="selectionSpan2">성인 2명</span></div></div></div>
 
-<!-- 숙소 검색 버튼 -->
-<div class="searchBtnArea">
-<button class="searchBtn">
-<div class="btnTitle">
-<span class="btnSpan">숙소 검색</span></div></button></div></div></div>
 
 
 <!-- 메인 사진 섹션 -->
@@ -141,7 +71,6 @@ loading="lazy" class="grid_img"></div>
 <div class="btnTitle">
 <a href="#room"><span class="BtnSpan">
 <span class="btnSpan3">객실 선택</span></span></a></div></button></div></div>
-
 </div>
 
 <!-- 편의 시설, 숙소 위치부터 끝까지 -->
@@ -189,22 +118,9 @@ loading="lazy" class="grid_img"></div>
 <div class="convenience">
 <div class="content"><img alt="아케이드/게임룸" src="resources/img/icon/casino.png" class="iconImg"></div>
 <div class="content"><span class="detailSpan moreBtnSpan2">아케이드/게임룸</span></div></div></div></div></div>
+</div>
 
-<!-- 숙소 위치 -->
-<div class="locationArea">
-<div class="info">
-<div class="info_title"><span class="infoTitle">숙소 위치</span></div>
-<div class="mapArea"><div class="css-0">
-<div class="map">
-<img alt="Google Map" src="https://maps.googleapis.com/maps/api/staticmap?size=400x200&amp;zoom=14&amp;scale=2&amp;center=33.244601,126.522142&amp;key=AIzaSyA3ZtWcrT0oQhZ7sytTylhtODsVqXqjL1A&amp;signature=SkCR3jGPf5Ma1NcepLU9jjIhSNs%3D" id="gooleMap" class="gooleMap">
-<img alt="33.244601,126.522142" src="resources/img/icon/location.svg" width="46" height="53" decoding="async" data-nimg="1" class="houseIcon" loading="lazy" style="color:transparent">
 
-</div></div>
-
-<!-- 주소 -->
-<div class="content">
-<span class="hotelAddress">1032, Ieodo-ro, Seogwipo, Jeju, 63571</span>
-</div></div></div></div></div>
 
 
 
@@ -335,50 +251,48 @@ Visa, Mastercard, American Express, JCB International, Discover, UnionPay, Diner
 <div class="lower-2-upper-right">
 <div class="mrt-detail-room-schedule schedule"></div>
 <div class="dateArea">
-<span class="choseDate">04월 10일 (월) - 04월 11일 (화)</span></div>
-
-<button class="changeDate">
-<div class="btnTitle">
-<span class="moreBtnSpan">
-<span class="moreBtnSpan2">일정 변경</span></span></div></button></div></div>
+</div>
+</div></div>
 
 <!-- 전체 객실 -->
 <div class="room_entire">
 <!-- 룸 1 -->
 <div class="each_room">
-<div class="room_title"><span class="hotelBold">Premier Ocean View Double Room</span></div>
-<div class="room_content">
-<div class="room_content_left">
-<div class="left_entire">
-<div class="room_pic">
-<img src="https://pix8.agoda.net/hotelImages/7385346/-1/06bf918ece1248fefd93215e7a4a81f7.jpg?ca=20&amp;ce=0&amp;s=1000x" alt="Premier Ocean View Double Room" class="room_img"></div>
-<div class="room_condition">
-<span class="room_condition_span">퀸베드 1개 + 소파베드 1개 · 최대 3명 · 일부 바다 전망,객실 크기(㎡) - 45</span>
-<div class="more_condition_box">
-<button a href="hotel_checkout" class="more_condition">
-<div class="more_condition_2"><span class="more_condition_3">
-<span class="more_condition_span">객실 정보 더보기</span></span></div></button></div></div></div></div>
-
-<div class="room_content_right">
-<div class="reserve_box"><div class="reserve_area">
-<div class="free_cancel_box">
-<div class="free_cancel">
-<span class="free_cancel_entire_span" style="background-color:#E7F4FD">
-<span style="font-weight:600;font-size:13px;color:#1583DB" class="free_cancel_span">무료취소</span>
-<span style="font-weight:500;font-size:13px;color:#0792E9" class="free_cancel_span"> 4월 7일 까지</span></span></div>
-
-<div><ul class="perksList">
-<li class="perk"><div class="perk_content">무료 생수</div></li>
-<li class="perk"><div class="perk_content">무료 피트니스 센터</div></li></ul></div></div>
-<div class="reserve_right">
-<div class="price_box">
-<div class="price">
-<span class="price_span">216,080원/박</span></div>
-</div>
-<div class="room_reserve_btn_area">
-<button class="room_reserve_btn" onclick="location.href='hotel_checkout'">
-<div class="btnTitle"><span class="BtnSpan">예약하기</span></div></button></div></div></div></div>
-</div></div></div></div>
+    <div class="room_title"><span class="hotelBold">Premier Ocean View Double Room</span></div>
+    <div class="room_content">
+    <div class="room_content_left">
+    <div class="left_entire">
+    <div class="room_pic">
+    <img src="https://pix8.agoda.net/hotelImages/7385346/-1/06bf918ece1248fefd93215e7a4a81f7.jpg?ca=20&amp;ce=0&amp;s=1000x" alt="Premier Ocean View Double Room" class="room_img"></div>
+    <div class="room_condition">
+    <span class="room_condition_span">퀸베드 1개 + 소파베드 1개 · 최대 3명 · 일부 바다 전망,객실 크기(㎡) - 45</span>
+    <div class="more_condition_box">
+    <button class="more_condition">
+    <div class="more_condition_2"><span class="more_condition_3">
+    </span></div></button></div></div></div></div>
+    
+    <div class="room_content_right">
+    <div class="reserve_box"><div class="reserve_area">
+    <div class="free_cancel_box">
+    <div class="free_cancel">
+    <span class="free_cancel_entire_span" style="background-color:#E7F4FD">
+    <span style="font-weight:600;font-size:13px;color:#1583DB" class="free_cancel_span">무료취소</span>
+    <span style="font-weight:500;font-size:13px;color:#0792E9" class="free_cancel_span"> 4월 7일 까지</span></span></div>
+    
+    <div><ul class="perksList">
+    <li class="perk"><div class="perk_content">무료 생수</div></li>
+    <li class="perk"><div class="perk_content">무료 피트니스 센터</div></li></ul></div></div>
+    
+    <div class="reserve_right">
+    <div class="price_box">
+    <div class="price">
+    <span class="price_span">216,080원/박</span></div>
+    
+    <div class="room_reserve_btn_area">
+    <button class="room_reserve_btn">
+    <div class="btnTitle" onclick="location.href='hotel_checkout'">
+    <span class="BtnSpan">예약하기</span></div></button></div></div></div></div>
+    </div></div></div></div>
 
 
 <!-- 룸 2 -->
@@ -394,7 +308,7 @@ Visa, Mastercard, American Express, JCB International, Discover, UnionPay, Diner
 <div class="more_condition_box">
 <button class="more_condition">
 <div class="more_condition_2"><span class="more_condition_3">
-<span class="more_condition_span">객실 정보 더보기</span></span></div></button></div></div></div></div>
+</span></div></button></div></div></div></div>
 
 <div class="room_content_right">
 <div class="reserve_box"><div class="reserve_area">
@@ -422,37 +336,43 @@ Visa, Mastercard, American Express, JCB International, Discover, UnionPay, Diner
 
 <!-- 룸 3 -->
 <div class="each_room">
-<div class="room_title"><span class="hotelBold">프리미어 더블룸, 바다 전망</span></div>
-<div class="room_content">
-<div class="room_content_left">
-<div class="left_entire">
-<div class="room_pic">
-<img src="https://i.travelapi.com/lodging/38000000/37630000/37622900/37622802/12d74e35_z.jpg" alt="프리미어 더블룸, 바다 전망" class="room_img">
-<div class="css-r5esnv e1nunbqm7"><span>10+</span></div></div>
-<div class="room_condition">
-<span class="room_condition_span">퀸사이즈침대 1개 · 최대 3명 · 바다 전망</span>
-<div class="more_condition_box">
-<button class="more_condition">
-<div class="more_condition_2"><span class="more_condition_3">
-<span class="more_condition_span">객실 정보 더보기</span></span></div></button></div></div></div></div>
-
-<div class="room_content_right">
-<div class="reserve_box"><div class="reserve_area">
-<div class="free_cancel_box">
-<div class="free_cancel">
-<span class="free_cancel_entire_span" style="background-color:#E7F4FD">
-<span style="font-weight:600;font-size:13px;color:#1583DB" class="free_cancel_span">무료취소</span>
-<span style="font-weight:500;font-size:13px;color:#0792E9" class="free_cancel_span"> 4월 7일 까지</span></span></div></div>
-
-<div class="reserve_right">
-<div class="price_box">
-<div class="price">
-<span class="price_span">216,081원/박</span></div>
-
-<div class="room_reserve_btn_area"><a href = "hotel_checkout">
-<button class="room_reserve_btn" onclick="location.href='hotel_checkout'"> 
-<div class="btnTitle"><span class="BtnSpan">예약하기</span></div></button></a></div></div></div></div></div></div></div></div></div></div>
+    <div class="room_title"><span class="hotelBold">프리미어 더블룸, 바다 전망</span></div>
+    <div class="room_content">
+    <div class="room_content_left">
+    <div class="left_entire">
+    <div class="room_pic">
+    <img src="https://i.travelapi.com/lodging/38000000/37630000/37622900/37622802/12d74e35_z.jpg" alt="프리미어 더블룸, 바다 전망" class="room_img"></div>
+    <div class="room_condition">
+    <span class="room_condition_span">퀸사이즈침대 1개 · 최대 3명 · 바다 전망</span>
+    <div class="more_condition_box">
+    <button class="more_condition">
+    <div class="more_condition_2"><span class="more_condition_3">
+   </span></div></button></div></div></div></div>
+    
+    <div class="room_content_right">
+    <div class="reserve_box"><div class="reserve_area">
+    <div class="free_cancel_box">
+    <div class="free_cancel">
+    <span class="free_cancel_entire_span" style="background-color:#E7F4FD">
+    <span style="font-weight:600;font-size:13px;color:#1583DB" class="free_cancel_span">무료취소</span>
+    <span style="font-weight:500;font-size:13px;color:#0792E9" class="free_cancel_span"> 4월 7일 까지</span></span></div>
+    
+    <div><ul class="perksList">
+    <li class="perk"><div class="perk_content">무료 생수</div></li>
+    <li class="perk"><div class="perk_content">무료 피트니스 센터</div></li></ul></div></div>
+    
+    <div class="reserve_right">
+    <div class="price_box">
+    <div class="price">
+    <span class="price_span">216,081원/박</span></div>
+    
+    <div class="room_reserve_btn_area">
+    <button class="room_reserve_btn">
+    <div class="btnTitle" onclick="location.href='hotel_checkout'">
+    <span class="BtnSpan">예약하기</span></div></button></div></div></div></div>
+    </div></div></div></div>
+    </div></div>
 
 </body>
 </html>
-		
+      

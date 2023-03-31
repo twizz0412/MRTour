@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -90,36 +91,30 @@ data-sign-in data-turbolinks="false" style>
 
 <div class="productRequireInfos--FlagWrapper">
 <div class="productRequireInfos--FlagTitle">체크인 고객 정보</div>
-<div class="productRequireInfos--FlagSubTitle">숙소에 실제 체크인하는 분의 정보를 여권과 동일하게 입력해주세요.</div>
+<div class="productRequireInfos--FlagSubTitle">숙소에 실제 체크인하는 분의 정보를 정확하게 입력해주세요.</div>
 <div class="productRequireInfos--TitleWrapper">
 <div class="productRequireInfos--Title">체크인 고객 이름</div>
 <div class="additionalInfoContainer--Container">
-<div class="additionalInfoContainer--Label">영문 이름</div>
-<input type="text" maxlength="50" class="text--TextInput" value="" placeholder="Gil Dong">
+<input type="text" maxlength="50" class="text--TextInput" value="" placeholder="홍길동">
 <div class="additionalInfoContainer--Caption"></div></div>
 <div class="additionalInfoContainer--Container">
-<div class="additionalInfoContainer--Label">영문 성</div>
-<input type="text" maxlength="50" class="text--TextInput" value="" placeholder="Hong">
 <div class="additionalInfoContainer--Caption"></div></div></div></div>
 
 <div class="productRequireInfos--FlagWrapper">
 <div class="productRequireInfos--FlagTitle">예약자 정보</div>
-<div class="productRequireInfos--FlagSubTitle">예약하시는 분의 정보를 여권과 동일하게 입력해주세요.</div>
+<div class="productRequireInfos--FlagSubTitle">예약하시는 분의 정보를 정확하게 입력해주세요.</div>
 <div class="productRequireInfos--TitleWrapper">
 <div class="productRequireInfos--Title">예약자 이름</div>
 <div class="additionalInfoContainer--Container">
-<div class="additionalInfoContainer--Label">영문 이름</div>
-<input type="text" maxlength="50" class="text--TextInput" value="" placeholder="Gil Dong">
+<input type="text" maxlength="50" class="text--TextInput" value="" placeholder="홍길동">
 <div class="additionalInfoContainer--Caption"></div></div>
 <div class="additionalInfoContainer--Container">
-<div class="additionalInfoContainer--Label">영문 성</div>
-<input type="text" maxlength="50" class="text--TextInput" value="" placeholder="Hong">
 <div class="additionalInfoContainer--Caption"></div></div></div></div>
 
 <div class="partnerCustomInfos--OptionWrapper">
 <div class="partnerCustomInfos--OptionTitle">기타 요청 사항</div>
 <div class="additionalInfoContainer--Container">
-<div class="additionalInfoContainer--Label">숙소에 전달할 요청사항을 현지 언어로 작성해주세요.</div>
+<div class="additionalInfoContainer--Label">숙소에 전달할 요청사항을 작성해주세요.</div>
 <textarea maxlength="100" placeholder="답변을 입력해 주세요." class="textArea--TextAreaInput"></textarea>
 <div class="additionalInfoContainer--Caption"></div></div>
 <div class="partnerCustomInfos--GuideText">고객님의 요청사항이 전달되나, 간혹 현장 사정에 따라 반영되지 않을 수 있습니다.</div></div></div></div>
