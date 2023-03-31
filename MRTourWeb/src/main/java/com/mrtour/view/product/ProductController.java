@@ -83,34 +83,31 @@ public class ProductController {
 	}
 	
 	// 품목 리스트 + 페이징 + 검색
-		@RequestMapping(value = "/searchHotel", method = RequestMethod.GET)
-		public String listHotelPage(Model model, HttpSession session, ProductInfoVO vo,
-				@RequestParam(defaultValue = "CITY_NO") String searchOption,
-				@RequestParam(defaultValue = "") String prd_opt, 
-				@RequestParam(defaultValue = "1") int curPage) 
-			throws Exception {
-			// 게시글 갯수 계산
-			int count = productService.countSearchPrd(searchOption, prd_opt);
+	@RequestMapping(value = "/searchPrd", method = RequestMethod.GET)
+	public String listPage(Model model, HttpSession session, ProductInfoVO vo,
+			@RequestParam(defaultValue = "") String sPrd, 
+			@RequestParam(defaultValue = "1") int curPage) {
+		// 게시글 갯수 계산
+		int count = productService.countSearchPrd(sPrd);
 
-			// 페이지 관련 설정
-			Pager pager = new Pager(count, curPage);
-			int start = pager.getPageBegin();
-			int end = pager.getPageEnd();
-			
-			session.setAttribute("searchOption", searchOption); // 상품 이름 검색
-			session.setAttribute("prd_opt", prd_opt); // 상품 이름 검색
-			session.setAttribute("curPage", curPage);
+		// 페이지 관련 설정
+		Pager pager = new Pager(count, curPage);
+		int start = pager.getPageBegin();
+		int end = pager.getPageEnd();
 
-			List<ProductInfoVO> list = productService.listSearchPrd(searchOption, start, end); // 게시글 목록
-			HashMap<String, Object> map = new HashMap<String, Object>();
-			map.put("list", list); // map에 자료 저장
-			map.put("count", count);
-			map.put("pager", pager); // 페이지 네버게이션을 위한 변수
-			map.put("searchOption", searchOption);
-			model.addAttribute("map", map);
-			
-			return "products/hotel_page";
-		}
+		session.setAttribute("sPrd", sPrd); // 상품 이름 검색
+		session.setAttribute("curPage", curPage);
+
+		List<ProductInfoVO> list = productService.listSearchPrd(sPrd, start, end); // 게시글 목록
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		map.put("list", list); // map에 자료 저장
+		map.put("count", count);
+		map.put("pager", pager); // 페이지 네버게이션을 위한 변수
+		map.put("sPrd", sPrd);
+		model.addAttribute("map", map);
+
+		return "product/search";
+	}
 	
 	
 	
@@ -184,34 +181,35 @@ public class ProductController {
 			return "admin/productList";
 		}
 		
-		
-		
 		//자동차(CAR)화면
 		// 품목 리스트 + 페이징 + 검색
 		@RequestMapping(value = "/car_page", method = RequestMethod.GET)
 		public String listCarPage(Model model, HttpSession session, ProductInfoVO vo,
-				@RequestParam(defaultValue = "CITY_NO") String searchOption,
-				@RequestParam(defaultValue = "") String prd_opt, 
+				@RequestParam(defaultValue = "") String keyword,
+				@RequestParam(name = "city_no", required = false, defaultValue = "") String city_no,
+				@RequestParam(name = "prd_opt", required = false, defaultValue = "") String prd_opt, 
 				@RequestParam(defaultValue = "1") int curPage) 
 			throws Exception {
-			// 게시글 갯수 계산
-			int count = productService.countSearchPrd(searchOption, prd_opt);
+			
+			// 상품 개수 계산
+			int count = productService.countSearchCar(city_no, prd_opt);
 
 			// 페이지 관련 설정
 			Pager pager = new Pager(count, curPage);
 			int start = pager.getPageBegin();
 			int end = pager.getPageEnd();
 
-			session.setAttribute("searchOption", searchOption); // 상품 이름 검색
-			session.setAttribute("prd_opt", prd_opt); // 상품 이름 검색
+			session.setAttribute("city_no", city_no); // 지역명 검색
+			session.setAttribute("prd_opt", prd_opt); // 상품옵션으로 검색
 			session.setAttribute("curPage", curPage);
 
-			List<ProductInfoVO> list = productService.listSearchPrd(searchOption, start, end); // 게시글 목록
+			List<ProductInfoVO> list = productService.listSearchCar(city_no, prd_opt, start, end); // 게시글 목록
 			HashMap<String, Object> map = new HashMap<String, Object>();
 			map.put("list", list); // map에 자료 저장
 			map.put("count", count);
 			map.put("pager", pager); // 페이지 네버게이션을 위한 변수
-			map.put("searchOption", searchOption);
+			map.put("city_no", city_no);
+			map.put("prd_opt", prd_opt);			
 			model.addAttribute("map", map);
 
 			return "products/car_page";

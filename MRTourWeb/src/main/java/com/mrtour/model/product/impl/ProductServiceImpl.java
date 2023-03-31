@@ -22,12 +22,22 @@ public class ProductServiceImpl implements ProductService {
 	public List<ProductInfoVO> listSearchPrd(String sPrd, int start, int end) {
 		return productInfoDAO.listSearchPrd(sPrd, start, end);
 	}
-
-	// 검색 품목 카운트
-	public int countSearchPrd(String searchOption, String prd_opt) {
-		return productInfoDAO.countSearchPrd(searchOption, prd_opt);
+	
+	// 자동차 상품 검색
+	public List<ProductInfoVO> listSearchCar(String city_no, String prd_opt, int start, int end) {
+		return productInfoDAO.listSearchCar(city_no, prd_opt, start, end);
 	}
-
+	
+	// 물품 검색 카운트
+	public int countSearchPrd(String sPrd) {
+		return productInfoDAO.countSearchPrd(sPrd);
+	}
+	
+	// 물품 검색 카운트
+	public int countSearchCar(String city_no, String prd_opt) {
+		return productInfoDAO.countSearchCar(city_no, prd_opt);
+	}
+	
 	// 상품 등록
 	public void insertProduct(ProductInfoVO vo) {
 		productInfoDAO.insertProduct(vo);

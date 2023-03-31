@@ -33,12 +33,55 @@
 		) WHERE RN BETWEEN #{start} AND #{end}
 	</select>
 	
+<!-- 자동차 검색 결과 -->
+	<select id="listSearchCar" resultMap="productinfo">
+	
+		<choose>
+			<when test="city_no == '전체' and prd_opt != '전체'" >
+			   SELECT * FROM PRODUCT_INFO WHERE PRD_OPT LIKE '%'||#{prd_opt}||'%'
+			</when>
+			<when test="city_no != '전체' and prd_opt == '전체'" >
+			   SELECT * FROM PRODUCT_INFO WHERE CITY_NO = #{city_no}
+			</when>
+			<when test="city_no != '전체' and prd_opt != '전체'" >
+			   SELECT * FROM PRODUCT_INFO WHERE CITY_NO = #{city_no} AND PRD_OPT LIKE '%'||#{prd_opt}||'%'
+			</when>
+			<otherwise>
+				SELECT *
+				FROM PRODUCT_INFO
+			</otherwise>
+		</choose>
+	</select>
+		
 	<!-- 검색한 상품 개수 -->
 	<select id="countSearchPrd" resultType="java.lang.Integer">
 		SELECT COUNT(*) 
 		FROM PRODUCT_INFO 
 		WHERE UPPER(PRD_NAME) LIKE UPPER('%'||#{sPrd}||'%') 
 		OR LOWER(PRD_NAME) LIKE LOWER('%'||#{sPrd}||'%')
+	</select>
+	
+	<!-- 검색한 상품 개수 -->
+	<select id="countSearchCar" resultType="java.lang.Integer">
+		<choose>
+			<when test="city_no == '전체' and prd_opt != '전체'" >
+				SELECT COUNT(*) FROM PRODUCT_INFO WHERE 
+				PRD_OPT LIKE '%'||#{prd_opt}||'%'
+			</when>
+			<when test="city_no != '전체' and prd_opt == '전체'" >
+				SELECT COUNT(*) FROM PRODUCT_INFO WHERE 
+				CITY_NO = #{city_no}
+				
+			</when>
+			<when test="city_no != '전체' and prd_opt != '전체'" >
+				SELECT COUNT(*) FROM PRODUCT_INFO WHERE CITY_NO = #{city_no} AND PRD_OPT LIKE '%'||#{prd_opt}||'%'
+			</when>
+			<otherwise>
+				SELECT COUNT(*) 
+				FROM PRODUCT_INFO
+			</otherwise>
+		</choose>
+		
 	</select>
 
 <!-- 상품 등록 -->

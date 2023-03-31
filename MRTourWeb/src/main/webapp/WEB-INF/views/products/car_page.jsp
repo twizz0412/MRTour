@@ -10,6 +10,25 @@
 	<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>미래투어 렌트카</title>
+	
+	<!-- 검색값을 DB로 넘기기 위한 함수 -->
+	<script>  
+		function ChangeSearch() {  
+		var city_no = document.getElementById("city_no");  
+		var prd_opt = document.getElementById("prd_opt");  
+		
+		document.getElementById("city_no_search").value = city_no.options[city_no.selectedIndex].text;
+		document.getElementById("prd_opt_search").value = prd_opt.options[prd_opt.selectedIndex].text;  
+		} 
+		
+		function SubmitSearch() {
+		    var city_no_search = document.getElementById("city_no_search").value; // 옵션의 value 값으로 변경
+		    var prd_opt_search = document.getElementById("prd_opt_search").value; // 옵션의 value 값으로 변경
+		    window.location.href = "car_page?city_no=" + city_no_search + "&prd_opt=" + prd_opt_search;
+		}
+
+	</script>  
+
 </head>
 
 <body>
@@ -47,46 +66,44 @@
 		<div id="contents">
 
 			<!-- 상단 검색창 -->
-		<form action="product" class="carsearch">
+		
 			<div class="app-car-search-form">
 				<div class="search-form-top rentalcar">
 					<div class="inner">
-						<div class="search-area-form same-area">
-							<div class="form-column">
-								<p class="title">인수 도시</p>
-								<select name="city">
-									<option value="">도시선택</option>
-									<option value="서울">서울</option>
-									<option value="강릉">강릉</option>
-									<option value="여수">여수</option>
-									<option value="경주">경주</option>
-									<option value="부산">부산</option>
-									<option value="제주">제주</option>
-								</select>
-								</p>
-							</div>
-
-
-							<div class="form-column">
-								<p class="title">차량명</p>
-								<p class="text">
-									<select name="car">
-										<option value="">차량선택</option>
-										<option value="아반떼">아반떼</option>
-										<option value="코나">코나</option>
-										<option value="그랜저">그랜저</option>
+					
+						<form method="get" action="car_page" class="carsearch">
+							<div class="search-area-form same-area">
+								<div class="form-column">
+									<p class="title">인수 도시</p>
+									<select name = "city_no" id = "city_no" onchange = "ChangeSearch()" >
+										<option value = "전체">전체</option>
+										<option value = "서울">서울</option>
+										<option value = "강릉">강릉</option>
+										<option value = "여수">여수</option>
+										<option value = "경주">경주</option>
+										<option value = "부산">부산</option>
+										<option value = "제주">제주</option>
 									</select>
-								</p>
+									<input type = "hidden" id = "city_no_search" value = "">
+								</div>
+								<div class="form-column">
+									<p class="title">차량명</p>
+									<select name = "prd_opt" id = "prd_opt" onchange = "ChangeSearch()" >
+										<option value="전체">전체</option>
+										<option value="디젤">디젤</option>
+										<option value="가솔린">가솔린</option>
+									</select>
+									<input type = "hidden" id = "prd_opt_search" value = "">
+								</div>
+								<input type="button" class="btn" value="검색" onclick="SubmitSearch()"/>
+								<input type="hidden" name="search" id="search" value="s"/>
 							</div>
-							<a class="btn-form-search"><b>검색</b></a>
-						</div>
+						</form>	
 					</div>
 				</div>
 
 			</div>
-		</form>
-
-
+			
 			<!--검색창 아래 본문-->
 			<div class="contents-area">
 				<!--검색창 바로 아래-->

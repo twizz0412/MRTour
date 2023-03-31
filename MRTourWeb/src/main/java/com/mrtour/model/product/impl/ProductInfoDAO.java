@@ -28,13 +28,31 @@ public class ProductInfoDAO {
 			map.put("end", end);
 			return mybatis.selectList("ProductInfoDAO.listSearchPrd", map);
 		}
+	
+		//렌트카 상품검색(검색 조건 2개)
+		public List<ProductInfoVO> listSearchCar(String city_no, String prd_opt, int start, int end) {
+			Map<String, Object> map = new HashMap<String, Object>();
+			map.put("city_no", city_no);
+			map.put("prd_opt", prd_opt);
+			map.put("start", start);
+			map.put("end", end);
+			return mybatis.selectList("ProductInfoDAO.listSearchCar", map);
+		}
 		
 		// 검색 품목 카운트
-		public int countSearchPrd(String searchOption, String prd_opt) {
+		public int countSearchPrd(String sPrd) {
 			Map<String, Object> map = new HashMap<String, Object>();
-			map.put("searchOption", searchOption);
-			map.put("prd_opt", prd_opt);
+			map.put("sPrd", sPrd);
 			return mybatis.selectOne("ProductInfoDAO.countSearchPrd", map);
+		}
+		
+		// 검색 품목 카운트
+		public int countSearchCar(String city_no, String prd_opt) {
+		    Map<String, Object> map = new HashMap<String, Object>();
+		    map.put("city_no", city_no == null ? "" : city_no);
+		    map.put("prd_opt", prd_opt == null ? "" : prd_opt);
+		    
+		    return mybatis.selectOne("ProductInfoDAO.countSearchCar", map);
 		}
 
 		// 상품 등록
