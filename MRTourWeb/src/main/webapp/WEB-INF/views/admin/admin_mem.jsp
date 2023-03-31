@@ -23,16 +23,11 @@
 				  if (isConfirm) {
 				    swal('삭제 완료!','이 회원을 추방했습니다.','success').then(function(isConfirm)
 				   		{
-							location.href='delete?member_id='+${member.member_id};
+							location.href='delete_mem?member_id='+${member.member_id};
 				    	});
 				  }
 				})
 		}
-		$("#list_btn").click(function(){
-			self.location="board?"
-					+ "searchOption=${searchOption}&keyword=${keyword}"
-					+ "&search=${search}&curPage=${curPage}";
-		});
 	</script>
 </head>
 
@@ -70,7 +65,7 @@
 		                                        <td><div class="birth">${member.member_birth}</div></td>
 		                                        <td><div class="phone">${member.member_phone}</div></td>
 		                                        <td><div class="EMAIL">${member.member_email}</div></td>
-		                                        <td><div class="choice"><a href="#" id="list_btn"onClick="deleteM()">추방</a></div></td>
+		                                        <td><a href="#" id="list_btn"onclick="deleteM()">추방</a></div></td>
 											</tr>
 										</c:forEach>
 									</tbody>

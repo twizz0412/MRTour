@@ -44,12 +44,12 @@
 						<td>
 							<select name="city_no" id="city_no" style="width: 150px; height: 24px;">
 								<option value="">::선택::</option>
-								<option value="sl">서울</option>
-								<option value="gr">강릉</option>
-								<option value="ys">여수</option>
-								<option value="gj">경주</option>
-								<option value="bs">부산</option>
-								<option value="jj">제주</option>
+								<option value="서울">서울</option>
+								<option value="강릉">강릉</option>
+								<option value="여수">여수</option>
+								<option value="경주">경주</option>
+								<option value="부산">부산</option>
+								<option value="제주">제주</option>
 							</select>
 						</td>
 					</tr>
@@ -71,11 +71,11 @@
 						<td>							
 						<select name="prd_opt" id="prd_opt" style="width: 150px; height: 24px;">
 								<option value="" selected>::선택::</option>
-								<option value="sgl">싱글룸</option>
-								<option value="dbl">더블룸</option>
-								<option value="sut">스위트룸</option>
-								<option value="gsl">가솔린</option>
-								<option value="dsl">디젤</option>
+								<option value="싱글룸">싱글룸</option>
+								<option value="더블룸">더블룸</option>
+								<option value="스위트룸">스위트룸</option>
+								<option value="가솔린">가솔린</option>
+								<option value="디젤">디젤</option>
 							</select>	
 						</td>
 					</tr>
