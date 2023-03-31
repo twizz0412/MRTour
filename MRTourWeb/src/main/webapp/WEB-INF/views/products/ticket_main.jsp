@@ -11,7 +11,20 @@
 	<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
 	<meta charset="UTF-8">
 	<title>미래투어 티켓</title>
+	<!-- 검색값을 DB로 넘기기 위한 함수 -->
+	<script>  
+		function ChangeSearch() {  
+		var city_no = document.getElementById("city_no");    
+		
+		document.getElementById("city_no_search").value = city_no.options[city_no.selectedIndex].text;
+		} 
+		
+		function SubmitSearch() {
+		    var city_no_search = document.getElementById("city_no_search").value; // 옵션의 value 값으로 변경
+		    window.location.href = "hotel_list?city_no=" + city_no_search;
+		}
 
+	</script>  
 </head>
 
 
@@ -53,41 +66,24 @@
 			<div class="app-car-search-form">
 				<div class="search-form-top rentalcar">
 					<div class="inner">
+					
+						<form method="get" action="hotel_list" class= "hotelsearch">
 						<div class="search-area-form same-area">
-
 							<div class="form-column">
 								<p class="title">여행지</p>
-								<select name="city">
-									<option value="">도시선택</option>
-									<option value="서울">서울</option>
-									<option value="강릉">강릉</option>
-									<option value="여수">여수</option>
-									<option value="부산">부산</option>
-									<option value="경주">경주</option>
-									<option value="제주">제주</option>
+								<select name = "city_no" id = "city_no" onchange = "ChangeSearch()" >
+										<option value = "전체">전체</option>
+										<option value = "서울">서울</option>
+										<option value = "강릉">강릉</option>
+										<option value = "여수">여수</option>
+										<option value = "경주">경주</option>
+										<option value = "부산">부산</option>
+										<option value = "제주">제주</option>
 								</select>
-								</p>
+								<input type = "hidden" id = "city_no_search" value = "">
 							</div>
-
-
-							<div class="form-column">
-								<p class="title">숙박인원</p>
-								<p class="text">
-									<select name="car">
-										<option value="">인원선택</option>
-										<option value="a">a</option>
-										<option value="b">b</option>
-										<option value="c">c</option>
-										<option value="d">d</option>
-										<option value="e">e</option>
-									</select>
-								</p>
-							</div>
-
-
-							<a class="btn-form-search"><b>검색</b>
-							</a>
 						</div>
+						</form>	
 					</div>
 				</div>
 
@@ -98,61 +94,85 @@
 			<!--검색창 아래 본문-->
 			<div class="contents-area">
 
-
-
-				<!-- 상품 위 검색 결과 섹션 -->
-				<div class="search-result-header">
-					<p class="total">
-						<span>935</span> 개의 상품이 검색되었습니다.
-					</p>
-				</div>
-
-
 				<!-- 상품 리스트 -->
 				<div class="products">
 					<div class="product-list">
-						<li>
-							<div class="pro_img" style="float: left;">
+					
+						<c:forEach begin="0" end="${(fn:length(map.list))}" var="i">
+							<c:set var="row" value="${map.list[i]}" />
+							<c:choose>
+						<%-- 검색결과가 있을 때 --%>
+							<c:when test="${row.cate_id eq 'T003' && not empty row}">
 								<a href="#" class="product">
-									<img src="${product.prd_img}" href="ticket_page" width="275" height="200px">
-							</div>
-							<div class="pro">${product.prd_name}<p><br>
-									<span>후쿠오카 호빵맨 어린이박물관 부근에 위치</span>
-								<p><br>
-									<span><fmt:formatNumber value="${product.prd_price}" pattern="#,###"/>원</span>
-							</div>
-							</a>
-						</li>
-					</div>
-
-
+								
+								<li>
+									<div class="pro_img" style="float: left;">
+										<a href="#" class="product">
+											<img src=""${row.prd_img}" href="ticket_page" width="275" height="200px">
+									</div>
+									<div class="pro">${row.prd_name}<p><br>
+											<span>${row.prd_opt}</span>
+										<p><br>
+											<span>${row.prd_price} ~ </span>
+									</div>
+									</a>
+								</li>
+							</c:when>
+							
+							<%-- 검색결과가 없을 떄 --%>
+							<c:when test="${map.count == 0}">
+								검색결과가 없습니다.
+							</c:when>
+							</c:choose>
+							</c:forEach>
+						</div>
 					<div class="clearfix"></div>
 				</div>
 			</div>
 		</div>
-	</div>
+
 
 	<!-- 하단 페이지 표시 부분 -->
-	<div _ class="pagination c-pagination">
-		<pagination _ previoustext="이전" nexttext="다음" firsttext="맨처음" lasttext="맨끝"
-			class="ng-untouched ng-pristine ng-valid">
-			<ul class="pagination">
-				<li class="pagination-first page-item disabled"><a href="" class="page-link">맨처음<!----></a></li>
-				<li class="pagination-prev page-item disabled"><a href="" class="page-link">이전<!----></a></li>
-				<li class="pagination-page page-item active"><a href="" class="page-link">1<!----></a></li>
-				<li class="pagination-page page-item"><a href="" class="page-link">2<!----></a></li>
-				<li class="pagination-page page-item"><a href="" class="page-link">3<!----></a></li>
-				<li class="pagination-page page-item"><a href="" class="page-link">4<!----></a></li>
-				<li class="pagination-page page-item"><a href="" class="page-link">5<!----></a></li>
-				<li class="pagination-next page-item"><a href="" class="page-link">다음<!----></a></li>
-				<li class="pagination-last page-item"><a href="" class="page-link">맨끝<!----></a></li>
-			</ul>
-
+	<div class="pagination c-pagination">
+		<pagination previoustext="이전" nexttext="다음" firsttext="맨처음" lasttext="맨끝" class="ng-untouched ng-pristine ng-valid">
+		<ul class="pagination">
+		
+		<c:if test="${map.pager.curBlock > 1}">
+			<li class="pagination-first page-item disabled">
+			<a href="board?curPage=1&searchOption=${searchOption}&keyword=${keyword}
+					&search=${search}">처음</a></li>
+		</c:if>
+		
+		<c:if test="${map.pager.curBlock > 1}">
+			<li class="pagination-prev page-item disabled"><a href="board?curPage=${map.pager.prevPage}
+					&searchOption=${searchOption}&keyword=${keyword}&search=${search}">이전</a></li>
+		</c:if>
+		<c:forEach var="num" begin="${map.pager.blockBegin}" 
+								end="${map.pager.blockEnd}">
+			<c:choose>
+				<c:when test="${num == map.pager.curPage}">
+					<li class="pagination-page page-item active"><a href="" class="page-link">${num}</a></li>
+				</c:when>
+				<c:otherwise>
+					<li class="pagination-page page-item"><a href="board?curPage=${num}&searchOption=${searchOption}&keyword=${keyword}
+							&search=${search}" class="page-link">${num}</a></li>
+				</c:otherwise>
+			</c:choose>
+		</c:forEach>
+		<c:if test="${map.pager.curBlock < map.pager.totBlock}">
+			<li class="pagination-next page-item"><a href="board?curPage=${map.pager.nextPage}&searchOption=${searchOption}&keyword=${keyword}
+					&search=${search}" class="page-link">다음</a></li>
+		</c:if>
+		<c:if test="${(map.pager.totPage > 5) && (map.pager.totPage != map.pager.curPage)}">
+			<li class="pagination-last page-item"><a href="board?curPage=${map.pager.totPage}
+								&searchOption=${searchOption}&keyword=${keyword}
+								&search=${search}">맨끝</a></li>
+		</c:if>
+		</ul>
+		
 		</pagination>
 	</div>
 	</div>
-	</app-rent-tab-body></div>
-
 </body>
 
 </html>

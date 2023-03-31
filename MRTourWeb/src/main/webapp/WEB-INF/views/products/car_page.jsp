@@ -87,7 +87,7 @@
 									<input type = "hidden" id = "city_no_search" value = "">
 								</div>
 								<div class="form-column">
-									<p class="title">차량명</p>
+									<p class="title">차량옵션</p>
 									<select name = "prd_opt" id = "prd_opt" onchange = "ChangeSearch()" >
 										<option value="전체">전체</option>
 										<option value="디젤">디젤</option>
@@ -110,9 +110,9 @@
 				<app-rent-breadcrumbs class="breadcrumbs" _nghost-serverapp-c364="">
 					<div class="text-article">
 					<c:choose>
-						<c:when test="${product_info.city_no != null}">
+						<c:when test="${row.city_no} != null">
 						<p class="text">
-							<strong>${product_info.city_no}</strong>에서 이용할 렌터카를 선택해 주세요.
+							<strong>${row.city_no}</strong>에서 이용할 렌터카를 선택해 주세요.
 						</p>
 						</c:when>
 						<c:otherwise> <!-- 디폴트값 -->
@@ -135,15 +135,6 @@
 					</ul>
 				</app-rent-breadcrumbs>
 
-
-				<!-- 상품 위 검색 결과 섹션 -->
-				<div class="search-result-header">
-					<p class="total">
-						<span>${map.count}</span> 개의 상품이 검색되었습니다.
-					</p>
-				</div>
-
-
 				<!-- 상품 리스트 -->
 				<div class="products">
 					
@@ -151,8 +142,6 @@
 					
 					<c:forEach begin="0" end="${(fn:length(map.list))}" var="i">
 					<c:set var="row" value="${map.list[i]}" />
-					<input type="hidden" id="cate_id" name="cate_id" value="${row.cate_id}"/>
-
 					<c:choose>
 					<%-- 검색결과가 있을 때 --%>
 					<c:when test="${row.cate_id eq 'C001' && not empty row}">

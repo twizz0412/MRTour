@@ -39,6 +39,15 @@ public class ProductInfoDAO {
 			return mybatis.selectList("ProductInfoDAO.listSearchCar", map);
 		}
 		
+		// 티켓 검색
+		public List<ProductInfoVO> listSearchTicket(String sPrd, int start, int end) {
+			Map<String, Object> map = new HashMap<String, Object>();
+			map.put("sPrd", sPrd);
+			map.put("start", start);
+			map.put("end", end);
+			return mybatis.selectList("ProductInfoDAO.listSearchTicket", map);
+		}
+		
 		// 검색 품목 카운트
 		public int countSearchPrd(String sPrd) {
 			Map<String, Object> map = new HashMap<String, Object>();
