@@ -41,8 +41,8 @@ public class ProductController {
 	public String hotel_checkout() {return "products/hotel_checkout";}
 		
 	// 티켓 상세페이지
-	@RequestMapping("/ticket_page")
-	public String ticket_page() {return "products/ticket_page";}
+	/*@RequestMapping("/ticket_page")
+	public String ticket_page() {return "products/ticket_page";}*/
 	
 	// 렌트카 예약페이지
 	@RequestMapping("/car_checkout")
@@ -52,11 +52,11 @@ public class ProductController {
 	@RequestMapping("/productpage")
 	public String productPage(ProductInfoVO vo, Model model) {
 		model.addAttribute("product", productService.productDetail(vo));
-		return "product/productpage";
+		return "products/ticket_page";
 	}
 	
-	// 카테고리 품목 출력
-	@RequestMapping("/category")
+	// 카테고리 품목 출력(상품 리스트 페이지)
+	/*@RequestMapping("/category")
 	public String getfbMirrorList(@RequestParam(defaultValue = "1") int curPage, ProductInfoVO vo, Model model) {
 		int count = productService.getCountProduct(vo);
 		Pager pager = new Pager(count, curPage);
@@ -71,10 +71,10 @@ public class ProductController {
 		map.put("pager", pager);
 		model.addAttribute("map", map);
 		return "product/category";
-	}
+	}*/
 	
 	// 품목 리스트 + 페이징 + 검색
-	@RequestMapping(value = "/searchPrd", method = RequestMethod.GET)
+	/*@RequestMapping(value = "/searchPrd", method = RequestMethod.GET)
 	public String listPage(Model model, HttpSession session, ProductInfoVO vo,
 			@RequestParam(defaultValue = "") String sPrd, 
 			@RequestParam(defaultValue = "1") int curPage) {
@@ -98,7 +98,7 @@ public class ProductController {
 		model.addAttribute("map", map);
 
 		return "product/search";
-	}
+	}*/
 	
 	
 	
@@ -128,7 +128,7 @@ public class ProductController {
 		@RequestMapping("/insertProduct")
 		public String insertProduct(MultipartHttpServletRequest multi, ProductInfoVO vo) {
 			System.out.println(vo.toString());
-			String root = "C:/Users/minn/git/MRTour/MRTourWeb/src/main/webapp/";
+			String root = "C:/Users/YOUNGJEE SEO/git/MRTour/MRTourWeb/src/main/webapp/";
 			String path = "resources/img/product/" + vo.getCate_id() + "/";
 			String realpath = root + "resources/img/product/" + vo.getCate_id() + "/";
 

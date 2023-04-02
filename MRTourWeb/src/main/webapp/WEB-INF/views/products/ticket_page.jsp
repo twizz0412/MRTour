@@ -9,12 +9,15 @@
 <head>
 <link rel="stylesheet" href="resources/css/ticket_page.css">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<script src = "resources/js/ticket_page.js"></script>
-<title>[홍천] 초록의 설렘 가득한, 알파카월드</title>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script type="text/javascript" src="resources/js/cart.js" charset="UTF-8"></script>
+<script type="text/javascript" src="resources/js/product.js" charset="UTF-8"></script>
+<title>${product.prd_name}</title>
 </head>
 <body>
 <script>
-			// 인원수 증감
+			// 구매수량
 			$("#buy_quantity").keyup(function(e){
 				var regNumber = /^([0-9]{2})$/;
 				var str = $(this).val();
@@ -24,51 +27,47 @@
 				}
 			});
 		</script>
-<main class="offer-detail" data-category="ticket" data-location-city="Gangwondo" data-location-country="Korea, Republic of" 
-data-location-region="asia" data-offer-id="40487" itemscope="" itemtype="http://schema.org/Product">
-<meta content="마이리얼트립" itemprop="brand">
-<meta content="홍천 알파카월드 입장권: ..." itemprop="description">
-<meta content="https://d2ur7st6jjikze.cloudfront.net/offer_photos/40487/675401_large_1662004535.jpg?1662004535" itemprop="image">
-<meta content="[홍천] 초록의 설렘 가득한, 알파카월드" itemprop="name">
-<meta content="대한민국 &amp;gt; 강원도" itemprop="category">
 
-<div class="hidden" itemprop="offers" itemscope="true" itemtype="http://schema.org/Offer">
-<meta content="KRW" itemprop="priceCurrency">
-<meta content="14300" itemprop="price">
-</div>
+<header>
+		<div class="login">
+			<p>
+				<a href="login"><b>로그인</a> | <a href="signup"><b>회원가입</a> | <a href="#"><b>고객센터</a>
+			</p>
+			<br>
+			<p>
+				<a href="#"><img src="resources/images/login1.png" width="50" height="50" style="float: right;"></a> <a
+					href="#"><img src="resources/images/login2.png" width="50" height="50" style="float: right"></a>
+			</p>
+		</div>
+
+		<div class="logo">
+			<a href="#"><img src="resources/images/logo.png"></a>
+		</div>
+
+		<nav>
+			<ul>
+				<li><a href="car_page"><b>렌트카 </a></li>
+				<li><a href="hotel_main"><b>호텔 </a></li>
+				<li><a href="ticket_main"><b> 투어 | 입장권</a>
+				<li><a href="#"><b> 골프</a>
+				<li><a href="#"><b> 미래LIVE </a>
+				<li><a href="#"><b> FAQ</a></li>
+			</ul>
+		</nav>
+	</header>
+
+<main class="offer-detail">
+
 
 <div id="Offer-react-component">
 <div class="Offer_container">
-<!-- 메뉴바 -->
-<div class="OfferSectionNavbar_container OfferSectionNavbar_show">
-<div class="Grid_container">
-<div class="Grid_row Grid-module__full--V7SXd OfferSectionNavbar_row">
-<div class="OfferSectionNavbar_nav">
-<nav id="OFFER-SECTION-BAR" class="TabsWithSwiper_container TabsWithSwiper_large TabsWithSwiper_hideBorder">
-<div class="swiper-container swiper-container-horizontal swiper-container-free-mode" style="cursor: grab;">
-<div class="swiper-wrapper" style="width: 1084px; transform: translate3d(0px, 0px, 0px);">
-<button id="OFFER-SECTION-TICKET_TAB" type="button" class="swiper-slide TabItemWithSwiper_btn TabItemWithSwiper_gray TabItemWithSwiper-module__large--m0bDm TabItemWithSwiper_active swiper-slide-active" style="margin-right: 24px;">티켓 안내</button>
-<button id="OFFER-SECTION-INTRODUCTION_TAB" type="button" class="swiper-slide TabItemWithSwiper_btn TabItemWithSwiper_gray TabItemWithSwiper-module__large--m0bDm swiper-slide-next" style="margin-right: 24px;">상품 소개</button>
-<button id="OFFER-SECTION-GUIDANCE_TAB" type="button" class="swiper-slide TabItemWithSwiper_btn TabItemWithSwiper_gray TabItemWithSwiper-module__large--m0bDm" style="margin-right: 24px;">이용 안내</button>
-<button id="OFFER-SECTION-REFUND_TAB" type="button" class="swiper-slide TabItemWithSwiper_btn TabItemWithSwiper_gray TabItemWithSwiper-module__large--m0bDm" style="margin-right: 24px;">환불 안내</button>
-</div>
-
-<!-- 메뉴바에 마우스 올리면 생기는 span -->
-<span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
-
-<button type="button" class="TabsWithSwiper_navButton TabsWithSwiper_prev TabsWithSwiper_prev--OFFER-SECTION-BAR">
-<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4KICAgIDxwYXRoIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlPSIjMkI5NkVEIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS13aWR0aD0iMiIgZD0iTTE0IDZsLTYgNi4wMDNMMTMuOTkzIDE4Ii8+Cjwvc3ZnPgo=" alt="prev"></button>
-<button type="button" class="TabsWithSwiper_navButton TabsWithSwiper_next TabsWithSwiper_next--OFFER-SECTION-BAR">
-<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4KICAgIDxwYXRoIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlPSIjMkI5NkVEIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS13aWR0aD0iMiIgZD0iTTEwIDZsNiA2LjAwM0wxMC4wMDcgMTgiLz4KPC9zdmc+Cg==" alt="next"></button></nav></div></div></div></div>
-
-<!-- 메뉴바 끝 -->
 
 <!-- 본문 시작 -->
 
-<!-- 제목 ~ 여행자들이 함께 구매한 상품 위까지 -->
+<!-- 제목 ~ 본문 끝까지 -->
 <div class="Grid_container">
 
-<!-- article, aside 포함된 본문 -->
+<!-- article + aside -->
 <div class="Grid_row Offer_layout">
 
 <!-- article -->
@@ -93,14 +92,13 @@ data-location-region="asia" data-offer-id="40487" itemscope="" itemtype="http://
 <span class="OfferMetaItem_label">유효기간(~2023.04.30) 내 사용</span></li>
 <li class="OfferMetaItem_container">
 <img src="https://dffoxz5he03rp.cloudfront.net/icons/ic_meta_language_md_gray_700.svg" alt="language" class="OfferMetaItem_icon">
-<span class="OfferMetaItem_label">한국어</span></li>
+<span class="OfferMetaItem_label">${product.city_no}</span></li>
 </ul>
 
 <!-- 구분선 -->
 <div class="OfferIntro_container"></div>
 
 <!-- 티켓 선택 구역 -->
-<a href="ticket"></a>
 <section class="OfferSectionBox_container OfferSectionBox_noBorder OfferSectionBox_noPadding" id="OFFER-SECTION-TICKET">
 <div class="OfferSectionBox_body OfferOptionSection_container">
 <h2 class="OfferSectionBox_title">티켓 선택</h2>
@@ -118,75 +116,52 @@ data-location-region="asia" data-offer-id="40487" itemscope="" itemtype="http://
 <div class="OfferOptionItemPrice_container">
 <div class="OfferOptionItemPrice_row OfferOptionItemPrice_margin">
 <span class="OfferOptionItemPrice_refund">미사용 전액환불</span></div>
-<!-- <div class="OfferOptionItemPrice_row">
-<span class="OfferOptionItemPrice-module__origin--goquY">15,000원</span>
-<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlPSIjRkE1QjRBIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS13aWR0aD0iMS41Ij4KICAgICAgICA8cGF0aCBkPSJNNC4xNjcgMC44MzNMNC4xNjcgOC43NSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNCAzKSIvPgogICAgICAgIDxwYXRoIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGQ9Ik0wIDUuODMzTDQuMTY3IDEwIDguMzMzIDUuODMzIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg0IDMpIi8+CiAgICA8L2c+Cjwvc3ZnPgo=" alt="discount">
-<span class="OfferOptionItemPrice-module__rate--XNdDJ">5%</span></div> -->
 <div class="OfferOptionItemPrice_row">
 <span class="OfferOptionItemPrice_unit">1명</span>
-<span class="OfferOptionItemPrice_price">14,250</span>
-<span class="OfferOptionItemPrice_symbol">원</span></div></div>
-<!-- 인원수 체크 부분 -->
-<div class="OfferOptionItemCounter_container">
-<div class="OfferOptionItemCounter_description">
-<ul class="OfferOptionDescription_container"></ul></div>
+<span class="OfferOptionItemPrice_price"><fmt:formatNumber value="${product.prd_price}" pattern="#,###"/></span>
+<span class="OfferOptionItemPrice_symbol">원</span><br><br>
 
-<!-- 인원수 증감 버튼 -->
-<div class="Stepper_container">
-<button type="button" class="Stepper_button layout_padding-zero layout_border-zero Stepper-module__disabled--krEGe" disabled="">
-<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij4KICAgIDxwYXRoIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlPSIjQ0VENERBIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS13aWR0aD0iMiIgZD0iTTIuNjY3IDhoMTAuNjY2Ii8+Cjwvc3ZnPgo=" alt="1만큼 감소"></button>
-<div class="Stepper_value">0</div>
-<button type="button" class="Stepper_button layout_padding-zero layout_border-zero">
-<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlPSIjNTFBQkYzIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS13aWR0aD0iMiI+CiAgICAgICAgPHBhdGggZD0iTTIuNjY3IDhoMTAuNjY2TTggMi42Njd2MTAuNjY2Ii8+CiAgICA8L2c+Cjwvc3ZnPgo=" alt="1만큼 증가"></button></div></div></div>
+<select id="prd_opt">
+							<c:forEach items="${fn:split(product.prd_opt, ',')}" var="opt">
+								<option value="${opt}">${opt}</option>
+							</c:forEach>
+						</select>
+										
+<input type="number" id="buy_quantity" min="1" maxlength="2" max="99" value="1" oninput="mxNum(this)" />
+					<script>
+						function mxNum(object) {
+							if (object.value.length > object.maxLength) {
+								object.value = object.value.slice(0, object.maxLength)
+							}
+						}
+					</script><br><br>
+<input type="hidden" name="prd_img" id="prd_img" value="${product.prd_img}" />
+<input type="hidden" name="member_id" id="member_id" value="${member.member_id}" />
+<input type="hidden" name="prd_id" id="prd_id" value="${product.prd_id}" />
+<input type="hidden" name="prd_opt" id="prd_opt" value="${product.prd_opt}" />
 
-<!-- 인원에 따른 금액 표시 부분(클릭하면 나옴 - 증감 버튼 위에 위치) -->
-<div class="OfferOptionCalculator_container">
-<ul class="OfferOptionCalculator_selections">
-<li class="OfferOptionCalculator_row">
-<p class="OfferOptionCalculator_title">알파카월드 1인입장권</p><p>1 X 14,250원</p>
-<p class="OfferOptionCalculator_price">14,250원</p></li></ul>
-<div class="OfferOptionCalculator_total">
-<span class="OfferOptionCalculator_label">총 여행 금액</span>
-<span class="OfferOptionCalculator_price">14,250원</span></div></div></div></div>
+<input type="button" name="buy" id="buy" onclick="buyProduct()" value="구매하기" />&nbsp;&nbsp;&nbsp;
+<input type="button" name="cart" id="cart" onclick="insertCart()" value="장바구니" />
+<input type="hidden" name="hiddenbtn" id="hiddenbtn" value="prdpage" />
 
-<!-- 결제하기 버튼 -->
-<div class="OfferOption_payment">
-<div class="OfferOption_button">
-<button type="button" class="Button_button Button_primary Button_large Button_block">결제하기</button>
 </div></div></div></div></div></div></div></div></section>
 
 
 
 <!-- 상품 소개 이미지 -->
-<a href="introduce"></a>
 <section class="OfferSectionBox_container OfferSectionBox_noBorder" id="OFFER-SECTION-INTRODUCTION">
 <div class="OfferSectionBox_body">
 <div>
-<div class="OfferFlexibleBox_container showstep1">
+<div class="OfferFlexibleBox_container">
 <div class="OfferFlexibleBox_body">
 <img src="https://d2ur7st6jjikze.cloudfront.net/offer_descriptive_images/40487/343523_medium_1677834930.jpg?1677834930" class="OfferDetailSection_image">
-<img src="https://d2ur7st6jjikze.cloudfront.net/offer_descriptive_images/40487/343524_medium_1677834936.jpg?1677834936" class="OfferDetailSection_image">
-<img src="https://d2ur7st6jjikze.cloudfront.net/offer_descriptive_images/40487/343525_medium_1677834941.jpg?1677834941" class="OfferDetailSection_image">
-<img src="https://d2ur7st6jjikze.cloudfront.net/offer_descriptive_images/40487/343526_medium_1677834946.jpg?1677834946" class="OfferDetailSection_image">
-<img src="https://d2ur7st6jjikze.cloudfront.net/offer_descriptive_images/40487/343527_medium_1677834951.jpg?1677834951" class="OfferDetailSection_image">
-<img src="https://d2ur7st6jjikze.cloudfront.net/offer_descriptive_images/40487/343528_medium_1677834956.jpg?1677834956" class="OfferDetailSection_image">
-<img src="https://d2ur7st6jjikze.cloudfront.net/offer_descriptive_images/40487/343529_medium_1677834962.jpg?1677834962" class="OfferDetailSection_image">
-<img src="https://d2ur7st6jjikze.cloudfront.net/offer_descriptive_images/40487/343530_medium_1677834967.jpg?1677834967" class="OfferDetailSection_image">
 <img src="https://d2ur7st6jjikze.cloudfront.net/offer_descriptive_images/40487/343534_medium_1677834988.jpg?1677834988" class="OfferDetailSection_image">
-<img src="https://d2ur7st6jjikze.cloudfront.net/offer_descriptive_images/40487/343536_medium_1677834993.jpg?1677834993" class="OfferDetailSection_image"></div>
-
-<!-- 상품 설명 더보기 -->
-<div class="OfferFlexibleBox_more OfferFlexibleBox_absolute">
-<div class="OfferFlexibleBox_gradation"></div>
-
-<button class="showmore">더보기</button><button class="showless">감추기</button>
-
-
-</div></div></div></div></section>
+<img src="https://d2ur7st6jjikze.cloudfront.net/offer_descriptive_images/40487/343536_medium_1677834993.jpg?1677834993" class="OfferDetailSection_image">
+</div>
+</div></div></div></section>
 
 
 <!-- 이용안내 -->
-<a href="guide"></a>
 <section class="OfferSectionBox_container" id="OFFER-SECTION-GUIDANCE">
 <div class="OfferSectionBox_body">
 <h2 class="OfferSectionBox_title">이용 안내</h2>
@@ -202,11 +177,7 @@ data-location-region="asia" data-offer-id="40487" itemscope="" itemtype="http://
 <h3 class="OfferContents_title">위치 안내</h3>
 <div class="OfferUseMeetingPoint_container">
 <p class="OfferUseMeetingPoint_description">강원 홍천군 화촌면 풍천리 310</p>
-<div class="OfferUseMeetingPoint_photos">
-<a href="https://www.google.com/maps/search/?api=1&amp;query=37.82335,127.88375" target="_blank" rel="noreferrer">
-<img class="OfferUseMeetingPoint_image" src="https://maps.googleapis.com/maps/api/staticmap?center=37.82335%2C127.
-88375&amp;markers=size%3Amid%7Ccolor%3Ared%7Clabel%3AE%7C37.82335%2C127.88375&amp;zoom=18&amp;scale=4&amp;size=344x218&amp;key=
-AIzaSyDIKCScTCOK-yllVbHvDboEnpKtKDs2vFU&amp;signature=KXHUkHIrb0_D52XZG3NSYQuQGL4="></a></div></div></div>
+</div></div>
 
 <!-- 이용 안내 - 사용 방법 -->
 <div class="OfferContents_container">
@@ -248,7 +219,6 @@ AIzaSyDIKCScTCOK-yllVbHvDboEnpKtKDs2vFU&amp;signature=KXHUkHIrb0_D52XZG3NSYQuQGL
 </div></div></div></div></div></section>
 
 <!-- 취소 및 환불 규정 -->
-<a href="refund"></a>
 <section class="OfferSectionBox_container" id="OFFER-SECTION-REFUND">
 <div class="OfferSectionBox_body">
 <h2 class="OfferSectionBox_title">취소 및 환불 규정</h2>
@@ -275,7 +245,7 @@ AIzaSyDIKCScTCOK-yllVbHvDboEnpKtKDs2vFU&amp;signature=KXHUkHIrb0_D52XZG3NSYQuQGL
 <div class="OfferPrice_container">
 
 <div class="OfferPrice-module__bottom--pKut4">
-<strong class="OfferPrice_price">14,300원</strong>
+<strong class="OfferPrice_price"><fmt:formatNumber value="${product.prd_price}" pattern="#,###"/>원</strong>
 <span class="OfferPrice_suffix">부터</span></div></div>
 </div>
 <div class="OfferSideBarMain_row">
@@ -299,12 +269,7 @@ c3Bhbj4KICAgICAgICA8L3RleHQ+CiAgICA8L2c+Cjwvc3ZnPgo=" alt="즉시사용"></a></p
 <!-- 위시리스트에 담기 부분 -->
 <div class="OfferSideBarMain_row">
 <button type="button" class="Button_button Button_outline Button_medium Button_block">
-<svg class="WishIcon_container" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-<path fill="none" fill-rule="evenodd" stroke="#CED4DA" stroke-width="1.25" 
-d="M15.876 4.625c1.205 0 2.41.46 3.33 1.379.918.92 1.378 2.124 1.378 3.33 0 1.204-.46 2.41-1.379 3.329h0l-7.1 7.1-7.101-7.1c-.
-92-.92-1.379-2.125-1.379-3.33s.46-2.41 1.379-3.329c.92-.92 2.124-1.379 3.33-1.379 1.204 0 2.41.46 3.329 1.379.161.162.309.332.
-442.51.133-.178.28-.349.442-.51.919-.92 2.124-1.379 3.329-1.379z"></path>
-</svg>
+<svg class="WishIcon_container" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"></svg>
 <span class="OfferSideBarMainWishlist_label">위시리스트에 담기</span>
 </button>
 <p class="OfferSideBarMainWishlist_desc">306명이 이 상품을 위시리스트에 담았습니다.</p></div></div></div></li>
@@ -316,17 +281,13 @@ d="M15.876 4.625c1.205 0 2.41.46 3.33 1.379.918.92 1.378 2.124 1.378 3.33 0 1.20
 <div class="BoxItem_body">
 <h3 class="BoxItem_title">안심하고 구매하세요!</h3>
 <p class="BoxItem_content">미사용시 100% 환불 가능한 상품입니다.</p></div></div></div></li>
-
-<!-- 렌트카 광고 배너 -->
-<li class="OfferSideBar_row">
-<a class="OfferSideBarBanner_container" href="https://www.myrealtrip.com/promotions/overseas_transport_rentacar" target="_blank">
-<img class="OfferSideBarBanner_image" src="https://d2ur7st6jjikze.cloudfront.net/cms/2407_original_1667280364.jpg?1667280364" alt="banner"></a></li></ul>
+</ul>
 </aside>
 
 
 <!-- 상품번호 섹션 -->
 <div class="offer-container_prd_id">
-<p class="offer-container_prd_id-content">상품번호: <span>40487</span></p></div></div>
+<p class="offer-container_prd_id-content">상품번호: <span>${product.prd_id}</span></p></div></div>
 
 
 </main>

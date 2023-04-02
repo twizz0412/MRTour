@@ -1,15 +1,12 @@
 package com.mrtour.model.cart.impl;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.mrtour.model.cart.ProductCartVO;
-import com.mrtour.model.product.ProductInfoVO;
 
 @Repository
 public class ProductCartDAO {

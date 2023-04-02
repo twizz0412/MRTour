@@ -17,7 +17,7 @@
 		<result property="pay_chk" column="PAY_CHK" />
 	</resultMap>
 	
-	<insert id="insertProductCart">
+	<insert id="insertProductCart"> <!-- 장바구니 담기("/insertCart") -->
 		<![CDATA[
 			MERGE INTO CART
 			USING DUAL ON (MEMBER_ID=#{member_id} AND PRD_ID=#{prd_id} AND PRD_OPT=#{prd_opt})
@@ -28,19 +28,19 @@
 		]]>
 	</insert>
 	
-	<delete id="deleteProductCart">
+	<delete id="deleteProductCart"> <!-- 장바구니 전체 비우기("/clearCart") -->
 		<![CDATA[
 			DELETE CART WHERE MEMBER_ID=#{member_id}
 		]]>
 	</delete>
 	
-	<delete id="deleteCart">
+	<delete id="deleteCart"> <!-- 장바구니 물품 삭제("/delCart") -->
 		<![CDATA[
 			DELETE CART WHERE MEMBER_ID=#{member_id} AND PRD_ID=#{prd_id}
 		]]>
 	</delete>
 	
-	<delete id="deleteThisProduct">
+	<delete id="deleteThisProduct"> <!-- ???? -->
 		<![CDATA[
 			DELETE CART WHERE MEMBER_ID=#{member_id} AND CART_ID=#{cart_id}
 		]]>
@@ -49,10 +49,10 @@
 	<select id="productCart" resultMap="productcart">
 		<![CDATA[
 			SELECT 
-				PRD_NAME, PRD_PRICE, BUY_QUANTITY, (PRD_PRICE * BUY_QUANTITY) AS PRD_SUM, 
-				MEMBER_ID, PRD_ID, CATE_ID, PRD_OPT, PRD_IMG
+				PRD_NAME, PRD_PRICE, (PRD_PRICE * BUY_QUANTITY) AS PRD_SUM, 
+				MEMBER_ID, PRD_ID, BUY_QUANTITY, CART_ID, CATE_ID, PRD_OPT, PRD_IMG
 			FROM CART NATURAL JOIN PRODUCT_INFO
-			WHERE MEMBER_ID=#{member_id} ORDER BY PRD_ID
+			WHERE MEMBER_ID=#{member_id, jdbcType=VARCHAR} ORDER BY PRD_ID
 		]]>
 	</select>
 </mapper>

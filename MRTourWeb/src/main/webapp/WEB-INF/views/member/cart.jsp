@@ -16,9 +16,7 @@
 	</head>
 	<body>
 	<button type="button" class="btn" onclick="location.href='./main'">메인 페이지</button>
-		<button type="button" class="btn" onclick="location.href='category'">카테고리별 상품 보기</button>
-		<button type="button" class="btn" onclick="location.href='searchPrd'">상품 검색</button>
-	
+		
 		<h1>상품목록</h1>
 		<table class="cart" align="center">
 			<tr>

@@ -7,6 +7,7 @@ public class ProductCartVO {
 	private String prd_name; // 상품명	
 	private int prd_price; // 상품 가격
 	private int prd_sum; // 가격 합계
+	private String prd_img; // 상품 이미지
 
 	private String member_id; // 회원 아이디(FK)
 	private String prd_id; // 상품 코드(FK)
@@ -39,6 +40,14 @@ public class ProductCartVO {
 
 	public void setPrd_sum(int buy_quantity, int prd_price) {
 		this.prd_sum = buy_quantity * prd_price; // 합계 = 주문 수량 * 상품 가격
+	}
+
+	public String getPrd_img() {
+		return prd_img;
+	}
+
+	public void setPrd_img(String prd_img) {
+		this.prd_img = prd_img;
 	}
 
 	public String getMember_id() {

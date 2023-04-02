@@ -97,25 +97,22 @@
 				<!-- 상품 리스트 -->
 				<div class="products">
 					<div class="product-list">
-					
 						<c:forEach begin="0" end="${(fn:length(map.list))}" var="i">
 							<c:set var="row" value="${map.list[i]}" />
 							<c:choose>
 						<%-- 검색결과가 있을 때 --%>
 							<c:when test="${row.cate_id eq 'T003' && not empty row}">
-								<a href="#" class="product">
 								
 								<li>
+								<div onclick="location.href='productpage?prd_id=${row.prd_id}'" style="cursor: pointer">
 									<div class="pro_img" style="float: left;">
-										<a href="#" class="product">
 											<img src=""${row.prd_img}" href="ticket_page" width="275" height="200px">
 									</div>
 									<div class="pro">${row.prd_name}<p><br>
 											<span>${row.prd_opt}</span>
 										<p><br>
 											<span>${row.prd_price} ~ </span>
-									</div>
-									</a>
+									</div></div>
 								</li>
 							</c:when>
 							
