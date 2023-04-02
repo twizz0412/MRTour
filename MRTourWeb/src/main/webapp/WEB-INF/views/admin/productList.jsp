@@ -37,6 +37,7 @@
 						<th>가격</th>
 						<th>옵션</th>
 						<th>지역</th>
+						<th>상품설명(썸네일 화면)</th>
 					</tr>
 					<c:forEach begin="0" end="${(fn:length(map.list))}" var="i">
 						<c:set var="product" value="${map.list[i]}" />
@@ -51,6 +52,7 @@
 								<td>${product.prd_price}</td>
 								<td>${product.prd_opt}</td>
 								<td>${product.city_no}</td>
+								<td width = "300px" align = "center">${product.prd_exp}</td>
 							</tr>
 						</c:if>
 					</c:forEach>

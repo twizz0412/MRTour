@@ -55,9 +55,7 @@ public class ProductCartController {
 		return "member/cart";
 	}
 
-	
-	
-	
+
 	// 결제
 		// 결제 페이지로 가기
 		   @RequestMapping("/payment")
@@ -105,6 +103,19 @@ public class ProductCartController {
 				paymentService.deleteCartPayment(vo);
 			}
 			return "main";
+		}
+		
+		// 렌트카 결제
+		// 결제 페이지로 가기
+		@RequestMapping(value="/car_checkout", method=RequestMethod.POST)
+		public String payment(PaymentVO vo, HttpSession session, Model model) {
+				List<PaymentVO> list = paymentService.getPaymentProduct(vo);
+				HashMap<String, Object> map = new HashMap<String, Object>();
+				map.put("list", list);
+				map.put("prd_id", vo.getPrd_id());			
+				map.put("prd_opt", vo.getPrd_opt());
+				session.setAttribute("map", map);
+			return "products/car_checkout";
 		}
 }
 

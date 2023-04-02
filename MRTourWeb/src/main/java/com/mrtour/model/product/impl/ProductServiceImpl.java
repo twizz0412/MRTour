@@ -18,24 +18,19 @@ public class ProductServiceImpl implements ProductService {
 		return productInfoDAO.prdCheckID(vo);
 	}
 
-	// 상품 검색
+	// 상품(티켓) 검색
 	public List<ProductInfoVO> listSearchPrd(String sPrd, int start, int end) {
 		return productInfoDAO.listSearchPrd(sPrd, start, end);
 	}
 	
-	// 자동차 상품 검색
+	// 자동차, 호텔 상품 검색
 	public List<ProductInfoVO> listSearchCar(String city_no, String prd_opt, int start, int end) {
 		return productInfoDAO.listSearchCar(city_no, prd_opt, start, end);
 	}
 
-	// 상품 검색
-	public List<ProductInfoVO> listSearchTicket(String city_no, int start, int end) {
-		return productInfoDAO.listSearchTicket(city_no, start, end);
-	}
-	
 	// 물품 검색 카운트
-	public int countSearchPrd(String sPrd) {
-		return productInfoDAO.countSearchPrd(sPrd);
+	public int countSearchPrd(String city_no) {
+		return productInfoDAO.countSearchPrd(city_no);
 	}
 	
 	// 렌트카 검색 카운트

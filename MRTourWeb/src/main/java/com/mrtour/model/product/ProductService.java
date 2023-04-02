@@ -8,11 +8,11 @@ public interface ProductService {
 	int prdCheckID(ProductInfoVO vo);
 
 	// 물품 검색
-	List<ProductInfoVO> listSearchPrd(String sPrd, int start, int end);
+	List<ProductInfoVO> listSearchPrd(String city_no, int start, int end);
 	List<ProductInfoVO> listSearchCar(String city_no, String prd_opt, int start, int end);
 
 	int countSearchCar(String city_no, String prd_opt);
-	int countSearchPrd(String sPrd);
+	int countSearchPrd(String city_no);
 	
 	// 물품 등록
 	void insertProduct(ProductInfoVO vo);

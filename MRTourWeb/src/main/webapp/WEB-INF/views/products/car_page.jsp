@@ -9,6 +9,9 @@
 	<link rel="stylesheet" type="text/css" href="resources/css/car_page.css" />
 	<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+			
 	<title>미래투어 렌트카</title>
 	
 	<!-- 검색값을 DB로 넘기기 위한 함수 -->
@@ -26,9 +29,7 @@
 		    var prd_opt_search = document.getElementById("prd_opt_search").value; // 옵션의 value 값으로 변경
 		    window.location.href = "car_page?city_no=" + city_no_search + "&prd_opt=" + prd_opt_search;
 		}
-
 	</script>  
-
 </head>
 
 <body>
@@ -53,9 +54,9 @@
 			<ul>
 				<li><a href="car_page"><b>렌트카 </a></li>
 				<li><a href="hotel_main"><b>호텔 </a></li>
-				<li><a href="ticket_main"><b> 투어 | 입장권</a>
-				<li><a href="#"><b> 골프</a>
-				<li><a href="#"><b> 미래LIVE </a>
+				<li><a href="ticket_main"><b> 투어 | 입장권</b></a></li>
+				<li><a href="#"><b> 골프</a></li>
+				<li><a href="#"><b> 미래LIVE </a></li>
 				<li><a href="#"><b> FAQ</a></li>
 			</ul>
 </nav>
@@ -117,7 +118,7 @@
 						</c:when>
 						<c:otherwise> <!-- 디폴트값 -->
 						<p class="text">
-							<strong>국내</strong>에서 이용할 렌터카를 선택해 주세요.
+							이용할 렌터카를 선택해 주세요.
 						</p>
 						</c:otherwise>
 					</c:choose>
@@ -137,20 +138,23 @@
 
 				<!-- 상품 리스트 -->
 				<div class="products">
-					
+				<form method="POST" action="car_checkout">
 					<div class="product-list">
+					
+					<input type="hidden" name="member_id" id="member_id" value="${member.member_id}" />
 					
 					<c:forEach begin="0" end="${(fn:length(map.list))}" var="i">
 					<c:set var="row" value="${map.list[i]}" />
 					<c:choose>
 					<%-- 검색결과가 있을 때 --%>
-					<c:when test="${row.cate_id eq 'C001' && not empty row}">
-						<a href="#" class="product">
+					<c:when test="${fn:startsWith(row.prd_id, 'C') && not empty row}">
+						<a  class="product">
 						<br><br><br>
 							<img src="${row.prd_img}" width="275" height="175px" style = "padding-top : 10px;padding-bottom : 15px">
 							<div class="product-name" style="padding:5px; font-size : 25px">
 								${row.prd_name}
 							</div>
+							<input type="hidden" name="prd_id" id="prd_id" value="${row.prd_id}" />
 							<br>
 							<div class="product-option" style=" padding:5px;">
 								${row.prd_opt}
@@ -161,19 +165,21 @@
 							</div>
 							<br>
 							<div class="product-button" style="padding:5px;">
-								<button id="product" onclick="location.href='car_checkout'">선택</button>
+								<input type = "hidden" id="city_no" value = "${row.city_no}">
+								<button type = "submit" id="product">선택</button>
 							</div>
 						</a>
 						</c:when>
 						<%-- 검색결과가 없을 떄 --%>
 						<c:when test="${map.count == 0}">
-							<b style="color: blue; font-size:30px;">'${keyword}'</b> 에 대한 검색결과가 없습니다.
+							검색결과가 없습니다.
 						</c:when>
 						</c:choose>
 						</c:forEach>
 
 						<div class="clearfix"></div>
 					</div>
+				</form>
 				</div>
 			</div>
 		</div>
