@@ -13,7 +13,8 @@
 		<result property="cate_id" column="CATE_ID" />
 		<result property="prd_price" column="PRD_PRICE" />
 		<result property="prd_img" column="PRD_IMG" />
-		
+		<result property="prd_exp" column="PRD_EXP" />		
+			
 	</resultMap>
 
 <!-- 상품 코드 중복 확인  -->
@@ -25,12 +26,14 @@
 	
 <!-- 상품 검색 결과 -->
 	<select id="listSearchPrd" resultMap="productinfo">
-		SELECT * FROM (
-			SELECT ROWNUM AS RN, A.* FROM (
+		<choose>
+			<when test="city_no != '전체'">
+			   SELECT * FROM PRODUCT_INFO WHERE CITY_NO = #{city_no}
+			</when>
+			<when test="city_no == '전체'">
 				SELECT * FROM PRODUCT_INFO
-				WHERE UPPER(PRD_NAME) LIKE UPPER('%'||#{sPrd}||'%') OR LOWER(PRD_NAME) LIKE LOWER('%'||#{sPrd}||'%')
-			) A
-		) WHERE RN BETWEEN #{start} AND #{end}
+			</when>
+		</choose>
 	</select>
 	
 <!-- 자동차 검색 결과 -->
@@ -55,10 +58,15 @@
 		
 	<!-- 검색한 상품 개수 -->
 	<select id="countSearchPrd" resultType="java.lang.Integer">
-		SELECT COUNT(*) 
-		FROM PRODUCT_INFO 
-		WHERE UPPER(PRD_NAME) LIKE UPPER('%'||#{sPrd}||'%') 
-		OR LOWER(PRD_NAME) LIKE LOWER('%'||#{sPrd}||'%')
+		<choose>
+			<when test="city_no == '전체'">
+				SELECT COUNT(*) FROM PRODUCT_INFO
+			</when>
+			<when test="city_no != '전체'">
+				SELECT COUNT(*) FROM PRODUCT_INFO WHERE 
+				CITY_NO = #{city_no}			
+			</when>
+		</choose>
 	</select>
 	
 	<!-- 검색한 상품 개수 -->
@@ -94,7 +102,8 @@
 				PRD_OPT,
 				CATE_ID,
 				PRD_PRICE,
-				PRD_IMG
+				PRD_IMG,
+				PRD_EXP
 			) VALUES (
 				#{prd_id},
 				#{prd_name},
@@ -102,7 +111,8 @@
 				#{prd_opt},
 				#{cate_id},
 				#{prd_price},
-				#{prd_img}	
+				#{prd_img},
+				#{prd_exp}
 			)
 		]]>
 	</insert>
@@ -128,7 +138,7 @@
 	<!-- 관리자 페이지에서 상품 리스트 불러오기 -->
 	<select id="getAdminProductList" resultMap="productinfo">
 		<![CDATA[
-			SELECT CATE_ID, nvl(prd_img, 'resource/img/product/') AS PRD_IMG, PRD_NAME, PRD_ID, PRD_PRICE, PRD_OPT, CITY_NO FROM (
+			SELECT CATE_ID, nvl(prd_img, 'resource/img/product/') AS PRD_IMG, PRD_NAME, PRD_ID, PRD_PRICE, PRD_OPT, CITY_NO, PRD_EXP FROM (
 				SELECT ROWNUM AS RN, A.* FROM (
 					SELECT * FROM PRODUCT_INFO ORDER BY PRD_ID DESC
 				) A

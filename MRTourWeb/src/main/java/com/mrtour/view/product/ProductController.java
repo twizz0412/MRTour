@@ -43,11 +43,7 @@ public class ProductController {
 	// 티켓 상세페이지
 	/*@RequestMapping("/ticket_page")
 	public String ticket_page() {return "products/ticket_page";}*/
-	
-	// 렌트카 예약페이지
-	@RequestMapping("/car_checkout")
-	public String car_checkout() {return "products/car_checkout";}
-	
+
 	// 제품 상세페이지
 	@RequestMapping("/productpage")
 	public String productPage(ProductInfoVO vo, Model model) {
@@ -206,6 +202,8 @@ public class ProductController {
 			return "products/car_page";
 		}
 		
+		//호텔(Hotel)화면
+		// 품목 리스트 + 페이징 + 검색				
 		@RequestMapping(value = "/hotel_list", method = RequestMethod.GET)
 		public String listHotelPage(Model model, HttpSession session, ProductInfoVO vo,
 				@RequestParam(defaultValue = "") String keyword,

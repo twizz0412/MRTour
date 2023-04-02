@@ -20,10 +20,10 @@ public class ProductInfoDAO {
 			return mybatis.selectOne("ProductInfoDAO.prdCheckID", vo);
 		}
 
-		// 상품 검색
-		public List<ProductInfoVO> listSearchPrd(String sPrd, int start, int end) {
+		// 상품 검색(티켓용 검색)
+		public List<ProductInfoVO> listSearchPrd(String city_no, int start, int end) {
 			Map<String, Object> map = new HashMap<String, Object>();
-			map.put("sPrd", sPrd);
+			map.put("city_no", city_no);
 			map.put("start", start);
 			map.put("end", end);
 			return mybatis.selectList("ProductInfoDAO.listSearchPrd", map);
@@ -39,19 +39,10 @@ public class ProductInfoDAO {
 			return mybatis.selectList("ProductInfoDAO.listSearchCar", map);
 		}
 		
-		// 티켓 검색
-		public List<ProductInfoVO> listSearchTicket(String sPrd, int start, int end) {
-			Map<String, Object> map = new HashMap<String, Object>();
-			map.put("sPrd", sPrd);
-			map.put("start", start);
-			map.put("end", end);
-			return mybatis.selectList("ProductInfoDAO.listSearchTicket", map);
-		}
-		
 		// 검색 품목 카운트
-		public int countSearchPrd(String sPrd) {
+		public int countSearchPrd(String city_no) {
 			Map<String, Object> map = new HashMap<String, Object>();
-			map.put("sPrd", sPrd);
+			map.put("city_no", city_no);
 			return mybatis.selectOne("ProductInfoDAO.countSearchPrd", map);
 		}
 		
@@ -60,7 +51,6 @@ public class ProductInfoDAO {
 		    Map<String, Object> map = new HashMap<String, Object>();
 		    map.put("city_no", city_no == null ? "" : city_no);
 		    map.put("prd_opt", prd_opt == null ? "" : prd_opt);
-		    
 		    return mybatis.selectOne("ProductInfoDAO.countSearchCar", map);
 		}
 

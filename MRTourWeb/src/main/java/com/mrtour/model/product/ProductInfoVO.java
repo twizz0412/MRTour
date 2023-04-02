@@ -11,7 +11,8 @@ public class ProductInfoVO {
 	private int prd_price; // 상품 가격
 	private String prd_img; // 상품 이미지
 	private MultipartFile uploadFile; // 파일 업로드
-
+	private String prd_exp; //상품 설명
+	
 	private String keyword ="";
 
 	@Override 
@@ -97,6 +98,13 @@ public class ProductInfoVO {
 	public void setKeyword(String keyword) {
 		this.keyword = keyword;
 	}
-	
+
+	public String getPrd_exp() {
+		return prd_exp;
+	}
+
+	public void setPrd_exp(String prd_exp) {
+		this.prd_exp = prd_exp;
+	}
 }
 	

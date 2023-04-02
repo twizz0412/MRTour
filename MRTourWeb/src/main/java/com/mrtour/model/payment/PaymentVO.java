@@ -18,7 +18,10 @@ public class PaymentVO {
 	private String prd_name; // 상품명
 	private int prd_price; // 상품 가격
 	private int prd_sum; // 가격 합계
-	private String prd_opt; // 상품 옵션	
+	private String prd_opt; // 상품 옵션
+	private String prd_img; // 상품 이미지
+	private String city_no;
+	private String cate_id;
 	
 	public String getPrd_type() {
 		return prd_type;
@@ -110,5 +113,28 @@ public class PaymentVO {
 	}
 	public void setPrd_opt(String prd_opt) {
 		this.prd_opt = prd_opt;
+	}
+	public String getPrd_img() {
+		return prd_img;
+	}
+
+	public void setPrd_img(String prd_img) {
+		this.prd_img = prd_img;
+	}
+
+	public String getCity_no() {
+		return city_no;
+	}
+
+	public void setCity_no(String city_no) {
+		this.city_no = city_no;
+	}
+
+	public String getCate_id() {
+		return cate_id;
+	}
+
+	public void setCate_id(String cate_id) {
+		this.cate_id = cate_id;
 	}
 }
