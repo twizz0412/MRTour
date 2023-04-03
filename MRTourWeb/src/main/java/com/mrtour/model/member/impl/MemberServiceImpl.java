@@ -44,7 +44,7 @@ public class MemberServiceImpl implements MemberService {
 		return memberDAO.checkID(vo);
 	}
 
-	// 회원 유무 검사
+	// 회원 가입 여부 검사
 	public int checkMember(MemberVO vo) {
 		securityPWD(vo);
 		return memberDAO.checkMember(vo);

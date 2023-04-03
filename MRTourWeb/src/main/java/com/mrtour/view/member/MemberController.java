@@ -3,6 +3,7 @@ package com.mrtour.view.member;
 import java.util.HashMap;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,9 +31,10 @@ public class MemberController {
 	@RequestMapping("/main")
 	public String main() { return "main"; }
 
-	@RequestMapping("/term")
-	public String term(MemberVO vo) { return "member/term"; }
+	/*@RequestMapping("/term")
+	public String term(MemberVO vo) { return "member/term"; }*/
 
+	// 회원가입
 	@RequestMapping(value = "/signup", method = RequestMethod.GET)
 	public String signUpView(MemberVO vo) { return "member/signup"; }
 
@@ -117,8 +119,18 @@ public class MemberController {
 	// 로그아웃
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public String logout(HttpSession session) {
-		session.invalidate();
-		return "main";
+		Object member = session.getAttribute("member");
+	    if (member == null) {
+	        System.out.println("member 속성에 저장된 값이 null입니다.");
+	    } else {
+	        System.out.println(member.toString());
+	    }
+	    	session.removeAttribute("member");
+	    	session.invalidate();
+
+			System.out.println("로그아웃 성공....");
+			
+			return "main";	
 	}
 
 	// 아이디 중복검사

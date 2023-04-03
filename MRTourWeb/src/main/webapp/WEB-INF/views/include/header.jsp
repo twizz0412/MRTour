@@ -22,6 +22,10 @@
 <link
 	href="https://fonts.googleapis.com/css2?family=Hi+Melody&display=swap"
 	rel="stylesheet">
+	
+	<script src="resources/js/login.js" charset="UTF-8"></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<script src = "http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
 	// 마이페이지 클릭 이벤트
 	function mypBtn() {
@@ -46,13 +50,13 @@
 	<div class="logint">
 		<p>
 			<c:choose>
-				<c:when test="${member.member_id eq 'admin'}">
+				<c:when test="${member.member_id eq 'admin'}"><!-- 관리자로 로그인했을 때 -->
 					<a onclick="location.href='logout'"><b>로그아웃</a>
 
 					<a href="admin_main"><b>관리페이지</a>
 				</c:when>
 
-				<c:when test="${member.member_id == null}">
+				<c:when test="${member.member_id == null}"><!-- 로그인하지 않았을 때 -->
 					<a href="login"><b>로그인</a>
 
 					<a href="signup"><b>회원가입</a>
@@ -62,7 +66,7 @@
 
 				<c:otherwise>
 					<input type="hidden" id="member_id" name="member_id"
-						value="${member.member_id}" />
+						value="${member.member_id}" /><!-- 회원으로 로그인했을 때 -->
 					<a href="logout"><b>로그아웃</a> 
 						| 
 						<a href=""><b>고객센터</a>
@@ -93,8 +97,8 @@
 			<li><a href="car_page"><b>렌트카 </a></li>
 			<li><a href="hotel_list"><b>호텔 </a></li>
 			<li><a href="ticket_main"><b> 투어 | 입장권</a></li>
-			<li><a href="ticket_page"><b> 골프</a></li>
-			<li><a href="productCart"><b> 미래LIVE </a></li>
+			<li><a href="#"><b> 골프</a></li>
+			<li><a href="#"><b> 미래LIVE </a></li>
 			<li><a href="#"><b> FAQ</a></li>
 		</ul>
 	</div>

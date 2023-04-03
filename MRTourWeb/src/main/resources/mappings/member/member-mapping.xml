@@ -24,6 +24,7 @@
 		WHERE MEMBER_ID=#{member_id}
 	</select>
 
+
 	<select id="checkMember" resultType="java.lang.Integer">
 		SELECT COUNT(*) FROM MEMBER
 		WHERE MEMBER_ID=#{member_id} AND MEMBER_PWD=#{member_pwd}
@@ -84,11 +85,13 @@
 		SELECT * FROM MEMBER
 	</select>
 
+<!-- 회원 탈퇴 -->
 	<delete id="deleteMember">
 		DELETE FROM MEMBER WHERE
 		MEMBER_ID = #{member_id}
 	</delete>
 	
+	<!-- 회원 주문내역 -->
 	<select id="orderMember" resultType="payment">
 		SELECT * FROM(
 			SELECT ROWNUM AS RN, A.* FROM (
@@ -102,6 +105,7 @@
 		) WHERE RN BETWEEN #{start} AND #{end}
 	</select>
 	
+	<!-- 주문 수 -->
 	<select id="orderCount" resultType="java.lang.Integer">
 		SELECT COUNT(*) FROM PRODUCT_PAYMENT WHERE MEMBER_ID = #{member_id}
 	</select>

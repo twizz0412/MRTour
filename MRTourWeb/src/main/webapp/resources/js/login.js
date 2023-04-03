@@ -21,6 +21,15 @@ window.onload = function () {
 		}
 	};
 	
+	text1.addEventListener("mousemove",  function() {
+		var fontSize = "2";
+		        
+		var labels = text1.getElementsByTagName("label");
+		for (var i = 0; i < labels.length; i++) {
+		    labels[i].style.fontSize = fontSize + "px";
+		}
+	});
+	
 	text2.addEventListener("mousemove",  function() {
 		var fontSize = "2";
 		        
@@ -74,3 +83,16 @@ window.onload = function () {
 		});
 	}
 }
+
+function logout() {
+ 	$.ajax({
+ 		type : "GET",
+ 		url : "logout",
+ 		data : {},
+ 		success : function(data) {
+ 			swal("로그아웃", "완료", "success");
+ 			location.href="main";
+ 		}
+ 	});
+ }
+ 

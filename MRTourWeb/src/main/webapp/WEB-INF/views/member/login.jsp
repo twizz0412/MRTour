@@ -28,7 +28,7 @@
 					<div class = "input_duo">
 						<span class="input_text" id = "input_id">
 							<input id="member_id" type="text" title="아이디" autocomplete="off" value="">
-							<label for="input_id" >아이디</label>
+							<label for="input_id">아이디</label>
 						</span>
 						<span class="input_text" id = "input_pwd">
 							<input id="member_pwd" type="password" title="비밀번호" autocomplete="off" placeholder=" " value="">
