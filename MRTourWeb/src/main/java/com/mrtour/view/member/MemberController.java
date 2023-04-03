@@ -127,8 +127,6 @@ public class MemberController {
 	    } else {
 	        System.out.println(member.toString());
 	    }
-	    	
-
 			System.out.println("로그아웃 성공....");
 			
 			return "main";	

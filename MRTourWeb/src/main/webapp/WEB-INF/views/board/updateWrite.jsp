@@ -78,6 +78,9 @@ $(document).ready(function(){
 <title>${board.title}</title>
 </head>
 <body>
+	<!-- header -->
+	<%@ include file="../include/header.jsp"%>
+	
 <center>
 	<div style="width:800px;">
 		<div style="float:right;">

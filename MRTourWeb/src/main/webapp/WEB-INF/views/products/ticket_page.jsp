@@ -28,33 +28,8 @@
 			});
 		</script>
 
-<header>
-		<div class="login">
-			<p>
-				<a href="login"><b>로그인</a> | <a href="signup"><b>회원가입</a> | <a href="#"><b>고객센터</a>
-			</p>
-			<br>
-			<p>
-				<a href="#"><img src="resources/images/login1.png" width="50" height="50" style="float: right;"></a> <a
-					href="#"><img src="resources/images/login2.png" width="50" height="50" style="float: right"></a>
-			</p>
-		</div>
-
-		<div class="logo">
-			<a href="#"><img src="resources/images/logo.png"></a>
-		</div>
-
-		<nav>
-			<ul>
-				<li><a href="car_page"><b>렌트카 </a></li>
-				<li><a href="hotel_main"><b>호텔 </a></li>
-				<li><a href="ticket_main"><b> 투어 | 입장권</a>
-				<li><a href="#"><b> 골프</a>
-				<li><a href="#"><b> 미래LIVE </a>
-				<li><a href="#"><b> FAQ</a></li>
-			</ul>
-		</nav>
-	</header>
+	<!-- header -->
+	<%@ include file="../include/header.jsp"%>
 
 <main class="offer-detail">
 
