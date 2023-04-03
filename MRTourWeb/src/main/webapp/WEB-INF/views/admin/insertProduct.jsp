@@ -85,12 +85,12 @@
 							<input type="file" name="uploadFile" id="uploadFile" />
 						</td>
 					</tr>
-					
-					<tr>
-						<td colspan="2">
-						<input type = "button" id="button" value = "등록" onclick = "doInsertProduct()">			
-						</td>
-					</tr>
+     <tr>
+       <th>상품설명(썸네일용)</th>
+         <td>
+          <input type="text" name="prd_exp" id="prd_exp" />
+         </td>
+      </tr>
 				</table>
 			</form>
 		</section>

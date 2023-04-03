@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -35,9 +36,10 @@ public class ProductCartController {
 	
 	// 장바구니 담기
 	@RequestMapping("/insertCart")
-	public String insertProductCart(ProductCartVO vo) {
+	public String insertProductCart(@ModelAttribute ProductCartVO vo) {
 		productCartService.insertProductCart(vo);
-		return "member/cart";
+		System.out.println("insertCart 메소드 실행됨" + vo.toString());
+		return "products/ticket_page";
 	}
 	
 	

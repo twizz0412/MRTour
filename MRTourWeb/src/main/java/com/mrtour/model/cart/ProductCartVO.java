@@ -13,10 +13,20 @@ public class ProductCartVO {
 	private String prd_id; // 상품 코드(FK)
 	private int buy_quantity; // 주문 수량
 	private int cart_id; // 장바구니 고유번호 
-	private String cate_id; // 상품 종류 코드(FK)
-	private String prd_opt; // 상품 옵션
 	
 	private List<String> cartPayList; // 장바구니 리스트
+	
+	@Override 
+	public String toString() {
+		return "ProductCartVO [ PRD_NAME = " + prd_name +
+						", PRD_PRICE = " + prd_price +
+						", PRD_SUM = " + prd_sum +
+						", PRD_IMG = " + prd_img +
+						", MEMBER_ID = " + member_id +
+						", PRD_ID = " + prd_id + 
+						", BUY_QUANTITY = " + buy_quantity + 
+						", CART_ID = " + cart_id + " ]";
+	}
 
 	public String getPrd_name() {
 		return prd_name;
@@ -80,22 +90,6 @@ public class ProductCartVO {
 
 	public void setCart_id(int cart_id) {
 		this.cart_id = cart_id;
-	}
-
-	public String getCate_id() {
-		return cate_id;
-	}
-
-	public void setCate_id(String cate_id) {
-		this.cate_id = cate_id;
-	}
-
-	public String getPrd_opt() {
-		return prd_opt;
-	}
-
-	public void setPrd_opt(String prd_opt) {
-		this.prd_opt = prd_opt;
 	}
 
 	public List<String> getCartPayList() {

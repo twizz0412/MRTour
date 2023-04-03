@@ -236,31 +236,31 @@ public class ProductController {
 			return "products/hotel_list";
 		}
 		
-		// 티켓
-		@RequestMapping(value = "/ticket_main", method = RequestMethod.GET)
-		public String listCarPage(Model model, HttpSession session, ProductInfoVO vo,
-				@RequestParam(defaultValue = "") String city_no, 
-				@RequestParam(defaultValue = "1") int curPage) {
-			// 게시글 갯수 계산
-			int count = productService.countSearchPrd(city_no);
+		 // 티켓
+        @RequestMapping(value = "/ticket_main", method = RequestMethod.GET)
+        public String listTicketPage(Model model, HttpSession session, ProductInfoVO vo,
+            @RequestParam(name = "city_no", required = false, defaultValue = "전체") String city_no,
+              @RequestParam(defaultValue = "1") int curPage) {
+           // 게시글 갯수 계산
+           int count = productService.countSearchPrd(city_no);
 
-			// 페이지 관련 설정
-			Pager pager = new Pager(count, curPage);
-			int start = pager.getPageBegin();
-			int end = pager.getPageEnd();
+           // 페이지 관련 설정
+           Pager pager = new Pager(count, curPage);
+           int start = pager.getPageBegin();
+           int end = pager.getPageEnd();
 
-			session.setAttribute("city_no", city_no); // 상품 이름 검색
-			session.setAttribute("curPage", curPage);
+           session.setAttribute("city_no", city_no); // 상품 이름 검색
+           session.setAttribute("curPage", curPage);
 
-			List<ProductInfoVO> list = productService.listSearchPrd(city_no, start, end); // 게시글 목록
-			HashMap<String, Object> map = new HashMap<String, Object>();
-			map.put("list", list); // map에 자료 저장
-			map.put("count", count);
-			map.put("pager", pager); // 페이지 네버게이션을 위한 변수
-			map.put("city_no", city_no);
-			model.addAttribute("map", map);
+           List<ProductInfoVO> list = productService.listSearchPrd(city_no, start, end); // 게시글 목록
+           HashMap<String, Object> map = new HashMap<String, Object>();
+           map.put("list", list); // map에 자료 저장
+           map.put("count", count);
+           map.put("pager", pager); // 페이지 네버게이션을 위한 변수
+           map.put("city_no", city_no);
+           model.addAttribute("map", map);
 
-			return "products/ticket_main";
-		}
+           return "products/ticket_main";
+        }
 		
 }

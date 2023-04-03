@@ -11,8 +11,6 @@
 		<result property="prd_id" column="PRD_ID" />
 		<result property="buy_quantity" column="BUY_QUANTITY" />
 		<result property="cart_id" column="CART_ID" />
-		<result property="cate_id" column="CATE_ID" />
-		<result property="prd_opt" column="PRD_OPT" />
 		<result property="prd_img" column="PRD_IMG" />
 		<result property="pay_chk" column="PAY_CHK" />
 	</resultMap>
@@ -20,11 +18,11 @@
 	<insert id="insertProductCart"> <!-- 장바구니 담기("/insertCart") -->
 		<![CDATA[
 			MERGE INTO CART
-			USING DUAL ON (MEMBER_ID=#{member_id} AND PRD_ID=#{prd_id} AND PRD_OPT=#{prd_opt})
+			USING DUAL ON (MEMBER_ID=#{member_id} AND PRD_ID=#{prd_id})
 			WHEN MATCHED THEN
 			UPDATE SET BUY_QUANTITY = BUY_QUANTITY + #{buy_quantity}
 			WHEN NOT MATCHED THEN
-			INSERT (MEMBER_ID, PRD_ID, BUY_QUANTITY, CART_ID, PRD_OPT) VALUES (#{member_id}, #{prd_id}, #{buy_quantity}, CART_ID_SEQ.NEXTVAL, #{prd_opt})
+			INSERT (MEMBER_ID, PRD_ID, BUY_QUANTITY, CART_ID) VALUES (#{member_id}, #{prd_id}, #{buy_quantity}, CART_ID.NEXTVAL)
 		]]>
 	</insert>
 	
@@ -50,7 +48,7 @@
 		<![CDATA[
 			SELECT 
 				PRD_NAME, PRD_PRICE, (PRD_PRICE * BUY_QUANTITY) AS PRD_SUM, 
-				MEMBER_ID, PRD_ID, BUY_QUANTITY, CART_ID, CATE_ID, PRD_OPT, PRD_IMG
+				MEMBER_ID, PRD_ID, BUY_QUANTITY, CART_ID, PRD_IMG
 			FROM CART NATURAL JOIN PRODUCT_INFO
 			WHERE MEMBER_ID=#{member_id, jdbcType=VARCHAR} ORDER BY PRD_ID
 		]]>

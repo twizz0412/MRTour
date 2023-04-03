@@ -23,7 +23,6 @@
 				<th><input id="checkAll" type="checkbox" checked /></th>
 				<th>이미지</th>
 				<th>상품명</th>
-				<th>옵션</th>
 				<th>판매가</th>
 				<th>수량</th>
 				<th>합계</th>
@@ -40,7 +39,6 @@
 					</td>
 					<td><img src="${cartprd.prd_img}" width="75" height="75"></td><!-- 이미지 썸네일 -->
 					<td>${cartprd.prd_name}</td><!-- 상품명 -->
-					<td>${cartprd.prd_opt}</td> <!-- 옵션 -->
 					<td><fmt:formatNumber value="${cartprd.prd_price}" pattern="#,###"/></td><!-- 판매가 -->
 					<td><fmt:formatNumber value="${cartprd.buy_quantity}" pattern="#,###"/></td><!-- 수량 -->
 					<td><fmt:formatNumber value="${cartprd.prd_sum}" pattern="#,###"/></td><!-- 합계 -->

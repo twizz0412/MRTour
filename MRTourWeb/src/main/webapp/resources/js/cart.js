@@ -7,7 +7,6 @@ function insertCart() {
 	var member_id = $("#member_id").val();
 	var prd_id = $("#prd_id").val();
 	var buy_quantity = $("#buy_quantity").val();
-	var prd_opt = $("#prd_opt").val();
 	if (member_id == "Administrator") {
 		swal("", "관리자 권한으로는 이용하실 수 없습니다.", "warning");
 	} else if (!member_id) {
@@ -21,8 +20,7 @@ function insertCart() {
 			data : {
 				"member_id" : member_id,
 				"prd_id" : prd_id,
-				"buy_quantity" : buy_quantity,
-				"prd_opt" : prd_opt
+				"buy_quantity" : buy_quantity
 			},
 			success : function(data) {
 				swal("", "장바구니에 추가되었습니다.", "success");

@@ -13,7 +13,7 @@
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script type="text/javascript" src="resources/js/cart.js" charset="UTF-8"></script>
 <script type="text/javascript" src="resources/js/product.js" charset="UTF-8"></script>
-<title>${product.prd_name}</title>
+<title>미래투어 - 티켓 상세페이지</title>
 </head>
 <body>
 <script>
@@ -74,7 +74,8 @@
 <article class="Offer_article">
 <!-- article (header) -->
 <header class="OfferHeader_container">
-<h1 class="OfferHeaderTitle_container">${product.prd_name}</h1>
+<img name="prd_img" id="prd_img" src="${product.prd_img}">
+<h1 class="OfferHeaderTitle_container" name="prd_name" id="prd_name">${product.prd_name}</h1>
 </header>
 
 <!-- 구분선 -->
@@ -121,12 +122,7 @@
 <span class="OfferOptionItemPrice_price"><fmt:formatNumber value="${product.prd_price}" pattern="#,###"/></span>
 <span class="OfferOptionItemPrice_symbol">원</span><br><br>
 
-<select id="prd_opt">
-							<c:forEach items="${fn:split(product.prd_opt, ',')}" var="opt">
-								<option value="${opt}">${opt}</option>
-							</c:forEach>
-						</select>
-										
+
 <input type="number" id="buy_quantity" min="1" maxlength="2" max="99" value="1" oninput="mxNum(this)" />
 					<script>
 						function mxNum(object) {
@@ -138,15 +134,14 @@
 <input type="hidden" name="prd_img" id="prd_img" value="${product.prd_img}" />
 <input type="hidden" name="member_id" id="member_id" value="${member.member_id}" />
 <input type="hidden" name="prd_id" id="prd_id" value="${product.prd_id}" />
-<input type="hidden" name="prd_opt" id="prd_opt" value="${product.prd_opt}" />
 
 <input type="button" name="buy" id="buy" onclick="buyProduct()" value="구매하기" />&nbsp;&nbsp;&nbsp;
 <input type="button" name="cart" id="cart" onclick="insertCart()" value="장바구니" />
+<input type="button" name="cart" id="cart" onclick="location.href='productCart?member_id=${member.member_id}'" value="내 장바구니 보기" />
+
 <input type="hidden" name="hiddenbtn" id="hiddenbtn" value="prdpage" />
 
 </div></div></div></div></div></div></div></div></section>
-
-
 
 <!-- 상품 소개 이미지 -->
 <section class="OfferSectionBox_container OfferSectionBox_noBorder" id="OFFER-SECTION-INTRODUCTION">
