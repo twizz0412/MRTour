@@ -29,13 +29,13 @@
 		<div class="swiper mySwiper">
 			<div class="swiper-wrapper">
 				<div class="swiper-slide" data-left="0">
-					<a href="#"><img src="resources/images/main1.jpg"></a>
+					<a href="#"><img src="resources/images/main1.png"></a>
 				</div>
 				<div class="swiper-slide" data-left="1">
-					<a href="#"><img src="resources/images/main2.jpg"></a>
+					<a href="#"><img src="resources/images/main2.png"></a>
 				</div>
 				<div class="swiper-slide" data-left="2">
-					<a href="#"><img src="resources/images/main3.jpg"></a>
+					<a href="#"><img src="resources/images/main3.png"></a>
 				</div>
 			</div>
 			<div class="swiper-pagination"></div>
@@ -68,6 +68,7 @@
 						<b>80,000원</b>
 					</div>
 				</div>
+				<div class="container">
 				<div class="box">
 					<div class="image_box">
 						<img src="resources/images/a3.JPG" alt="">
@@ -77,6 +78,16 @@
 						<b>91,000원</b>
 					</div>
 				</div>
+				<div class="container">
+					<div class="box">
+						<div class="image_box">
+							<img src="resources/images/a2.JPG" alt="">
+						</div>
+						<div class="des">
+							<strong>[부산 출발]</strong><br> 국내 당일투어 혼자여행 여성트레킹 버스여행<br>
+							<b>80,000원</b>
+						</div>
+					</div>
 			</div>
 		</div>
 	</section>
@@ -94,7 +105,7 @@
 			<div class="c2">여행을 결심하기에 좋은 "부산"</div>
 			<div class="c3">아직 보여줄 것이 많은 "제주"</div>
 			<div class="c4">여행을 가장 여행답게 "강릉"</div>
-		</div>
+			<div class="c5">
 		<div class="box1">
 			<div class="image_box1">
 				<img src="resources/images/c.JPG" alt="">
@@ -121,10 +132,10 @@
 				<strong>[KTX]부산 2일</strong><br> #엘시티레지던스1박 #호캉스 #해운대해변열차 <br>
 				<b>399,000원 ~ </b>
 			</div>
+			</div>
 		</div>
 		</div>
 		</div>
-
 	</section>
 
 
@@ -209,94 +220,69 @@
 	</section>
 
 	<section id="section5">
-		<div class="scn5">
-			<div class="sc5">
-				<div class="sc55" onclick = "location.href='notice'">
-					<img src="resources/images/ft.JPG"
-						style="width: 50px; height: 50px; border: solid 1px #afafaf; border-radius: 50%; padding: 5px;">
-					<div class="tt5">
-						<p>
-							<b>공지 사항</b>
+		<div class="sc5">
+			<ul>
+				<li>
+					<a href="#">
+						<div class="img1" >
+						<img src="resources/images/sc5-1.jpeg" width="200px" height="200px"></div>
+						<p class="item_title">인더숲 BTS '평창'</p>
+						<p class="item_text">"촬영지 버스투어 + 인더숲 스테이!
+							<br>여기에 인더숲 공식상품 증정은 덤!
 						</p>
-						<p style="color: rgb(98, 112, 136); font-size: 25px; padding-top: 26.9px;">최근 소식</p>
-					</div>
-				</div>
-
-				<div class="sc555">
-					<div class="sc5555">
-						<img src="resources/images/ft2.JPG"
-							style="width: 50px; height: 50px; border: solid 1px #afafaf; border-radius: 50%; padding: 3px;">
-					</div>
-					<div class="tt5">
-						<p onclick = "location.href='board'">1:1문의</p>
-						<p
-							style="color: rgb(98, 112, 136); font-size: 25px; padding-top: 20px;">개별
-							맞춤상담</p>
-					</div>
-				</div>
-				<div class="text51">
-					<ul>
-						상담시간 : 평일 오전 9시 ~ 오후 6시 (토,일요일 및 공휴일 휴무)
-						<li>투어&티켓, 렌터카 취소/변경/환불 업무: 평일 오후 5시까지</li>
-						<li>호텔 취소/변경/환불 업무: 평일 오후 4시까지</li>
-					</ul>
-					</ul>
-				</div>
-			</div>
-
-
-			<div class="qa">
-				<h2 style="font-size: 30px; padding-bottom: 30px;">자주하는 질문 ></h2>
-				<table border="1">
-					<tr>
-						<td><a href="#">패키지여행</td>
-						</a>
-						<td><a href="#">항공</td>
-						</a>
-					</tr>
-					<tr>
-						<td><a href="#">호텔</td>
-						</a>
-						<td><a href="#">투어&티켓</td>
-						</a>
-					</tr>
-					<tr>
-						<td><a href="#">렌터카</td>
-						</a>
-						<td><a href="#">회원</td>
-						</a>
-					</tr>
-				</table>
-
-
-				<div class="qaa">
-					<h2 style="font-size: 30px; padding-bottom: 30px;">이용 안내 ></h2>
-					<table border="1">
-						<tr>
-
-							<td><a href="#">예약안내</td>
-							</a>
-							<td><a href="#">결제방법안내</td>
-							</a>
-						</tr>
-						<tr>
-							<td><a href="#">무이자할부</td>
-							</a>
-							<td><a href="#">포인트</td>
-							</a>
-						</tr>
-						<tr>
-							<td><a href="#">회원등급</td>
-							</a>
-							<td><a href="#">쿠폰안내</td>
-							</a>
-						</tr>
-					</table>
-				</div>
-			</div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<div class="img1">
+						<img src="resources/images/sc5-2.jpg"  width="200px" height="200px" ></div>
+						<p class="item_title">국내 자유여행</p>
+						<p class="item_text">내맘대로 자유로운 국내여행
+							<br>평창 티켓텔 2일 135,000원부터
+							<br>제주 에어텔 렌터카 10만원 할인쿠폰
+						</p>
+					</a>
+				</li>
+				<div class="sc55">
+				<li>
+					<a href="#">
+						<div class="img1">
+						<img src="resources/images/sc5-3.jpg" width="300px" height="300px"></div>
+						<p class="item_title">4월의 국내여행</p>
+						<p class="item_text">봄 힐링여행 🍀
+							<br>봄꽃여행은 물론, 다양한 체험&액티비티까지!
+							<br>봄 힐링여행의 모든 것!
+						</p>
+						<span class="value">추천</span>
+					</a>
+				</li></div>
+				<li>
+					<a href="#">
+						<div class="img1">
+						<img src="resources/images/sc5-4.jpg" width="200px" height="200px"></div>
+						<p class="item_title">이유 있는 선택, 내나라 여행</p>
+						<p class="item_text">2007년 시작, 연간 1만명의
+							<br>고객이 선택한 고품격 국내여행🏆
+						</p>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<div class="img1">
+						<img src="resources/images/sc5-5.jpg" width="200px" height="200px"></div>
+						<p class="item_title">봄을 한가득 담은 섬, 제주</p>
+						<p class="item_text">유채꽃부터 청보리까지
+							<br>봄 만끽하러 떠나는 제주💛
+						</p>
+					</a>
+				</li>
+			</ul>
 		</div>
 
 	</section>
+
+
+
 
 
 	<!--footer-->
