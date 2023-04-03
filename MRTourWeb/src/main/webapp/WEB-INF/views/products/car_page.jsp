@@ -138,7 +138,6 @@
 
 				<!-- 상품 리스트 -->
 				<div class="products">
-				<form method="POST" action="car_checkout">
 					<div class="product-list">
 					
 					<input type="hidden" name="member_id" id="member_id" value="${member.member_id}" />
@@ -166,7 +165,7 @@
 							<br>
 							<div class="product-button" style="padding:5px;">
 								<input type = "hidden" id="city_no" value = "${row.city_no}">
-								<button type = "submit" id="product">선택</button>
+								<button type = "button" id="product" onclick="location.href='car_checkout?prd_id=${row.prd_id}'" style="cursor: pointer">선택</button>
 							</div>
 						</a>
 						</c:when>
@@ -179,7 +178,6 @@
 
 						<div class="clearfix"></div>
 					</div>
-				</form>
 				</div>
 			</div>
 		</div>

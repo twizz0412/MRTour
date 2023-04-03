@@ -39,6 +39,11 @@ public class PaymentServiceImpl implements PaymentService {
 		paymentDAO.insertPayment(vo);
 	}
 	
+	// 렌트카결제
+	public void CarPayment(PaymentVO vo) {
+		paymentDAO.CarPayment(vo);
+	}
+	
 	// 결제 후 장바구니 비우기
 	public void deleteCartPayment(PaymentVO vo) {
 		paymentDAO.deleteCartPayment(vo);
