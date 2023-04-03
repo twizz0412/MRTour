@@ -20,7 +20,7 @@
 </head>
 
 <body>
-
+<div class="wrapper">
 	<!-- header -->
 	<%@ include file="include/header.jsp"%>
 
@@ -281,7 +281,7 @@
 
 	</section>
 
-
+</div>
 
 
 

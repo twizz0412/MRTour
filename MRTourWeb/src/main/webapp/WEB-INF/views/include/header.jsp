@@ -81,7 +81,7 @@
 
 
 <div class="logo">
-	<a href="#"><img src="resources/images/logo.jpg" alt="" onclick="clickBtn();"  border="0"></a>
+	<a href="main"><img src="resources/images/logo.jpg" alt="" onclick="clickBtn();"  border="0" width="350px"></a>
 </div>
 
 
@@ -91,7 +91,7 @@
 	<div class="nav1">
 		<ul>
 			<li><a href="car_page"><b>렌트카 </a></li>
-			<li><a href="hotel_main"><b>호텔 </a></li>
+			<li><a href="hotel_list"><b>호텔 </a></li>
 			<li><a href="ticket_main"><b> 투어 | 입장권</a></li>
 			<li><a href="ticket_page"><b> 골프</a></li>
 			<li><a href="productCart"><b> 미래LIVE </a></li>
