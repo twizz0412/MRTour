@@ -14,8 +14,7 @@
 <link
 	href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap"
 	rel="stylesheet">
-<link rel="stylesheet"
-	href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,7 +24,9 @@
 	
 	<script src="resources/js/login.js" charset="UTF-8"></script>
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-	<script src = "http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src = "http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>		
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	
 <script>
 	// 마이페이지 클릭 이벤트
 	function mypBtn() {
@@ -51,7 +52,7 @@
 		<p>
 			<c:choose>
 				<c:when test="${member.member_id eq 'admin'}"><!-- 관리자로 로그인했을 때 -->
-					<a onclick="location.href='logout'"><b>로그아웃</a>
+					<a href="#" onclick="logout()"><b>로그아웃</a>
 
 					<a href="admin_main"><b>관리페이지</a>
 				</c:when>
@@ -65,9 +66,9 @@
 				</c:when>
 
 				<c:otherwise>
-					<input type="hidden" id="member_id" name="member_id"
+					<input type="hidden" id="member_id" 
 						value="${member.member_id}" /><!-- 회원으로 로그인했을 때 -->
-					<a href="logout"><b>로그아웃</a> 
+					<a href="#" onclick="logout()"><b>로그아웃</a> 
 						| 
 						<a href=""><b>고객센터</a>
 				</c:otherwise>

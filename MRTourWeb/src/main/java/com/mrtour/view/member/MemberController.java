@@ -119,14 +119,15 @@ public class MemberController {
 	// 로그아웃
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public String logout(HttpSession session) {
+		session.invalidate();
+		
 		Object member = session.getAttribute("member");
 	    if (member == null) {
 	        System.out.println("member 속성에 저장된 값이 null입니다.");
 	    } else {
 	        System.out.println(member.toString());
 	    }
-	    	session.removeAttribute("member");
-	    	session.invalidate();
+	    	
 
 			System.out.println("로그아웃 성공....");
 			

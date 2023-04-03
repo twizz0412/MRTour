@@ -21,7 +21,7 @@
 		
 		function SubmitSearch() {
 		    var city_no_search = document.getElementById("city_no_search").value; // 옵션의 value 값으로 변경
-		    window.location.href = "hotel_list?city_no=" + city_no_search;
+		    window.location.href = "ticket_main?city_no=" + city_no_search;
 		}
 
 	</script>  
@@ -82,6 +82,8 @@
 								</select>
 								<input type = "hidden" id = "city_no_search" value = "">
 							</div>
+							<input type="button" class="btn" value="검색" onclick="SubmitSearch()"/>
+								<input type="hidden" name="search" id="search" value="s"/>
 						</div>
 						</form>	
 					</div>
@@ -106,7 +108,7 @@
 								<li>
 								<div onclick="location.href='productpage?prd_id=${row.prd_id}'" style="cursor: pointer">
 									<div class="pro_img" style="float: left;">
-											<img src=""${row.prd_img}" href="ticket_page" width="275" height="200px">
+											<img src="${row.prd_img}" href="ticket_page" width="275" height="200">
 									</div>
 									<div class="pro">${row.prd_name}<p><br>
 											<span>${row.prd_opt}</span>
