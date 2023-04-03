@@ -8,38 +8,36 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<script src="http://code.jquery.com/jquery-latest.js"></script>
 		<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
-		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link rel="stylesheet" type="text/css" href="resources/css/payment.css">
+	 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+		<!-- <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="resources/css/payment.css"> -->
 		<title>미래투어 - 주문서 작성</title>
 	</head>
 	<body>
 		<div id="container">
 		<h3>티켓 주문서 작성</h3>
 		<table id="oSW">
-			<tr>
+			<tr align="center">
 				<th height="50">이미지</th>
-				<th width="300" colspan="2">상품정보</th>
-				<th width="100">옵션</th>
+				<th width="300" colspan="2">상품 정보</th>
 				<th width="100">판매가</th>
 				<th width="70">수량</th>
 				<th width="100">합계</th>
 			</tr>
 			<c:set var="priceSum" value="0" />
 			<c:choose>
-				<c:when test="${map.hidden eq 'cartpage'}">
+				<c:when test="${map.hidden eq 'cartpage'}"> <!-- 결제하기 버튼 클릭 시 -->
 					<c:forEach items="${map.list}" var="pay">
 						<input type="hidden" id="prd_id" value="${pay.prd_id}"/>
 						<input type="hidden" id="buy_quantity" value="${pay.buy_quantity}"/>
-						<input type="hidden" id="prd_opt" value="${pay.prd_opt}" />
 						<input type="hidden" id="member_id" value="${member.member_id}" />
-						<tr>
+						<tr align="center">
 							<td>
 								<img src="${pay.prd_img}" width="100px" height="100px">
 								<input type="hidden" name="chkbox">
 							</td>
-							<td class="tdright">${pay.prd_id}</td>
-							<td class="tdleft">${pay.prd_name}</td>
-							<td>${pay.prd_opt}</td>
+							<td>${pay.prd_id}</td>
+							<td>${pay.prd_name}</td>
 							<td><fmt:formatNumber value="${pay.prd_price}" pattern="#,###"/></td>
 							<td>${pay.buy_quantity}</td>
 							<c:set var="paySum" value="${pay.prd_price * pay.buy_quantity}"/>
@@ -53,15 +51,13 @@
 					<c:forEach items="${map.list}" var="pay">
 						<input type="hidden" id="prd_id" value="${pay.prd_id}"/>
 						<input type="hidden" id="buy_quantity" value="${map.buy_quantity}"/>
-						<input type="hidden" id="prd_opt" value="${map.prd_opt}" />
 						<tr id="tr">
 							<td>
 								<img src="${pay.prd_img}" width="100px" height="100px">
 								<input type="hidden" name="chkbox">
 							</td>
-							<td class="tdright">${pay.prd_id}</td>
-							<td class="tdleft">${pay.prd_name}</td>
-							<td>${map.prd_opt}</td>
+							<td>${pay.prd_id}</td>
+							<td>${pay.prd_name}</td>
 							<td><fmt:formatNumber value="${pay.prd_price}" pattern="#,###"/></td>
 							<td>${map.buy_quantity}</td>
 							<c:set var="paySum" value="${pay.prd_price * map.buy_quantity}"/>
@@ -71,10 +67,9 @@
 					</c:forEach>
 				</c:when>
 			</c:choose>
-			<tr>
-				<td colspan="8" align="left" id="ordersheet" height="30">
-					총 결제 금액: <fmt:formatNumber value="${priceSum}" pattern="#,###" />
-				</td>
+			<tr align="center">
+				<td colspan="3" id="ordersheet" height="30">총 결제 금액</td>
+				<td colspan="3"><fmt:formatNumber value="${priceSum}" pattern="#,###" /></td>
 			</tr>
 		</table><br><br>
 		<h3>주문자 정보</h3>
@@ -460,7 +455,7 @@
 				})
 				
 				$("input[type=radio][name=choice]").change(function() {
-					if(this.value == "sameaddr") {
+					if(this.value == "sameaddr") { // 기존 주소일 경우
 						$("input[name=sn_member_name]").val($("#hidden_member_name").val());
 						$("input[name=sn_member_name]").attr("readonly", true);
 						$("input[name=sn_member_zipcode]").val($("#hidden_member_zipcode").val());
@@ -472,7 +467,7 @@
 						$("input[name=sn_member_phone]").val($("#hidden_member_phone").val());
 						$("input[name=sn_member_phone]").attr("readonly", true);
 						$("input[name=nn_searchPost]").css("visibility", "hidden");
-					} else if (this.value == "newaddr") {
+					} else if (this.value == "newaddr") { // 새로운 주소일 경우
 						$("input[name=sn_member_name]").val("");
 						$("input[name=sn_member_name]").attr("readonly", false);
 						$("input[name=sn_member_zipcode]").val("");
@@ -503,6 +498,7 @@
 				jQuery.ajaxSettings.traditional = true;
 				
 				if (chk1 == true && chk2 == true && $("#credit1").val() != "" && $("#credit2").val() != "" && $("#credit3").val() != "" && $("#credit4").val() != "") {
+					// 약관 두 개 모두 체크, 신용카드 정보 다 입력 시
  					swal({
 						icon : "info", 
 						text : "결제를 진행 하시겠습니까?", 
@@ -514,16 +510,14 @@
 							swal("결제 성공", "결제를 완료했습니다.", "success").then(function(isConfirm) {
 								chkbox.each(function(i) {
 									var tr = chkbox.parent().parent().eq(i).children();
-									var prd_id = tr.eq(1).text();	// prd_id
-									var prd_opt = tr.eq(3).text();	// prd_opt
-									var buy_quantity = tr.eq(5).text();
+									var prd_id = tr.eq(1).text(); // 주문서 테이블의 1번째 셀(0 시작)
+									var buy_quantity = tr.eq(4).text(); // 주문서 테이블의 4번째 셀
 									prd_list.push(prd_id);
-									prd_list.push(prd_opt);
 									prd_list.push(buy_quantity);
 								});
 								$.ajax({
 									type : "POST", 
-									url : "decopay", 
+									url : "resetPayList", 
 									data : {
 										"prd_list" : prd_list,
 										"member_id" : member_id,

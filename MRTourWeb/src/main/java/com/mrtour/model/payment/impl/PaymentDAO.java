@@ -15,14 +15,14 @@ public class PaymentDAO {
 	@Autowired
 	private SqlSessionTemplate mybatis;
 	
-	// 물품 구매
+	// 상세 페이지에서 상품 바로 구매
 	public List<PaymentVO> getPaymentProduct(PaymentVO vo) {
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("payment", vo);
 		return mybatis.selectList("PaymentDAO.paymentProduct", map);
 	}
 	
-	// 장바구니 물품 구매
+	// 장바구니에서 상품 구매
 	public List<PaymentVO> cartPaymentProduct(PaymentVO vo) {
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("payment", vo);

@@ -22,7 +22,7 @@
 			<tr>
 				<th><input id="checkAll" type="checkbox" checked /></th>
 				<th>이미지</th>
-				<th>상품명</th>
+				<th>상품정보</th>
 				<th>판매가</th>
 				<th>수량</th>
 				<th>합계</th>

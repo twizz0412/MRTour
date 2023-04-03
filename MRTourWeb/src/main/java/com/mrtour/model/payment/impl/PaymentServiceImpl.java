@@ -24,12 +24,12 @@ public class PaymentServiceImpl implements PaymentService {
 		System.out.println("SHA3-512: " + vo.getCredit_number());
 	}
 	
-	// 구매
+	// 상세페이지에서 바로 구매
 	public List<PaymentVO> getPaymentProduct(PaymentVO vo) {
 		return paymentDAO.getPaymentProduct(vo);
 	}
 	
-	// 장바구니 구매
+	// 장바구니에서 구매
 	public List<PaymentVO> cartPaymentProduct(PaymentVO vo) {
 		return paymentDAO.cartPaymentProduct(vo);
 	}

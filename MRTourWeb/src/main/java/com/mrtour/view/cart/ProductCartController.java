@@ -73,16 +73,15 @@ public class ProductCartController {
 		@RequestMapping(value="/payment", method=RequestMethod.POST)
 		public String payment(@RequestParam(value="hiddenbtn") String hidden, PaymentVO vo, HttpSession session, Model model) {
 			System.out.println(hidden);
-			if (hidden.equals("prdpage")) {
+			if (hidden.equals("prdpage")) { // 장바구니 버튼 클릭 시
 				List<PaymentVO> list = paymentService.getPaymentProduct(vo);
 				HashMap<String, Object> map = new HashMap<String, Object>();
 				map.put("list", list);
 				map.put("hidden", hidden);
-				map.put("prd_opt", vo.getPrd_opt());
 				map.put("buy_quantity", vo.getBuy_quantity());
 //				model.addAttribute("map", map);
 				session.setAttribute("map", map);
-			} else if (hidden.equals("cartpage")) {
+			} else if (hidden.equals("cartpage")) { // 결제하기 버튼 클릭 시
 				List<PaymentVO> list = paymentService.cartPaymentProduct(vo);
 				HashMap<String, Object> map = new HashMap<String, Object>();
 				map.put("list", list);
@@ -94,7 +93,7 @@ public class ProductCartController {
 		}
 		
 		// 결제목록 갱신
-		@RequestMapping(value="/decopay")
+		@RequestMapping(value="/resetPayList")
 		public String insertPayment(String[] prd_list, PaymentVO vo) {
 			for(int i = 0; i < prd_list.length; i += 3) {
 				vo.setPrd_id(prd_list[i]);
