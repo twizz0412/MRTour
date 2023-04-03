@@ -2,13 +2,20 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ taglib prefix="c" uri = "http://java.sun.com/jsp/jstl/core" %>   
+<%@ taglib prefix="c" uri = "http://java.sun.com/jsp/jstl/core" %>  
+<%@ page isELIgnored="false" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="resources/css/car_checkout.css" />
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<script src = "resources/js/car_checkout.js"></script>
+
 	<title>렌트카 결제</title>
 </head>
 <body>
@@ -45,8 +52,6 @@
 
 				<!-- 진짜 본문 -->
 				<div class="contents">
-					<c:forEach begin="0" end="${(fn:length(map.list))}" var="i">
-					<c:set var="product_info" value="${map.list[i]}" />
 				<!-- 렌터카 정보 섹션 -->
 					<div class="contents-item">
 						<h2 class="heading-title1 line-bottom">렌터카 정보</h2>
@@ -59,17 +64,29 @@
 							<strong class="ml5">${product_info.prd_name}</strong>
 							<strong class="year">&nbsp;[23년식]</strong></p>
 							
+							<input type="hidden" value="${product_info.prd_id}" id = "prd_id">
+							
 							<ul class="rentalcar-option-list between color-main2">
 								<li class="option type">Economy</li>
 								<li class="option person">5인승</li>
 								<li class="option gear">자동 변속</li><!---->
 								<li class="option fuel">${product_info.prd_opt}</li>
 							</ul>
+							
+							<input type="hidden" value="${product_info.prd_opt}" id = "prd_opt">
+							
 							<ul class="option-list">
-								<li class="option quantity" name = "buy_quantity" id = "buy_quantity">
-									<span class="option date">이용일</span>
-									<span><input type = "number" id = "buy_quantity" value = "${payment.buy_quantity}"></span>
+								<li class="option quantity">
+									<span class="option date">이용수량</span>
+									<span><input type = "number" id = "buy_quantity" min="1" maxlength="2" max="99" value="1" oninput="mxNum(this)" style = "background : rgb(234, 234, 234)"></span>
 								</li>
+							<script>
+								function mxNum(object) {
+									if (object.value.length > object.maxLength) {
+										object.value = object.value.slice(0, object.maxLength)
+									}
+								}
+							</script>
 							<!-- 지역별 인수/반납 장소 화면변동 -->
 							<c:choose>
 								<c:when test = "${product_info.city_no eq '제주'}">
@@ -77,8 +94,8 @@
 									<li><span class="option city">반납 장소</span><span>제주시 연미3길 4 (오라이동 2093-1)</span></li>
 								</c:when>
 								<c:when test = "${product_info.city_no eq '서울'}">
-									<li><span class="option city">인수 장소</span><span>서울특별시 용산구 미래로 369 MRT서울지사 1층 (주차동 안쪽, 사무동 왼편) </span></li>
-									<li><span class="option city">반납 장소</span><span>서울특별시 용산구 청파로 369 MRT서울지사 1층 (주차동 안쪽, 사무동 왼편)</span></li>
+									<li><span class="option city">인수 장소</span><span>서울특별시 용산구 미래로 369 MRT서울지사 1층 </span></li>
+									<li><span class="option city">반납 장소</span><span>서울특별시 용산구 미래로 369 MRT서울지사 1층</span></li>
 								</c:when>					
 								<c:when test = "${product_info.city_no eq '경주'}">
 									<li><span class="option city">인수 장소</span><span>경상북도 경주시 건천읍 화천리 1010 신경주KTX역사</span></li>
@@ -107,14 +124,15 @@
 				<!-- 예약자 정보 입력 섹션 -->
 				<div class="contents-item">
 					<h2 class="heading-title1 line-bottom">예약자 정보 입력</h2>
+					<input type="hidden" value="${member.member_id}" id = "member_id">
 					<p class="color-sub6">예약과 관련된 중요사항을 연락처로 발송해 드립니다.</p>
 					<div class="row-list mt40">
 						<div class="row-item">
 							<div class="row-label">예약자 명</div>
 							<div class="row-form">
 								<div class="input lg line">
-									<input formcontrolname="userName" type="text" value="${member.member_name}" 
-											class="c-input ng-untouched ng-pristine ng-invalid"><!---->
+									<input formcontrolname="member_name" type="text" value="${member.member_name}" 
+											class="c-input ng-untouched ng-pristine ng-invalid" id = "member_name"><!---->
 									<span class="valid-msg">예약자 명은 필수값입니다.</span>
 								</div>
 							</div>
@@ -123,7 +141,7 @@
 							<div class="row-label">휴대폰 번호</div>
 							<div class="row-form">
 								<div class="input lg line">
-									<input formcontrolname="userPhone" type="text" id = "member_phone" value="${member.member_phone}" 
+									<input formcontrolname="member_phone" type="text" id = "member_phone" value="${member.member_phone}" 
 											class="c-input ng-untouched ng-pristine ng-invalid"><!---->
 									<span class="valid-msg"> 휴대폰 번호는 10자리 이상으로 입력해야 합니다. </span>
 								</div>
@@ -133,7 +151,7 @@
 							<div class="row-label">이메일 주소</div>
 							<div class="row-form">
 								<div class="input lg line">
-									<input formcontrolname="userEmail" type="text" id = "member_email" value="${member.member_email}" 
+									<input formcontrolname="member_email" type="text" id = "member_email" value="${member.member_email}" 
 									class="c-input ng-untouched ng-pristine ng-invalid"><!---->
 									<span class="valid-msg">이메일주소는 필수값입니다.</span>
 								</div>
@@ -150,9 +168,36 @@
 				<h2 class="heading-title1 line-bottom">최종 결제 정보</h2>
 				<!-- 총 결제 금액 섹션 -->
 				<ul class="payment">
-					<li><span class="color-main2">총 결제 금액</span>
-					<strong class="color-point2"> 12,100 
-					<span class="font-md color-sub5 mr5">원</span></strong></li></ul>
+				
+					<li>
+						<span class="color-main2">2시간 당 결제금액</span>
+						<strong class="color-point2"> ${product_info.prd_price} <span></span>
+						<span class="font-md color-sub5 mr5">원</span></strong>
+					</li>
+					<li>
+						<span class="color-main2">총 결제금액 </span>
+						<strong class="color-point2"> ${product_info.prd_price}  <span></span>
+						<span class="font-md color-sub5 mr5">원</span></strong>
+					</li>
+				</ul>
+				
+				<ul class="payment">
+
+					<li>
+						<span class="color-main2"><input type = "radio" name = "payway" id = "cash" value = "cash">무통장입금</span>
+						<div></div>
+						<span class="color-main2"><input type = "radio" name = "payway" id = "card" value = "card">카드결제</span>
+						<div id="creditPay" style = "display : none">
+							카드번호: 
+							<input type="text" id="credit1" maxlength="4" size="4" onkeypress="onlyNumber()" style = "background : rgb(234, 234, 234)"/> - 
+							<input type="password" id="credit2" maxlength="4" size="4" onkeypress="onlyNumber()" style = "background : rgb(234, 234, 234)"/> - 
+							<input type="text" id="credit3" maxlength="4" size="4" onkeypress="onlyNumber()" style = "background : rgb(234, 234, 234)"/> - 
+							<input type="password" id="credit4" maxlength="4" size="4" onkeypress="onlyNumber()" style = "background : rgb(234, 234, 234)"/>
+						</div>
+						<div></div>
+						<div></div>
+					</li>
+				</ul>
 				
 				<!-- 약관 동의 섹션 -->
 				<div class="payment-rule">
@@ -163,42 +208,42 @@
 				
 					<li data-target="agreeAllChk" class="line">
 						<label class="checkbox lg">
-						<input type="checkbox" class="checkbox-control-input">
+						<input type="checkbox" class="checkbox-control-input" id="checkAll" type="checkbox" onclick = "check_all()" value="">
 						<span class="checkbox-control-text">모든 약관에 동의함</span></label></li>
 									
 					<li>
 						<label data-target="agreeChk" class="checkbox lg">
-						<input type="checkbox" class="checkbox-control-input ng-untouched ng-pristine ng-valid">
+						<input type="checkbox" class="checkbox-control-input ng-untouched ng-pristine ng-valid" name="chk" value="" id = "chk01">
 						<span class="checkbox-control-text"><!---->  만 14세 이상입니다. </span></label></li>
 					
 					<li>
 						<label data-target="agreeChk" class="checkbox lg">
-						<input type="checkbox" class="checkbox-control-input ng-untouched ng-pristine ng-valid">
+						<input type="checkbox" class="checkbox-control-input ng-untouched ng-pristine ng-valid"  name="chk" value="" id = "chk02">
 						<span class="checkbox-control-text">
 						<span>[필수] 개인정보 수집 및 이용</span> 을(를) 읽었으며 동의함 </span></label></li>
 					<li>
 						<label data-target="agreeChk" class="checkbox lg">
-						<input type="checkbox" class="checkbox-control-input ng-untouched ng-pristine ng-valid">
+						<input type="checkbox" class="checkbox-control-input ng-untouched ng-pristine ng-valid" name="chk" value="" id = "chk03">
 						<span class="checkbox-control-text">
 						<span>[필수] 고유 식별정보 수집 및 이용</span> 을(를) 읽었으며 동의함</span></label></li>
 					<li>
 						<label data-target="agreeChk" class="checkbox lg">
-						<input type="checkbox" class="checkbox-control-input ng-untouched ng-pristine ng-valid">
+						<input type="checkbox" class="checkbox-control-input ng-untouched ng-pristine ng-valid" name="chk" value="" id = "chk04">
 						<span class="checkbox-control-text">
 						<span>[필수] 국내 렌터카 개인정보 제3자 제공</span> 을(를) 읽었으며 동의함 </span></label></li>
 					<li>
 						<label data-target="agreeChk" class="checkbox lg">
-						<input type="checkbox" class="checkbox-control-input ng-untouched ng-pristine ng-valid">
+						<input type="checkbox" class="checkbox-control-input ng-untouched ng-pristine ng-valid" name="chk" value="" id = "chk05">
 						<span class="checkbox-control-text">
 						<span>[필수] 국내 렌터카 특별약관</span> 을(를) 읽었으며 동의함</span></label></li>
 					<li>
 						<label data-target="agreeChk" class="checkbox lg">
-						<input type="checkbox" class="checkbox-control-input ng-untouched ng-pristine ng-valid">
+						<input type="checkbox" class="checkbox-control-input ng-untouched ng-pristine ng-valid" name="chk" value="" id = "chk06">
 						<span class="checkbox-control-text">
 						<span>[필수] 국내 렌터카 구매 전 확인사항</span> 을(를) 읽었으며 동의함 </span></label></li>
 					<li>
 						<label data-target="agreeChk" class="checkbox lg">
-						<input type="checkbox" class="checkbox-control-input ng-untouched ng-pristine ng-valid">
+						<input type="checkbox" class="checkbox-control-input ng-untouched ng-pristine ng-valid" name="chk" value="" id = "chk07">
 						<span class="checkbox-control-text">
 						<span>[필수] 공급사정보 확인 동의</span> 을(를) 읽었으며 동의함 </span></label></li>
 				</ul>
@@ -216,10 +261,9 @@
 			</div>
 			
 			<div class="btn-group flex-around mt20">
-				<button class="btn lg default">결제정보 입력하기</button>
+				<input class="btn lg default" cursor = "pointer" type="button" name="buy" id="buy" onclick="termChk()" value="구매하기" />
 			</div>
 		</div>
-		</c:forEach>
 	</div>
 </div>
 </form>

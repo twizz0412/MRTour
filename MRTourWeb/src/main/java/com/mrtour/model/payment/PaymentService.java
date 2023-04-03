@@ -12,6 +12,9 @@ public interface PaymentService {
 	// 결제
 	void insertPayment(PaymentVO vo);
 	
+	// 렌트카결제
+	void CarPayment(PaymentVO vo) ;
+
 	// 결제 후 장바구니 비우기
 	void deleteCartPayment(PaymentVO vo);
 }

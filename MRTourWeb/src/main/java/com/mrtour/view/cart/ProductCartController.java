@@ -106,17 +106,16 @@ public class ProductCartController {
 			return "main";
 		}
 		
-		// 렌트카 결제
-		// 결제 페이지로 가기
-		@RequestMapping(value="/car_checkout", method=RequestMethod.POST)
-		public String payment(PaymentVO vo, HttpSession session, Model model) {
-				List<PaymentVO> list = paymentService.getPaymentProduct(vo);
-				HashMap<String, Object> map = new HashMap<String, Object>();
-				map.put("list", list);
-				map.put("prd_id", vo.getPrd_id());			
-				map.put("prd_opt", vo.getPrd_opt());
-				session.setAttribute("map", map);
-			return "products/car_checkout";
+		
+		// 자동차 결제
+		@RequestMapping(value="/CarPayment")
+		public String CarPayment(String prd_id, String prd_opt, Integer buy_quantity, PaymentVO vo) {
+				vo.setPrd_id(prd_id);
+				vo.setPrd_opt(prd_opt);
+				vo.setBuy_quantity(buy_quantity);
+				paymentService.CarPayment(vo);
+			return "main";
 		}
+		
 }
 

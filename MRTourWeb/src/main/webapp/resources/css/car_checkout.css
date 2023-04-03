@@ -666,8 +666,6 @@ input {
     position: absolute;
     left: 0;
     top: 0;
-    opacity: 0;
-    z-index: -1;
 }
 
 .checkbox.lg .checkbox-control-text {
@@ -777,7 +775,13 @@ button {
 
 .btn.active, .btn.default {
     color: #000;
-    background: #ffc72c;
+    background: #bbddff;
+    border-color: transparent;
+}
+
+.btn.default:hover {
+    color: #000;
+    background: #0080ff;
     border-color: transparent;
 }
 
@@ -801,28 +805,13 @@ button, input {
     border-width: 0;
     border-radius: 0;
     background: 0 0;
-    outline: 0;
-   
+    outline: 0; 
     -moz-appearance: none;
-    appearance: none;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+input[type=checkbox] {
+	transform : scale(1.5);
+}
 
 
 

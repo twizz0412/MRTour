@@ -18,6 +18,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.mrtour.model.member.MemberVO;
 import com.mrtour.model.product.ProductInfoVO;
 import com.mrtour.model.product.ProductService;
 import com.mrtour.home.Pager;
@@ -49,6 +50,13 @@ public class ProductController {
 	public String productPage(ProductInfoVO vo, Model model) {
 		model.addAttribute("product", productService.productDetail(vo));
 		return "products/ticket_page";
+	}
+	
+	// 제품 상세페이지
+	@RequestMapping("/car_checkout")
+	public String CarproductPage(ProductInfoVO vo, Model model) {
+		model.addAttribute("product_info", productService.productDetail(vo));
+		return "products/car_checkout";
 	}
 	
 	// 카테고리 품목 출력(상품 리스트 페이지)
@@ -124,7 +132,7 @@ public class ProductController {
 		@RequestMapping("/insertProduct")
 		public String insertProduct(MultipartHttpServletRequest multi, ProductInfoVO vo) {
 			System.out.println(vo.toString());
-			String root = "C:/Users/YOUNGJEE SEO/git/MRTour/MRTourWeb/src/main/webapp/";
+			String root = "C:/Users/minn/git/MRTour/MRTourWeb/src/main/webapp/";
 			String path = "resources/img/product/" + vo.getCate_id() + "/";
 			String realpath = root + "resources/img/product/" + vo.getCate_id() + "/";
 
