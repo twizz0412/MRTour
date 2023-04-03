@@ -3,7 +3,7 @@ package com.mrtour.model.payment;
 import java.sql.Date;
 
 public class PaymentVO {
-	private String prd_type; // 상품 카테고리(유형)(FK)
+	private String cate_id; // 상품 종류 코드(FK)
 	private int order_no; // 주문번호(FK)
 	private String member_id; // 회원 id(FK)
 	private String prd_id; // 상품 코드(FK)
@@ -20,16 +20,16 @@ public class PaymentVO {
 	private int prd_sum; // 가격 합계
 	private String prd_opt; // 상품 옵션
 	private String prd_img; // 상품 이미지
-	private String city_no;
-	private String cate_id;
 	
-	public String getPrd_type() {
-		return prd_type;
+	
+	public String getCate_id() {
+		return cate_id;
+	}
+
+	public void setCate_id(String cate_id) {
+		this.cate_id = cate_id;
 	}
 	
-	public void setPrd_type(String prd_type) {
-		this.prd_type = prd_type;
-	}
 	public int getOrder_no() {
 		return order_no;
 	}
@@ -122,19 +122,4 @@ public class PaymentVO {
 		this.prd_img = prd_img;
 	}
 
-	public String getCity_no() {
-		return city_no;
-	}
-
-	public void setCity_no(String city_no) {
-		this.city_no = city_no;
-	}
-
-	public String getCate_id() {
-		return cate_id;
-	}
-
-	public void setCate_id(String cate_id) {
-		this.cate_id = cate_id;
-	}
 }

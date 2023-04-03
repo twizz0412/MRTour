@@ -19,7 +19,6 @@
 		<result property="prd_price" column="PRD_PRICE" />
 		<result property="prd_sum" column="PRD_SUM" />
 		<result property="cate_id" column="CATE_ID" />
-		<result property="prd_opt" column="PRD_OPT" />
 		<result property="prd_img" column="PRD_IMG" />
 		
 	</resultMap>
@@ -27,15 +26,15 @@
 	<insert id="insertPayment">
 		<![CDATA[
 			INSERT INTO PAYMENT
-			(ORDER_NO, MEMBER_ID, PRD_ID, BUY_QUANTITY, MEMBER_ZIPCODE, MEMBER_FADDR, MEMBER_LADDR, MEMBER_PHONE, CREDIT_NUMBER, PRD_OPT)
+			(ORDER_NO, MEMBER_ID, PRD_ID, BUY_QUANTITY, MEMBER_ZIPCODE, MEMBER_FADDR, MEMBER_LADDR, MEMBER_PHONE, CREDIT_NUMBER)
 			VALUES
-			(PAYMENT_SEQ.NEXTVAL, #{member_id}, #{prd_id}, #{buy_quantity}, #{member_zipcode}, #{member_faddr}, #{member_laddr}, #{member_phone}, #{credit_number}, #{prd_opt})
+			(ORDER_NO.NEXTVAL, #{member_id}, #{prd_id}, #{buy_quantity}, #{member_zipcode}, #{member_faddr}, #{member_laddr}, #{member_phone}, #{credit_number})
 		]]>
 	</insert>
 	
 	<delete id="deleteCartPayment">
 		<![CDATA[
-			DELETE PRODUCT_CART WHERE MEMBER_ID=#{member_id} AND PRD_ID=#{prd_id}
+			DELETE CART WHERE MEMBER_ID=#{member_id} AND PRD_ID=#{prd_id}
 		]]>
 	</delete>
 	
@@ -50,7 +49,7 @@
 	<select id="cartPaymentProduct" resultMap="payment">
 		<![CDATA[
 			SELECT * 
-			FROM PRODUCT_CART NATURAL JOIN PRODUCT_INFO 
+			FROM CART NATURAL JOIN PRODUCT_INFO 
 			WHERE MEMBER_ID=#{payment.member_id}
 		]]>
 	</select>
