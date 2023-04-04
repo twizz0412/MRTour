@@ -132,7 +132,7 @@ public class ProductController {
 		@RequestMapping("/insertProduct")
 		public String insertProduct(MultipartHttpServletRequest multi, ProductInfoVO vo) {
 			System.out.println(vo.toString());
-			String root = "C:/Users/minn/git/MRTour/MRTourWeb/src/main/webapp/";
+			String root = "C:/Users/YOUNGJEE SEO/git/MRTour/MRTourWeb/src/main/webapp/";
 			String path = "resources/img/product/" + vo.getCate_id() + "/";
 			String realpath = root + "resources/img/product/" + vo.getCate_id() + "/";
 

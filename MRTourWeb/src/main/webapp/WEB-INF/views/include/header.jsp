@@ -81,7 +81,7 @@
 <div class="login2">
 	<p>
 		<a href="main"><img src="resources/images/menu.JPG" alt="" onclick="clickBtn();"  border="0"  height="50px" style="float: right; padding-top: 8px; padding-right: 40px;"></a>
-		<a href="#"><img src="resources/images/jjim.JPG" alt="" onclick="clickBtn();" border="0"  height="50px" style="float: right; padding-top: 7px; padding-right: 10px;"></a>
+		<a href="MyPage"><img src="resources/images/jjim.JPG" alt="" onclick="clickBtn();" border="0"  height="50px" style="float: right; padding-top: 7px; padding-right: 10px;"></a>
 	</p>
 </div>
 

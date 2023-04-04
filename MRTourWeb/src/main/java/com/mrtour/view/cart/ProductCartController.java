@@ -31,7 +31,7 @@ public class ProductCartController {
 	@RequestMapping("/productCart")
 	public String cartList(ProductCartVO vo, Model model) {
 		model.addAttribute("cartPrd", productCartService.getProductCartList(vo));
-		return "member/cart";
+		return "member/mypage";
 	}
 	
 	// 장바구니 담기
@@ -39,7 +39,7 @@ public class ProductCartController {
 	public String insertProductCart(@ModelAttribute ProductCartVO vo) {
 		productCartService.insertProductCart(vo);
 		System.out.println("insertCart 메소드 실행됨" + vo.toString());
-		return "products/ticket_page";
+		return "member/mypage";
 	}
 	
 	
@@ -47,14 +47,14 @@ public class ProductCartController {
 	@RequestMapping("/clearCart")
 	public String deleteProductCart(ProductCartVO vo) {
 		productCartService.deleteProductCart(vo);
-		return "member/cart";
+		return "member/mypage";
 	}
 	
 	// 장바구니 물품 삭제
 	@RequestMapping("/delCart")
 	public String deleteCart(ProductCartVO vo) {
 		productCartService.deleteCart(vo);
-		return "member/cart";
+		return "member/mypage";
 	}
 
 

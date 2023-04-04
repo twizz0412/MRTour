@@ -41,7 +41,13 @@ public class MemberController {
 	@RequestMapping("/forgotPW")
 	public String forgotPWView(MemberVO vo) { return "member/forgotPW"; }
 
-	// 회원 주문내역
+	// 마이페이지
+		@RequestMapping(value = "/MyPage", method = RequestMethod.GET)
+		public String mypage(MemberVO vo) {
+			return "member/mypage";
+		}
+		
+	// 회원 주문내역(마이페이지)
 	@ResponseBody
 	@RequestMapping("/mypL")
 	public String mypage1(MemberVO vo, HttpSession session, Model model, @RequestParam(defaultValue = "1") int myp) {
@@ -84,6 +90,7 @@ public class MemberController {
 		return "member/mypage";
 	}
 
+	
 	// 마이페이지-비밀번호 view
 	@RequestMapping(value = "/mypage2", method = RequestMethod.GET)
 	public String mypageView2(MemberVO vo) {
