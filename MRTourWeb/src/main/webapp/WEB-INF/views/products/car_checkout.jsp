@@ -22,7 +22,9 @@
 
 	<!-- 상세 페이지에서 선택 클릭 시 로그인 화면으로 넘어가게 해야 함 -->
 	<div id="wrap">
-	<!-- header 들어갈 자리 -->
+	<!-- header -->
+	<%@ include file="../include/header.jsp"%>
+	
 	
 	<div id="container">
 		<div id	="contents">

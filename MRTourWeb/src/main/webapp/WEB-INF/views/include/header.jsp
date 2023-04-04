@@ -52,6 +52,7 @@
 		<p>
 			<c:choose>
 				<c:when test="${member.member_id eq 'admin'}"><!-- 관리자로 로그인했을 때 -->
+					<input type="hidden" id="member_id" value="${member.member_id}" />
 					<a href="#" onclick="logout()"><b>로그아웃</a>
 
 					<a href="admin_main"><b>관리페이지</a>
@@ -62,7 +63,7 @@
 
 					<a href="signup"><b>회원가입</a>
 
-					<a href="#"><b>고객센터</a>
+					<a href="board"><b>고객센터</a>
 				</c:when>
 
 				<c:otherwise>
@@ -70,7 +71,7 @@
 						value="${member.member_id}" /><!-- 회원으로 로그인했을 때 -->
 					<a href="#" onclick="logout()"><b>로그아웃</a> 
 						| 
-						<a href=""><b>고객센터</a>
+						<a href="board"><b>고객센터</a>
 				</c:otherwise>
 			</c:choose>
 		</p>
@@ -96,11 +97,11 @@
 	<div class="nav1">
 		<ul>
 			<li><a href="car_page"><b>렌트카 </a></li>
-			<li><a href="hotel_list"><b>호텔 </a></li>
+			<li><a href="hotel_list""><b>호텔 </a></li>
 			<li><a href="ticket_main"><b> 투어 | 입장권</a></li>
-			<li><a href="#"><b> 골프</a></li>
-			<li><a href="#"><b> 미래LIVE </a></li>
-			<li><a href="#"><b> FAQ</a></li>
+			<li><a href=""><b> 골프</a></li>
+			<li><a href="notice"><b> 미래LIVE </a></li>
+			<li><a href="FAQ"><b> FAQ</a></li>
 		</ul>
 	</div>
 </div>

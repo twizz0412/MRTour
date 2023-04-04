@@ -11,6 +11,9 @@
 	</style>
 </head>
 <body>	
+	<!-- header -->
+	<%@ include file="../include/header.jsp"%>
+	
 	<div id="contents" class="contents">
 		 <div class="js_tabs type1">
 			 <ul class="tabs" style = "width:100%">

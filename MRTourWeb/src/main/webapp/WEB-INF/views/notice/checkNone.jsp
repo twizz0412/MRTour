@@ -19,6 +19,10 @@
 <title>공지사항</title>
 </head>
 <body>
+
+	<!-- header -->
+	<%@ include file="../include/header.jsp"%>
+	
 <center>
 	<div id="contents" class="contents">
 		<div class="js_tabs type1">
