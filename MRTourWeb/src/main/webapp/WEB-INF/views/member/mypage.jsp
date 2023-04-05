@@ -57,11 +57,12 @@
     <section id="panel-1">
       <main>
         <p>
-            <main class="SignUpEmail-Container">
-   
+            <main class="Modify-Container">
+   										<div class="pn2">
+       						 <p>회원정보 수정</p></div><br>
               
                 <!-- 입력 칸 -->
-                    <form action="signup" method="POST" class="SignUpEmail-Form">
+                    <form action="signup" method="POST" class="Modify-Form">
                     
                         <!-- 아이디 섹션(수정 불가) -->
                         <div class="Modify-Section">
@@ -69,7 +70,7 @@
                                 
                                 <label for="member_id" required="" class="FormTextInput-Label">아이디</label>
                                     <label id="idchk"></label>
-                          						<label id="member_id" class="FormTextInput-Input" onFocus="">${member.member_id}</label><br>
+                          						<label id="member_id" class="FormTextInput-Input" onFocus="">${member.member_id}</label>
                             </div>
                         </div>
                         
@@ -96,7 +97,7 @@
                         <div class="Modify-Section">
                             <div class="FormTextInput-Container">
                                 <label for="member_name" required="" class="FormTextInput-Label">이름</label>
-                                <label id="member_name" class="FormTextInput-Input">${member.member_name}</label><br>                                
+                                <label id="member_name" class="FormTextInput-Input">${member.member_name}</label>                                
                             </div>
                         </div>   
                                             
@@ -106,7 +107,7 @@
                                 <label for="member_birth" required="" class="FormTextInput-Label">생년월일</label><br>
                                 	<fmt:parseDate value="${member.member_birth}" pattern="yyyy-MM-ddHH:mm:ss" var="m_birth" />
 																																	<fmt:formatDate value="${m_birth}" pattern="yyyy-MM-dd" var="mbirth" />
-																																	<label id="member_birth" class="FormTextInput-Input">${mbirth}</label><br>
+																																	<label id="member_birth" class="FormTextInput-Input">${mbirth}</label>
                             </div>
                         </div>
             
@@ -139,7 +140,7 @@
 																																<c:set var="m_email" value="${member.member_email}" />
 																																<c:set var="memail" value="${fn:split(m_email, '@') }" />
 																																<!-- 배열 인덱스로 불러옴 -->
-                                <input type = "text" size = "15" id="email_id" class="input" value="${memail[0]}"> @
+                                <input type = "text" size = "15" id="email_id" class="input" value="${memail[0]}"> <span class = "sp_mail">@</span>
                                 <input type="text" size="15" id="email_addr" class="input" value="${memail[1]}" disabled>
                                     <select id="email_select">
                                         <option value="" selected>::선택하세요::</option>
@@ -271,7 +272,7 @@
 
     <section id="panel-3">
       <main><div class="pn2">
-        <p>${member.member_name}님의 장바구니 목록입니다.</p></div>
+        <p>${member.member_name}님의 장바구니 목록입니다.</p></div><br>
 <input type="hidden" id="member_name" value="${member.member_name}"/>
 
            
@@ -279,7 +280,7 @@
                     <table class="type1">
                          
                           
-   <tr>
+   <thead><tr>
     <th><input id="checkAll" type="checkbox" checked /></th>                        
 				<th>이미지</th>
 				<th width="300px">상품정보</th>
@@ -287,10 +288,10 @@
 				<th>수량</th>
 				<th>합계</th>
 				<th>삭제</th>
-			</tr>
+			</tr></thead>
 			<c:set var="priceSum" value="0" />
 			<c:forEach items="${cartPrd}" var="cartprd"><!-- 카트에 담긴 각 상품 -->
-				<tr align="center">
+				<tbody><tr align="center">
 					<!--체크박스-->
 					<td>
 						<input type="checkbox" name="chk" onclick="calCart()" value="${cartprd.prd_id}" checked />
@@ -303,33 +304,32 @@
 					<td><fmt:formatNumber value="${cartprd.buy_quantity}" pattern="#,###"/></td><!-- 수량 -->
 					<td><fmt:formatNumber value="${cartprd.prd_sum}" pattern="#,###"/></td><!-- 합계 -->
 					<td>
-						<input type="button" id="delCart" onClick="delCart('${cartprd.prd_id}', '${member.member_id}')" value="삭제" />
+						<input type="button" class="btn" id="delCart" onClick="delCart('${cartprd.prd_id}', '${member.member_id}')" value="삭제" />
 						<input type="hidden" id="prd_id" value="${cartprd.prd_id}" />
 					</td>
-				</tr>
+				</tbody></tr>
 				<c:set var="priceSum" value="${priceSum + cartprd.prd_sum}" />
 			</c:forEach>
 			<tr align="center">
 				<td colspan="7">
-					<input type="button" name="cartClear" id="cartClear" onclick="cartClear()" value="상품 비우기" />
+					<input type="button" class="btn" name="cartClear" id="cartClear" onclick="cartClear()" value="상품 비우기" />
 				</td>
 			</tr>
 		</table><br>
 		
-		<br><br>
-		<h1>결제</h1>
-		<table class="cart3" align="center">
-			<tr align="center">
-				<th colspan="2">총 합계</th>
-				<th colspan="4"><h2 id="prd_sum"><fmt:formatNumber value="${priceSum}" pattern="#,###" /></h2></th>
+	<div class="paymentArea" align="center">
+		<p>결제</p>
+		<table class="cart3">
+			<tr>
+			<th></th><th></th>
+				<th align="right">총 합계</th>
+				<th colspan="3" align="left"><h2 id="prd_sum"><fmt:formatNumber value="${priceSum}" pattern="#,###" /></h2></th>
 			</tr>
-
-    
    </table><br>
    <div class="paybtn">
-   		<input type="button" id="payCart" onclick="payCart()" value="결제하기" />
+   		<input type="button" class="btn" id="payCart" onclick="payCart()" value="결제하기" />
 					<input type="hidden" name="hiddenbtn" id="hiddenbtn" value="cartpage" />
-   </div>
+   </div></div>
                     
                     <br>
                     <br>

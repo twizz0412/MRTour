@@ -9,14 +9,19 @@
 		<script src="http://code.jquery.com/jquery-latest.js"></script>
 		<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 	 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-		<!-- <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link rel="stylesheet" type="text/css" href="resources/css/payment.css"> -->
+		
+		<link rel="stylesheet" type="text/css" href="resources/css/payment.css">
 		<title>미래투어 - 주문서 작성</title>
 	</head>
 	<body>
-		<div id="container">
+	<!-- 헤더 -->
+	<%@ include file="../include/header.jsp"%>
+		<div class="container">
+		<!-- 주문서 작성 섹션 -->
+		<div class="eachSection">
 		<h3>티켓 주문서 작성</h3>
-		<table id="oSW">
+		<div class="tbl">
+		<table class="type1">
 			<tr align="center">
 				<th height="50">이미지</th>
 				<th width="300" colspan="2">상품 정보</th>
@@ -51,7 +56,7 @@
 					<c:forEach items="${map.list}" var="pay">
 						<input type="hidden" id="prd_id" value="${pay.prd_id}"/>
 						<input type="hidden" id="buy_quantity" value="${map.buy_quantity}"/>
-						<tr id="tr">
+						<tr>
 							<td>
 								<img src="${pay.prd_img}" width="100px" height="100px">
 								<input type="hidden" name="chkbox">
@@ -68,55 +73,48 @@
 				</c:when>
 			</c:choose>
 			<tr align="center">
-				<td colspan="3" id="ordersheet" height="30">총 결제 금액</td>
+				<td colspan="3" id="ordersheet" height="50">총 결제 금액</td>
 				<td colspan="3"><fmt:formatNumber value="${priceSum}" pattern="#,###" /></td>
 			</tr>
-		</table><br><br>
+		</table></div></div><br><br>
+		
+		<!-- 주문자 정보 섹션 -->
+		<div class="eachSection">
 		<h3>주문자 정보</h3>
-		<table id="oSI">
-			<tr>
-				<th width="150" height="50">주문자명</th>
-				<td>
-					<label id="member_name" class="input" size="20">${member.member_name}</label>
-					<input type="hidden" id="hidden_member_name" value="${member.member_name}">
-				</td>
-			</tr>
-			<tr>
-				<th rowspan="2" width="150" height="50">주소</th>
-				<td>
-					<label id="member_zipcode" class="input" size="10">${member.member_zipcode}</label><br>
-					<input type="hidden" id="hidden_member_zipcode" value="${member.member_zipcode}">
-					<label id="member_faddr" class="input" size="60">${member.member_faddr}</label>
-					<input type="hidden" id="hidden_member_faddr" value="${member.member_faddr}">
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<label id="member_laddr" class="input" size="60">${member.member_laddr}</label>
-					<input type="hidden" id="hidden_member_laddr" value="${member.member_laddr}">
-				</td>
-			</tr>
-			<tr>
-				<th height="50">핸드폰 번호</th>
-				<td>
-					<label id="member_phone" class="input" size="16">${member.member_phone}</label>
-					<input type="hidden" id="hidden_member_phone" value="${member.member_phone}">
-				</td>
-			</tr>
-			<tr>
-				<th height="50">이메일</th>
-				<td>
-					<label id="member_email" class="input" size="30">${member.member_email}</label>
-					<input type="hidden" id="hidden_member_email" value="${member.member_email}">
-				</td>
-			</tr>
-		</table><br><br><br>
+		<div class="Modify-Section">
+   <div class="FormTextInput-Container">                        
+     <label for="member_name" required="" class="FormTextInput-Label">주문자명</label>
+     <label id="member_name" class="FormTextInput-Input" onFocus="">${member.member_name}</label>
+    </div>
+   </div>
+   <div class="Modify-Section">
+   <div class="FormTextInput-Container">                        
+     <label for="member_address" required="" class="FormTextInput-Label">주소</label>
+     <label id="member_address" class="FormTextInput-Input" onFocus="">${member.member_faddr} ${member.member_laddr} (우)${member.member_zipcode} </label>
+    </div>
+   </div>
+   <div class="Modify-Section">
+   <div class="FormTextInput-Container">                        
+     <label for="member_phone" required="" class="FormTextInput-Label">연락처</label>
+     <label id="member_phone" class="FormTextInput-Input" onFocus="">${member.member_phone}</label>
+    </div>
+   </div>
+   <div class="Modify-Section">
+   <div class="FormTextInput-Container">                        
+     <label for="member_email" required="" class="FormTextInput-Label">이메일</label>
+     <label id="member_email" class="FormTextInput-Input" onFocus="">${member.member_email}</label>
+    </div>
+   </div>
+		</div><br><br>
+		
+		<!-- 배송 정보 섹션 -->
+		<div class="eachSection">
 		<h3>배송 정보</h3>
 		<table id="oSD">
 			<tr>
 				<th width="150" height="50">배송지 선택</th>
 				<td>
-					<input type="radio" name="choice" id="sameaddr" value="sameaddr" checked />주문자 정보 동일
+					<input type="radio" name="choice" id="sameaddr" value="sameaddr" checked />주문자 정보 동일 &nbsp;
 					<input type="radio" name="choice" id="newaddr" value="newaddr" />새로운 배송지
 				</td>
 			</tr>
@@ -130,7 +128,7 @@
 				<th rowspan="2" width="150" height="50">주소</th>
 				<td>
 					<input type="text" name="sn_member_zipcode" class="input" size="10" placeholder="우편번호" value="${member.member_zipcode}" readonly>
-					<input type="button" name="nn_searchPost" onclick="searchPost()" value="우편번호 찾기" style="visibility: hidden"><br>
+					<input type="button" class="btn" name="nn_searchPost" onclick="searchPost()" value="우편번호 찾기" style="visibility: hidden"><br>
 					<input type="text" name="sn_member_faddr" class="input" size="60" placeholder="우편주소" value="${member.member_faddr}" readonly>
 				</td>
 			</tr>
@@ -147,21 +145,28 @@
 					<textarea id="texta" rows="3" cols="60" maxlength="10" placeholder="배송시 요청메시지 입력(10자 내)"></textarea>
 				</td>
 			</tr>
-		</table>
+		</table></div>
 		
-		<br><br><br><br><br>
-		<script>
-		</script>
-		<table id="oST">
+		<br><br>
+		
+		
+		<!-- 약관 섹션 -->
+		<div class="eachSection">
+		<div class="AgreementList-Container">
+		<table class="AgreementTable">
 			<tr>
 				<td>
+				<div class="AgreementList-TitleSection">
 					<input type="checkbox" id="checkAll" />
-					쇼핑몰 이용약관, 비회원 구매시 개인정보수집이용 동의에 모두 동의합니다.
+					<label class="AgreeLabel"><strong>
+					쇼핑몰 이용약관, 비회원 구매시 개인정보수집이용 동의에 모두 동의합니다.</strong></label></div>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<input type="checkbox" name="chk" id="chk1" />쇼핑몰 이용약관
+					<div class="AgreementList-TitleSection">
+					<input type="checkbox" name="chk" id="chk1" />
+					<label class="AgreeLabel"><strong>쇼핑몰 이용약관</strong></label></div>
 				</td>
 			</tr>
 			<tr>
@@ -382,9 +387,13 @@
 					</textarea>
 				</td>
 			</tr>
+			</table><br>
+			<table class="AgreementTable">
 			<tr>
 				<td>
-					<input type="checkbox" name="chk" id="chk2"/>구매시 개인정보수집이용 동의
+				<div class="AgreementList-TitleSection">
+					<input type="checkbox" name="chk" id="chk2"/>
+					<label class="AgreeLabel"><strong>구매시 개인정보수집이용 동의</strong></label></div>
 				</td>
 			</tr>
 			<tr>
@@ -411,31 +420,45 @@
 					</textarea>
 				</td>
 			</tr>
-		</table>
-		<br><br><br>
+		</table></div></div>
+		<br>
+		
+		
+		<!-- 결제 수단 섹션 -->
+		<div class="eachSection">
 		<h3>결제 수단</h3>
 		<div id="pay">
-			<input type="radio" name="chk_info" value="card" checked />카드 결제
-			<input type="radio" name="chk_info" value="transfer" disabled />계좌 이체
-			<input type="radio" name="chk_info" value="deposit" disabled />무통장 입금
+			<input type="radio" name="chk_info" value="card" checked />카드 결제  &nbsp;
+			<input type="radio" name="chk_info" value="transfer" disabled />계좌 이체  &nbsp;
+			<input type="radio" name="chk_info" value="deposit" disabled />무통장 입금  &nbsp;
+			<br><br>
 			<div id="creditPay">
-				카드번호: 
+				카드 번호: &nbsp;
 				<input type="text" id="credit1" maxlength="4" size="4" onkeypress="onlyNumber()"/> - 
 				<input type="password" id="credit2" maxlength="4" size="4" onkeypress="onlyNumber()"/> - 
 				<input type="text" id="credit3" maxlength="4" size="4" onkeypress="onlyNumber()"/> - 
 				<input type="password" id="credit4" maxlength="4" size="4" onkeypress="onlyNumber()"/>
 			</div>
-		</div>
+		</div></div><br>
+		
+		<!-- 최종 결제 금액 섹션 -->
+		<div class="eachSection">
 		<h3>최종 결제 금액</h3>
 		<table id="paymoney">
 			<tr>
 				<td>결제금액: <fmt:formatNumber value="${priceSum}" pattern="#,###" /></td>
 				<td></td>
 			</tr>
+			<tr><td></td><td></td><tr>
 			<tr>
-				<th colspan="2"><input type="button" onClick="termChk()" value="결제하기" /></th>
+				<th colspan="2"><input type="button" class="btn" onClick="termChk()" value="결제하기" /></th>
 			</tr>
-		</table>
+		</table></div></div><br><br><br>
+		
+		
+		
+		
+		
 		<script>
 			$(document).ready(function() {	
 				$("#checkAll").click(function() {	// 최상단 체크박스 클릭
@@ -579,6 +602,6 @@
 				}).open();
 			}
 		</script>
-		</div>
+		
 	</body>
 </html>

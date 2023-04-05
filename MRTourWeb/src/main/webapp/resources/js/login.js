@@ -90,7 +90,6 @@ function logout() {
  		url : "logout",
  		data : {},
  		success : function(data) {
- 			swal("로그아웃", "완료", "success");
  			location.href="main";
  		}
  	});

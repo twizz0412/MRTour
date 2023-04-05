@@ -50,7 +50,7 @@
                      <form method="get" action="car_page" class="carsearch">
                         <div class="search-area-form same-area">
                            <div class="form-column">
-                              <p class="title">인수도시</p>
+                              <p class="title">지역</p>
                               <select name="city_no" id="city_no" onchange="ChangeSearch()">
                                  <option value="전체">전체</option>
                                  <option value="서울">서울</option>
