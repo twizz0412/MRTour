@@ -9,32 +9,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="resources/css/admin_css/admin_mem.css">
     <title>MRT Admin</title>
-    
-    <script>
-		// 게시물 삭제 확인
-		function deleteM() {
-			swal({
-				 icon: "warning",
-				 text: "정말 이 회원을 추방하시겠습니까?",
-				 closeOnClickOutside : false,
-				 closeOnEsc : false, 
-				 buttons: ["돌아가기", "추방하기"],
-				}).then(function(isConfirm) {
-				  if (isConfirm) {
-				    swal('삭제 완료!','이 회원을 추방했습니다.','success').then(function(isConfirm)
-				   		{
-							location.href='delete_mem?member_id='+${member.member_id};
-				    	});
-				  }
-				})
-		}
-	</script>
+
 </head>
 
 <body>
     <div class="container right-panel-active">
         <!-- Sign Up -->
         <div class="container__form container--signup">
+        	<button type="button" class="btn" onclick="location.href='admin_main'">관리자 메인 페이지</button>
+			<button type="button" class="btn" onclick="location.href='./main'">메인 페이지</button>
             <form action="#" class="form" id="form1">
                 <div class="board_wrap">
                     <div class="board_title">
@@ -52,7 +35,6 @@
 	                                        <td><div class="birth">생년월일</div></td>
 	                                        <td><div class="phone">연락처</div></td>
 	                                        <td><div class="EMAIL">이메일</div></td>
-	                                        <td><div class="delete">추방</div></td>
 	                                    </tr>
                                   	 </thead> 
                                      <tbody>		
@@ -65,7 +47,6 @@
 		                                        <td><div class="birth">${member.member_birth}</div></td>
 		                                        <td><div class="phone">${member.member_phone}</div></td>
 		                                        <td><div class="EMAIL">${member.member_email}</div></td>
-		                                        <td><a href="#" id="list_btn"onclick="deleteM()">추방</a></div></td>
 											</tr>
 										</c:forEach>
 									</tbody>

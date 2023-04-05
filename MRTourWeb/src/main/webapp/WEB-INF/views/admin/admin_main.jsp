@@ -16,8 +16,7 @@
         <!-- Sign Up -->
         <div class="container__form container--signup">
             <form action="#" class="form" id="form1">
-                <button type="button" class="btn" onclick="location.href='admin_notice'">공지사항</button>
-                <button type="button" class="btn" onclick="location.href=''">1:1 문의</button>
+                <button type="button" class="btn" onclick="location.href='main'">메인으로</button>
                 <button type="button" class="btn" onclick="location.href='admin_mem'">회원관리</button>
                 <button type="button" class="btn" onclick="location.href='productList'">상품관리</button>
             </form>

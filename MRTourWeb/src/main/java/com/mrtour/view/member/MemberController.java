@@ -194,9 +194,6 @@ public class MemberController {
 		return "";
 	}
 	
-	
-	
-
 	//관리자 화면
 
 	// 관리자 메인화면으로 가기
@@ -231,6 +228,9 @@ public class MemberController {
 			return "redirect:/admin_mem"; // 목록으로 이동
 		}	
 		
-		
 
+		@RequestMapping("/Intro")
+		public String intro() {
+			return "company/Intro"; 
+		}
 }

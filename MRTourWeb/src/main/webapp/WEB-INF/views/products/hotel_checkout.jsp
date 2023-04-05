@@ -75,7 +75,7 @@ data-sign-in data-turbolinks="false" style>
 						<div class="productInfoPrice--TotalPriceWrapper">
 							<div class="productInfoPrice--TotalPriceText">총 상품 금액</div>
 							<strong class="productInfoPrice--TotalPriceNumber">${map.prd_price}원</strong>
-							<input type = "hidden" id = "buy_quantity" value="${map.buy_quantity}" >	
+							<input type = "hidden" id = "buy_quantity" value="1" >	
 						</div>
 					</div>
 				</div>

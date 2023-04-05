@@ -124,13 +124,13 @@
 
                <c:if test="${map.pager.curBlock > 1}">
                   <li class="pagination-first page-item disabled"><a
-                     href="board?curPage=1&searchOption=${searchOption}&keyword=${keyword}
+                     href="ticket_main?curPage=1&searchOption=${searchOption}&keyword=${keyword}
                &search=${search}">처음</a></li>
                </c:if>
 
                <c:if test="${map.pager.curBlock > 1}">
                   <li class="pagination-prev page-item disabled"><a
-                     href="board?curPage=${map.pager.prevPage}
+                     href="ticket_main?curPage=${map.pager.prevPage}
                &searchOption=${searchOption}&keyword=${keyword}&search=${search}">이전</a></li>
                </c:if>
                <c:forEach var="num" begin="${map.pager.blockBegin}"
@@ -142,7 +142,7 @@
                      </c:when>
                      <c:otherwise>
                         <li class="pagination-page page-item"><a
-                           href="board?curPage=${num}&searchOption=${searchOption}&keyword=${keyword}
+                           href="ticket_main?curPage=${num}&searchOption=${searchOption}&keyword=${keyword}
                      &search=${search}"
                            class="page-link">${num}</a></li>
                      </c:otherwise>
@@ -150,14 +150,14 @@
                </c:forEach>
                <c:if test="${map.pager.curBlock < map.pager.totBlock}">
                   <li class="pagination-next page-item"><a
-                     href="board?curPage=${map.pager.nextPage}&searchOption=${searchOption}&keyword=${keyword}
+                     href="ticket_main?curPage=${map.pager.nextPage}&searchOption=${searchOption}&keyword=${keyword}
                &search=${search}"
                      class="page-link">다음</a></li>
                </c:if>
                <c:if
                   test="${(map.pager.totPage > 5) && (map.pager.totPage != map.pager.curPage)}">
                   <li class="pagination-last page-item"><a
-                     href="board?curPage=${map.pager.totPage}
+                     href="ticket_main?curPage=${map.pager.totPage}
                         &searchOption=${searchOption}&keyword=${keyword}
                         &search=${search}">맨끝</a></li>
                </c:if>
