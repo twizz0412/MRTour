@@ -1,9 +1,8 @@
 @charset "UTF-8";
 
 
-/* 패널  */
 .tabb2{
-    margin-top: 100px;
+    margin-top: 200px;
 
 }
 
@@ -211,6 +210,11 @@ main p {
 
 
 
+
+
+
+
+
 :root {
     --white: #fff;
     --black: #000;
@@ -233,18 +237,18 @@ main p {
 
 
 
-.Modify-Container { /* 수정 폼 메인 전체*/
+.SignUpEmail-Container { /* 가입 폼 메인 전체*/
     width: 800px;
     padding: 48px;
     margin: 64px auto;
   
 }
 
-.Modify-Form { /* 수정 폼(레이블+입력칸) 전체 */
+.SignUpEmail-Form { /* 가입 폼(레이블+입력칸) 전체 */
     position: relative;
 }
 
-.Modify-Section { /* 각 섹션 */
+.SignUpEmail-Section { /* 각 섹션 */
     margin-bottom: 16px;
 }
 
@@ -302,7 +306,7 @@ label {
     text-align : center;
 }
 
-.Modify-Section select {
+.SignUpEmail-Section select {
     -webkit-box-align: center;
     align-items: center;
     height: 39px;
@@ -317,7 +321,7 @@ label {
     width: 130px;
 }
 
-.Modify-Section .input {
+.SignUpEmail-Section .input {
     -webkit-box-align: center;
     align-items: center;
     height: 40px;
@@ -398,6 +402,25 @@ button, input, optgroup, select, textarea {
     color: inherit;
 }
 
+.idchk {
+    text-align: center;
+    border: 0px;
+    border-radius: 4px;
+    letter-spacing: -0.2px;
+    user-select: none;
+    outline-style: none;
+    cursor: pointer;
+    height: 22px;
+    font-size: 12px;
+    color: black;
+    background-color: var(--blue-light);
+    width: 60px;
+}
+
+.idchk:hover {
+    background-color: var(--blue-hover);
+    color : white;
+}
 
 /*주소 css*/
 .FormTextInput-post {
@@ -474,21 +497,31 @@ button, input, optgroup, select, textarea {
     padding: 0px 8px;
 }
 
-.update {
+.Join {
     display: flex;
     flex-direction: row;
     -webkit-box-align: center;
     align-items: center;
 }
 
+.AgreementList-Notices {
+    width: 100%;
+}
+
+.AgreementList-Notices-Content {
+    color: var(--gray-500);
+    font-size: 12px;
+    line-height: 1.5;
+}
 
 
-/* section2 - 주문내역*/
+/* section2 */
 
 .pn2{
     text-align: center;
     font-family: 'Nanum Gothic', sans-serif;
 }
+
 
 
 
@@ -553,18 +586,12 @@ ol, ul, li {
     padding: 0 10px;
     margin: 0;
     color: #666;
-    background-color: #9ad8f7;
-    color: #fff;
+    background-color: #fff;
     font-weight: 400;
     text-align: center;
     border-radius: 4px;
     border: solid 1px #c2c2c2;
 }
-
-.paymentArea {
-				align: center;
-}
-
 
 .text_wrap .notice-board input[type=text], .text_wrap .notice-board input[type=number], 
 .text_wrap .notice-board input[type=date], .text_wrap .notice-board input[type=password], 
@@ -689,8 +716,7 @@ input[type="text" i] {
     padding: 0 10px;
     margin: 0;
     color: #666;
-    background-color: #;
-    color: #fff;
+    background-color: #fff;
     font-weight: 400;
     text-align: center;
     border-radius: 4px;

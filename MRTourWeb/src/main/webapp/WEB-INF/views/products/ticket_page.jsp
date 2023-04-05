@@ -112,10 +112,17 @@
 
 
 <div class="btn1">
-<input type="button" button class="w-btn w-btn-blue"  name="buy" id="buy" onclick="buyProduct()" value="구매하기" />&nbsp;&nbsp;&nbsp;
-<input type="button" button class="w-btn w-btn-blue"  name="cart" id="cart" onclick="insertCart()" value="장바구니" />&nbsp;&nbsp;&nbsp;
-<input type="button" button class="w-btn w-btn-blue"  name="cart" id="cart" onclick="location.href='productCart?member_id=${member.member_id}'" value="내 장바구니 보기" /></div>
-
+	<c:choose>
+		<c:when test="${member.member_id eq 'admin' || member.member_id == null}"><!-- 관리자로 로그인했을 때 -->	
+			<input type="button" button class="w-btn w-btn-blue"  name="buy" id="buy" onclick="buyProduct()" value="구매하기" />&nbsp;&nbsp;&nbsp;
+			<input type="button" button class="w-btn w-btn-blue"  name="cart" id="cart" onclick="insertCart()" value="장바구니" />&nbsp;&nbsp;&nbsp;
+		</c:when>
+		<c:otherwise>
+			<input type="button" button class="w-btn w-btn-blue"  name="buy" id="buy" onclick="buyProduct()" value="구매하기" />&nbsp;&nbsp;&nbsp;
+			<input type="button" button class="w-btn w-btn-blue"  name="cart" id="cart" onclick="insertCart()" value="장바구니" />&nbsp;&nbsp;&nbsp;
+			<input type="button" button class="w-btn w-btn-blue"  name="cart" id="cart" onclick="location.href='productCart?member_id=${member.member_id}'" value="내 장바구니 보기" /></div>
+		</c:otherwise>
+	</c:choose>
 <input type="hidden" name="hiddenbtn" id="hiddenbtn" value="prdpage" />
 
 </div></div></div></div></div></div></div></section>
@@ -129,7 +136,7 @@
 <div class="OfferFlexibleBox_container">
 <div class="OfferFlexibleBox_body">
 <p class="OfferContents_contents">- 유효기간 내 미사용티켓 100% 환불가능
-<br class="">- 유효기간 후 100%환불가능<br class="">- 사용한 티켓은 환불 불가능합니다.</p></div>
+<br class="">- 유효기간 후 수수료 차감/ 일부상품 환불 불가능<br class="">- 사용한 티켓은 환불 불가능합니다.</p></div>
 <div class="OfferFlexibleBox_more"></div></div></div></div></div></section>
 
 

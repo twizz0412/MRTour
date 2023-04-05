@@ -9,14 +9,14 @@
 
 <head>
     <meta charset="UTF-8">
-				<title>미래투어</title>
-				<script src="http://code.jquery.com/jquery-latest.js"></script>
-				<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-				<script type="text/javascript" src="resources/js/cart.js" charset="UTF-8"></script>
-				<script type="text/javascript" src="resources/js/mypage.js" charset="UTF-8"></script>
-				<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
-				
-		
+            <title>미래투어</title>
+            <script src="http://code.jquery.com/jquery-latest.js"></script>
+            <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+            <script type="text/javascript" src="resources/js/cart.js" charset="UTF-8"></script>
+            <script type="text/javascript" src="resources/js/mypage.js" charset="UTF-8"></script>
+            <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+            
+      
 
     <link rel="stylesheet" href="resources/css/mypage.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -58,8 +58,8 @@
       <main>
         <p>
             <main class="Modify-Container">
-   										<div class="pn2">
-       						 <p>회원정보 수정</p></div><br>
+                                 <div class="pn2">
+                          <p>회원정보 수정</p></div><br>
               
                 <!-- 입력 칸 -->
                     <form action="signup" method="POST" class="Modify-Form">
@@ -70,7 +70,7 @@
                                 
                                 <label for="member_id" required="" class="FormTextInput-Label">아이디</label>
                                     <label id="idchk"></label>
-                          						<label id="member_id" class="FormTextInput-Input" onFocus="">${member.member_id}</label>
+                                            <label id="member_id" class="FormTextInput-Input" onFocus="">${member.member_id}</label>
                             </div>
                         </div>
                         
@@ -105,9 +105,9 @@
                         <div class="Modify-Section">
                             <div class="FormTextInput-Container">
                                 <label for="member_birth" required="" class="FormTextInput-Label">생년월일</label><br>
-                                	<fmt:parseDate value="${member.member_birth}" pattern="yyyy-MM-ddHH:mm:ss" var="m_birth" />
-																																	<fmt:formatDate value="${m_birth}" pattern="yyyy-MM-dd" var="mbirth" />
-																																	<label id="member_birth" class="FormTextInput-Input">${mbirth}</label>
+                                   <fmt:parseDate value="${member.member_birth}" pattern="yyyy-MM-ddHH:mm:ss" var="m_birth" />
+                                                                                                   <fmt:formatDate value="${m_birth}" pattern="yyyy-MM-dd" var="mbirth" />
+                                                                                                   <label id="member_birth" class="FormTextInput-Input">${mbirth}</label>
                             </div>
                         </div>
             
@@ -116,12 +116,12 @@
                             <div class="FormTextInput-Container">
                                 <label for="userPhone" required="" class="FormTextInput-Label">전화번호</label><br>
                                 <!-- phone split해서 값 넣어주기 -->
-																																<!-- c:set 셋팅 -->
-																																<c:set var="m_phone" value="${member.member_phone}" />
-																																<c:set var="mphone" value="${fn:split(m_phone, '-') }" />
-																																<!-- 배열 인덱스로 불러옴 -->
+                                                                                                <!-- c:set 셋팅 -->
+                                                                                                <c:set var="m_phone" value="${member.member_phone}" />
+                                                                                                <c:set var="mphone" value="${fn:split(m_phone, '-') }" />
+                                                                                                <!-- 배열 인덱스로 불러옴 -->
                                     <select id="NUMst" class="FormTextInput-third" >
-                                    				<option value="${mphone[0]}" selected>${mphone[0]}</option>
+                                                <option value="${mphone[0]}" selected>${mphone[0]}</option>
                                         <option value="010">010</option>
                                         <option value="011">011</option>
                                         <option value="016">016</option>
@@ -136,10 +136,10 @@
                             <div class="FormTextInput-Container">
                                 <label for="member_email" required="" class="FormTextInput-Label">이메일</label><br>
                                 <!-- email split해서 값 넣어주기 -->
-																																<!-- c:set 셋팅 -->
-																																<c:set var="m_email" value="${member.member_email}" />
-																																<c:set var="memail" value="${fn:split(m_email, '@') }" />
-																																<!-- 배열 인덱스로 불러옴 -->
+                                                                                                <!-- c:set 셋팅 -->
+                                                                                                <c:set var="m_email" value="${member.member_email}" />
+                                                                                                <c:set var="memail" value="${fn:split(m_email, '@') }" />
+                                                                                                <!-- 배열 인덱스로 불러옴 -->
                                 <input type = "text" size = "15" id="email_id" class="input" value="${memail[0]}"> <span class = "sp_mail">@</span>
                                 <input type="text" size="15" id="email_addr" class="input" value="${memail[1]}" disabled>
                                     <select id="email_select">
@@ -210,56 +210,56 @@
                             </tr>
                           
     <!-- 마이페이지 주문내역 -->
-				<c:forEach begin="0" end="${(fn:length(map.mypL))}" var="i">
-					<c:set var="row" value="${map.mypL[i]}" />
-					<c:choose>
-						<%-- 검색결과가 있을 때 --%>
-						<c:when test="${not empty row}">
-							<tr>
-								<td>${row.order_no}</td>
-								<td>${row.payment_date}</td>
-								<td>${row.prd_name}</td>
-								<td><fmt:formatNumber value="${row.prd_sum}" pattern="#,###"/>원</td>
-							</tr>
-						</c:when>
-						<%-- 검색결과가 없을 떄 --%>
-						<c:when test="${map.count == 0}">
-							<tr>
-								<td colspan='4'><b>주문내역이 없습니다.</b></td>
-							</tr>
-						</c:when>
-					</c:choose>
-				</c:forEach>
+            <c:forEach begin="0" end="${(fn:length(map.mypL))}" var="i">
+               <c:set var="row" value="${map.mypL[i]}" />
+               <c:choose>
+                  <%-- 검색결과가 있을 때 --%>
+                  <c:when test="${not empty row}">
+                     <tr>
+                        <td>${row.order_no}</td>
+                        <td>${row.payment_date}</td>
+                        <td>${row.prd_name}</td>
+                        <td><fmt:formatNumber value="${row.prd_sum}" pattern="#,###"/>원</td>
+                     </tr>
+                  </c:when>
+                  <%-- 검색결과가 없을 떄 --%>
+                  <c:when test="${map.count == 0}">
+                     <tr>
+                        <td colspan='4'><b>주문내역이 없습니다.</b></td>
+                     </tr>
+                  </c:when>
+               </c:choose>
+            </c:forEach>
                     </table></div>
                     <br><br>
                 
      <!-- 페이지 네비게이션 출력 -->
-			<div align="center">
-				<c:if test="${map.pager.curBlock > 1}">
-					<a href="mypL?myp=1&member_id=${member_id}">[처음]</a>
-				</c:if>
-				<c:if test="${map.pager.curBlock > 1}">
-					<a href="mypL?myp=${map.pager.prevPage}&member_id=${member_id}">[이전]</a>
-				</c:if>
-				<c:forEach var="num" begin="${map.pager.blockBegin}" end="${map.pager.blockEnd}">
-					<c:choose>
-						<c:when test="${num == map.pager.curPage}">
-							<!-- 현재 페이지인 경우 하이퍼링크 제거 -->
-							<span style="color: red;">${num}</span>
-						</c:when>
-						<c:otherwise>
-							<a href="mypage?member_id=${member_id}&myp=${num}">${num}</a>
-						</c:otherwise>
-					</c:choose>
-				</c:forEach>
-				<c:if test="${map.pager.curBlock < map.pager.totBlock}">
-					<a href="mypL?myp=${map.pager.nextPage}&member_id=${member_id}">[다음]</a>
-				</c:if>
-				<c:if test="${(map.pager.totPage > 5) && (map.pager.totPage != map.pager.curPage)}">
-					<a href="mypL?myp=${map.pager.totPage}&member_id=${member_id}">[끝]</a>
-				</c:if>
-			</div>
-		</div>             
+         <div align="center">
+            <c:if test="${map.pager.curBlock > 1}">
+               <a href="mypL?myp=1&member_id=${member_id}">[처음]</a>
+            </c:if>
+            <c:if test="${map.pager.curBlock > 1}">
+               <a href="mypL?myp=${map.pager.prevPage}&member_id=${member_id}">[이전]</a>
+            </c:if>
+            <c:forEach var="num" begin="${map.pager.blockBegin}" end="${map.pager.blockEnd}">
+               <c:choose>
+                  <c:when test="${num == map.pager.curPage}">
+                     <!-- 현재 페이지인 경우 하이퍼링크 제거 -->
+                     <span style="color: red;">${num}</span>
+                  </c:when>
+                  <c:otherwise>
+                     <a href="mypage?member_id=${member_id}&myp=${num}">${num}</a>
+                  </c:otherwise>
+               </c:choose>
+            </c:forEach>
+            <c:if test="${map.pager.curBlock < map.pager.totBlock}">
+               <a href="mypL?myp=${map.pager.nextPage}&member_id=${member_id}">[다음]</a>
+            </c:if>
+            <c:if test="${(map.pager.totPage > 5) && (map.pager.totPage != map.pager.curPage)}">
+               <a href="mypL?myp=${map.pager.totPage}&member_id=${member_id}">[끝]</a>
+            </c:if>
+         </div>
+      </div>             
       </main>
     </section>
 
@@ -280,55 +280,53 @@
                     <table class="type1">
                          
                           
-   <thead><tr>
-    <th><input id="checkAll" type="checkbox" checked /></th>                        
-				<th>이미지</th>
-				<th width="300px">상품정보</th>
-				<th>판매가</th>
-				<th>수량</th>
-				<th>합계</th>
-				<th>삭제</th>
-			</tr></thead>
-			<c:set var="priceSum" value="0" />
-			<c:forEach items="${cartPrd}" var="cartprd"><!-- 카트에 담긴 각 상품 -->
-				<tbody><tr align="center">
-					<!--체크박스-->
-					<td>
-						<input type="checkbox" name="chk" onclick="calCart()" value="${cartprd.prd_id}" checked />
-						<input type="hidden" name="prd_sum" value="${cartprd.prd_sum}" />
-						<input type="hidden" id="member_id" value="${member.member_id}"/>
-					</td>
-					<td><img src="${cartprd.prd_img}" width="75" height="75"></td><!-- 이미지 썸네일 -->
-					<td>${cartprd.prd_name}</td><!-- 상품명 -->
-					<td><fmt:formatNumber value="${cartprd.prd_price}" pattern="#,###"/></td><!-- 판매가 -->
-					<td><fmt:formatNumber value="${cartprd.buy_quantity}" pattern="#,###"/></td><!-- 수량 -->
-					<td><fmt:formatNumber value="${cartprd.prd_sum}" pattern="#,###"/></td><!-- 합계 -->
-					<td>
-						<input type="button" class="btn" id="delCart" onClick="delCart('${cartprd.prd_id}', '${member.member_id}')" value="삭제" />
-						<input type="hidden" id="prd_id" value="${cartprd.prd_id}" />
-					</td>
-				</tbody></tr>
-				<c:set var="priceSum" value="${priceSum + cartprd.prd_sum}" />
-			</c:forEach>
-			<tr align="center">
-				<td colspan="7">
-					<input type="button" class="btn" name="cartClear" id="cartClear" onclick="cartClear()" value="상품 비우기" />
-				</td>
-			</tr>
-		</table><br>
-		
-	<div class="paymentArea" align="center">
-		<p>결제</p>
-		<table class="cart3">
-			<tr>
-			<th></th><th></th>
-				<th align="right">총 합계</th>
-				<th colspan="3" align="left"><h2 id="prd_sum"><fmt:formatNumber value="${priceSum}" pattern="#,###" /></h2></th>
-			</tr>
+   <thead>
+   		<tr>                     
+            <th colspan = "2">상품정보</th>
+            <th>판매가</th>
+            <th>수량</th>
+            <th>합계</th>
+            <th>삭제</th>
+         </tr>
+   </thead>
+         <c:set var="priceSum" value="0" />
+         <c:forEach items="${cartPrd}" var="cartprd"><!-- 카트에 담긴 각 상품 -->
+            <tbody>
+            	<tr align="center">
+	                  <input type="hidden" name="prd_sum" value="${cartprd.prd_sum}" />
+	                  <input type="hidden" id="member_id" value="${member.member_id}"/>
+	               <td colspan = "2"><img src="${cartprd.prd_img}" width="75" height="75"><!-- 이미지 썸네일 -->
+	               ${cartprd.prd_name}</td><!-- 상품명 -->
+	               <td><fmt:formatNumber value="${cartprd.prd_price}" pattern="#,###"/></td><!-- 판매가 -->
+	               <td><fmt:formatNumber value="${cartprd.buy_quantity}" pattern="#,###"/></td><!-- 수량 -->
+	               <td><fmt:formatNumber value="${cartprd.prd_sum}" pattern="#,###"/></td><!-- 합계 -->
+	               <td>
+	                  <input type="button" class="btn" id="delCart" onClick="delCart('${cartprd.prd_id}', '${member.member_id}')" value="삭제" />
+	                  <input type="hidden" id="prd_id" value="${cartprd.prd_id}" />
+	               </td>
+               </tr>
+            </tbody>
+            <c:set var="priceSum" value="${priceSum + cartprd.prd_sum}" />
+         </c:forEach>
+         <tr align="center">
+            <td colspan="6">
+               <input type="button" class="btn" name="cartClear" id="cartClear" onclick="cartClear()" value="상품 비우기" />
+            </td>
+         </tr>
+      </table><br>
+      
+   <div class="paymentArea" align="center">
+      <p>결제</p>
+      <table class="cart3">
+         <tr>
+         <th></th><th></th>
+            <th align="right">총 합계</th>
+            <th colspan="3" align="left"><h2 id="prd_sum"><fmt:formatNumber value="${priceSum}" pattern="#,###" /></h2></th>
+         </tr>
    </table><br>
    <div class="paybtn">
-   		<input type="button" class="btn" id="payCart" onclick="payCart()" value="결제하기" />
-					<input type="hidden" name="hiddenbtn" id="hiddenbtn" value="cartpage" />
+         <input type="button" class="btn" id="payCart" onclick="payCart()" value="결제하기" />
+               <input type="hidden" name="hiddenbtn" id="hiddenbtn" value="cartpage" />
    </div></div>
                     
                     <br>
@@ -347,45 +345,41 @@
 <script>
 
 
-$(document).ready(function() {	
-	// 최상단 체크박스 클릭 시 모두 클릭됨
-	$("#checkAll").click(function() {	// 클릭
-		if ($("#checkAll").prop("checked")) {	// input tag name="chk" checked=true
-			$("input[name=chk]").prop("checked", true);
-		} else {
-			$("input[name=chk]").prop("checked", false);
-		}
-	})
-	
-	$("input[name=chk]").click(function() {
-		if ($("input[name=chk]").length == $("input[name=chk]:checkbox:checked").length) {
-			$("#checkAll").prop("checked", true);
-		} else {
-			$("#checkAll").prop("checked", false);
-		}
-	})
+$(document).ready(function() {   
+   // 최상단 체크박스 클릭 시 모두 클릭됨
+   $("#checkAll").click(function() {   // 클릭
+      if ($("#checkAll").prop("checked")) {   // input tag name="chk" checked=true
+         $("input[name=chk]").prop("checked", true);
+      } else {
+         $("input[name=chk]").prop("checked", false);
+      }
+   })
+   
+   $("input[name=chk]").click(function() {
+      if ($("input[name=chk]").length == $("input[name=chk]:checkbox:checked").length) {
+         $("#checkAll").prop("checked", true);
+      } else {
+         $("#checkAll").prop("checked", false);
+      }
+   })
 })
 
-	// 결제
-	function payCart() {
-		var member_id = $("#member_id").val();
-		var hiddenbtn = $("#hiddenbtn").val();
-		if ($("input[name=chk]:checkbox:checked").length == 0) {
-			swal("", "결제할 상품을 선택해주세요.", "warning");
-		} else {
-			$.ajax({
-				type : "POST",
-				url : "payment",
-				data : {
-					"member_id" : member_id,
-					"hiddenbtn" : hiddenbtn
-				}, success : function(data) {
-					console.log(data);
-					window.location.href="payment";
-				}
-			});
-		}
-	}
+   // 결제
+   function payCart() {
+      var member_id = $("#member_id").val();
+      var hiddenbtn = $("#hiddenbtn").val();
+         $.ajax({
+            type : "POST",
+            url : "payment",
+            data : {
+               "member_id" : member_id,
+               "hiddenbtn" : hiddenbtn
+            }, success : function(data) {
+               console.log(data);
+               window.location.href="payment";
+            }
+         });
+      }
     
     
         $(document).ready(function () {

@@ -46,7 +46,7 @@
             "myp": myp
         },
         success: function (data) {
-            window.location.href = "mypage?member_id=" + member_id + "&myp=" + myp;
+        	  window.location.href = 'productCart?member_id=${member.member_id}#li-for-panel-2';
         }
     });
 }
@@ -85,12 +85,21 @@
 	</div>
 </div>
 <br>
+
 <div class="login2">
 	<p>
-		<a onclick="mypBtn();"><img src="resources/images/menu.JPG" alt=""   border="0"  height="50px" style="float: right; padding-top: 8px; padding-right: 40px;"></a>
-		<a href="productCart?member_id=${member.member_id}"><img src="resources/images/jjim.JPG" alt="" onclick="clickBtn();" border="0"  height="50px" style="float: right; padding-top: 7px; padding-right: 10px;"></a>
+		<c:choose>
+			<c:when test="${member.member_id eq 'admin' || member.member_id == null}"><!-- 관리자로 로그인했을 때 -->
+				
+			</c:when>
+			<c:otherwise>
+				<a onclick="mypBtn();"><img src="resources/images/menu.JPG" alt=""   border="0"  height="50px" style="float: right; padding-top: 8px; padding-right: 40px; cursor : pointer" ></a>
+				<a href="productCart?member_id=${member.member_id}"><img src="resources/images/jjim.JPG" alt="" onclick="clickBtn();" border="0"  height="50px" style="float: right; padding-top: 7px; padding-right: 10px;"></a>
+			</c:otherwise>
+		</c:choose>
 	</p>
 </div>
+
 
 
 <div class="logo">
@@ -106,7 +115,7 @@
 			<li><a href="car_page"><b>렌트카 </a></li>
 			<li><a href="hotel_list2""><b>호텔 </a></li>
 			<li><a href="ticket_main"><b> 투어 | 입장권</a></li>
-			<li><a href=""><b> 골프</a></li>
+			<li><a href="golf"><b> 골프 </a></li>
 			<li><a href="notice"><b> 미래LIVE </a></li>
 			<li><a href="FAQ"><b> FAQ</a></li>
 		</ul>

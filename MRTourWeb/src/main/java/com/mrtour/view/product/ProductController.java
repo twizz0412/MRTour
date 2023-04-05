@@ -35,6 +35,11 @@ public class ProductController {
 	// 호텔 상세페이지
 	@RequestMapping("/hotel_page")
 	public String hotel_page() {return "products/hotel_page";}
+
+	// 골프페이지
+	@RequestMapping("/golf")
+	public String golf() {return "products/golf";}
+	
 	
 	// 티켓 상세페이지
 	/*@RequestMapping("/ticket_page")
