@@ -40,7 +40,16 @@
 			(ORDER_NO.NEXTVAL, #{member_id}, #{prd_id}, #{buy_quantity}, #{member_phone}, #{credit_number})
 		]]>
 	</insert>
-	
+
+	<insert id="HotelPayment">
+		<![CDATA[
+			INSERT INTO PAYMENT
+			(ORDER_NO, MEMBER_ID, PRD_ID, BUY_QUANTITY, MEMBER_PHONE, CREDIT_NUMBER, BUY_QUANTITY)
+			VALUES
+			(ORDER_NO.NEXTVAL, #{member_id}, #{prd_id}, #{buy_quantity}, #{member_phone}, #{credit_number}, #{buy_quantity})
+		]]>
+	</insert>
+			
 	<delete id="deleteCartPayment">
 		<![CDATA[
 			DELETE CART WHERE MEMBER_ID=#{member_id} AND PRD_ID=#{prd_id}

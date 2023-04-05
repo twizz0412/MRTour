@@ -14,6 +14,9 @@ public interface PaymentService {
 	
 	// 렌트카결제
 	void CarPayment(PaymentVO vo) ;
+	
+	// 호텔결제
+	void HotelPayment(PaymentVO vo) ;
 
 	// 결제 후 장바구니 비우기
 	void deleteCartPayment(PaymentVO vo);

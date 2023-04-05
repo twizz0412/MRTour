@@ -36,11 +36,6 @@ public class ProductController {
 	@RequestMapping("/hotel_page")
 	public String hotel_page() {return "products/hotel_page";}
 	
-	
-	// 호텔 결제페이지
-	@RequestMapping("/hotel_checkout")
-	public String hotel_checkout() {return "products/hotel_checkout";}
-		
 	// 티켓 상세페이지
 	/*@RequestMapping("/ticket_page")
 	public String ticket_page() {return "products/ticket_page";}*/
@@ -52,13 +47,20 @@ public class ProductController {
 		return "products/ticket_page";
 	}
 	
-	// 제품 상세페이지
+	// 자동차 결제페이지
 	@RequestMapping("/car_checkout")
 	public String CarproductPage(ProductInfoVO vo, Model model) {
 		model.addAttribute("product_info", productService.productDetail(vo));
 		return "products/car_checkout";
 	}
-	
+
+	// 호텔 결제페이지
+	@RequestMapping("/hotel_checkout")
+	public String HotelproductPage(ProductInfoVO vo, Model model) {
+		model.addAttribute("map", productService.productDetail(vo));
+		return "products/hotel_checkout";
+		
+	}	
 	// 카테고리 품목 출력(상품 리스트 페이지)
 	/*@RequestMapping("/category")
 	public String getfbMirrorList(@RequestParam(defaultValue = "1") int curPage, ProductInfoVO vo, Model model) {
@@ -243,6 +245,40 @@ public class ProductController {
 
 			return "products/hotel_list";
 		}
+			//호텔(Hotel)화면
+			// 품목 리스트 + 페이징 + 검색				
+			@RequestMapping(value = "/hotel_list2", method = RequestMethod.GET)
+			public String listHotel2Page(Model model, HttpSession session, ProductInfoVO vo,
+					@RequestParam(defaultValue = "") String keyword,
+					@RequestParam(name = "city_no", required = false, defaultValue = "전체") String city_no,
+					@RequestParam(name = "prd_opt", required = false, defaultValue = "전체") String prd_opt,
+					@RequestParam(defaultValue = "1") int curPage)
+				throws Exception {
+				
+				// 상품 개수 계산
+				int count = productService.countSearchCar(city_no, prd_opt);
+
+				// 페이지 관련 설정
+				Pager pager = new Pager(count, curPage);
+				int start = pager.getPageBegin();
+				int end = pager.getPageEnd();
+
+				session.setAttribute("city_no", city_no); // 지역명 검색
+				session.setAttribute("prd_opt", prd_opt); // 상품옵션으로 검색
+				session.setAttribute("curPage", curPage);
+			
+				List<ProductInfoVO> list = productService.listSearchCar(city_no, prd_opt, start, end); // 게시글 목록
+				HashMap<String, Object> map = new HashMap<String, Object>();
+				map.put("list", list); // map에 자료 저장
+				map.put("count", count);
+				map.put("pager", pager); // 페이지 네버게이션을 위한 변수
+				map.put("city_no", city_no);
+				map.put("prd_opt", prd_opt);			
+				model.addAttribute("map", map);
+
+				return "products/hotel_list2";
+			}
+			
 		
 		 // 티켓
         @RequestMapping(value = "/ticket_main", method = RequestMethod.GET)
