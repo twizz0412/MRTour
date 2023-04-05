@@ -92,6 +92,18 @@ public class ProductCartController {
 			return "member/payment";
 		}
 		
+		// 호텔 결제페이지
+		@RequestMapping("/hotel_payment")
+		public String hotelpayment(PaymentVO vo, HttpSession session, Model model) {
+		 // 장바구니 버튼 클릭 시
+			List<PaymentVO> list = paymentService.getPaymentProduct(vo);
+			HashMap<String, Object> map = new HashMap<String, Object>();
+			map.put("list", list);
+			map.put("buy_quantity", vo.getBuy_quantity());
+			session.setAttribute("map", map);
+			return "products/hotel_checkout";
+		}
+		
 		// 결제목록 갱신
 		@RequestMapping(value="/resetPayList")
 		public String insertPayment(String[] prd_list, PaymentVO vo) {
@@ -109,6 +121,16 @@ public class ProductCartController {
 		// 자동차 결제
 		@RequestMapping(value="/CarPayment")
 		public String CarPayment(String prd_id, String prd_opt, Integer buy_quantity, PaymentVO vo) {
+				vo.setPrd_id(prd_id);
+				vo.setPrd_opt(prd_opt);
+				vo.setBuy_quantity(buy_quantity);
+				paymentService.CarPayment(vo);
+			return "main";
+		}
+		
+		// 호텔 결제
+		@RequestMapping(value="/HotelPayment")
+		public String Payment(String prd_id, String prd_opt, Integer buy_quantity, PaymentVO vo) {
 				vo.setPrd_id(prd_id);
 				vo.setPrd_opt(prd_opt);
 				vo.setBuy_quantity(buy_quantity);

@@ -41,6 +41,11 @@ public class PaymentDAO {
 		mybatis.insert("PaymentDAO.CarPayment", vo);
 	}	
 	
+	// 호텔결제
+	public void HotelPayment(PaymentVO vo) {
+		mybatis.insert("PaymentDAO.HotelPayment", vo);
+	}	
+		
 	// 결제 후 장바구니 비우기
 	public void deleteCartPayment(PaymentVO vo) {
 		mybatis.delete("PaymentDAO.deleteCartPayment", vo);

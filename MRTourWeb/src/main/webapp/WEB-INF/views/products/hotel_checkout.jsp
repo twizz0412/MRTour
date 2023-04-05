@@ -8,11 +8,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="resources/css/hotel_checkout.css" />
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" type="text/css" href="resources/css/hotel_checkout.css" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
 	<script src = "resources/js/hotel_checkout.js"></script>
-	
 <title>호텔 결제 페이지</title>
 
 
@@ -20,6 +22,9 @@
 
 <body class="body" data-action="index" data-controller-path="mrt3/payment" data-controller="payment"
 data-sign-in data-turbolinks="false" style>
+
+	<!-- header -->
+	<%@ include file="../include/header.jsp"%>
 
 <div id="Mrt3Payment-react-component-a92f35c0-6ea8-48dc-8477-7eb3bb3206cc">
 	<main class="orderForm--Container">
@@ -41,9 +46,10 @@ data-sign-in data-turbolinks="false" style>
 				<div class="sectionContainer--Body">
 					<div class="productInfoSummary--TitleWrapper">
 						<div class="productInfoSummary--ImageWrapper">
-							<img src="https://i.travelapi.com/lodging/38000000/37630000/37622900/37622802/3e004903_z.jpg" 
+							<img src="${map.prd_img}" 
 								 alt="상품 이미지" class="productInfoSummary--Image">
 						</div>
+						<input type = "hidden" id = "prd_id" value="${map.prd_id}" >
 						<div class="productInfoSummary--TextWrapper">
 							<h3 class="productInfoSummary--Title">${map.prd_name}</h3>
 							<div class="productInfoSummary--Schedule">
@@ -60,6 +66,7 @@ data-sign-in data-turbolinks="false" style>
 						<li class="productInfoOptions--Option">
 							<div class="productInfoOptions--OptionText">
 								<span class="productInfoOptions--OptionName">${map.prd_name},  ${map.prd_opt}</span></div>
+								<input type = "hidden" id = "prd_opt" value="${map.prd_opt}" >	
 							<div class="productInfoOptions--OptionPrice">${map.prd_price}원</div>
 						</li>
 					</ul>
@@ -68,6 +75,7 @@ data-sign-in data-turbolinks="false" style>
 						<div class="productInfoPrice--TotalPriceWrapper">
 							<div class="productInfoPrice--TotalPriceText">총 상품 금액</div>
 							<strong class="productInfoPrice--TotalPriceNumber">${map.prd_price}원</strong>
+							<input type = "hidden" id = "buy_quantity" value="${map.buy_quantity}" >	
 						</div>
 					</div>
 				</div>
@@ -91,11 +99,17 @@ data-sign-in data-turbolinks="false" style>
 						</div>
 						<div class="infoField--Field">
 							<div class="infoField--Title">이메일 주소</div>
-							<div class="infoField--Content">${member.member_email}</div>
+							<div class="infoField--Content">
+								<input formcontrolname="member_email" type="text" id = "member_email" value="${member.member_email}" 
+									class="c-input ng-untouched ng-pristine ng-invalid">
+							</div>
 						</div>
 						<div class="infoField--Field">
 							<div class="infoField--Title">휴대전화 번호</div>
-							<div class="infoField--NeededContent">${member.member_phone}</div>
+							<div class="infoField--NeededContent">
+								<input formcontrolname="member_phone" type="text" id = "member_phone" value="${member.member_phone}" >
+							</div>
+
 						</div>
 					</div>
 
@@ -173,21 +187,22 @@ data-sign-in data-turbolinks="false" style>
 						<h2 class="sectionContainerHeader--Title">결제 방법</h2>
 					</div>
 				</div>
-			<ul class="payment">
-
-					<li>
-						<span class="color-main2"><input type = "radio" name = "payway" id = "cash" value = "cash">무통장입금</span>
-						<br>
-						<span class="color-main2"><input type = "radio" name = "payway" id = "card" value = "card">카드결제</span>
-						<div id="creditPay" style = "display : none">
-							카드번호: 
-							<input type="text" id="credit1" maxlength="4" size="4" onkeypress="onlyNumber()" style = "background : rgb(234, 234, 234)"/> - 
-							<input type="password" id="credit2" maxlength="4" size="4" onkeypress="onlyNumber()" style = "background : rgb(234, 234, 234)"/> - 
-							<input type="text" id="credit3" maxlength="4" size="4" onkeypress="onlyNumber()" style = "background : rgb(234, 234, 234)"/> - 
-							<input type="password" id="credit4" maxlength="4" size="4" onkeypress="onlyNumber()" style = "background : rgb(234, 234, 234)"/>
-						</div>
-					</li>
-			</ul>
+				<ul class="payment">
+	
+						<li>
+							<span class="color-main2"><input type = "radio" name = "payway" id = "cash" value = "cash">무통장입금</span>
+							<br>
+							<span class="color-main2"><input type = "radio" name = "payway" id = "card" value = "card">카드결제</span>
+							<br>
+						
+							<div id="creditPay" style = "display:none">
+								<input type="text" id="credit1" maxlength="4" size="4" onkeypress="onlyNumber()" style = "background : rgb(234, 234, 234)"/> - 
+								<input type="password" id="credit2" maxlength="4" size="4" onkeypress="onlyNumber()" style = "background : rgb(234, 234, 234)"/> - 
+								<input type="text" id="credit3" maxlength="4" size="4" onkeypress="onlyNumber()" style = "background : rgb(234, 234, 234)"/> - 
+								<input type="password" id="credit4" maxlength="4" size="4" onkeypress="onlyNumber()" style = "background : rgb(234, 234, 234)"/>
+							</div>
+						</li>
+				</ul>
 			</div>
 			
 			<!-- 약관 안내 섹션 -->
@@ -251,7 +266,7 @@ data-sign-in data-turbolinks="false" style>
 			<!-- 결제하기 버튼 -->
 			<div class="purchaseButton--Wrapper">
 				<span role="button" class="purchaseButton--disabled">
-					<button type="button" class="mrt-button purchaseBtn" disabled="">
+					<button type="button" class="mrt-button purchaseBtn" onclick="termChk()">
 						<span class="buttonSpan">${map.prd_price}원 결제하기</span>
 					</button>
 				</span>

@@ -13,6 +13,16 @@ public class ProductInfoVO {
 	private MultipartFile uploadFile; // 파일 업로드
 	private String prd_exp; //상품 설명
 	
+	private int buy_quantity;
+	
+	public int getBuy_quantity() {
+		return buy_quantity;
+	}
+
+	public void setBuy_quantity(int buy_quantity) {
+		this.buy_quantity = buy_quantity;
+	}
+
 	private String keyword ="";
 
 	@Override 
@@ -23,7 +33,8 @@ public class ProductInfoVO {
 						", PRD_OPT = " + prd_opt + 
 						", CATE_ID = " + cate_id +
 						", PRD_PRICE = " + prd_price + 
-						", PRD_IMG = " + prd_img + " ]";
+						", PRD_IMG = " + prd_img + 
+						", BUY_QUANTITY = " + buy_quantity + " ]";
 	}
 
 	public String getPrd_id() {

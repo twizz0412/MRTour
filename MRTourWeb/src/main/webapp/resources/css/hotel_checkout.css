@@ -180,11 +180,11 @@ main {
 
 form {
     display: block;
-    margin-top: 0em;
+    margin-top: 10em;
 }
 
-@media (min-width: 768px)
-.orderForm--Title { /* 타이틀(예약하기) */
+@media (min-width: 768px) /* 타이틀(예약하기) */
+.orderForm--Title {
     margin: auto 0px 32px;
     font-weight: bold;
     font-size: 28px;
@@ -441,7 +441,7 @@ ul, li {
     margin: 0;
     padding: 0;
     list-style: none;
-    font-size: 0;
+    font-size: 15px;
 }
 
 li {
@@ -693,10 +693,6 @@ p, dt, dd {
     color: var(--gray-700);
     letter-spacing: -0.2px;
     margin-bottom: 8px;
-}
-
-input:not([type="checkbox"]):not([type="radio"]), button, textarea, select {
-    appearance: none;
 }
 
 .text--TextInput {
@@ -1111,9 +1107,18 @@ button[disabled], html input[disabled] {
     padding: 0px 32px;
     font-size: 16px;
     color: white;
-    background-color: var(--blue-400);
     width: 100%;
 }
 
 
+.purchaseBtn {
+    color: #000;
+    background: #bbddff;
+    border-color: transparent;
+}
 
+.purchaseBtn:hover {
+    color: #000;
+    background: #0080ff;
+    border-color: transparent;
+}
