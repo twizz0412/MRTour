@@ -106,22 +106,23 @@
 								<c:choose>
 									<%-- 검색결과가 있을 때 --%>
 									<c:when test="${row.cate_id eq 'H002' && not empty row}">
-										<a href="#" class="product">
+										<a href="hotel_page" class="product">
 											<div class="pro1">
 													<li>
 														<div class="pro_img" style="float: left;">
-															<a href="#" class="product"> <!-- 이미지는 DB에 저장된 썸네일로 사용 -->
+															<a href="hotel_page" class="product"> <!-- 이미지는 DB에 저장된 썸네일로 사용 -->
 																<img src="${row.prd_img}" width="275" height="200px">
 														</div>
-														<div class="pro">${row.prd_name}<p>
+														<div class="pro">${row.prd_name}
+															<p>
 																<br> <span>${row.prd_opt}</span>
 															<p>
 																<br> <span>${row.prd_price} ~ </span>
 														</div>
 										</a>
 										</li>
+						</div>
 					</div>
-				</div>
 				</c:when>
 
 				<%-- 검색결과가 없을 떄 --%>

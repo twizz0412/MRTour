@@ -19,12 +19,12 @@
 	<title>렌트카 결제</title>
 </head>
 <body>
-
-	<!-- 상세 페이지에서 선택 클릭 시 로그인 화면으로 넘어가게 해야 함 -->
-	<div id="wrap">
 	<!-- header -->
 	<%@ include file="../include/header.jsp"%>
 	
+	<!-- 상세 페이지에서 선택 클릭 시 로그인 화면으로 넘어가게 해야 함 -->
+	<div id="wrap">
+
 	
 	<div id="container">
 		<div id	="contents">
@@ -79,8 +79,7 @@
 							
 							<ul class="option-list">
 								<li class="option quantity">
-									<span class="option date">이용수량</span>
-									<span><input type = "number" id = "buy_quantity" min="1" maxlength="2" max="99" value="1" oninput="mxNum(this)" style = "background : rgb(234, 234, 234)"></span>
+									<input type = "hidden" id = "buy_quantity" value="1" >
 								</li>
 							<script>
 								function mxNum(object) {
@@ -124,6 +123,22 @@
 				</div>
 
 				<!-- 예약자 정보 입력 섹션 -->
+				<c:choose>
+				<c:when test = "${member.member_id == 'admin'}">
+					<div class="contents-item">
+						<h2 class="heading-title1 line-bottom">예약자 정보 입력</h2>
+						관리자는 구매할 수 없습니다.
+					</div>
+				</c:when>
+
+				<c:when test="${member.member_id == null}">
+					<div class="contents-item">
+						<h2 class="heading-title1 line-bottom">예약자 정보 입력</h2>
+						회원만 구매가능한 상품입니다.
+					</div>
+				</c:when>
+
+				<c:otherwise>
 				<div class="contents-item">
 					<h2 class="heading-title1 line-bottom">예약자 정보 입력</h2>
 					<input type="hidden" value="${member.member_id}" id = "member_id">
@@ -162,6 +177,8 @@
 						
 					</div>
 				</div>
+				</c:otherwise>
+				</c:choose>
 
 
 <!-- 최종 결제 정보 섹션 -->
@@ -170,12 +187,6 @@
 				<h2 class="heading-title1 line-bottom">최종 결제 정보</h2>
 				<!-- 총 결제 금액 섹션 -->
 				<ul class="payment">
-				
-					<li>
-						<span class="color-main2">2시간 당 결제금액</span>
-						<strong class="color-point2"> ${product_info.prd_price} <span></span>
-						<span class="font-md color-sub5 mr5">원</span></strong>
-					</li>
 					<li>
 						<span class="color-main2">총 결제금액 </span>
 						<strong class="color-point2"> ${product_info.prd_price}  <span></span>

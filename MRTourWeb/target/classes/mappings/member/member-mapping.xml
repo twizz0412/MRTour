@@ -96,7 +96,7 @@
 		SELECT * FROM(
 			SELECT ROWNUM AS RN, A.* FROM (
 				SELECT * FROM (
-					SELECT PRD_ID, PAYMENT_ID, PAYMENT_DATE, PRD_NAME,
+					SELECT PRD_ID, ORDER_NO, PAYMENT_DATE, PRD_NAME,
 					(PRD_PRICE * BUY_QUANTITY) AS PRD_SUM 
 					FROM PAYMENT NATURAL JOIN PRODUCT_INFO WHERE MEMBER_ID = #{member_id}
 					<include refid="myp"></include>
@@ -107,7 +107,7 @@
 	
 	<!-- 주문 수 -->
 	<select id="orderCount" resultType="java.lang.Integer">
-		SELECT COUNT(*) FROM PRODUCT_PAYMENT WHERE MEMBER_ID = #{member_id}
+		SELECT COUNT(*) FROM PAYMENT WHERE MEMBER_ID = #{member_id}
 	</select>
 	
 	<select id="forgotPWChkMember" resultType="java.lang.Integer">

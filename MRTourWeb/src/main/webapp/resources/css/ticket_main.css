@@ -2,6 +2,7 @@
 
 html,
 body {
+      overflow-x: hidden;
     background-color: #ffffff;
     font-size: 18px;
     color: #333;
@@ -19,108 +20,11 @@ input {
     padding: 0;
     box-sizing: border-box;
 }
-
 /* //기본 설정 */
-
-/* header */
-header .logo {
-    text-align: center;
-    padding-top: 30px;
-    margin-left: 150px;
-    margin-bottom: 10px;
+#wrapper {
+   min-height: 100%;
+   position: relative;
 }
-
-header .login {
-    padding: 20px;
-    float: right;
-    font-family: 'Nanum Gothic', sans-serif;
-    word-spacing: 5px;
-    /* 글자 사이의 간격*/
-    font-size: 13px;
-}
-
-header .login a {
-    /*하이퍼링크 된곳 css 효과 */
-    text-decoration: none;
-    /*원래 하이퍼링크가 걸리면 밑줄
-    선이 생긴다. 이 밑줄선을 제거하는 효과 */
-    color: #333;
-    /*하이퍼링크 된곳 글자색 지정*/
-}
-
-header .login a:hover {
-    /* 하이퍼링크 된곳 마우스 오버시 css효과*/
-    color: rgb(86, 221, 255);
-}
-
-header .search {
-    text-align: center;
-    width: 200px;
-    margin-left: 70px;
-}
-
-header .search>input {
-    width: 500px;
-    border: 1px solid #000000;
-    border-radius: 15px;
-    padding: 10px 12px;
-    font-size: 14px;
-    margin-left: 615px;
-}
-
-header .search a {
-    position: absolute;
-    top: 97px;
-    left: 1150px;
-    margin-top: 0px;
-}
-
-/* nav */
-nav {
-    position: absolute;
-    margin: auto;
-    left: 33%;
-}
-
-nav ul {
-    list-style: none;
-    /* 목록 앞 점 없앰 */
-    font-family: 'Nanum Gothic', sans-serif;
-    font-size: 25px;
-    /*글자크기*/
-    font-weight: 100;
-    /*글자를 굵게 */
-    color: #333;
-    /*글자색*/
-}
-
-nav li {
-    float: left;
-    /* 목록 수직정렬을 수평정렬로 바꿈*/
-    margin: 0px 5px;
-    /*상하 바깥여백을 0픽셀,좌우 바깥여백
-    을 5픽셀 */
-}
-
-nav a {
-    /* 메뉴 하이퍼링크 된곳 css 효과 */
-    display: block;
-    height: 20px;
-    text-decoration: none;
-    /*밑줄선 제거*/
-    color: #333;
-    /*글자색*/
-}
-
-nav a:hover {
-    /*하이퍼링크 된곳 마우스 오버시 css 효과*/
-    color: rgb(86, 221, 255);
-}
-
-/* //nav */
-
-
-
 
 
 #wrap {
@@ -128,109 +32,118 @@ nav a:hover {
 }
 
 #container {
-    position: relative;
-    top: 100px;
+   position: relative;
+   margin-top: 80px;
+
 }
 
 #container>#contents {
-    position: relative;
+   position: relative;
+  
 }
 
-
 /* 상단 검색창 */
-.search-form-top {
-    background: #fff;
+
+
+.app-car-search-form {
+   width: 100%;
+   height: 500px;
+}
+
+.sc5 {
+   width: 900px;
+   height: 100px;
+   border-radius: 10px;
 }
 
 .search-form-top .inner {
-    position: relative;
-    width: 1200px;
-    margin: 0 auto;
+   border: solid 1px #ffffff;
+   border-radius: 30px;
+   background-color: #fff;
+   position: relative;
+   width: 500px;
+   margin: 0 auto;
+   opacity: 0.8;
+   margin-top: 2%;
+   margin-left: 57%;
+   padding-left: 8px;
 }
 
 .search-form-top .search-area-form {
-    /* 검색창 전체 */
-    display: flex;
-    background: #fff;
+   /* 검색창 전체 */
+   display: flex;
 }
-
 
 .search-form-top .search-area-form .form-column {
-    /* 검색창 항목별 구역 */
-    display: flex;
-    justify-content: center;
-    flex: 1 1;
-    flex-direction: column;
-    position: relative;
-    padding: 0 30px;
-    border-left: 1px solid #e0e0e0;
+   /* 검색창 항목별 구역 */
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+   position: relative;
+   min-width: 300px;
+   padding-left: 3%;
 }
 
-.search-form-top.rentalcar .search-area-form.same-area .form-column:first-child {
-    /* 첫 번째 항목(인수 도시) */
-    flex: 0 0 530px;
-    max-width: 530px;
-}
-
-.search-form-top .search-area-form .btn-form-search,
-.search-form-top .search-area-form .form-column {
-    height: 90px;
+.search-form-top .search-area-form .btn-form-search, .search-form-top .search-area-form .form-column
+   {
+   height: 90px;
 }
 
 .search-form-top .search-area-form .form-column .title {
-    /* 검색창 항목별 제목 */
-    margin-bottom: 15px;
-    color: #757575;
+   /* 검색창 항목별 제목 */
+   margin-bottom: 10px;
+   color: #000000;
+   font-size: 15px;
+   font-family: 'Nanum Gothic', sans-serif;
 }
 
 .search-form-top .search-area-form .form-column .text {
-    /* 내용 */
-    position: relative;
+   /* 내용 */
+   position: relative;
 }
 
-
 .search-form-top .search-area-form .form-column .text strong {
-    font-size: 16px;
-    font-weight: 400;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-    display: block;
+   font-size: 16px;
+   font-weight: 400;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   overflow: hidden;
+   display: block;
 }
 
 select {
-    width: 100%;
-    padding: 0.5em 0.5em;
-    border: 1px solid #999;
-    font-family: inherit;
-    border-radius: 0px;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
+   width: 100%;
+   padding: 0.5em 0.5em;
+   border: 1px solid #999;
+   font-family: inherit;
+   border-radius: 0px;
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none;
 }
 
-
 .search-form-top .search-area-form .btn-form-search {
-    /* 검색창 오른쪽 검색변경 버튼 */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: Noto_m;
-    font-weight: 400;
-    font-size: 20px;
-    width: 200px;
-    background: #a5dbff;
-    border-radius: 10px;
-    color: #ffffff;
-    height: 50px;
-    margin-top: 35px;
+   /* 검색창 오른쪽 검색변경 버튼 */
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-family: 'Nanum Gothic', sans-serif;
+   font-weight: 400;
+   font-size: 17px;
+   width: 150px;
+   height: 50px;
+   margin-top: 24px;
+   margin-left: 20px;
+   background: #5dbeff;
+   border-radius: 10px;
+   color: #ffffff;
 }
 
 a {
-    cursor: pointer;
-    color: inherit;
-    text-decoration: none;
-    -webkit-tap-highlight-color: transparent;
+   cursor: pointer;
+   color: inherit;
+   text-decoration: none;
+   -webkit-tap-highlight-color: transparent;
 }
 
 
@@ -249,16 +162,38 @@ a {
 }
 
 
-
-ul {
-    display: block;
-    list-style-type: disc;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    padding-inline-start: 40px;
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 0;
 }
+
+.breadcrumbs .text-article .text {
+    font-size: 32px;
+    font-weight: 400;
+    letter-spacing: -2px;
+}
+
+strong {
+    /* "제주" 강조 */
+    font-weight: 500 !important;
+    /* !important : 우선 적용 */
+    font-family: Noto_m !important;
+}
+
+.breadcrumbs .text-article .text+.sub-text {
+    /* 이용일자 표시 부분 */
+    margin-top: 15px;
+}
+
+.breadcrumbs .text-article .sub-text {
+    font-size: 16px;
+    font-weight: 400;
+    color: #999;
+}
+
+
 
 
 /* 상품 위 검색 결과 섹션 */
@@ -424,4 +359,73 @@ ul {
     position: absolute;
     top: 400px;
     right: 19%;
+}
+
+
+
+
+
+
+/* footer */
+
+#footer .ft {
+   position: relative;
+   border-top: 1px solid #d1cece;
+   color: #808080;
+   height: 200px;
+   display : block;
+   margin-top: 100px;
+}
+
+#footer ul {
+   list-style: none;
+   position: relative;
+   padding-left: 200px;
+   padding-top: 15px;
+   padding-bottom: 10px;
+}
+
+#footer li {
+   font-size: 13px;
+   float: left;
+   padding-left: 10px;
+   padding-right: 8px;
+   padding-top: 1px;
+}
+
+#footer .ft ul li::before {
+   padding-top: 1px;
+   position: absolute;
+   content: "";
+   margin-left: -9px;
+   width: 2px;
+   height: 15px;
+   background-color: #cacaca;
+   margin-top: 1px;
+}
+
+#footer ul li:first-child::before {
+   content: none
+}
+
+#footer .fott ul {
+   list-style: none;
+   position: relative;
+   padding-left: 200px;
+   padding-top: 15px;
+   padding-bottom: 15px;
+}
+
+#footer .fott li {
+   font-size: 13px;
+   float: left;
+   padding-left: 10px;
+   padding-right: 8px;
+   padding-top: 1px;
+   font-weight: bold;
+   color: #333;
+}
+
+#footer .fott ul li::before {
+   content: none
 }

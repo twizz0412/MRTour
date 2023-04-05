@@ -11,6 +11,7 @@
  */
 main {
     position: relative;
+        padding : 100px;
 }
 
 .hidden {
@@ -62,6 +63,7 @@ element.style {
 :-webkit-any(article, aside, nav, section) h1 {
     margin-block-start: 0.83em;
     margin-block-end: 0.83em;
+    
 }
 
 h1 {
@@ -71,15 +73,16 @@ h1 {
 }
 
 header {
-	display: block;
+   display: block;
 }
 
 .OfferHeader_container { /* Header 전체 */
 margin-bottom: 24px;
+
 }
 
 .OfferHeader_container .img {
-	align: center;
+   align: center;
 }
 
 .OfferHeaderTitle_container{ /* Header 제목 부분 */
@@ -136,6 +139,7 @@ b, strong {
 @media (min-width: 768px) /* article */
 .Offer_article {
     width: 700px;
+    
 }
 
 
@@ -145,7 +149,7 @@ img {
 }
 
 img {
-				border: 0;
+            border: 0;
     border-width: 0;
     vertical-align: middle;
     text-align: center;
@@ -338,7 +342,7 @@ img {
 
 
 OfferOption_optionWrapper > button {
-	background-color: #51abf3; !important;
+   background-color: #51abf3; !important;
     border: 1px solid #51abf3; !important;
     color: #fff; !important;
 }
@@ -452,7 +456,7 @@ html {
 html, body {
     background: #fff;
     letter-spacing: -.2px;
-    padding : 30px;
+
 }
 
 
@@ -472,4 +476,8 @@ html, body {
 }
 
 
-
+.w-btn-blue {
+    background-color: #2ca0ff;
+    color: #ffffff;
+    
+}

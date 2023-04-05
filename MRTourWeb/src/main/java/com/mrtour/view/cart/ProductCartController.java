@@ -73,7 +73,7 @@ public class ProductCartController {
 		@RequestMapping(value="/payment", method=RequestMethod.POST)
 		public String payment(@RequestParam(value="hiddenbtn") String hidden, PaymentVO vo, HttpSession session, Model model) {
 			System.out.println(hidden);
-			if (hidden.equals("prdpage")) { // 장바구니 버튼 클릭 시
+			if (hidden.equals("prdpage")) { 
 				List<PaymentVO> list = paymentService.getPaymentProduct(vo);
 				HashMap<String, Object> map = new HashMap<String, Object>();
 				map.put("list", list);
@@ -95,10 +95,9 @@ public class ProductCartController {
 		// 결제목록 갱신
 		@RequestMapping(value="/resetPayList")
 		public String insertPayment(String[] prd_list, PaymentVO vo) {
-			for(int i = 0; i < prd_list.length; i += 3) {
+			for(int i = 0; i < prd_list.length; i += 2) {
 				vo.setPrd_id(prd_list[i]);
-				vo.setPrd_opt(prd_list[i+1]);
-				vo.setBuy_quantity(Integer.parseInt(prd_list[i+2]));
+				vo.setBuy_quantity(Integer.parseInt(prd_list[i+1]));
 				System.out.println(vo.toString());
 				paymentService.insertPayment(vo);
 				paymentService.deleteCartPayment(vo);

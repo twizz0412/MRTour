@@ -54,7 +54,7 @@ public class MemberController {
 		// 주문 테이블 갯수 계산
 		int count = memberService.getCountOrder(vo);
 
-		session.setAttribute("myp", myp);
+		session.setAttribute("myp", myp); // 주문내역 페이지 번호(디폴트 1)
 		session.setAttribute("member_id", vo.getMember_id());
 
 		// 페이지 관련 설정
@@ -67,8 +67,10 @@ public class MemberController {
 		HashMap<String, Object> map = new HashMap<String, Object>();
 		map.put("mypL", list); // map에 자료 저장
 		map.put("count", count);
-		map.put("pager", pager); // 페이지 네버게이션을 위한 변수
+		map.put("pager", pager); // 페이지 내비게이션을 위한 변수
 		session.setAttribute("map", map);
+		
+		
 		return "member/mypage";
 	}
 
@@ -85,13 +87,13 @@ public class MemberController {
 		HashMap<String, Object> map = new HashMap<String, Object>();
 		map.put("mypL", list); // map에 자료 저장
 		map.put("count", count);
-		map.put("pager", pager); // 페이지 네버게이션을 위한 변수
+		map.put("pager", pager); // 페이지 내비게이션을 위한 변수
 		session.setAttribute("map", map);
 		return "member/mypage";
 	}
 
 	
-	// 마이페이지-비밀번호 view
+	/*// 마이페이지-비밀번호 view
 	@RequestMapping(value = "/mypage2", method = RequestMethod.GET)
 	public String mypageView2(MemberVO vo) {
 		return "member/mypage2";
@@ -102,7 +104,7 @@ public class MemberController {
 	public String mypage2(MemberVO vo) {
 		memberService.login(vo);
 		return "member/mypage3";
-	}
+	}*/
 
 	// 마이페이지-회원정보수정 view
 	@RequestMapping(value = "/mypage3", method = RequestMethod.GET)
@@ -117,12 +119,12 @@ public class MemberController {
 		return "member/mypage";
 	}
 
-	// 마이페이지-완료 view
+	/*// 마이페이지-완료 view
 	@RequestMapping("/mypage4")
 	public String mypage4(MemberVO vo) {
 		return "member/mypage4";
 	}
-
+*/
 	// 로그아웃
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public String logout(HttpSession session) {

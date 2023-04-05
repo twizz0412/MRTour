@@ -17,19 +17,19 @@
 </head>
 <body>
 <script>
-			// 구매수량
-			$("#buy_quantity").keyup(function(e){
-				var regNumber = /^([0-9]{2})$/;
-				var str = $(this).val();
-				if(!regNumber.test(str)) {
-					var res = str.substring(0, str.length-1);
-					$(this).val(res);
-				}
-			});
-		</script>
+         // 구매수량
+         $("#buy_quantity").keyup(function(e){
+            var regNumber = /^([0-9]{2})$/;
+            var str = $(this).val();
+            if(!regNumber.test(str)) {
+               var res = str.substring(0, str.length-1);
+               $(this).val(res);
+            }
+         });
+      </script>
 
-	<!-- header -->
-	<%@ include file="../include/header.jsp"%>
+   <!-- header -->
+   <%@ include file="../include/header.jsp"%>
 
 <main class="offer-detail">
 
@@ -49,7 +49,7 @@
 <article class="Offer_article">
 <!-- article (header) -->
 <header class="OfferHeader_container">
-<img name="prd_img" id="prd_img" src="${product.prd_img}">
+<img name="prd_img" id="prd_img" src="${product.prd_img}" >
 <h1 class="OfferHeaderTitle_container" name="prd_name" id="prd_name">${product.prd_name}</h1>
 </header>
 
@@ -99,20 +99,22 @@
 <span class="OfferOptionItemPrice_unit">수량선택</span>
 <input type="number" id="buy_quantity" min="1" maxlength="2" max="99" value="1" oninput="mxNum(this)" />
 <span class="OfferOptionItemPrice_symbol">매</span>
-					<script>
-						function mxNum(object) {
-							if (object.value.length > object.maxLength) {
-								object.value = object.value.slice(0, object.maxLength)
-							}
-						}
-					</script><br><br>
+               <script>
+                  function mxNum(object) {
+                     if (object.value.length > object.maxLength) {
+                        object.value = object.value.slice(0, object.maxLength)
+                     }
+                  }
+               </script><br><br>
 <input type="hidden" name="prd_img" id="prd_img" value="${product.prd_img}" />
 <input type="hidden" name="member_id" id="member_id" value="${member.member_id}" />
 <input type="hidden" name="prd_id" id="prd_id" value="${product.prd_id}" />
 
-<input type="button" name="buy" id="buy" onclick="buyProduct()" value="구매하기" />&nbsp;&nbsp;&nbsp;
-<input type="button" name="cart" id="cart" onclick="insertCart()" value="장바구니" />&nbsp;&nbsp;&nbsp;
-<input type="button" name="cart" id="cart" onclick="location.href='productCart?member_id=${member.member_id}'" value="내 장바구니 보기" />
+
+<div class="btn1">
+<input type="button" button class="w-btn w-btn-blue"  name="buy" id="buy" onclick="buyProduct()" value="구매하기" />&nbsp;&nbsp;&nbsp;
+<input type="button" button class="w-btn w-btn-blue"  name="cart" id="cart" onclick="insertCart()" value="장바구니" />&nbsp;&nbsp;&nbsp;
+<input type="button" button class="w-btn w-btn-blue"  name="cart" id="cart" onclick="location.href='productCart?member_id=${member.member_id}'" value="내 장바구니 보기" /></div>
 
 <input type="hidden" name="hiddenbtn" id="hiddenbtn" value="prdpage" />
 

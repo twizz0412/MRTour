@@ -30,21 +30,28 @@
 <script>
 	// 마이페이지 클릭 이벤트
 	function mypBtn() {
-		var member_id = $("#member_id").val();
-		var myp = $("#myp").val();
-		$.ajax({
-			type : "GET",
-			url : "mypL",
-			data : {
-				"member_id" : member_id,
-				"myp" : myp
-			},
-			success : function(data) {
-				window.location.href = "mypage?member_id=" + member_id
-						+ "&myp=" + myp;
-			}
-		});
-	}
+    var member_id = $("#member_id").val();
+    var myp = $("#myp").val();
+
+    // myp 값이 undefined일 경우 기본값으로 1 설정
+    if (typeof myp === "undefined") {
+        myp = 1;
+    }
+
+    $.ajax({
+        type: "GET",
+        url: "mypL",
+        data: {
+            "member_id": member_id,
+            "myp": myp
+        },
+        success: function (data) {
+            window.location.href = "mypage?member_id=" + member_id + "&myp=" + myp;
+        }
+    });
+}
+
+
 </script>
 <header>
 <div class="login">
@@ -80,8 +87,8 @@
 <br>
 <div class="login2">
 	<p>
-		<a href="main"><img src="resources/images/menu.JPG" alt="" onclick="clickBtn();"  border="0"  height="50px" style="float: right; padding-top: 8px; padding-right: 40px;"></a>
-		<a href="MyPage"><img src="resources/images/jjim.JPG" alt="" onclick="clickBtn();" border="0"  height="50px" style="float: right; padding-top: 7px; padding-right: 10px;"></a>
+		<a onclick="mypBtn();"><img src="resources/images/menu.JPG" alt=""   border="0"  height="50px" style="float: right; padding-top: 8px; padding-right: 40px;"></a>
+		<a href="productCart?member_id=${member.member_id}"><img src="resources/images/jjim.JPG" alt="" onclick="clickBtn();" border="0"  height="50px" style="float: right; padding-top: 7px; padding-right: 10px;"></a>
 	</p>
 </div>
 
