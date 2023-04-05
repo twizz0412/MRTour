@@ -113,7 +113,7 @@
 	<div class="nav1">
 		<ul>
 			<li><a href="car_page"><b>렌트카 </a></li>
-			<li><a href="hotel_list2""><b>호텔 </a></li>
+			<li><a href="hotel_list""><b>호텔 </a></li>
 			<li><a href="ticket_main"><b> 투어 | 입장권</a></li>
 			<li><a href="golf"><b> 골프 </a></li>
 			<li><a href="notice"><b> 미래LIVE </a></li>

@@ -21,7 +21,7 @@ public class ProductInfoDAO {
 		}
 
 		// 상품 검색(티켓용 검색)
-		public List<ProductInfoVO> listSearchPrd(String city_no, int start, int end) {
+		public List<ProductInfoVO> listSearchPrd(String searchOption1, String city_no, int start, int end) {
 			Map<String, Object> map = new HashMap<String, Object>();
 			map.put("city_no", city_no);
 			map.put("start", start);
@@ -30,8 +30,10 @@ public class ProductInfoDAO {
 		}
 	
 		//렌트카 상품검색(검색 조건 2개)
-		public List<ProductInfoVO> listSearchCar(String city_no, String prd_opt, int start, int end) {
+		public List<ProductInfoVO> listSearchCar(String searchOption1, String city_no, String searchOption2, String prd_opt, int start, int end) {
 			Map<String, Object> map = new HashMap<String, Object>();
+			map.put("searchOption1", searchOption1);
+			map.put("searchOption2", searchOption2);
 			map.put("city_no", city_no);
 			map.put("prd_opt", prd_opt);
 			map.put("start", start);
@@ -39,19 +41,44 @@ public class ProductInfoDAO {
 			return mybatis.selectList("ProductInfoDAO.listSearchCar", map);
 		}
 		
-		// 검색 품목 카운트
-		public int countSearchPrd(String city_no) {
+		//호텔 상품검색(검색 조건 2개)
+		public List<ProductInfoVO> listSearchHotel(String searchOption1, String city_no, String searchOption2, String prd_opt, int start, int end) {
 			Map<String, Object> map = new HashMap<String, Object>();
+			map.put("searchOption1", searchOption1);
+			map.put("searchOption2", searchOption2);
+			map.put("city_no", city_no);
+			map.put("prd_opt", prd_opt);
+			map.put("start", start);
+			map.put("end", end);
+			return mybatis.selectList("ProductInfoDAO.listSearchHotel", map);
+		}
+		
+		// 티켓 검색 품목 카운트
+		public int countSearchPrd(String searchOption1, String city_no) {
+			Map<String, Object> map = new HashMap<String, Object>();
+			map.put("searchOption1", searchOption1);
 			map.put("city_no", city_no);
 			return mybatis.selectOne("ProductInfoDAO.countSearchPrd", map);
 		}
 		
 		// 검색 품목 카운트
-		public int countSearchCar(String city_no, String prd_opt) {
+		public int countSearchCar(String searchOption1, String city_no, String searchOption2, String prd_opt) {
 		    Map<String, Object> map = new HashMap<String, Object>();
+			map.put("searchOption1", searchOption1);
+			map.put("searchOption2", searchOption2);		    
 		    map.put("city_no", city_no == null ? "" : city_no);
 		    map.put("prd_opt", prd_opt == null ? "" : prd_opt);
 		    return mybatis.selectOne("ProductInfoDAO.countSearchCar", map);
+		}
+		
+		// 검색 품목 카운트
+		public int countSearchHotel(String searchOption1, String city_no, String searchOption2, String prd_opt) {
+		    Map<String, Object> map = new HashMap<String, Object>();
+			map.put("searchOption1", searchOption1);
+			map.put("searchOption2", searchOption2);
+		    map.put("city_no", city_no == null ? "" : city_no);
+		    map.put("prd_opt", prd_opt == null ? "" : prd_opt);
+		    return mybatis.selectOne("ProductInfoDAO.countSearchHotel", map);
 		}
 
 		// 상품 등록

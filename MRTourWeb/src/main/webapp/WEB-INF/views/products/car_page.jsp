@@ -53,6 +53,7 @@
                         <div class="search-area-form same-area">
                            <div class="form-column">
                               <p class="title">인수도시</p>
+                              <input type = "hidden" name = "searchOption1" value = "CITY_NO">
                               <select name="city_no" id="city_no" onchange="ChangeSearch()">
                                  <option value="전체">전체</option>
                                  <option value="서울">서울</option>
@@ -61,7 +62,7 @@
                                  <option value="경주">경주</option>
                                  <option value="부산">부산</option>
                                  <option value="제주">제주</option>
-                              </select> <input type="hidden" id="city_no_search" value="">
+                              </select> <input type="hidden" id="city_no_search" name = "city_no" value="">
                            
                            </div>
 
@@ -69,12 +70,13 @@
                            <div class="form-column">
                               <p class="title">차량옵션</p>
                               <p class="text">
+                              <input type = "hidden" name = "searchOption2" value = "PRD_OPT">
                                  <select name="prd_opt" id="prd_opt" onchange="ChangeSearch()">
                                     <option value="전체">전체</option>
                                     <option value="디젤">디젤</option>
                                     <option value="가솔린">가솔린</option>
                                     
-                                 </select> <input type="hidden" id="prd_opt_search" value="">
+                                 </select> <input type="hidden" id="prd_opt_search" name = "prd_opt" value="${prd_opt}">
                               </p>
                            </div>
 
@@ -95,6 +97,9 @@
          
          <!--검색창 아래 본문-->
          <div class="contents-area">
+         
+
+					
             <!--검색창 바로 아래-->
             <app-rent-breadcrumbs class="breadcrumbs" _nghost-serverapp-c364="">
                <div class="text-article">
@@ -111,6 +116,7 @@
                   </c:otherwise>
                </c:choose>
                </div>
+
                <!-- 오른쪽 상품선택, 결제하기 부분 -->
                <ul class="step">
                   <li class="active">
@@ -123,7 +129,14 @@
                   </li>
                </ul>
             </app-rent-breadcrumbs>
-
+               
+         <!-- 상품 위 검색 결과 섹션 -->
+			<div class="search-result-header">
+				<p class="total">
+					<span>${map.count}</span> 개의 상품이 검색되었습니다.
+				</p>
+			</div>
+					
             <!-- 상품 리스트 -->
 				<div class="products">
 					<div class="product-list">
@@ -134,7 +147,8 @@
 					<c:set var="row" value="${map.list[i]}" />
 					<c:choose>
 					<%-- 검색결과가 있을 때 --%>
-					<c:when test="${fn:startsWith(row.prd_id, 'C') && not empty row}">
+					<c:when test="${not empty row}">
+									
 						<a  class="product">
 						<br><br><br>
 							<img src="${row.prd_img}" width="275" height="175px" style = "padding-top : 10px;padding-bottom : 15px">
@@ -172,43 +186,45 @@
 
 		<!-- 하단 페이지 표시 부분 -->
 <div class="pagination c-pagination">
-	<pagination previoustext="이전" nexttext="다음" firsttext="맨처음" lasttext="맨끝" class="ng-untouched ng-pristine ng-valid">
 	<ul class="pagination">
 	
 	<c:if test="${map.pager.curBlock > 1}">
 		<li class="pagination-first page-item disabled">
-		<a href="car_page?curPage=1&searchOption=${searchOption}&keyword=${keyword}
-				&search=${search}">처음</a></li>
+			<a href="car_page?curPage=1&searchOption1=CITY_NO&city_no=${city_no}&searchOption2=PRD_OPT&prd_opt=${prd_opt}">처음</a>
+		</li>
 	</c:if>
 	
 	<c:if test="${map.pager.curBlock > 1}">
-		<li class="pagination-prev page-item disabled"><a href="car_page?curPage=${map.pager.prevPage}
-				&searchOption=${searchOption}&keyword=${keyword}&search=${search}">이전</a></li>
+		<li class="pagination-prev page-item disabled">
+			<a href="car_page?curPage=${map.pager.prevPage}&searchOption1=CITY_NO&city_no=${city_no}&searchOption2=PRD_OPT&prd_opt=${prd_opt}">이전</a>
+		</li>
 	</c:if>
-	<c:forEach var="num" begin="${map.pager.blockBegin}" 
-							end="${map.pager.blockEnd}">
+	<c:forEach var="num" begin="${map.pager.blockBegin}" end="${map.pager.blockEnd}">
 		<c:choose>
 			<c:when test="${num == map.pager.curPage}">
-				<li class="pagination-page page-item active"><a href="" class="page-link">${num}</a></li>
+				<li class="pagination-page page-item active">
+					<span class="page-link">${num}</span>
+				</li>
 			</c:when>
 			<c:otherwise>
-				<li class="pagination-page page-item"><a href="car_page?curPage=${num}&searchOption=${searchOption}&keyword=${keyword}
-						&search=${search}" class="page-link">${num}</a></li>
+				<li class="pagination-page page-item">
+					<a href="car_page?curPage=${num}&searchOption1=CITY_NO&city_no=${city_no}&searchOption2=PRD_OPT&prd_opt=${prd_opt}" class="page-link">${num}</a>
+				</li>
 			</c:otherwise>
 		</c:choose>
 	</c:forEach>
 	<c:if test="${map.pager.curBlock < map.pager.totBlock}">
-		<li class="pagination-next page-item"><a href="car_page?curPage=${map.pager.nextPage}&searchOption=${searchOption}&keyword=${keyword}
-				&search=${search}" class="page-link">다음</a></li>
+		<li class="pagination-next page-item">
+			<a href="car_page?curPage=${map.pager.nextPage}&searchOption1=CITY_NO&city_no=${city_no}&searchOption2=PRD_OPT&prd_opt=${prd_opt}" class="page-link">다음</a>
+		</li>
 	</c:if>
 	<c:if test="${(map.pager.totPage > 5) && (map.pager.totPage != map.pager.curPage)}">
-		<li class="pagination-last page-item"><a href="car_page?curPage=${map.pager.totPage}
-							&searchOption=${searchOption}&keyword=${keyword}
-							&search=${search}">맨끝</a></li>
+		<li class="pagination-last page-item">
+			<a href="car_page?curPage=${map.pager.totPage}&searchOption1=CITY_NO&city_no=${city_no}&searchOption2=PRD_OPT&prd_opt=${prd_opt}">맨끝</a>
+		</li>
 	</c:if>
 	</ul>
 	
-	</pagination>
 	</div>
 	</div>
 	</app-rent-tab-body>
