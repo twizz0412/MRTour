@@ -406,7 +406,7 @@ ul {
 
 
 .product-list {
-    width: 1000px;
+    width: 100%;
     margin: auto;
     padding: 0 50px;
 }
@@ -414,13 +414,12 @@ ul {
 
 .product {
     display: block;
-    width: 275px;
+    width: 100%;
     text-align: center;
     text-decoration: none;
     color: black;
     float: left;
-    margin-left: 10px;
-    margin-right: 100px;
+    margin-left: 50px;
     margin-top: 100px;
     width: 300px;
     height: 500px;
