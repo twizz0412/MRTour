@@ -136,11 +136,12 @@
                             <div class="FormTextInput-Container">
                                 <label for="member_email" required="" class="FormTextInput-Label">이메일</label><br>
                                 <!-- email split해서 값 넣어주기 -->
-                                                                                                <!-- c:set 셋팅 -->
-                                                                                                <c:set var="m_email" value="${member.member_email}" />
-                                                                                                <c:set var="memail" value="${fn:split(m_email, '@') }" />
-                                                                                                <!-- 배열 인덱스로 불러옴 -->
-                                <input type = "text" size = "15" id="email_id" class="input" value="${memail[0]}"> <span class = "sp_mail">@</span>
+                                       <!-- c:set 셋팅 -->
+                                       <c:set var="m_email" value="${member.member_email}" />
+                                       <c:set var="memail" value="${fn:split(m_email, '@') }" />
+                                    <!-- 배열 인덱스로 불러옴 -->
+                                <input type = "text" size = "15" id="email_id" class="input" value="${memail[0]}">
+                                <span class = "sp_mail">@</span>
                                 <input type="text" size="15" id="email_addr" class="input" value="${memail[1]}" disabled>
                                     <select id="email_select">
                                         <option value="" selected>::선택하세요::</option>
@@ -308,11 +309,6 @@
             </tbody>
             <c:set var="priceSum" value="${priceSum + cartprd.prd_sum}" />
          </c:forEach>
-         <tr align="center">
-            <td colspan="6">
-               <input type="button" class="btn" name="cartClear" id="cartClear" onclick="cartClear()" value="상품 비우기" />
-            </td>
-         </tr>
       </table><br>
       
    <div class="paymentArea" align="center">
@@ -325,8 +321,9 @@
          </tr>
    </table><br>
    <div class="paybtn">
+    	 <input type="button" class="btn" name="cartClear" id="cartClear" onclick="cartClear()" value="상품 비우기" />
          <input type="button" class="btn" id="payCart" onclick="payCart()" value="결제하기" />
-               <input type="hidden" name="hiddenbtn" id="hiddenbtn" value="cartpage" />
+         <input type="hidden" name="hiddenbtn" id="hiddenbtn" value="cartpage" />
    </div></div>
                     
                     <br>

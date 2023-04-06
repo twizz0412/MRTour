@@ -7,8 +7,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
 		<title>미래투어 - 관리자 상품 등록 페이지</title>
 		<script src="http://code.jquery.com/jquery-latest.js"></script>
- 	<script src="resources/js/product.js"></script>
+ 		<script src="resources/js/product.js"></script>
 		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="resources/css/admin_css/admin_notice.css"> 
 		
 		
 			<!--	<link rel="stylesheet" type="text/css" href="resources/css/main.css">
@@ -17,11 +18,14 @@
 		 -->
 	</head>
 	<body>
+		 <div class="container right-panel-active">
+		 <div class="container__form container--signup">
 		<button type="button" class="btn" onclick="location.href='productList'">상품관리</button>
 		<section>
 			<h2 align="center">상품 등록</h2>
 			<form id="fileForm" action="insertProduct" method="POST" enctype="multipart/form-data">
-				<table align="center">
+			<div class="board_wrap" width = "300px">
+				<table align="center" >
 					<tr>
 						<th>상품 유형</th>
 						<td>
@@ -97,8 +101,10 @@
                   </td>
                </tr>
 				</table>
+				</div>
 			</form>
 		</section>
-		
+		</div>
+		</div>
 	</body>
 </html>

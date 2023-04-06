@@ -105,13 +105,7 @@ public class MemberController {
 		memberService.login(vo);
 		return "member/mypage3";
 	}*/
-
-	// 마이페이지-회원정보수정 view
-	@RequestMapping(value = "/mypage3", method = RequestMethod.GET)
-	public String mypageView3(MemberVO vo) {
-		return "member/mypage3";
-	}
-
+	
 	// 마이페이지-회원정보수정 처리
 	@RequestMapping(value = "/mypage3", method = RequestMethod.POST)
 	public String mypage3(MemberVO vo) {

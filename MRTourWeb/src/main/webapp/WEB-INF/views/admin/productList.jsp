@@ -6,11 +6,11 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-		<title>관리자 페이지-상품 보기</title>
+		<title>MRT Admin</title>
 		<script src="http://code.jquery.com/jquery-latest.js"></script>
 		<script src="resources/js/product.js" charset="UTF-8"></script>
 		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<!--  	<link rel="stylesheet" type="text/css" href="resources/css/admin_css/admin_notice.css"> -->	
+  	<link rel="stylesheet" type="text/css" href="resources/css/admin_css/admin_notice.css"> 
 		
 		<script>
 			function list(page) {
@@ -19,26 +19,34 @@
 		</script>
 	</head>
 	<body>
-	
+	    <div class="container right-panel-active">
+		 <div class="container__form container--signup">
 		<section>
-			<h2 align="center">등록한 상품 보기</h2>
 			
 			<button type="button" class="btn" onclick="location.href='admin_main'">관리자 메인 페이지</button>
 			<button type="button" class="btn" onclick="location.href='admin_insertProduct'">상품 등록 페이지</button>
 			<button type="button" class="btn" onclick="location.href='./main'">메인 페이지</button>
 			
 			<form name="f3rm" id="f3rm" enctype="multipart/form-data">
-				<table align="center">
-					<tr>
+			<div class="board_wrap">
+			<br><br><br>
+			    <div class="board_title">
+                        <strong>등록한 상품 보기</strong>
+               </div>
+               <br><br><br>
+			   <div class="board_list_wrap">
+                  <div class="board_list">
+                     <div class="top">
+				<table>
+					<thead>
 						<th>카테고리</th>
-						<th>이미지 경로</th>
 						<th>상품명</th>
 						<th>상품 코드</th>
 						<th>가격</th>
 						<th>옵션</th>
 						<th>지역</th>
 						<th>상품설명(썸네일 화면)</th>
-					</tr>
+					</thead>
 					<c:forEach begin="0" end="${(fn:length(map.list))}" var="i">
 						<c:set var="product" value="${map.list[i]}" />
 						
@@ -46,7 +54,6 @@
 						<c:if test="${not empty product}">
 							<tr>
 								<td>${product.cate_id}</td>
-								<td><img src="${product.prd_img}" width="100" height="100" alt = "사진변경필요"></td>
 								<td>${product.prd_name}</td>
 								<td>${product.prd_id}</td>
 								<td>${product.prd_price}</td>
@@ -82,8 +89,13 @@
 						</c:if>
 					</td>
 				</tr>
+				</div>
+				</div>
+				</div>
 			</table>
 		</form>
 		</section>
+		</div>
+		</div>
 	</body>
 </html>
