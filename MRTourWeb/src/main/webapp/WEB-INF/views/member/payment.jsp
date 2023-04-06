@@ -23,8 +23,8 @@
 		<div class="tbl">
 		<table class="type1">
 			<tr align="center">
-				<th height="50">이미지</th>
-				<th width="300" colspan="2">상품 정보</th>
+				<th height="50" width = "200">상품정보</th>
+				<th width="200">상품명</th>
 				<th width="100">판매가</th>
 				<th width="70">수량</th>
 				<th width="100">합계</th>
@@ -40,8 +40,8 @@
 							<td>
 								<img src="${pay.prd_img}" width="100px" height="100px">
 								<input type="hidden" name="chkbox">
+							<input type = "hidden" id = "prd_id" name = "prd_id" >
 							</td>
-							<td>${pay.prd_id}</td>
 							<td>${pay.prd_name}</td>
 							<td><fmt:formatNumber value="${pay.prd_price}" pattern="#,###"/></td>
 							<td>${pay.buy_quantity}</td>
@@ -60,8 +60,8 @@
 							<td>
 								<img src="${pay.prd_img}" width="100px" height="100px">
 								<input type="hidden" name="chkbox">
+							<input type = "hidden" id = "prd_id" name = "prd_id" >
 							</td>
-							<td>${pay.prd_id}</td>
 							<td>${pay.prd_name}</td>
 							<td><fmt:formatNumber value="${pay.prd_price}" pattern="#,###"/></td>
 							<td>${map.buy_quantity}</td>
@@ -73,8 +73,8 @@
 				</c:when>
 			</c:choose>
 			<tr align="center">
-				<td colspan="3" id="ordersheet" height="50">총 결제 금액</td>
-				<td colspan="3"><fmt:formatNumber value="${priceSum}" pattern="#,###" /></td>
+				<td colspan="2" id="ordersheet" height="50">총 결제 금액</td>
+				<td colspan="2"><fmt:formatNumber value="${priceSum}" pattern="#,###" /></td>
 			</tr>
 		</table></div></div><br><br>
 		
@@ -533,8 +533,8 @@
 							swal("결제 성공", "결제를 완료했습니다.", "success").then(function(isConfirm) {
 								chkbox.each(function(i) {
 									var tr = chkbox.parent().parent().eq(i).children();
-									var prd_id = tr.eq(1).text(); // 주문서 테이블의 1번째 셀(0 시작)
-									var buy_quantity = tr.eq(4).text(); // 주문서 테이블의 4번째 셀
+									var prd_id =  $("#prd_id").val(); // 주문서 테이블의 1번째 셀(0 시작)
+									var buy_quantity = tr.eq(3).text(); // 주문서 테이블의 4번째 셀
 									prd_list.push(prd_id);
 									prd_list.push(buy_quantity);
 								});
