@@ -48,47 +48,61 @@
 		<div class="tc2">
 			<b>급상승 신상품🤩</b>
 		</div>
+		<a href="productpage?prd_id=gj004">
 		<div class="container">
 			<div class="box">
 				<div class="image_box">
 					<img src="resources/images/a.JPG" alt="">
 				</div>
 				<div class="des">
-					<strong>[봄여행페스타]</strong><br> 경주 찐핫플만 매일 출발하는 당일 버스투어<br>
-					<b>27,120원 </b>
+					<strong>[경주]</strong><br> 대릉원 첨성대 가이드 투어<br>
+					<b>39,000원 </b>
 				</div>
 			</div>
+			</div>
+			</a>
+			
+			<a href="productpage?prd_id=bs010">
 			<div class="container">
 				<div class="box">
 					<div class="image_box">
-						<img src="resources/images/a2.JPG" alt="">
+						<img src="resources/images/메인상품1.png" alt="">
 					</div>
 					<div class="des">
-						<strong>[부산 출발]</strong><br> 국내 당일투어 혼자여행 여성트레킹 버스여행<br>
-						<b>80,000원</b>
+						<strong>[부산]</strong><br>해운대 요트투어<br>
+						<b>15,000원</b>
 					</div>
 				</div>
+				</div>
+				</a>
+				
+				<a href="productpage?prd_id=jj007">
 				<div class="container">
 				<div class="box">
 					<div class="image_box">
-						<img src="resources/images/a3.JPG" alt="">
+						<img src="resources/images/제주 스쿠버다이빙 체험.png" alt="">
 					</div>
 					<div class="des">
-						<strong>[부산 출발]</strong><br> 거제 외도 & 바람의 언덕 당일 버스투어<br>
-						<b>91,000원</b>
+						<strong>[제주]</strong><br> 스쿠버다이빙 체험<br>
+						<b>95,000원</b>
 					</div>
 				</div>
+				</div>
+				</a>
+				
+				<a href="productpage?prd_id=sl004">
 				<div class="container">
 					<div class="box">
 						<div class="image_box">
-							<img src="resources/images/a2.JPG" alt="">
+							<img src="resources/images/메인상품2.png" alt="">
 						</div>
 						<div class="des">
-							<strong>[부산 출발]</strong><br> 국내 당일투어 혼자여행 여성트레킹 버스여행<br>
-							<b>80,000원</b>
+							<strong>[서울]</strong><br> 디스커버 서울 패스 <br>
+							<b>66,500원</b>
 						</div>
 					</div>
 			</div>
+			</a>
 		</div>
 	</section>
 
@@ -106,33 +120,42 @@
 			<div class="c3">아직 보여줄 것이 많은 "제주"</div>
 			<div class="c4">여행을 가장 여행답게 "강릉"</div>
 			<div class="c5">
+			
+		<a href="productpage?prd_id=jj001">
 		<div class="box1">
 			<div class="image_box1">
 				<img src="resources/images/c.JPG" alt="">
 			</div>
 			<div class="des1">
-				<strong>[4성급] 스카이베이 호텔 경포</strong><br> #경포해변부근 #최저가<br> <b>128,700원
+				<strong>[5성급] 파르나스 호텔 제주</strong><br> #경포해변부근 #최저가<br> <b>347,530원
 					~ </b>
 			</div>
 		</div>
+		</a>
+		
+		<a href="productpage?prd_id=bs002">
 		<div class="box1">
 			<div class="image_box1">
-				<img src="resources/images/c2.jpg" alt="">
+				<img src="resources/images/그랜드 조선 부산.png" alt="">
 			</div>
 			<div class="des1">
-				<strong>[에어카텔]제주 3일</strong><br> #그랜드하얏트 #중형렌터카(고급자차포함)<br>
-				<b>569,000원 ~ </b>
+				<strong>[5성급] 그랜드 조선 부산</strong><br> #해운대 #인피니티풀<br>
+				<b>224,400원 ~ </b>
 			</div>
 		</div>
+		</a>
+		
+		<a href="productpage?prd_id=bs002">
 		<div class="box1">
 			<div class="image_box1">
 				<img src="resources/images/c3.jpg" alt="">
 			</div>
 			<div class="des1">
-				<strong>[KTX]부산 2일</strong><br> #엘시티레지던스1박 #호캉스 #해운대해변열차 <br>
-				<b>399,000원 ~ </b>
+				<strong>[5성급] 아난티 힐튼 부산</strong><br> #아난티 힐튼 #호캉스 #해운대해변열차 <br>
+				<b>341,000원 ~ </b>
 			</div>
 			</div>
+			</a>
 		</div>
 		</div>
 		</div>
@@ -245,7 +268,7 @@
 				</li>
 				<div class="sc55">
 				<li>
-					<a href="#">
+					<a href="ticket_main">
 						<div class="img1">
 						<img src="resources/images/sc5-3.jpg" width="300px" height="300px"></div>
 						<p class="item_title">4월의 국내여행</p>

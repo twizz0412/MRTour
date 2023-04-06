@@ -102,7 +102,7 @@
                                           height="200">
                                     </div>
                                     <div class="pro">${row.prd_name}<p>
-                                          <br> <span>${row.prd_opt}</span>
+                                          <br> <span>${row.prd_exp}</span>
                                        <p>
                                           <br> <span>${row.prd_price} ~ </span>
                                     </div>
