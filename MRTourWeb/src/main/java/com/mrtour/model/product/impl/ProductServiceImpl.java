@@ -19,23 +19,33 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	// 상품(티켓) 검색
-	public List<ProductInfoVO> listSearchPrd(String sPrd, int start, int end) {
-		return productInfoDAO.listSearchPrd(sPrd, start, end);
+	public List<ProductInfoVO> listSearchPrd(String searchOption1, String city_no, int start, int end) {
+		return productInfoDAO.listSearchPrd(searchOption1, city_no, start, end);
 	}
 	
-	// 자동차, 호텔 상품 검색
-	public List<ProductInfoVO> listSearchCar(String city_no, String prd_opt, int start, int end) {
-		return productInfoDAO.listSearchCar(city_no, prd_opt, start, end);
+	// 자동차 상품 검색
+	public List<ProductInfoVO> listSearchCar(String searchOption1, String city_no, String searchOption2, String prd_opt, int start, int end) {
+		return productInfoDAO.listSearchCar(searchOption1, city_no, searchOption2, prd_opt, start, end);
+	}
+	
+	// 호텔 상품 검색
+	public List<ProductInfoVO> listSearchHotel(String searchOption1, String city_no, String searchOption2, String prd_opt, int start, int end) {
+		return productInfoDAO.listSearchHotel(searchOption1, city_no, searchOption2, prd_opt, start, end);
 	}
 
 	// 물품 검색 카운트
-	public int countSearchPrd(String city_no) {
-		return productInfoDAO.countSearchPrd(city_no);
+	public int countSearchPrd(String searchOption1, String city_no) {
+		return productInfoDAO.countSearchPrd(searchOption1, city_no);
 	}
 	
 	// 렌트카 검색 카운트
-	public int countSearchCar(String city_no, String prd_opt) {
-		return productInfoDAO.countSearchCar(city_no, prd_opt);
+	public int countSearchCar(String searchOption1, String city_no, String searchOption2, String prd_opt) {
+		return productInfoDAO.countSearchCar(searchOption1, city_no, searchOption2, prd_opt);
+	}
+	
+	// 호텔 검색 카운트
+	public int countSearchHotel(String searchOption1, String city_no, String searchOption2, String prd_opt) {
+		return productInfoDAO.countSearchHotel(searchOption1, city_no, searchOption2, prd_opt);
 	}
 
 	// 상품 등록
@@ -67,6 +77,7 @@ public class ProductServiceImpl implements ProductService {
 	public ProductInfoVO productDetail(ProductInfoVO vo) {
 		return productInfoDAO.productDetail(vo);
 	}
-	
+
+
 	
 }

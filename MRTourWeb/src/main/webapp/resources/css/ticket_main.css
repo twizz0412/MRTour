@@ -1,5 +1,22 @@
 @charset "UTF-8";
 
+/* 상품 위 검색 결과 섹션 */
+.search-result-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.search-result-header .total {
+    color: #888;
+}
+
+.search-result-header .total span {
+    /* 검색결과 개수 강조 */
+    color: #ff682c;
+}
+
 html,
 body {
       overflow-x: hidden;

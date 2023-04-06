@@ -10,7 +10,7 @@
 
 <script src = "resources/js/hotel_checkout.js"></script>
 <link rel="stylesheet" type="text/css"
-	href="resources/css/hotel_list2.css" />
+	href="resources/css/hotel_list.css" />
 <link
 	href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap"
 	rel="stylesheet">
@@ -30,7 +30,7 @@
 	function SubmitSearch() {
 		var city_no_search = document.getElementById("city_no_search").value; // 옵션의 value 값으로 변경
 		var prd_opt_search = document.getElementById("prd_opt_search").value; // 옵션의 value 값으로 변경
-		window.location.href = "hotel_list2?city_no=" + city_no_search
+		window.location.href = "hotel_list?city_no=" + city_no_search
 				+ "&prd_opt=" + prd_opt_search;
 	}
 	
@@ -75,6 +75,7 @@
 								<div class="search-area-form same-area">
 									<div class="form-column">
 										<p class="title">여행지</p>
+										<input type = "hidden" name = "searchOption1" value = "CITY_NO">
 										<select name="city_no" id="city_no" onchange="ChangeSearch()">
 											<option value="전체">전체</option>
 											<option value="서울">서울</option>
@@ -83,7 +84,7 @@
 											<option value="경주">경주</option>
 											<option value="부산">부산</option>
 											<option value="제주">제주</option>
-										</select> <input type="hidden" id="city_no_search" value="">
+										</select> <input type="hidden" id="city_no_search" name = "city_no" value="">
 										</p>
 									</div>
 
@@ -91,12 +92,13 @@
 									<div class="form-column">
 										<p class="title">룸타입</p>
 										<p class="text">
+										<input type = "hidden" name = "searchOption2" value = "PRD_OPT">
 											<select name="prd_opt" id="prd_opt" onchange="ChangeSearch()">
 												<option value="전체">전체</option>
 												<option value="싱글룸">싱글룸</option>
 												<option value="더블룸">더블룸</option>
 												<option value="스위트룸">스위트룸</option>
-											</select> <input type="hidden" id="prd_opt_search" value="">
+											</select> <input type="hidden" id="prd_opt_search" name = "prd_opt"  value="">
 										</p>
 									</div>
 
@@ -116,15 +118,25 @@
 
 				<!--검색창 아래 본문-->
 				<div class="contents-area">
+				
+					<!-- 상품 위 검색 결과 섹션 -->
+					<div class="search-result-header">
+						<p class="total">
+							<span>${map.count}</span> 개의 상품이 검색되었습니다.
+						</p>
+					</div>
+				
 					<!-- 상품 리스트 -->
 					<div class="products">
 						<div class="product-list">
 
 							<c:forEach begin="0" end="${(fn:length(map.list))}" var="i">
 								<c:set var="row" value="${map.list[i]}" />
+									
 								<c:choose>
 									<%-- 검색결과가 있을 때 --%>
-									<c:when test="${row.cate_id eq 'H002' && not empty row}">
+									<c:when test="${not empty row}">
+										
 										<div class="each_room">
 										    <div class="room_content">
 											    <div class="room_content_left">
@@ -235,52 +247,40 @@
 
 	<!-- 하단 페이지 표시 부분 -->
 	<div class="pagination c-pagination">
-		<pagination previoustext="이전" nexttext="다음" firsttext="맨처음"
-			lasttext="맨끝" class="ng-untouched ng-pristine ng-valid">
 		<ul class="pagination">
 
 			<c:if test="${map.pager.curBlock > 1}">
-				<li class="pagination-first page-item disabled"><a
-					href="hotel_list2?curPage=1&searchOption=${searchOption}&keyword=${keyword}
-               &search=${search}">처음</a></li>
+				<li class="pagination-first page-item disabled">
+				<a href="hotel_list?curPage=1&&searchOption1=CITY_NO&city_no=${city_no}&searchOption2=PRD_OPT&prd_opt=${prd_opt}">처음</a></li>
 			</c:if>
 
 			<c:if test="${map.pager.curBlock > 1}">
 				<li class="pagination-prev page-item disabled"><a
-					href="hotel_list2?curPage=${map.pager.prevPage}
-               &searchOption=${searchOption}&keyword=${keyword}&search=${search}">이전</a></li>
+					href="hotel_list?curPage=${map.pager.prevPage}&searchOption1=CITY_NO&city_no=${city_no}&searchOption2=PRD_OPT&prd_opt=${prd_opt}">이전</a></li>
 			</c:if>
 			<c:forEach var="num" begin="${map.pager.blockBegin}"
 				end="${map.pager.blockEnd}">
 				<c:choose>
 					<c:when test="${num == map.pager.curPage}">
-						<li class="pagination-page page-item active"><a href=""
-							class="page-link">${num}</a></li>
+						<li class="pagination-page page-item active">
+						<span class="page-link">${num}</span>
 					</c:when>
 					<c:otherwise>
-						<li class="pagination-page page-item"><a
-							href="hotel_list2?curPage=${num}&searchOption=${searchOption}&keyword=${keyword}
-                     &search=${search}"
-							class="page-link">${num}</a></li>
+						<li class="pagination-page page-item">
+						<a href="hotel_list?curPage=${num}&searchOption1=CITY_NO&city_no=${city_no}&searchOption2=PRD_OPT&prd_opt=${prd_opt}"class="page-link">${num}</a></li>
 					</c:otherwise>
 				</c:choose>
 			</c:forEach>
 			<c:if test="${map.pager.curBlock < map.pager.totBlock}">
-				<li class="pagination-next page-item"><a
-					href="hotel_list2?curPage=${map.pager.nextPage}&searchOption=${searchOption}&keyword=${keyword}
-               &search=${search}"
-					class="page-link">다음</a></li>
+				<li class="pagination-next page-item">
+				<a href="hotel_list?curPage=${map.pager.nextPage}&searchOption1=CITY_NO&city_no=${city_no}&searchOption2=PRD_OPT&prd_opt=${prd_opt}"class="page-link">다음</a></li>
 			</c:if>
 			<c:if
 				test="${(map.pager.totPage > 5) && (map.pager.totPage != map.pager.curPage)}">
-				<li class="pagination-last page-item"><a
-					href="hotel_list2?curPage=${map.pager.totPage}
-                        &searchOption=${searchOption}&keyword=${keyword}
-                        &search=${search}">맨끝</a></li>
+				<li class="pagination-last page-item">
+				<a href="hotel_list?curPage=${map.pager.totPage}&searchOption1=CITY_NO&city_no=${city_no}&searchOption2=PRD_OPT&prd_opt=${prd_opt}">맨끝</a></li>
 			</c:if>
 		</ul>
-
-		</pagination>
 	</div>
 	</div>
 	</div>

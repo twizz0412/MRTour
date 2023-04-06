@@ -76,6 +76,13 @@
 
             <!--검색창 아래 본문-->
             <div class="contents-area">
+            
+          <!-- 상품 위 검색 결과 섹션 -->
+			<div class="search-result-header">
+				<p class="total">
+					<span>${map.count}</span> 개의 상품이 검색되었습니다.
+				</p>
+			</div>           
 
                <!-- 상품 리스트 -->
                <div class="products">
@@ -84,7 +91,7 @@
                         <c:set var="row" value="${map.list[i]}" />
                         <c:choose>
                            <%-- 검색결과가 있을 때 --%>
-                           <c:when test="${row.cate_id eq 'T003' && not empty row}">
+                           <c:when test="${not empty row}">
 
                               <li>
                                  <div
@@ -118,52 +125,46 @@
 
          <!-- 하단 페이지 표시 부분 -->
          <div class="pagination c-pagination">
-            <pagination previoustext="이전" nexttext="다음" firsttext="맨처음"
-               lasttext="맨끝" class="ng-untouched ng-pristine ng-valid">
             <ul class="pagination">
 
                <c:if test="${map.pager.curBlock > 1}">
-                  <li class="pagination-first page-item disabled"><a
-                     href="ticket_main?curPage=1&searchOption=${searchOption}&keyword=${keyword}
-               &search=${search}">처음</a></li>
+                  <li class="pagination-first page-item disabled">
+                  	<a href="ticket_main?curPage=1&searchOption1=CITY_NO&city_no=${city_no}">처음</a>
+                  </li>
                </c:if>
 
                <c:if test="${map.pager.curBlock > 1}">
-                  <li class="pagination-prev page-item disabled"><a
-                     href="ticket_main?curPage=${map.pager.prevPage}
-               &searchOption=${searchOption}&keyword=${keyword}&search=${search}">이전</a></li>
+                  <li class="pagination-prev page-item disabled">
+                  	<a href="ticket_main?curPage=${map.pager.prevPage}&searchOption1=CITY_NO&city_no=${city_no}">이전</a>
+                  </li>
                </c:if>
                <c:forEach var="num" begin="${map.pager.blockBegin}"
                   end="${map.pager.blockEnd}">
                   <c:choose>
                      <c:when test="${num == map.pager.curPage}">
-                        <li class="pagination-page page-item active"><a href=""
-                           class="page-link">${num}</a></li>
+                        <li class="pagination-page page-item active">
+                        	<a href="" class="page-link">${num}</a>
+                        </li>
                      </c:when>
                      <c:otherwise>
-                        <li class="pagination-page page-item"><a
-                           href="ticket_main?curPage=${num}&searchOption=${searchOption}&keyword=${keyword}
-                     &search=${search}"
-                           class="page-link">${num}</a></li>
+                        <li class="pagination-page page-item">
+                        	<a href="ticket_main?curPage=${num}&searchOption1=CITY_NO&city_no=${city_no}" class="page-link">${num}</a>
+                        </li>
                      </c:otherwise>
                   </c:choose>
                </c:forEach>
                <c:if test="${map.pager.curBlock < map.pager.totBlock}">
-                  <li class="pagination-next page-item"><a
-                     href="ticket_main?curPage=${map.pager.nextPage}&searchOption=${searchOption}&keyword=${keyword}
-               &search=${search}"
-                     class="page-link">다음</a></li>
+                  <li class="pagination-next page-item">
+                 	<a href="ticket_main?curPage=${map.pager.nextPage}&searchOption1=CITY_NO&city_no=${city_no}" class="page-link">다음</a>
+                 </li>
                </c:if>
-               <c:if
-                  test="${(map.pager.totPage > 5) && (map.pager.totPage != map.pager.curPage)}">
-                  <li class="pagination-last page-item"><a
-                     href="ticket_main?curPage=${map.pager.totPage}
-                        &searchOption=${searchOption}&keyword=${keyword}
-                        &search=${search}">맨끝</a></li>
+               <c:if test="${(map.pager.totPage > 5) && (map.pager.totPage != map.pager.curPage)}">
+                  <li class="pagination-last page-item">
+                  	<a href="ticket_main?curPage=${map.pager.totPage}&searchOption1=CITY_NO&city_no=${city_no}">맨끝</a>
+                  </li>
                </c:if>
             </ul>
 
-            </pagination>
          </div>
       </div>
       

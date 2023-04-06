@@ -139,7 +139,7 @@ public class ProductController {
 		@RequestMapping("/insertProduct")
 		public String insertProduct(MultipartHttpServletRequest multi, ProductInfoVO vo) {
 			System.out.println(vo.toString());
-			String root = "C:/Users/YOUNGJEE SEO/git/MRTour/MRTourWeb/src/main/webapp/";
+			String root = "C:/Users/minn/git/MRTour/MRTourWeb/src/main/webapp/";
 			String path = "resources/img/product/" + vo.getCate_id() + "/";
 			String realpath = root + "resources/img/product/" + vo.getCate_id() + "/";
 
@@ -175,6 +175,7 @@ public class ProductController {
 			int end = pager.getPageEnd();
 
 			List<ProductInfoVO> list = productService.getAdminProductList(start, end, vo);
+			
 			HashMap<String, Object> map = new HashMap<String, Object>();
 			map.put("list", list);
 			map.put("count", count);
@@ -186,126 +187,110 @@ public class ProductController {
 		//자동차(CAR)화면
 		// 품목 리스트 + 페이징 + 검색
 		@RequestMapping(value = "/car_page", method = RequestMethod.GET)
-		public String listCarPage(Model model, HttpSession session, ProductInfoVO vo,
-				@RequestParam(defaultValue = "") String keyword,
-				@RequestParam(name = "city_no", required = false, defaultValue = "전체") String city_no,
-				@RequestParam(name = "prd_opt", required = false, defaultValue = "전체") String prd_opt,
+		public String listCarPage(Model model, HttpSession session,
+				@RequestParam(defaultValue = "CITY_NO") String searchOption1, 
+				@RequestParam(defaultValue = "PRD_OPT") String searchOption2, 
+				@RequestParam(required = false, defaultValue = "전체") String city_no, 
+				@RequestParam(required = false, defaultValue = "전체") String prd_opt, 
 				@RequestParam(defaultValue = "1") int curPage)
 			throws Exception {
 			
 			// 상품 개수 계산
-			int count = productService.countSearchCar(city_no, prd_opt);
+			int count = productService.countSearchCar(searchOption1, city_no, searchOption2, prd_opt);
+			
+			session.setAttribute("searchOption1", searchOption1);
+			session.setAttribute("searchOption2", searchOption2);
+			session.setAttribute("city_no", city_no); // 지역명 검색
+			session.setAttribute("prd_opt", prd_opt); // 상품옵션으로 검색
+			session.setAttribute("curPage", curPage);
 
 			// 페이지 관련 설정
 			Pager pager = new Pager(count, curPage);
 			int start = pager.getPageBegin();
 			int end = pager.getPageEnd();
-
-			session.setAttribute("city_no", city_no); // 지역명 검색
-			session.setAttribute("prd_opt", prd_opt); // 상품옵션으로 검색
-			session.setAttribute("curPage", curPage);
 		
-			List<ProductInfoVO> list = productService.listSearchCar(city_no, prd_opt, start, end); // 게시글 목록
+			List<ProductInfoVO> list = productService.listSearchCar(searchOption1, city_no, searchOption2, prd_opt, start, end); // 게시글 목록
+			
 			HashMap<String, Object> map = new HashMap<String, Object>();
 			map.put("list", list); // map에 자료 저장
 			map.put("count", count);
-			map.put("pager", pager); // 페이지 네버게이션을 위한 변수
+			map.put("pager", pager); // 페이지 네비게이션을 위한 변수
+			map.put("searchOption1", searchOption1);
 			map.put("city_no", city_no);
-			map.put("prd_opt", prd_opt);			
+			map.put("searchOption2", searchOption2);
+			map.put("prd_opt", prd_opt);
 			model.addAttribute("map", map);
 
 			return "products/car_page";
 		}
-		
-		//호텔(Hotel)화면
-		// 품목 리스트 + 페이징 + 검색				
-		@RequestMapping(value = "/hotel_list", method = RequestMethod.GET)
-		public String listHotelPage(Model model, HttpSession session, ProductInfoVO vo,
-				@RequestParam(defaultValue = "") String keyword,
-				@RequestParam(name = "city_no", required = false, defaultValue = "전체") String city_no,
-				@RequestParam(name = "prd_opt", required = false, defaultValue = "전체") String prd_opt,
-				@RequestParam(defaultValue = "1") int curPage)
-			throws Exception {
-			
-			// 상품 개수 계산
-			int count = productService.countSearchCar(city_no, prd_opt);
 
-			// 페이지 관련 설정
-			Pager pager = new Pager(count, curPage);
-			int start = pager.getPageBegin();
-			int end = pager.getPageEnd();
-
-			session.setAttribute("city_no", city_no); // 지역명 검색
-			session.setAttribute("prd_opt", prd_opt); // 상품옵션으로 검색
-			session.setAttribute("curPage", curPage);
-		
-			List<ProductInfoVO> list = productService.listSearchCar(city_no, prd_opt, start, end); // 게시글 목록
-			HashMap<String, Object> map = new HashMap<String, Object>();
-			map.put("list", list); // map에 자료 저장
-			map.put("count", count);
-			map.put("pager", pager); // 페이지 네버게이션을 위한 변수
-			map.put("city_no", city_no);
-			map.put("prd_opt", prd_opt);			
-			model.addAttribute("map", map);
-
-			return "products/hotel_list";
-		}
 			//호텔(Hotel)화면
 			// 품목 리스트 + 페이징 + 검색				
-			@RequestMapping(value = "/hotel_list2", method = RequestMethod.GET)
-			public String listHotel2Page(Model model, HttpSession session, ProductInfoVO vo,
-					@RequestParam(defaultValue = "") String keyword,
-					@RequestParam(name = "city_no", required = false, defaultValue = "전체") String city_no,
-					@RequestParam(name = "prd_opt", required = false, defaultValue = "전체") String prd_opt,
+			@RequestMapping(value = "/hotel_list", method = RequestMethod.GET)
+			public String listHotel2Page(Model model, HttpSession session,
+					@RequestParam(defaultValue = "CITY_NO") String searchOption1, 
+					@RequestParam(defaultValue = "PRD_OPT") String searchOption2, 
+					@RequestParam(required = false, defaultValue = "전체") String city_no,
+					@RequestParam(required = false, defaultValue = "전체") String prd_opt,
 					@RequestParam(defaultValue = "1") int curPage)
 				throws Exception {
 				
 				// 상품 개수 계산
-				int count = productService.countSearchCar(city_no, prd_opt);
+				int count = productService.countSearchHotel(searchOption1, city_no, searchOption2, prd_opt);
+
+				session.setAttribute("searchOption1", searchOption1);
+				session.setAttribute("searchOption2", searchOption2);
+				session.setAttribute("city_no", city_no); // 지역명 검색
+				session.setAttribute("prd_opt", prd_opt); // 상품옵션으로 검색
+				session.setAttribute("curPage", curPage);
 
 				// 페이지 관련 설정
 				Pager pager = new Pager(count, curPage);
 				int start = pager.getPageBegin();
 				int end = pager.getPageEnd();
-
-				session.setAttribute("city_no", city_no); // 지역명 검색
-				session.setAttribute("prd_opt", prd_opt); // 상품옵션으로 검색
-				session.setAttribute("curPage", curPage);
-			
-				List<ProductInfoVO> list = productService.listSearchCar(city_no, prd_opt, start, end); // 게시글 목록
+							
+				List<ProductInfoVO> list = productService.listSearchHotel(searchOption1, city_no, searchOption2, prd_opt, start, end); // 게시글 목록
+				
 				HashMap<String, Object> map = new HashMap<String, Object>();
 				map.put("list", list); // map에 자료 저장
 				map.put("count", count);
-				map.put("pager", pager); // 페이지 네버게이션을 위한 변수
+				map.put("pager", pager); // 페이지 네비게이션을 위한 변수
+				map.put("searchOption1", searchOption1);
 				map.put("city_no", city_no);
+				map.put("searchOption2", searchOption2);
 				map.put("prd_opt", prd_opt);			
 				model.addAttribute("map", map);
 
-				return "products/hotel_list2";
+				return "products/hotel_list";
 			}
 			
 		
 		 // 티켓
         @RequestMapping(value = "/ticket_main", method = RequestMethod.GET)
-        public String listTicketPage(Model model, HttpSession session, ProductInfoVO vo,
-            @RequestParam(name = "city_no", required = false, defaultValue = "전체") String city_no,
+        public String listTicketPage(Model model, HttpSession session,
+        	 @RequestParam(defaultValue = "CITY_NO") String searchOption1,
+        	  @RequestParam(name = "city_no", required = false, defaultValue = "전체") String city_no,
               @RequestParam(defaultValue = "1") int curPage) {
+        	
+        	
            // 게시글 갯수 계산
-           int count = productService.countSearchPrd(city_no);
+           int count = productService.countSearchPrd(searchOption1, city_no);
 
            // 페이지 관련 설정
            Pager pager = new Pager(count, curPage);
            int start = pager.getPageBegin();
            int end = pager.getPageEnd();
 
+           session.setAttribute("searchOption1", searchOption1);
            session.setAttribute("city_no", city_no); // 상품 이름 검색
            session.setAttribute("curPage", curPage);
 
-           List<ProductInfoVO> list = productService.listSearchPrd(city_no, start, end); // 게시글 목록
+           List<ProductInfoVO> list = productService.listSearchPrd(searchOption1, city_no, start, end); // 게시글 목록
            HashMap<String, Object> map = new HashMap<String, Object>();
+           map.put("searchOption1", searchOption1);
            map.put("list", list); // map에 자료 저장
            map.put("count", count);
-           map.put("pager", pager); // 페이지 네버게이션을 위한 변수
+           map.put("pager", pager); // 페이지 네비게이션을 위한 변수
            map.put("city_no", city_no);
            model.addAttribute("map", map);
 

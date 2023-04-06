@@ -10,7 +10,7 @@
 
 <script src = "resources/js/hotel_checkout.js"></script>
 <link rel="stylesheet" type="text/css"
-	href="resources/css/hotel_list2.css" />
+	href="resources/css/hotel_list.css" />
 <link
 	href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap"
 	rel="stylesheet">
