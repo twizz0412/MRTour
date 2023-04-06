@@ -107,8 +107,7 @@
 		
 		<!-- 관리자만 생성/수정/삭제 가능 -->
 		<c:if test="${member.member_id eq 'admin'}">
-			<a href="updateNotice">수정</a>&nbsp;&nbsp;&nbsp;
-			<a href="#" onClick="deleteN()">삭제</a>&nbsp;&nbsp;&nbsp;
+			<button type="button" id="list_btn" class="text"><a href="#" onClick="deleteN()">삭제</a></button>&nbsp;&nbsp;&nbsp;
 		</c:if>
 		
 		<button type="button" id="list_btn" onClick="location.href='notice'">목록</button>

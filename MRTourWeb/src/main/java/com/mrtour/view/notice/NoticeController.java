@@ -39,23 +39,6 @@ public class NoticeController {
 		public String Notice_write(NoticeVO vo) throws Exception {
 			return "notice/Notice_write";
 		}
-		
-		// 게시글 수정 뷰
-		@RequestMapping("/updateNotice_view")
-		public String updateNotice_view(NoticeVO vo) throws Exception {
-			return "notice/updateNotice_view";
-		}
-
-		// 게시글 수정
-		@RequestMapping(value = "/updateNotice", method = RequestMethod.POST)
-		public String updateNotice(NoticeVO vo) throws Exception {
-			if (vo.getNotice_title() != null) {
-				noticeService.updateNotice(vo);
-				return "notice/view";
-			} else {
-				return "notice/write";
-			}
-		}
 
 		// 게시글 삭제
 		@RequestMapping("/deleteNotice")
