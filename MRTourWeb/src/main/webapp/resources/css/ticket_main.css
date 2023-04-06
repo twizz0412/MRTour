@@ -337,25 +337,27 @@ strong {
     margin-top: 20px;
     float: left;
     height: 300px;
-
 }
 
 .product-list {
     width: 100%;
     float: left;
+    
 }
 
 .product-list li {
+   position: realative;
+   padding-left: 20px;
+   padding-top: 30px;
     display: list-item;
     list-style: none;
     float: left;
-
+   
 }
 
 
 .pro {
-    margin-top: 35px;
-    margin-left: 20px;
+
     font-size: 20px;
 }
 

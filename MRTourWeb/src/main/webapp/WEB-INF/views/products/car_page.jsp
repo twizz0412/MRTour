@@ -238,7 +238,7 @@
       <div class="ft">
          <div class="foo_div">
             <ul>
-               <li>회사소개</li>
+               <li><a href = "Intro" style = "text-decoration : none; color: #808080;">회사소개</a></li>
                <li>이용약관</li>
                <li>개인정보처리방침</li>
                <li>여행약관</li>
