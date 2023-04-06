@@ -23,7 +23,7 @@
 			 </ul>
 		 </div>
 		<div class="tbl">
-			<table border="1" bordercolor="#E1DCDC" cellpadding="0" cellspacing="0" width="100%">
+			<table border="1" bordercolor="#E1DCDC" cellpadding="0" cellspacing="0" width="100%" >
 				<tr>
 					<td>
 						<ul class="js_acc list_qna">

@@ -296,7 +296,7 @@ li {
    display: flex;
    align-items: center;
    justify-content: center;
-   margin-top: 100px;
+   margin-top: 30px;
 }
 
 .c-pagination .pagination-first, .c-pagination .pagination-prev {
