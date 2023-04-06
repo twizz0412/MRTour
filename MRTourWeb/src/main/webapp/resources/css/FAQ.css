@@ -1,7 +1,5 @@
 @charset "UTF-8";
 
-@charset "UTF-8";
-
 /*검색기능*/
 .contents {
     float: left;
@@ -9,10 +7,12 @@
     padding-left : 15%;
     padding-right : 15%;
     padding-top : 100px;
+    padding-bottom: 100px;
     display : block;
 }
 .contents {
     min-height: 350px;
+    
 }
 
 .in-contents{
@@ -51,6 +51,7 @@
 form {
     display: block;
     margin-top: 0em;
+    
 }
 
 
@@ -180,6 +181,7 @@ div.select_item .selectbox {
 /*게시판 목록*/
 
 .text_wrap .notice-board .select_item .selectbox .display .text, .option_wrap .notice-board .select_item .selectbox .display .text {
+	
     height: 34px;
 }
 .selectbox .display .text {
@@ -380,6 +382,7 @@ button {
 
 .text_wrap.fix + .cont_unit, .text_wrap.fix + .tbl, .text_wrap.fix + .js_tabs {
     margin-top: 0 !important;
+  
 }
 .js_tabs {
     position: relative;
